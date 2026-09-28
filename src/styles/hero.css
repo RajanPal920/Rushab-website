@@ -1,0 +1,542 @@
+/* ============================================================
+   HERO SLIDER STYLES - RUSHAB METAL INDUSTRIES
+   ============================================================ */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  height: 75vh;
+  max-height: 820px;
+  background-color: var(--navy-deep);
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Slider Track Container */
+.hero-slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.hero-slider-track.is-animated {
+  transition: transform 850ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hero-slider-track.no-animation {
+  transition: none !important;
+}
+
+/* Individual Slide */
+.hero-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Slide Background Image */
+.hero-slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.02);
+  transition: transform 6s ease-out;
+}
+
+.hero-slide.is-active .hero-slide-bg {
+  transform: scale(1.06);
+}
+
+/* Content Container */
+.hero-content-wrapper {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 720px;
+  padding: 3rem 0;
+  color: var(--white);
+}
+
+/* Premium Localized Content Panel behind hero text only */
+.hero-content-panel {
+  max-width: 700px;
+  background: rgba(5, 20, 45, 0.48);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 32px 36px;
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.45);
+}
+
+/* Initial state for slide content to allow smooth animated entrance */
+.hero-slide .hero-eyebrow,
+.hero-slide .hero-title,
+.hero-slide .hero-description,
+.hero-slide .hero-actions {
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: opacity, transform;
+}
+
+/* Staggered smooth entrance animation when slide is active */
+.hero-slide.is-active .hero-eyebrow {
+  animation: heroContentFadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1) 120ms forwards;
+}
+
+.hero-slide.is-active .hero-title {
+  animation: heroContentFadeUp 650ms cubic-bezier(0.16, 1, 0.3, 1) 240ms forwards;
+}
+
+.hero-slide.is-active .hero-description {
+  animation: heroContentFadeUp 650ms cubic-bezier(0.16, 1, 0.3, 1) 360ms forwards;
+}
+
+.hero-slide.is-active .hero-actions {
+  animation: heroContentFadeUp 650ms cubic-bezier(0.16, 1, 0.3, 1) 480ms forwards;
+}
+
+@keyframes heroContentFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Eyebrow badge */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  background-color: rgba(8, 166, 214, 0.15);
+  border: 1px solid var(--cyan-border);
+  border-radius: 4px;
+  color: var(--cyan);
+  font-family: var(--font-main);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.hero-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+}
+
+/* Main Headline */
+.hero-title {
+  font-family: var(--font-main);
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+  /* Localized subtle shadow for clear legibility over natural image */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65), 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Description text */
+.hero-description {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.4vw, 1.125rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2.25rem;
+  max-width: 600px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7), 0 2px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* Hero Button Group */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Primary Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, #08A6D6 0%, #0093c4 100%);
+  color: var(--white);
+  font-family: var(--font-main);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(8, 166, 214, 0.25);
+  transition: all var(--transition-fast);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0093c4 0%, #18246F 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(8, 166, 214, 0.35);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  font-family: var(--font-main);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background-color: var(--white);
+  color: var(--royal-blue);
+  border-color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ------------------------------------------------------------
+   CONTROLS: ARROWS & PAGINATION
+   ------------------------------------------------------------ */
+
+/* Navigation Arrows */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(14, 23, 62, 0.45);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 1.15rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.slider-arrow:hover {
+  background-color: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--white);
+  box-shadow: 0 4px 16px var(--cyan-glow);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.slider-arrow.prev {
+  left: 2rem;
+}
+
+.slider-arrow.next {
+  right: 2rem;
+}
+
+/* Pagination Bar at Bottom */
+.hero-controls-bar {
+  position: absolute;
+  bottom: 34px;
+  left: 0;
+  width: 100%;
+  z-index: 25;
+  pointer-events: none;
+}
+
+.hero-controls-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: auto;
+  padding-left: clamp(80px, 7vw, 120px);
+  padding-right: clamp(80px, 7vw, 120px);
+  box-sizing: border-box;
+}
+
+/* Slide Counter - Clear and High-Contrast Glassmorphic Pill */
+.slide-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-main);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+  padding: 8px 18px;
+  background: rgba(5, 20, 45, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.38);
+  letter-spacing: 0.04em;
+  user-select: none;
+}
+
+.slide-counter-current {
+  font-size: 18px;
+  font-weight: 700;
+  color: #08A6D6;
+  text-shadow: 0 0 10px rgba(8, 166, 214, 0.55);
+}
+
+.slide-counter-divider {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0 2px;
+}
+
+.slide-counter-total {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Pagination Indicators */
+.pagination-indicators {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(5, 20, 45, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.38);
+}
+
+.pagination-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  cursor: pointer;
+  border: none;
+  padding: 4px;
+  opacity: 0.8;
+  transition: all var(--transition-fast);
+}
+
+.pagination-item:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.pagination-item.active {
+  opacity: 1;
+}
+
+.pagination-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.45);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pagination-item.active .pagination-dot {
+  width: 24px;
+  border-radius: 8px;
+  background-color: #08A6D6;
+  border-color: #08A6D6;
+  box-shadow: 0 0 10px rgba(8, 166, 214, 0.65);
+}
+
+.pagination-label {
+  display: none;
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE DESIGN FOR HERO
+   ------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  .hero-section {
+    min-height: 600px;
+    height: 72vh;
+  }
+  .slider-arrow.prev {
+    left: 1.25rem;
+  }
+  .slider-arrow.next {
+    right: 1.25rem;
+  }
+  .hero-controls-container {
+    padding-left: clamp(40px, 5vw, 80px);
+    padding-right: clamp(40px, 5vw, 80px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 580px;
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+  }
+  .hero-content {
+    max-width: 100%;
+    padding: 1.5rem 0;
+  }
+  .hero-content-panel {
+    max-width: calc(100% - 24px);
+    margin: 0 auto;
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+  .slider-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+    background-color: rgba(14, 23, 62, 0.65);
+  }
+  .slider-arrow.prev {
+    left: 0.65rem;
+  }
+  .slider-arrow.next {
+    right: 0.65rem;
+  }
+  .hero-controls-bar {
+    bottom: 20px;
+  }
+  .hero-controls-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .slide-counter {
+    padding: 6px 14px;
+    font-size: 15px;
+  }
+  .slide-counter-current {
+    font-size: 15px;
+  }
+  .slide-counter-total {
+    font-size: 14px;
+  }
+  .pagination-indicators {
+    padding: 6px 14px;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 540px;
+    height: auto;
+    padding-top: 0.75rem;
+    padding-bottom: 4.5rem;
+  }
+  .hero-content {
+    padding: 0.75rem 0;
+  }
+  .hero-content-panel {
+    max-width: calc(100% - 16px);
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  .hero-description {
+    font-size: 0.92rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    padding: 0.8rem 1.25rem;
+    font-size: 0.875rem;
+  }
+  .slider-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+    background-color: rgba(14, 23, 62, 0.75);
+  }
+  .slider-arrow.prev {
+    left: 0.35rem;
+  }
+  .slider-arrow.next {
+    right: 0.35rem;
+  }
+  .hero-controls-bar {
+    bottom: 18px;
+  }
+  .hero-controls-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .slide-counter {
+    padding: 5px 12px;
+    font-size: 14px;
+  }
+  .slide-counter-current {
+    font-size: 14px;
+  }
+  .slide-counter-total {
+    font-size: 13px;
+  }
+  .pagination-indicators {
+    padding: 5px 12px;
+    gap: 5px;
+  }
+  .pagination-dot {
+    width: 8px;
+    height: 8px;
+  }
+  .pagination-item.active .pagination-dot {
+    width: 18px;
+  }
+}
