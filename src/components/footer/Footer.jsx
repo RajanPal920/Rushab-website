@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="footer-top">
         <div className="container">
           <div className="footer-grid">
-            
+
             <div className="footer-widget about-widget">
               <h3 className="footer-brand">RISHABH METAL INDUSTRIES</h3>
               <p className="footer-about">
@@ -20,29 +20,29 @@ export default function Footer() {
                 <a href="#" className="social-icon"><FaFacebookF /></a>
               </div>
             </div>
-            
+
             <div className="footer-widget links-widget">
               <h4 className="widget-title">Quick Links</h4>
               <ul className="footer-links">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Our Products</a></li>
-                <li><a href="#">Quality Assurance</a></li>
-                <li><a href="#">Industries Served</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/products">Our Products</a></li>
+                <li><a href="/quality">Quality Assurance</a></li>
+                <li><a href="/industries">Industries Served</a></li>
+                <li><a href="/contact">Contact Us</a></li>
               </ul>
             </div>
-            
+
             <div className="footer-widget products-widget">
               <h4 className="widget-title">Products</h4>
               <ul className="footer-links">
-                <li><a href="#">Stainless Steel Pipes</a></li>
-                <li><a href="#">Carbon Steel Tubes</a></li>
-                <li><a href="#">Alloy Steel Plates</a></li>
-                <li><a href="#">Industrial Flanges</a></li>
-                <li><a href="#">Pipe Fittings</a></li>
+                <li><a href="/products/pipes-and-tubes">Stainless Steel Pipes</a></li>
+                <li><a href="/products/fasteners">Carbon Steel Tubes</a></li>
+                <li><a href="/products/sheets-and-plates">Alloy Steel Plates</a></li>
+                <li><a href="/products/flanges">Industrial Flanges</a></li>
+                <li><a href="/products/fittings">Pipe Fittings</a></li>
               </ul>
             </div>
-            
+
             <div className="footer-widget contact-widget">
               <h4 className="widget-title">Contact Info</h4>
               <ul className="contact-list">
@@ -60,11 +60,11 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            
+
           </div>
         </div>
       </div>
-      
+
       <div className="footer-bottom">
         <div className="container">
           <div className="footer-bottom-content">

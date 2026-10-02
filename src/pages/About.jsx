@@ -1,7 +1,6 @@
 import React from 'react';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
-import BrandLogos from '../components/BrandLogos';
 import { siteConfig } from '../data/siteConfig';
 import {
   FiShield,
@@ -167,9 +166,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* Source Mills Reference */}
-      <BrandLogos light={true} />
 
       {/* Final Action CTA */}
       <section className="about-bottom-cta section-py-sm">

@@ -23,6 +23,7 @@ const brochureIndustries = [
   {
     id: 1,
     name: "Acid & Chemical",
+    image: "/images/industriesimage/chemical.jpg",
     icon: <FiActivity />,
     tag: "Aggressive Media",
     description: "Highly corrosive acid handling systems requiring specialized austenitic stainless steels, Hastelloy, and nickel alloy piping.",
@@ -31,6 +32,7 @@ const brochureIndustries = [
   {
     id: 2,
     name: "Automobile",
+    image: "/images/industriesimage/automobile.jpg",
     icon: <FiCpu />,
     tag: "Machining & Precision",
     description: "Precision bright bars, capillary stainless tubes, and high-tensile fasteners for powertrain components and exhaust lines.",
@@ -39,30 +41,25 @@ const brochureIndustries = [
   {
     id: 3,
     name: "Beverage",
+    image: "/images/industriesimage/Beverage.jpg",
     icon: <FiDroplet />,
     tag: "Sanitary Grade",
     description: "Food and liquid processing lines utilizing mirror-finished, electro-polished stainless steel tubes and sanitary valves.",
     typicalSupplies: ["Sanitary Polished Tubes", "SS 304/316 Dairy Bends", "Butterfly Valves", "Tri-Clamp Fittings"]
   },
-  {
-    id: 4,
-    name: "Cement",
-    icon: <FiBox />,
-    tag: "Abrasion & Dust",
-    description: "Heavy-duty wear plates, abrasion-resistant pipe liners, and structural beams for kiln circuits and clinker handling.",
-    typicalSupplies: ["Chequered & Wear Plates", "Heavy Wall CS Pipes", "MS Beams & Channels", "Foundation Fasteners"]
-  },
-  {
-    id: 5,
-    name: "Electrical & Electronic",
-    icon: <FiZap />,
-    tag: "High Conductivity",
-    description: "Pure copper busbars, non-magnetic stainless enclosures, and brass precision parts for switchgears and panels.",
-    typicalSupplies: ["ETP Copper Busbars", "Brass Rods & Tubes", "SS 304 Thin Sheets", "Spring Washers"]
-  },
+  // {
+  //   id: 4,
+  //   name: "Cement",
+  //   image: "/images/industriesimage/cement.jpg",
+  //   icon: <FiBox />,
+  //   tag: "Abrasion & Dust",
+  //   description: "Heavy-duty wear plates, abrasion-resistant pipe liners, and structural beams for kiln circuits and clinker handling.",
+  //   typicalSupplies: ["Chequered & Wear Plates", "Heavy Wall CS Pipes", "MS Beams & Channels", "Foundation Fasteners"]
+  // },
   {
     id: 6,
     name: "Food Processing",
+    image: "/images/industriesimage/food.jpg",
     icon: <FiCheckCircle />,
     tag: "Hygienic Cleanliness",
     description: "Stainless steel food conveyor mesh, hygienic storage tanks, and non-toxic fluid circulation lines.",
@@ -71,22 +68,16 @@ const brochureIndustries = [
   {
     id: 7,
     name: "Oil & Gas",
+    image: "/images/industriesimage/oil.jpg",
     icon: <FiDroplet />,
     tag: "High Pressure Hydrocarbons",
     description: "API 5L transmission line pipes, high-pressure forged fittings, and duplex manifolds for upstream and midstream networks.",
     typicalSupplies: ["API 5L Gr. B to X70 Pipes", "3000#/6000# Forged Fittings", "Weld Neck Flanges", "Duplex S31803"]
   },
   {
-    id: 8,
-    name: "Paper & Pulp",
-    icon: <FiLayers />,
-    tag: "Chlorite & Bleaching",
-    description: "Bleach plant digesters and liquor pipelines fabricated from duplex and 317L high-molybdenum stainless alloys.",
-    typicalSupplies: ["SS 317L Plates & Pipes", "Duplex UNS S32205", "Knife Gate Valves", "Wire Mesh Screens"]
-  },
-  {
     id: 9,
     name: "Pharmaceutical",
+    image: "/images/industriesimage/Pharma.jpg",
     icon: <FiActivity />,
     tag: "Sterile & Ultra-Pure",
     description: "Zero dead-leg diaphragm valves, orbital-welded ASTM A270 SS 316L tubes, and high-purity fluid transfer tackle.",
@@ -95,6 +86,7 @@ const brochureIndustries = [
   {
     id: 10,
     name: "Power Plant",
+    image: "/images/industriesimage/power-plant.jpg",
     icon: <FiSun />,
     tag: "High Thermal Pressure",
     description: "Supercritical boiler tubes, main steam alloy lines, and high-temperature stud bolts engineered to ASME codes.",
@@ -103,30 +95,16 @@ const brochureIndustries = [
   {
     id: 11,
     name: "Refinery",
+    image: "/images/industriesimage/Refinery.jpg",
     icon: <FiLayers />,
     tag: "Crude Distillation",
     description: "Coking, hydrocracking, and catalytic reforming units utilizing heavy alloy steel pipes, fittings, and heat exchangers.",
     typicalSupplies: ["ASTM A106 Gr. B", "A234 WPB / WP11 Fittings", "Inconel 625 Tubes", "Class 600# Flanges"]
   },
   {
-    id: 12,
-    name: "Sugar",
-    icon: <FiBox />,
-    tag: "Evaporator Circuits",
-    description: "Juice heater brass & stainless steel tubes, boiler feed piping, and centrifugal screens for cane processing mills.",
-    typicalSupplies: ["Brass Condenser Tubes", "SS 304 Evaporator Tubes", "Perforated Screens", "CS Flanges"]
-  },
-  {
-    id: 13,
-    name: "Textile",
-    icon: <FiCompass />,
-    tag: "Dyeing & Bleaching",
-    description: "Chemical dye bath vessels and wet processing pipelines fabricated with pitting-resistant stainless steel 316.",
-    typicalSupplies: ["SS 316 Sheets & Coils", "Pickled Flat Bars", "Pumps & Valve Trims", "Wire Mesh Cloth"]
-  },
-  {
     id: 14,
     name: "Water Piping",
+    image: "/images/industriesimage/Water-Piping.jpg",
     icon: <FiDroplet />,
     tag: "Municipal & Desalination",
     description: "Large diameter transmission mains, ductile iron and carbon steel piping, and seawater RO desalination duplex lines.",
@@ -135,6 +113,7 @@ const brochureIndustries = [
   {
     id: 15,
     name: "Wind Power",
+    image: "/images/industriesimage/wind-power.jpg",
     icon: <FiWind />,
     tag: "Renewable Energy",
     description: "Tower flange assemblies, high-tensile anchor foundation bolts, and structural steel reinforcement rings.",
@@ -143,6 +122,7 @@ const brochureIndustries = [
   {
     id: 16,
     name: "Fertilizer",
+    image: "/images/industriesimage/fertilizer.jpg",
     icon: <FiActivity />,
     tag: "Urea & Ammonia Plants",
     description: "Carbamate and urea synthesis reactors requiring low-carbon urea-grade stainless and exotic nickel alloy piping.",
@@ -151,43 +131,15 @@ const brochureIndustries = [
   {
     id: 17,
     name: "Petrochemical",
+    image: "/images/industriesimage/petrochemical.jpg",
     icon: <FiLayers />,
     tag: "Polymer & Cracking",
     description: "Ethylene cracking furnaces, intermediate fluid manifolds, and cryogenic liquefied gas storage tanks.",
     typicalSupplies: ["ASTM A333 Low Temp Pipes", "Inconel 800H", "ASTM A182 F316 Flanges", "Fasteners B8M"]
   },
-  {
-    id: 18,
-    name: "Offshore Drilling",
-    icon: <FiAnchor />,
-    tag: "Deep Subsea & Splash Zone",
-    description: "Subsea choke manifolds, topside firewater deluge systems, and certified marine lifting slings and shackles.",
-    typicalSupplies: ["Super Duplex UNS S32750", "Titanium Grade 2", "Bow & D Shackles", "Grade 80 Slings"]
-  },
-  {
-    id: 19,
-    name: "Construction",
-    icon: <FiTool />,
-    tag: "Civil & Commercial",
-    description: "TOR steel rebars, structural MS beams, channels, and architectural stainless facade profiles.",
-    typicalSupplies: ["TOR Steel Rebars", "ISMB Beams & Channels", "Anchor Bolts", "Checkered Plates"]
-  },
-  {
-    id: 20,
-    name: "Engineering",
-    icon: <FiTool />,
-    tag: "Heavy Fabrication & OEM",
-    description: "Custom machined forgings, precision shafts, tube-sheets, and heavy CNC plate profiles for equipment builders.",
-    typicalSupplies: ["Forged Round Bars", "Alloy Steel Billets", "Heavy Plate Blanks", "Custom Studs"]
-  },
-  {
-    id: 21,
-    name: "Specialty Chemicals",
-    icon: <FiActivity />,
-    tag: "Fine Chemical Synthesis",
-    description: "Batch reactor piping and column internals crafted from Hastelloy, Monel, and pure nickel to prevent catalyst poisoning.",
-    typicalSupplies: ["Hastelloy C22 / C276", "Nickel 200/201", "Demister Wire Mesh", "Sampling Valves"]
-  }
+
+
+
 ];
 
 export default function Industries() {
@@ -247,6 +199,11 @@ export default function Industries() {
           <div className="industries-full-grid">
             {filtered.map((ind) => (
               <div key={ind.id} className="ind-detail-card">
+                {ind.image && (
+                  <div className="ind-card-image">
+                    <img src={ind.image} alt={ind.name} />
+                  </div>
+                )}
                 <div className="ind-card-top-row">
                   <div className="ind-icon-box">{ind.icon}</div>
                   <span className="ind-focus-tag">{ind.tag}</span>

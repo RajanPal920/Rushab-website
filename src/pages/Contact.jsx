@@ -54,6 +54,27 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const subject = encodeURIComponent(`Request for Quotation from ${formData.name}`);
+    const bodyText = `
+Name: ${formData.name}
+Company: ${formData.company || 'N/A'}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Product Category: ${formData.productType}
+Material: ${formData.material}
+Quantity/Size: ${formData.quantity || 'N/A'}
+
+Message / Specifications:
+${formData.message}
+    `.trim();
+
+    const body = encodeURIComponent(bodyText);
+    const mailtoLink = `mailto:rushabmetal@rediffmail.com?subject=${subject}&body=${body}`;
+
+    window.location.href = mailtoLink;
+
     setIsSubmitted(true);
   };
 
@@ -93,9 +114,9 @@ export default function Contact() {
                   <div className="c-info-text">
                     <strong>Corporate & Sales Office</strong>
                     <p>
-                      {siteConfig.address.office},<br />
-                      {siteConfig.address.street},<br />
-                      {siteConfig.address.city}, {siteConfig.address.country}
+                      Office No. 5, 1st Floor, Manibai Building,<br />
+                      3rd Khetwadi Cross Lane,<br />
+                      Mumbai – 400 004, India
                     </p>
                   </div>
                 </div>
@@ -339,6 +360,20 @@ export default function Contact() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Google Map Section */}
+      <section className="contact-map-section">
+        <iframe
+          src="https://maps.google.com/maps?q=Office%20No.%205,%201st%20Floor,%20Manibai%20Building,%203rd%20Khetwadi%20Cross%20Lane,%20Mumbai%20-%20400%20004,%20India&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="450"
+          style={{ border: 0, display: 'block' }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Google Map Location of Rushab Metal Industries"
+        ></iframe>
       </section>
     </div>
   );
