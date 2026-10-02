@@ -17,6 +17,7 @@ import Industries from './pages/Industries';
 import TechnicalData from './pages/TechnicalData';
 import Certificates from './pages/Certificates';
 import Contact from './pages/Contact';
+import Catalogue from './pages/Catalogue';
 
 // Global Styles
 import './styles/global.css';
@@ -56,6 +57,8 @@ export default function App() {
             <Route path="/technical-data" element={<TechnicalData />} />
             <Route path="/certificates" element={<Certificates />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/catalogue" element={<Catalogue />} />
+            <Route path="/downloads" element={<Catalogue />} />
             {/* Catch-all fallback */}
             <Route path="*" element={<Home />} />
           </Routes>

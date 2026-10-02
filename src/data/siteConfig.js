@@ -50,5 +50,31 @@ export const siteConfig = {
     "Copper",
     "Brass",
     "Aluminium"
-  ]
+  ],
+  catalogues: {
+    brochure: {
+      id: "company-brochure",
+      title: "Company Brochure",
+      subtitle: "Official ISO 9001:2015 Corporate Profile & Capability Overview",
+      description: "Complete overview of Rushab Metal Industries, manufacturing scopes, third-party inspection references, quality management systems, and global export footprint.",
+      fileName: "broucher_final_design.pdf",
+      url: "/catalogue/broucher_final_design.pdf",
+      size: "29 MB",
+      format: "PDF",
+      badge: "Corporate Profile"
+    },
+    productCatalogue: {
+      id: "product-catalogue",
+      title: "Product Technical Catalogue",
+      subtitle: "Engineering Specifications, ASTM/ASME Standards, Dimensions & Weights",
+      description: "Full technical handbook covering stainless steel, carbon steel, and alloy steel pipes, tubes, butt weld fittings, forged fittings, flanges, and fasteners with dimensional tables.",
+      fileName: "Rushub_Metal_Industries_Catalogue_With_Logo.pdf",
+      url: "/catalogue/Rushub_Metal_Industries_Catalogue_With_Logo.pdf",
+      size: "6.4 MB",
+      format: "PDF",
+      badge: "Technical Handbook"
+    }
+  },
+  brochurePdf: "/catalogue/broucher_final_design.pdf",
+  cataloguePdf: "/catalogue/Rushub_Metal_Industries_Catalogue_With_Logo.pdf"
 };

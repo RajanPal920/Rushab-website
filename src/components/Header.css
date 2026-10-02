@@ -65,7 +65,36 @@
 .topbar-right {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
+}
+
+.topbar-catalogue-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-main);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  background: rgba(14, 165, 233, 0.22);
+  border: 1px solid rgba(14, 165, 233, 0.45);
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.topbar-catalogue-pill:hover {
+  background: #0ea5e9;
+  color: #ffffff;
+  border-color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+.tb-pdf-icon {
+  color: #ef4444;
+  font-size: 0.8rem;
 }
 
 .topbar-iso-badge {
@@ -116,6 +145,7 @@
    2. MAIN NAVIGATION
    ------------------------------------------------------------ */
 .main-navigation {
+  position: relative;
   height: var(--navbar-height);
   background: var(--white);
   display: flex;
@@ -139,20 +169,20 @@
 .navbar-brand-logo {
   display: inline-flex;
   align-items: center;
-  height: 64px;
+  height: 74px;
   overflow: hidden;
   text-decoration: none;
   flex-shrink: 0;
-  max-width: 260px;
+  max-width: 310px;
   transition: height var(--transition-normal);
 }
 
 .site-header.is-scrolled .navbar-brand-logo {
-  height: 52px;
+  height: 62px;
 }
 
 .navbar-logo-image {
-  height: 125px;
+  height: 150px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -163,7 +193,7 @@
 }
 
 .site-header.is-scrolled .navbar-logo-image {
-  height: 105px;
+  height: 125px;
 }
 
 /* Desktop Nav Links */
@@ -199,9 +229,22 @@
   z-index: 5;
 }
 
-.nav-item-link.active {
+.nav-link-dropdown-wrap {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.nav-item-link.active,
+.nav-item-link.menu-active {
   color: var(--primary-blue);
   font-weight: 700;
+}
+
+.nav-item-link.menu-active .nav-accent-underline {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .nav-accent-underline {
@@ -400,6 +443,41 @@
   opacity: 1;
 }
 
+.mobile-drawer-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.mobile-catalogue-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 12px;
+  background: #f1f5f9;
+  color: #0f172a;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.mobile-catalogue-btn svg {
+  color: #dc2626;
+  font-size: 1.05rem;
+}
+
+.mobile-catalogue-btn:hover {
+  background: #e2e8f0;
+  color: #0284c7;
+}
+
 .mobile-get-quote {
   display: block;
   text-align: center;
@@ -475,20 +553,20 @@
   }
 
   .navbar-brand-logo {
-    height: 48px;
-    max-width: 200px;
+    height: 58px;
+    max-width: 240px;
   }
 
   .navbar-logo-image {
-    height: 98px;
+    height: 120px;
   }
 
   .site-header.is-scrolled .navbar-brand-logo {
-    height: 42px;
+    height: 50px;
   }
 
   .site-header.is-scrolled .navbar-logo-image {
-    height: 86px;
+    height: 104px;
   }
 }
 
@@ -510,11 +588,11 @@
   }
 
   .navbar-brand-logo {
-    height: 44px;
-    max-width: 175px;
+    height: 52px;
+    max-width: 215px;
   }
 
   .navbar-logo-image {
-    height: 88px;
+    height: 108px;
   }
 }

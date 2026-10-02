@@ -11,6 +11,7 @@ import {
   FiCheckCircle
 } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
+import PageHero from '../components/common/PageHero';
 import './Contact.css';
 
 export default function Contact() {
@@ -59,17 +60,17 @@ export default function Contact() {
   return (
     <div className="contact-page">
       {/* Page Header */}
-      <section className="page-hero-banner">
-        <div className="container">
-          <div className="page-hero-content">
-            <span className="page-hero-tag">COMMERCIAL & TECHNICAL DESK</span>
-            <h1 className="page-hero-title">Contact & Request a Quote</h1>
-            <p className="page-hero-subtitle">
-              Connect directly with our sales engineers in Mumbai for standard inventory stock inquiries, custom manufacturing, or international export shipments.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        bgImage="/images/herosliderimg/contact.jpg"
+        eyebrow="COMMERCIAL & TECHNICAL DESK"
+        titleWhite1="CONNECT WITH"
+        titleHighlight="OUR TECHNICAL TEAM."
+        titleWhite2="2-4 HR TURNAROUND."
+        description="Connect directly with our sales engineers in Mumbai for standard inventory stock inquiries, custom manufacturing, or international export shipments."
+        primaryBtn={{ text: "DOWNLOAD CATALOGUE ↗", link: "/catalogue" }}
+        secondaryBtn={{ text: "VIEW PRODUCTS >", link: "/products" }}
+        pillText="FAST 2-4 HR RFQ TURNAROUND // JNPT PORT PROXIMITY"
+      />
 
       {/* Main Contact Grid */}
       <section className="section-py bg-light-steel">

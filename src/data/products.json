@@ -734,5 +734,382 @@
         "value": "Primary mill test certificate with every bundle"
       }
     ]
+  },
+  {
+    "id": 14,
+    "slug": "dairy-pharma-fittings",
+    "std": "DIN 11851 / SMS 1145 / 3A Sanitary / ISO 2852",
+    "type": "MANUFACTURER & EXPORTER",
+    "title": "DAIRY & PHARMA FITTINGS",
+    "subtitle": "Sanitary Tube Fittings & Tri-Clover Connections",
+    "category": "Fittings",
+    "image": "/images/products/buttweld-fitting.jpg",
+    "gallery": [
+      "/images/products/buttweld-fitting.jpg"
+    ],
+    "materials": [
+      "Stainless Steel (304 / 304L / 316 / 316L)",
+      "Hastelloy C22",
+      "Titanium"
+    ],
+    "grades": [
+      "AISI 304, AISI 316L, 1.4404, 1.4435"
+    ],
+    "types": [
+      "Tri-Clover Clamps & Ferrules",
+      "Sanitary Bends & Elbows",
+      "Sanitary Equal & Reducing Tees",
+      "DIN / SMS Unions",
+      "Sampling Valves & Sight Glasses"
+    ],
+    "sizes": "1/2\" to 4\" OD (Sanitary Tube Dimensions)",
+    "description": "Sanitary stainless steel bends, tees, unions, ferrules, TC clamps, and butterfly valves with mechanical and electro-polished surfaces (Ra < 0.4 µm) for pharmaceutical, biotechnology, food & dairy processing.",
+    "specifications": [
+      {
+        "label": "Surface Finish",
+        "value": "Electro-polished Ra < 0.4 µm / Mechanical Mirror Finish"
+      },
+      {
+        "label": "Standards",
+        "value": "3A Sanitary, DIN 11851, SMS 1145, ISO 2852"
+      },
+      {
+        "label": "Applications",
+        "value": "Pharmaceutical, Biotechnology, Food & Beverage, Dairy"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "slug": "ferrule-fittings",
+    "std": "ASTM A276 / ASME B31.3 / MSS-SP-99",
+    "type": "MANUFACTURER & EXPORTER",
+    "title": "FERRULE FITTINGS",
+    "subtitle": "Instrumentation Double & Single Ferrule Flareless Fittings",
+    "category": "Fittings",
+    "image": "/images/products/forge-fittings.jpg",
+    "gallery": [
+      "/images/products/forge-fittings.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Monel",
+      "Inconel",
+      "Hastelloy",
+      "Brass"
+    ],
+    "grades": [
+      "SS 316 / 316L, Monel 400, Inconel 625, Hastelloy C276"
+    ],
+    "types": [
+      "Male / Female Connectors",
+      "Union Elbows & Tees",
+      "Bulkhead Unions",
+      "Reducing Unions",
+      "Instrument Manifolds & Needle Valves"
+    ],
+    "sizes": "1/16\" to 1\" OD (1 mm to 25 mm OD)",
+    "description": "Double and single ferrule tube fittings engineered for leak-tight gas and liquid sampling, high-pressure instrumentation tubing, hydraulic impulses, and analyzer lines up to 10,000 PSI.",
+    "specifications": [
+      {
+        "label": "Pressure Rating",
+        "value": "Up to 10,000 PSI (690 bar)"
+      },
+      {
+        "label": "Sealing Design",
+        "value": "Precision Double Ferrule Swaging Action"
+      },
+      {
+        "label": "Testing",
+        "value": "100% Helium Leak Tested & Proof Pressure Tested"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "slug": "hose-pipes",
+    "std": "BS 6501 Part 1 / ISO 10380",
+    "type": "MANUFACTURER & EXPORTER",
+    "title": "HOSE PIPES",
+    "subtitle": "Flexible Corrugated Metallic Braided Hoses",
+    "category": "Pipes & Tubes",
+    "image": "/images/products/pipes.jpg",
+    "gallery": [
+      "/images/products/pipes.jpg"
+    ],
+    "materials": [
+      "Stainless Steel (304 / 316 / 321)",
+      "Monel"
+    ],
+    "grades": [
+      "SS 304, SS 316, SS 321 with Single / Double SS 304 Braiding"
+    ],
+    "types": [
+      "Corrugated Flexible Hoses",
+      "Single Braided Hoses",
+      "Double Braided Hoses",
+      "Jacketed Hoses with Flanged / Threaded Ends"
+    ],
+    "sizes": "1/4\" NB to 12\" NB",
+    "description": "Flexible stainless steel corrugated metallic hoses with single/double high-tensile wire braiding for vibration dampening, thermal expansion absorption, and high-pressure steam/cryogenic service.",
+    "specifications": [
+      {
+        "label": "End Connections",
+        "value": "Flanged (ANSI 150#/300#), BSP/NPT Male-Female, Quick Release"
+      },
+      {
+        "label": "Working Temperature",
+        "value": "-200°C to +600°C"
+      },
+      {
+        "label": "Testing",
+        "value": "100% Hydrostatic and Pneumatic Submerged Testing"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "slug": "perforated-sheets",
+    "std": "ASTM A240 / DIN 24041",
+    "type": "MANUFACTURER & EXPORTER",
+    "title": "PERFORATED SHEETS",
+    "subtitle": "Precision Punched & Slotted Industrial Screens",
+    "category": "Screens & Mesh",
+    "image": "/images/products/sheets-plates.jpg",
+    "gallery": [
+      "/images/products/sheets-plates.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Carbon Steel",
+      "Aluminium",
+      "Brass",
+      "Copper"
+    ],
+    "grades": [
+      "SS 304, 304L, 316, 316L, Galvanized Steel, MS"
+    ],
+    "types": [
+      "Round Hole Perforations",
+      "Square Hole Sheets",
+      "Hexagonal Pattern Screens",
+      "Slotted Hole Sieves",
+      "Decorative Perforated Panels"
+    ],
+    "sizes": "Thickness 0.5 mm to 12 mm; Hole size from 0.8 mm to 100 mm",
+    "description": "Precision CNC punched round hole, square hole, hexagonal, and slotted perforated metal sheets for acoustic baffling, architectural cladding, filtration screens, and chemical centrifuges.",
+    "specifications": [
+      {
+        "label": "Pitch Patterns",
+        "value": "60° Staggered, 45° Staggered, Inline / Parallel"
+      },
+      {
+        "label": "Sheet Sizes",
+        "value": "1000x2000 mm, 1250x2500 mm, 1500x3000 mm and custom slit cut"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "slug": "circle",
+    "std": "ASTM A240 / ASME SA240",
+    "type": "SUPPLIER & STOCKIST",
+    "title": "CIRCLE",
+    "subtitle": "Precision Cold-Sheared, Plasma & Laser-Cut Circles",
+    "category": "Sheets & Plates",
+    "image": "/images/products/sheets-plates.jpg",
+    "gallery": [
+      "/images/products/sheets-plates.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Carbon Steel",
+      "Duplex",
+      "Nickel Alloys",
+      "Copper"
+    ],
+    "grades": [
+      "SS 304, 316, 310, A516 Gr. 70, Duplex 2205"
+    ],
+    "types": [
+      "Cold-Sheared Circles",
+      "CNC Laser Cut Circles",
+      "High-Definition Plasma Cut Discs",
+      "Waterjet Cut Blanks"
+    ],
+    "sizes": "Diameter: 50 mm to 3000 mm; Thickness: 0.5 mm to 100 mm",
+    "description": "Cold-sheared and CNC laser/plasma cut metal circles in stainless steel, carbon steel, and exotic alloys for pressure vessel dished ends, flanges, cookware, and blind covers.",
+    "specifications": [
+      {
+        "label": "Cutting Tolerance",
+        "value": "Down to ±0.2 mm on CNC Laser"
+      },
+      {
+        "label": "Surface Finish",
+        "value": "2B, No. 1 Hot Rolled, Satin / Mill Finish"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "slug": "patapatti-strips",
+    "std": "ASTM A240 / ASTM A666",
+    "type": "SUPPLIER & STOCKIST",
+    "title": "PATAPATTI / STRIPS",
+    "subtitle": "Precision Narrow Slit Strips & Continuous Patti",
+    "category": "Bars & Rods",
+    "image": "/images/products/flat-bar.jpg",
+    "gallery": [
+      "/images/products/flat-bar.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Carbon Steel",
+      "Brass",
+      "Copper"
+    ],
+    "grades": [
+      "SS 202, 304, 304L, 316, 316L, 410, 430"
+    ],
+    "types": [
+      "Slit Edge Patti",
+      "Deburred Round Edge Strips",
+      "Spring Temper Strips",
+      "Continuous Coiled Patti"
+    ],
+    "sizes": "Width: 5 mm to 150 mm; Thickness: 0.3 mm to 6.0 mm",
+    "description": "Continuous slit patti, decorative trims, earthing strips, and shim strips in cold-rolled and annealed conditions with deburred or rounded edges for engineering and electrical applications.",
+    "specifications": [
+      {
+        "label": "Edge Finish",
+        "value": "Slit Edge, Deburred Edge, Rolled Round Edge"
+      },
+      {
+        "label": "Hardness Tempers",
+        "value": "Annealed, 1/4 Hard, 1/2 Hard, Full Hard"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "slug": "rings",
+    "std": "ASTM A182 / ASTM A105 / ASTM A350",
+    "type": "SUPPLIER & STOCKIST",
+    "title": "RING",
+    "subtitle": "Seamless Forged & Rolled Rings",
+    "category": "Flanges",
+    "image": "/images/products/flanges.jpg",
+    "gallery": [
+      "/images/products/flanges.jpg"
+    ],
+    "materials": [
+      "Carbon Steel",
+      "Alloy Steel",
+      "Stainless Steel",
+      "Duplex",
+      "Titanium"
+    ],
+    "grades": [
+      "ASTM A105, A350 LF2, A182 F304/F316/F11/F22/F91, Duplex F51"
+    ],
+    "types": [
+      "Contour Rolled Rings",
+      "Rectangular Forged Rings",
+      "Slewing Bearing Blanks",
+      "Gear Rim Forgings"
+    ],
+    "sizes": "Outside Diameter up to 4000 mm; Weight up to 10,000 KG",
+    "description": "Seamless forged and contour rolled rings for gear blanks, slewing bearings, pressure vessel body flanges, and wind turbine components with full ultrasonic inspection.",
+    "specifications": [
+      {
+        "label": "NDT Inspection",
+        "value": "100% Ultrasonic Testing (UT) & MPI Tested"
+      },
+      {
+        "label": "Heat Treatment",
+        "value": "Normalized, Quenched & Tempered, Solution Annealed"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "slug": "wires",
+    "std": "ASTM A313 / AWS A5.9 / ASTM A580",
+    "type": "SUPPLIER & STOCKIST",
+    "title": "WIRES",
+    "subtitle": "Industrial Spring Wires, TIG/MIG Welding & Tie Wires",
+    "category": "Screens & Mesh",
+    "image": "/images/products/wire-mesh.jpg",
+    "gallery": [
+      "/images/products/wire-mesh.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Inconel",
+      "Monel",
+      "Carbon Steel"
+    ],
+    "grades": [
+      "SS 302, 304, 316, 310, Inconel 600, Monel 400"
+    ],
+    "types": [
+      "Spring Steel Wires",
+      "MIG & TIG Filler Wires",
+      "Annealed Tie Wires",
+      "Cold Heading Quality (CHQ) Wires"
+    ],
+    "sizes": "Diameter 0.10 mm to 16.0 mm in coils and cut spools",
+    "description": "Bright drawn and annealed stainless steel and alloy wires for spring manufacturing, wire ropes, MIG/TIG filler wire, cold heading, and industrial woven mesh applications.",
+    "specifications": [
+      {
+        "label": "Finish",
+        "value": "Bright Drawn, Matte, Soap Coated, Annealed"
+      },
+      {
+        "label": "Packaging",
+        "value": "Coils, Wooden Spools, DIN 250 Plastic Spools"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "slug": "specialist-alloy-steel",
+    "std": "ASTM A335 / ASTM A234 / ASTM A182 (P11, P22, P91, P92)",
+    "type": "SUPPLIER & STOCKIST",
+    "title": "SPECIALIST ALLOY STEEL PRODUCTS",
+    "subtitle": "High-Temperature & High-Pressure Creep-Resistant Products",
+    "category": "Pipes & Tubes",
+    "image": "/images/products/pipes.jpg",
+    "gallery": [
+      "/images/products/pipes.jpg"
+    ],
+    "materials": [
+      "Alloy Steel (P5, P9, P11, P22, P91, P92, 16Mo3)"
+    ],
+    "grades": [
+      "ASTM A335 P11, P22, P91, P92, A234 WP11, WP22, WP91, A182 F11, F22, F91"
+    ],
+    "types": [
+      "Seamless Heavy Wall Pipes",
+      "Superheater & Reheater Tubes",
+      "Induction Pipe Bends (3D/5D)",
+      "High-Pressure Forged Headers"
+    ],
+    "sizes": "1/2\" NB to 36\" NB; Wall Thickness up to 100 mm",
+    "description": "Engineered creep-resistant and high-temperature alloy steel pipes, heavy wall forged fittings, and power boiler headers for ultra-supercritical thermal power stations and petrochemical cracking furnaces.",
+    "specifications": [
+      {
+        "label": "Service Temperature",
+        "value": "Creep resistant up to 650°C"
+      },
+      {
+        "label": "Testing",
+        "value": "100% UT, Hardness testing, Positive Material Identification (PMI)"
+      },
+      {
+        "label": "Certificates",
+        "value": "IBR Certified Form III-A / EN 10204 Type 3.1 & 3.2"
+      }
+    ]
   }
 ]

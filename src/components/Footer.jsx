@@ -103,6 +103,7 @@ export default function Footer() {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About Us</Link></li>
                 <li><Link to="/products">Product Catalogue</Link></li>
+                <li><Link to="/catalogue">Downloads & Brochure (PDF)</Link></li>
                 <li><Link to="/materials">Materials & Grades</Link></li>
                 <li><Link to="/industries">Industries We Serve</Link></li>
                 <li><Link to="/technical-data">Technical Data & Weights</Link></li>
@@ -167,6 +168,8 @@ export default function Footer() {
           </p>
           <div className="bottom-bar-links">
             <Link to="/certificates">ISO 9001:2015</Link>
+            <span className="dot">•</span>
+            <Link to="/catalogue">Downloads & Catalogues</Link>
             <span className="dot">•</span>
             <Link to="/technical-data">Engineering Standards</Link>
             <span className="dot">•</span>

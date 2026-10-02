@@ -7,9 +7,10 @@ import {
   FiFileText,
   FiCheckCircle,
   FiActivity,
-  FiPhone,
-  FiInfo
+  FiInfo,
+  FiPhone
 } from 'react-icons/fi';
+import PageHero from '../components/common/PageHero';
 import './Certificates.css';
 
 // Third-Party Inspection Agencies from Brochure
@@ -65,17 +66,17 @@ export default function Certificates() {
   return (
     <div className="certificates-page">
       {/* Page Header */}
-      <section className="page-hero-banner">
-        <div className="container">
-          <div className="page-hero-content">
-            <span className="page-hero-tag">ASSURED METALLURGY</span>
-            <h1 className="page-hero-title">Quality & Certifications</h1>
-            <p className="page-hero-subtitle">
-              ISO 9001:2015 certified quality management, EN 10204 3.1 Manufacturer Test Certificates, and independent third-party inspection coordination.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        bgImage="/images/herosliderimg/cert.jpg"
+        eyebrow="ASSURED METALLURGY & QA"
+        titleWhite1="CERTIFIED QUALITY."
+        titleHighlight="ZERO-DEFECT PROTOCOL."
+        titleWhite2="GLOBAL AUDITS."
+        description="ISO 9001:2015 certified quality management, EN 10204 3.1 & 3.2 Manufacturer Test Certificates, and independent third-party inspection coordination."
+        primaryBtn={{ text: "DOWNLOAD CATALOGUE ↗", link: "/catalogue" }}
+        secondaryBtn={{ text: "CONTACT QA TEAM >", link: "/contact" }}
+        pillText="ISO 9001:2015 CERTIFIED // IAF & JAS-ANZ ACCREDITED"
+      />
 
       {/* Main ISO Framework Overview */}
       <section className="section-py bg-white">

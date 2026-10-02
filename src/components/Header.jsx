@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import {
   FaPhoneAlt,
@@ -9,15 +9,19 @@ import {
   FaLinkedinIn,
   FaBars,
   FaTimes,
-  FaCertificate
+  FaCertificate,
+  FaFilePdf
 } from 'react-icons/fa';
 import { siteConfig } from '../data/siteConfig';
 import { navigationLinks } from '../data/navigation';
+import NavMegaMenu from './navigation/NavMegaMenu';
 import './Header.css';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(null);
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +39,21 @@ export default function Header() {
     };
   }, [mobileMenuOpen]);
 
-  const closeMenu = () => setMobileMenuOpen(false);
+  const handleMenuEnter = (menuKey) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setActiveMenu(menuKey);
+  };
+
+  const handleMenuLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveMenu(null);
+    }, 180);
+  };
+
+  const closeMenu = () => {
+    setActiveMenu(null);
+    setMobileMenuOpen(false);
+  };
 
   return (
     <header className={`site-header ${isScrolled ? 'is-scrolled' : ''}`}>
@@ -60,6 +78,11 @@ export default function Header() {
           </div>
 
           <div className="topbar-right">
+            <Link to="/catalogue" className="topbar-catalogue-pill" title="Official Technical Catalogues & Brochures">
+              <FaFilePdf className="tb-pdf-icon" />
+              <span>E-CATALOGUE</span>
+            </Link>
+
             <div className="topbar-iso-badge">
               <FaCertificate className="tb-iso-icon" />
               <span>ISO 9001:2015 CERTIFIED</span>
@@ -121,17 +144,43 @@ export default function Header() {
 
           {/* Desktop Nav Items */}
           <div className="desktop-navigation-links">
-            {navigationLinks.map((link) => (
-              <NavLink
-                key={link.name}
-                to={link.href}
-                className={({ isActive }) => `nav-item-link ${isActive ? 'active' : ''}`}
-                end={link.href === '/'}
-              >
-                <span>{link.name}</span>
-                <span className="nav-accent-underline"></span>
-              </NavLink>
-            ))}
+            {navigationLinks.map((link) => {
+              const lowerName = link.name.toLowerCase();
+              const menuKey =
+                lowerName === 'products'
+                  ? 'products'
+                  : lowerName === 'materials'
+                  ? 'materials'
+                  : lowerName === 'certificates'
+                  ? 'certificates'
+                  : null;
+
+              const isMenuActive = Boolean(menuKey && activeMenu === menuKey);
+
+              return (
+                <div
+                  key={link.name}
+                  className="nav-link-dropdown-wrap"
+                  onMouseEnter={() => menuKey && handleMenuEnter(menuKey)}
+                  onMouseLeave={handleMenuLeave}
+                >
+                  <NavLink
+                    to={link.href}
+                    className={({ isActive }) =>
+                      `nav-item-link ${isActive ? 'active' : ''} ${isMenuActive ? 'menu-active' : ''}`
+                    }
+                    end={link.href === '/'}
+                    onClick={() => setActiveMenu(null)}
+                  >
+                    <span>{link.name}</span>
+                    <span className="nav-accent-underline"></span>
+                  </NavLink>
+                  {isMenuActive && (
+                    <NavMegaMenu activeMenu={menuKey} onClose={() => setActiveMenu(null)} />
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* CTA Action & Mobile Toggle */}
@@ -151,6 +200,8 @@ export default function Header() {
             </button>
           </div>
         </div>
+
+        {/* Global Nav Mega Menu Dropdown removed as it's now rendered inside the nav links */}
       </nav>
 
       {/* 3. MOBILE DRAWER & BACKDROP */}
@@ -198,6 +249,10 @@ export default function Header() {
           </ul>
 
           <div className="mobile-drawer-cta">
+            <Link to="/catalogue" className="mobile-catalogue-btn" onClick={closeMenu}>
+              <FaFilePdf />
+              <span>DOWNLOAD CATALOGUES (PDF)</span>
+            </Link>
             <Link to="/contact" className="mobile-get-quote" onClick={closeMenu}>
               REQUEST A QUOTE
             </Link>

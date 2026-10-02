@@ -12,6 +12,7 @@ import {
   FiEye,
   FiHeart
 } from 'react-icons/fi';
+import PageHero from '../components/common/PageHero';
 import './About.css';
 
 const supplyPillars = [
@@ -44,18 +45,18 @@ const supplyPillars = [
 export default function About() {
   return (
     <div className="about-page">
-      {/* Page Header / Breadcrumb Hero */}
-      <section className="page-hero-banner">
-        <div className="container">
-          <div className="page-hero-content">
-            <span className="page-hero-tag">ABOUT RUSHAB METAL INDUSTRIES</span>
-            <h1 className="page-hero-title">Engineering Metal Solutions Driven by Integrity & Quality</h1>
-            <p className="page-hero-subtitle">
-              ISO 9001:2015 certified exporter, importer, supplier, and stockist of ferrous and non-ferrous products based in Mumbai, India.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Page Hero Banner */}
+      <PageHero
+        bgImage="/images/herosliderimg/about.jpg"
+        eyebrow="ABOUT RUSHAB METAL INDUSTRIES"
+        titleWhite1="ENGINEERING METALS."
+        titleHighlight="INTEGRITY & QUALITY."
+        titleWhite2="WORLDWIDE TRUST."
+        description="ISO 9001:2015 certified exporter, importer, supplier, and stockist of ferrous and non-ferrous piping, flange, and alloy solutions based in Mumbai, India."
+        primaryBtn={{ text: "EXPLORE PRODUCTS ↗", link: "/products" }}
+        secondaryBtn={{ text: "OUR CERTIFICATES >", link: "/certificates" }}
+        pillText="ISO 9001:2015 AUDITED // GLOBAL EXPORT FOOTPRINT"
+      />
 
       {/* Main Corporate Overview */}
       <section className="section-py bg-white">

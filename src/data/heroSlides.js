@@ -49,7 +49,7 @@ export const heroSlides = [
     badgeText: "READY BUFFER INVENTORY // RAPID PORT DISPATCH",
     primaryButton: {
       text: "VIEW CATALOGUE ↗",
-      link: "/products"
+      link: "/catalogue"
     },
     secondaryButton: {
       text: "GET IN TOUCH >",

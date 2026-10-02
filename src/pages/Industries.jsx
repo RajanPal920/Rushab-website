@@ -16,6 +16,7 @@ import {
   FiSend,
   FiSearch
 } from 'react-icons/fi';
+import PageHero from '../components/common/PageHero';
 import './Industries.css';
 
 const brochureIndustries = [
@@ -201,17 +202,17 @@ export default function Industries() {
   return (
     <div className="industries-page">
       {/* Header Banner */}
-      <section className="page-hero-banner">
-        <div className="container">
-          <div className="page-hero-content">
-            <span className="page-hero-tag">GLOBAL SUPPLY SECTORS</span>
-            <h1 className="page-hero-title">Industries We Serve</h1>
-            <p className="page-hero-subtitle">
-              Authentic industrial applications supported by Rushab Metal Industries across all 21 key sectors documented in our company brochure.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        bgImage="/images/herosliderimg/industries.jpg"
+        eyebrow="GLOBAL SUPPLY SECTORS"
+        titleWhite1="CRITICAL PIPING FOR"
+        titleHighlight="GLOBAL INDUSTRIES."
+        titleWhite2="MISSION READY."
+        description="Authentic industrial applications supported by Rushab Metal Industries across all 21 key sectors documented in our company brochure."
+        primaryBtn={{ text: "EXPLORE PRODUCTS ↗", link: "/products" }}
+        secondaryBtn={{ text: "REQUEST A QUOTE >", link: "/contact" }}
+        pillText="21 CRITICAL GLOBAL INDUSTRIAL SECTORS"
+      />
 
       {/* Main Sector Grid */}
       <section className="section-py bg-light-steel">

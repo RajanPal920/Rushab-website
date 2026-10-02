@@ -9,6 +9,7 @@ import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 import ProductCard from '../components/ProductCard';
 import IndustryCard from '../components/IndustryCard';
+import CatalogueDownloads from '../components/home/CatalogueDownloads';
 import productsData from '../data/products.json';
 import { siteConfig } from '../data/siteConfig';
 
@@ -100,6 +101,48 @@ export default function Home() {
       {/* 3. Infinite Highlight Marquee */}
       <Marquee />
 
+      {/* 6. Existing Products Section — Visual Redesign Only */}
+      <section className="home-products-section section-py bg-light-steel" id="products-catalog">
+        <div className="container">
+          <SectionTitle
+            subtitle="Engineering Inventory & Production"
+            title="Featured Product Catalogue"
+            description="Precision-engineered steel and special alloy components for demanding industrial and petrochemical applications."
+            align="center"
+          />
+
+          {/* Category Tabs */}
+          <div className="product-category-tabs">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                className={`category-tab-btn ${activeCategory === cat ? 'active' : ''}`}
+                onClick={() => setActiveCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* Product Cards Grid: Reduced height, crystal clear images, no blue overlay */}
+          <div className="home-products-grid">
+            {filteredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+
+          <div className="products-view-all-box">
+            <Button to="/catalogue" variant="primary" size="lg" icon={<FiArrowRight />}>
+              View & Download Complete Product Catalogue (PDF & Portal)
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Official Technical Literature & Brochure Downloads */}
+      <CatalogueDownloads />
+
       {/* 4. Who We Are (Two-Column Layout) */}
       <section className="home-intro-section section-py bg-light-steel" id="who-we-are">
         <div className="container">
@@ -108,7 +151,7 @@ export default function Home() {
             <div className="intro-visual-col">
               <div className="intro-image-frame">
                 <img
-                  src="/images/herosliderimg/img2.jpg"
+                  src="/images/herosliderimg/img1.jpg"
                   alt="Rushab Metal Industries Warehouse Inventory"
                   className="intro-main-img"
                   loading="lazy"
@@ -180,44 +223,7 @@ export default function Home() {
       {/* 5. Why Choose Us — EXACTLY 9 Cards */}
       <WhyChooseUs />
 
-      {/* 6. Existing Products Section — Visual Redesign Only */}
-      <section className="home-products-section section-py bg-light-steel" id="products-catalog">
-        <div className="container">
-          <SectionTitle
-            subtitle="Engineering Inventory & Production"
-            title="Featured Product Catalogue"
-            description="Precision-engineered steel and special alloy components for demanding industrial and petrochemical applications."
-            align="center"
-          />
 
-          {/* Category Tabs */}
-          <div className="product-category-tabs">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                className={`category-tab-btn ${activeCategory === cat ? 'active' : ''}`}
-                onClick={() => setActiveCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          {/* Product Cards Grid: Reduced height, crystal clear images, no blue overlay */}
-          <div className="home-products-grid">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-
-          <div className="products-view-all-box">
-            <Button to="/products" variant="primary" size="lg" icon={<FiArrowRight />}>
-              View Complete Product Catalogue ({productsData.length} Categories)
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* 7. Testing & Integrity Section */}
       <section className="home-quality-section section-py bg-white" id="testing-integrity">

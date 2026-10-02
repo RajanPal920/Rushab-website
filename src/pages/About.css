@@ -2,47 +2,7 @@
    ABOUT PAGE STYLES - RUSHAB METAL INDUSTRIES
    ============================================================ */
 
-.page-hero-banner {
-  background: linear-gradient(135deg, #0A0E2A 0%, var(--dark-navy) 40%, var(--primary-blue) 100%);
-  padding: clamp(3.5rem, 6vw, 5rem) 0;
-  color: var(--white);
-  position: relative;
-  border-bottom: 2px solid var(--cyan);
-}
 
-.page-hero-content {
-  max-width: 860px;
-}
-
-.page-hero-tag {
-  display: inline-block;
-  font-family: var(--font-main);
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: var(--cyan);
-  background: rgba(27, 147, 207, 0.15);
-  border: 1px solid rgba(27, 147, 207, 0.35);
-  padding: 4px 14px;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-
-.page-hero-title {
-  font-family: var(--font-main);
-  font-size: clamp(2rem, 3.8vw, 3.2rem);
-  font-weight: 800;
-  color: var(--white);
-  line-height: 1.2;
-  margin-bottom: 0.85rem;
-  letter-spacing: -0.02em;
-}
-
-.page-hero-subtitle {
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
-  color: var(--light-blue);
-  line-height: 1.6;
-}
 
 /* ------------------------------------------------------------
    Overview Section

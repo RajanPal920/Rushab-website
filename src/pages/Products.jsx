@@ -1,8 +1,12 @@
 import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import Button from '../components/Button';
 import productsData from '../data/products.json';
+import { siteConfig } from '../data/siteConfig';
 import { FiSearch, FiFilter, FiRotateCcw, FiPackage } from 'react-icons/fi';
+import { FaFilePdf, FaDownload } from 'react-icons/fa';
+import PageHero from '../components/common/PageHero';
 import './Products.css';
 
 export default function Products() {
@@ -81,22 +85,56 @@ export default function Products() {
 
   return (
     <div className="products-page">
-      {/* Page Header Banner */}
-      <section className="page-hero-banner">
-        <div className="container">
-          <div className="page-hero-content">
-            <span className="page-hero-tag">ENGINEERING INVENTORY & PRODUCTION</span>
-            <h1 className="page-hero-title">Industrial Product Catalogue</h1>
-            <p className="page-hero-subtitle">
-              Comprehensive inventory of pipes, tubes, butt weld fittings, forged fittings, flanges, fasteners, plates, and special alloys compliant with ASTM, ASME, API, and DIN standards.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Page Hero Banner */}
+      <PageHero
+        bgImage="/images/herosliderimg/products.jpg"
+        eyebrow="ENGINEERING INVENTORY & PRODUCTION"
+        titleWhite1="COMPREHENSIVE"
+        titleHighlight="PRODUCT CATALOGUE."
+        titleWhite2="READY BUFFER STOCK."
+        description="Comprehensive inventory of pipes, tubes, butt weld fittings, forged fittings, flanges, fasteners, plates, and special alloys compliant with ASTM, ASME, API, and DIN standards."
+        primaryBtn={{ text: "DOWNLOAD CATALOGUE ↗", link: "/catalogue" }}
+        secondaryBtn={{ text: "GET IN TOUCH >", link: "/contact" }}
+        pillText="100% PMI SPECTRO VERIFIED // MTC EN 10204 3.1 & 3.2"
+      />
 
       {/* Main Listing Section */}
       <section className="section-py bg-light-steel">
         <div className="container">
+          {/* Official Catalogue & Brochure Download Banner */}
+          <div className="products-catalogue-download-bar">
+            <div className="pcdb-left">
+              <FaFilePdf className="pcdb-pdf-icon" />
+              <div>
+                <strong className="pcdb-title">Official Technical Literature & Engineering Catalogues</strong>
+                <span className="pcdb-desc">Download complete ASTM/ASME standards, wall schedules, flange ratings & company profile in high-res PDF.</span>
+              </div>
+            </div>
+            <div className="pcdb-actions">
+              <a
+                href={siteConfig.catalogues.productCatalogue.url}
+                download="Rushab_Metal_Industries_Technical_Catalogue.pdf"
+                className="pcdb-btn primary"
+                title="Download Product Technical Catalogue PDF"
+              >
+                <FaDownload />
+                <span>Product Catalogue ({siteConfig.catalogues.productCatalogue.size})</span>
+              </a>
+              <a
+                href={siteConfig.catalogues.brochure.url}
+                download="Rushab_Metal_Industries_Brochure.pdf"
+                className="pcdb-btn secondary"
+                title="Download Company Brochure PDF"
+              >
+                <FaDownload />
+                <span>Company Brochure ({siteConfig.catalogues.brochure.size})</span>
+              </a>
+              <Link to="/catalogue" className="pcdb-link">
+                View Portal ↗
+              </Link>
+            </div>
+          </div>
+
           {/* Controls Bar: Search & Material Filter */}
           <div className="products-controls-bar">
             {/* Search Box */}

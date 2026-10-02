@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import Button from '../components/Button';
 import {
   FiFileText,
@@ -7,26 +7,8 @@ import {
   FiSend,
   FiCheckCircle
 } from 'react-icons/fi';
-import { FaCalculator } from 'react-icons/fa';
+import PageHero from '../components/common/PageHero';
 import './TechnicalData.css';
-
-// Material Densities (g/cm³)
-const materialsDensity = [
-  { name: "Stainless Steel (304 / 316 / 321)", density: 7.93 },
-  { name: "Carbon Steel (A106 / A53 / API 5L)", density: 7.85 },
-  { name: "Alloy Steel (P11 / P22 / P91)", density: 7.85 },
-  { name: "Duplex 2205 (UNS S31803 / S32205)", density: 7.80 },
-  { name: "Super Duplex 2507 (UNS S32750)", density: 7.80 },
-  { name: "Nickel 200 / 201", density: 8.89 },
-  { name: "Monel 400", density: 8.80 },
-  { name: "Inconel 600 / 625", density: 8.44 },
-  { name: "Incoloy 800 / 825", density: 8.14 },
-  { name: "Hastelloy C276", density: 8.89 },
-  { name: "Titanium (Gr. 1, 2, 5)", density: 4.51 },
-  { name: "Aluminium (1050 / 6061)", density: 2.70 },
-  { name: "Copper (Cu-ETP)", density: 8.96 },
-  { name: "Brass (Commercial / Naval)", density: 8.50 }
-];
 
 // Verified Pipe Schedule Reference Data (ANSI B36.10 / B36.19)
 const pipeScheduleData = [
@@ -59,98 +41,27 @@ const flangeClassData = [
 ];
 
 export default function TechnicalData() {
-  const [activeTab, setActiveTab] = useState("calculator");
-
-  // Calculator State
-  const [calcShape, setCalcShape] = useState("pipe");
-  const [calcMaterial, setCalcMaterial] = useState("Stainless Steel (304 / 316 / 321)");
-  
-  // Dimensions
-  const [pipeOD, setPipeOD] = useState("60.3"); // mm
-  const [pipeWT, setPipeWT] = useState("3.91"); // mm
-  const [length, setLength] = useState("6");     // meters
-  const [quantity, setQuantity] = useState("1");
-  
-  // Sheet
-  const [sheetLength, setSheetLength] = useState("2500"); // mm
-  const [sheetWidth, setSheetWidth] = useState("1250");   // mm
-  const [sheetThick, setSheetThick] = useState("3.0");    // mm
-
-  // Bar
-  const [barDia, setBarDia] = useState("50"); // mm
-
-  // Selected density
-  const selectedDensity = useMemo(() => {
-    const found = materialsDensity.find(m => m.name === calcMaterial);
-    return found ? found.density : 7.93;
-  }, [calcMaterial]);
-
-  // Verified Weight Calculation Engine
-  const calculatedWeight = useMemo(() => {
-    const qty = Math.max(1, parseFloat(quantity) || 1);
-    const lenMeters = Math.max(0, parseFloat(length) || 0);
-
-    let unitWeight = 0;
-
-    if (calcShape === "pipe") {
-      const od = parseFloat(pipeOD) || 0;
-      const wt = parseFloat(pipeWT) || 0;
-      if (od > wt && wt > 0) {
-        // Formula: Weight (kg/m) = (OD - WT) * WT * 0.02466 * (density / 7.85)
-        const kgPerMeter = (od - wt) * wt * 0.02466 * (selectedDensity / 7.85);
-        unitWeight = kgPerMeter * lenMeters;
-      }
-    } else if (calcShape === "sheet") {
-      const l = (parseFloat(sheetLength) || 0) / 1000;
-      const w = (parseFloat(sheetWidth) || 0) / 1000;
-      const t = parseFloat(sheetThick) || 0;
-      // Formula: Weight (kg) = L(m) * W(m) * T(mm) * density
-      unitWeight = l * w * t * selectedDensity;
-    } else if (calcShape === "round_bar") {
-      const d = parseFloat(barDia) || 0;
-      // Formula: Weight (kg/m) = d² * 0.00623 * (density / 7.85)
-      const kgPerMeter = d * d * 0.00623 * (selectedDensity / 7.85);
-      unitWeight = kgPerMeter * lenMeters;
-    } else if (calcShape === "hex_bar") {
-      const a = parseFloat(barDia) || 0;
-      // Hex across flats formula: a² * 0.0068 * (density / 7.85)
-      const kgPerMeter = a * a * 0.0068 * (selectedDensity / 7.85);
-      unitWeight = kgPerMeter * lenMeters;
-    }
-
-    const totalWeight = unitWeight * qty;
-    return {
-      unit: unitWeight.toFixed(2),
-      total: totalWeight.toFixed(2)
-    };
-  }, [calcShape, selectedDensity, pipeOD, pipeWT, length, quantity, sheetLength, sheetWidth, sheetThick, barDia]);
+  const [activeTab, setActiveTab] = useState("schedules");
 
   return (
     <div className="technical-page">
       {/* Page Header */}
-      <section className="page-hero-banner">
-        <div className="container">
-          <div className="page-hero-content">
-            <span className="page-hero-tag">TECHNICAL METROLOGY & ENGINEERING</span>
-            <h1 className="page-hero-title">Technical Data & Weight Calculator</h1>
-            <p className="page-hero-subtitle">
-              Verified dimensional charts, pipe wall schedules, pressure ratings, and metallurgical formulas based on ASME B36.10, B16.5, and ASTM standards.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        bgImage="/images/herosliderimg/tech.jpg"
+        eyebrow="TECHNICAL METROLOGY & ENGINEERING"
+        titleWhite1="TECHNICAL DATA &"
+        titleHighlight="DIMENSIONAL CHARTS."
+        titleWhite2="ASME / ASTM STANDARDS."
+        description="Verified dimensional charts, pipe wall schedules, pressure ratings, and metallurgical formulas based on ASME B36.10, B16.5, and ASTM standards."
+        primaryBtn={{ text: "DOWNLOAD CATALOGUE ↗", link: "/catalogue" }}
+        secondaryBtn={{ text: "GET IN TOUCH >", link: "/contact" }}
+        pillText="ASME / ASTM / API / DIN COMPLIANT SPECIFICATIONS"
+      />
 
       {/* Main Tabs Navigation */}
       <section className="section-py bg-light-steel">
         <div className="container">
           <div className="tech-nav-tabs">
-            <button
-              type="button"
-              className={`tech-tab-btn ${activeTab === 'calculator' ? 'active' : ''}`}
-              onClick={() => setActiveTab('calculator')}
-            >
-              <FaCalculator /> Weight Calculator
-            </button>
             <button
               type="button"
               className={`tech-tab-btn ${activeTab === 'schedules' ? 'active' : ''}`}
@@ -174,230 +85,8 @@ export default function TechnicalData() {
             </button>
           </div>
 
-          {/* TAB 1: Weight Calculator */}
-          {activeTab === 'calculator' && (
-            <div className="calculator-wrapper-card">
-              <div className="calc-header-row">
-                <div>
-                  <h2 className="calc-title">Interactive Metal Weight Calculator</h2>
-                  <p className="calc-subtitle">
-                    Compute precise theoretical weights for pipes, sheets, and bars according to standardized metallurgical densities.
-                  </p>
-                </div>
-                <div className="calc-density-badge">
-                  <span>Selected Density:</span>
-                  <strong>{selectedDensity} g/cm³</strong>
-                </div>
-              </div>
+          {/* TAB 1: Pipe Schedules & Dimensions */}
 
-              <div className="calc-body-grid">
-                {/* Inputs Area */}
-                <div className="calc-form-side">
-                  <div className="calc-row">
-                    <label className="calc-label">Product Geometry / Shape:</label>
-                    <div className="calc-shape-selector">
-                      <button
-                        type="button"
-                        className={`shape-pill ${calcShape === 'pipe' ? 'active' : ''}`}
-                        onClick={() => setCalcShape('pipe')}
-                      >
-                        Round Pipe / Tube
-                      </button>
-                      <button
-                        type="button"
-                        className={`shape-pill ${calcShape === 'sheet' ? 'active' : ''}`}
-                        onClick={() => setCalcShape('sheet')}
-                      >
-                        Sheet / Plate
-                      </button>
-                      <button
-                        type="button"
-                        className={`shape-pill ${calcShape === 'round_bar' ? 'active' : ''}`}
-                        onClick={() => setCalcShape('round_bar')}
-                      >
-                        Round Bar
-                      </button>
-                      <button
-                        type="button"
-                        className={`shape-pill ${calcShape === 'hex_bar' ? 'active' : ''}`}
-                        onClick={() => setCalcShape('hex_bar')}
-                      >
-                        Hexagonal Bar
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="calc-row">
-                    <label htmlFor="calc-mat-select" className="calc-label">Select Metallurgy & Material:</label>
-                    <select
-                      id="calc-mat-select"
-                      className="calc-select"
-                      value={calcMaterial}
-                      onChange={(e) => setCalcMaterial(e.target.value)}
-                    >
-                      {materialsDensity.map((m) => (
-                        <option key={m.name} value={m.name}>
-                          {m.name} ({m.density} g/cm³)
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  {/* Dimensional Inputs Depending on Shape */}
-                  {calcShape === 'pipe' && (
-                    <div className="calc-dimension-grid">
-                      <div className="calc-input-group">
-                        <label>Outer Diameter (OD in mm):</label>
-                        <input
-                          type="number"
-                          step="0.1"
-                          value={pipeOD}
-                          onChange={(e) => setPipeOD(e.target.value)}
-                        />
-                      </div>
-                      <div className="calc-input-group">
-                        <label>Wall Thickness (WT in mm):</label>
-                        <input
-                          type="number"
-                          step="0.01"
-                          value={pipeWT}
-                          onChange={(e) => setPipeWT(e.target.value)}
-                        />
-                      </div>
-                      <div className="calc-input-group">
-                        <label>Length per Piece (Meters):</label>
-                        <input
-                          type="number"
-                          step="0.5"
-                          value={length}
-                          onChange={(e) => setLength(e.target.value)}
-                        />
-                      </div>
-                      <div className="calc-input-group">
-                        <label>Quantity (Pieces):</label>
-                        <input
-                          type="number"
-                          min="1"
-                          value={quantity}
-                          onChange={(e) => setQuantity(e.target.value)}
-                        />
-                      </div>
-                    </div>
-                  )}
-
-                  {calcShape === 'sheet' && (
-                    <div className="calc-dimension-grid">
-                      <div className="calc-input-group">
-                        <label>Length (in mm):</label>
-                        <input
-                          type="number"
-                          value={sheetLength}
-                          onChange={(e) => setSheetLength(e.target.value)}
-                        />
-                      </div>
-                      <div className="calc-input-group">
-                        <label>Width (in mm):</label>
-                        <input
-                          type="number"
-                          value={sheetWidth}
-                          onChange={(e) => setSheetWidth(e.target.value)}
-                        />
-                      </div>
-                      <div className="calc-input-group">
-                        <label>Thickness (in mm):</label>
-                        <input
-                          type="number"
-                          step="0.1"
-                          value={sheetThick}
-                          onChange={(e) => setSheetThick(e.target.value)}
-                        />
-                      </div>
-                      <div className="calc-input-group">
-                        <label>Quantity (Sheets):</label>
-                        <input
-                          type="number"
-                          min="1"
-                          value={quantity}
-                          onChange={(e) => setQuantity(e.target.value)}
-                        />
-                      </div>
-                    </div>
-                  )}
-
-                  {(calcShape === 'round_bar' || calcShape === 'hex_bar') && (
-                    <div className="calc-dimension-grid">
-                      <div className="calc-input-group">
-                        <label>{calcShape === 'round_bar' ? 'Diameter (Dia in mm):' : 'Across Flats (A/F in mm):'}</label>
-                        <input
-                          type="number"
-                          step="0.5"
-                          value={barDia}
-                          onChange={(e) => setBarDia(e.target.value)}
-                        />
-                      </div>
-                      <div className="calc-input-group">
-                        <label>Length per Piece (Meters):</label>
-                        <input
-                          type="number"
-                          step="0.5"
-                          value={length}
-                          onChange={(e) => setLength(e.target.value)}
-                        />
-                      </div>
-                      <div className="calc-input-group">
-                        <label>Quantity (Pieces):</label>
-                        <input
-                          type="number"
-                          min="1"
-                          value={quantity}
-                          onChange={(e) => setQuantity(e.target.value)}
-                        />
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* Result Display Side */}
-                <div className="calc-result-side">
-                  <div className="calc-result-box">
-                    <span className="result-tag">ESTIMATED THEORETICAL WEIGHT</span>
-                    <div className="result-big-number">
-                      {calculatedWeight.total} <span className="unit-label">KG</span>
-                    </div>
-                    <div className="result-metric-row">
-                      <span>Weight Per Unit:</span>
-                      <strong>{calculatedWeight.unit} KG</strong>
-                    </div>
-                    <div className="result-metric-row">
-                      <span>Total Pieces:</span>
-                      <strong>{quantity} Units</strong>
-                    </div>
-                    <div className="result-metric-row">
-                      <span>Total Metric Tons:</span>
-                      <strong>{(calculatedWeight.total / 1000).toFixed(3)} MT</strong>
-                    </div>
-
-                    <div className="calc-action-btn-row">
-                      <Button
-                        to={`/contact?calcWeight=${calculatedWeight.total}kg&calcMaterial=${encodeURIComponent(calcMaterial)}`}
-                        variant="primary"
-                        size="md"
-                        icon={<FiSend />}
-                      >
-                        Request Quote For This Spec
-                      </Button>
-                    </div>
-
-                    <p className="calc-disclaimer-note">
-                      * Calculation is theoretical based on nominal dimensions and standard material density. Commercial weights are subject to standard mill tolerances.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* TAB 2: Pipe Schedules & Dimensions */}
           {activeTab === 'schedules' && (
             <div className="tech-table-card">
               <div className="table-card-header">

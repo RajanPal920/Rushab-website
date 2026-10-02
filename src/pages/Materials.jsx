@@ -5,6 +5,7 @@ import {
   FiSend,
   FiShield
 } from 'react-icons/fi';
+import PageHero from '../components/common/PageHero';
 import './Materials.css';
 
 const ferrousMaterials = [
@@ -185,6 +186,34 @@ const nonFerrousMaterials = [
     ],
     features: "Low density, excellent thermal/electrical conduction, and retained ductility at cryogenic liquid gas temperatures.",
     products: "Extrusions, Plates, Perforated Mesh, Tanks, Architectural Profiles"
+  },
+  {
+    id: "exotic-alloys",
+    name: "Exotic Alloys (Tantalum, Zirconium)",
+    category: "Non-Ferrous / Special Alloys",
+    tag: "Extreme Corrosion Immunity in Harsh Acids",
+    standards: "ASTM B521, ASTM B365, ASTM B708",
+    grades: [
+      "Tantalum (UNS R05200 / R05400)",
+      "Zirconium 702 (UNS R60702)",
+      "Zirconium 705 (UNS R60705)"
+    ],
+    features: "Virtually unattackable by hydrochloric, nitric, and sulfuric acids at boiling temperatures; unmatched biocompatibility and refractory density.",
+    products: "Thermowell Sheaths, Bayonet Heaters, Acid Reactor Liners, Custom Fabrications"
+  },
+  {
+    id: "high-alloys",
+    name: "High Alloys (Sanicro 28, 904L, Alloy 20)",
+    category: "Non-Ferrous / Special Alloys",
+    tag: "Phosphoric & Sulfuric Acid Resisting Metallurgy",
+    standards: "ASTM B668, ASTM B625, ASTM B464",
+    grades: [
+      "Sanicro 28 (UNS N08028)",
+      "904L (UNS N08904 / 1.4539)",
+      "Alloy 20 (UNS N08020)"
+    ],
+    features: "High chromium, nickel, and molybdenum content with copper addition providing outstanding resistance to strong reducing acids and stress corrosion cracking.",
+    products: "Fertilizer Evaporators, Pickling Tanks, Acid Piping, Heat Exchanger Bundles"
   }
 ];
 
@@ -194,23 +223,23 @@ export default function Materials() {
   const displayMaterials = selectedGroup === "all"
     ? [...ferrousMaterials, ...nonFerrousMaterials]
     : selectedGroup === "ferrous"
-    ? ferrousMaterials
-    : nonFerrousMaterials;
+      ? ferrousMaterials
+      : nonFerrousMaterials;
 
   return (
     <div className="materials-page">
       {/* Header Banner */}
-      <section className="page-hero-banner">
-        <div className="container">
-          <div className="page-hero-content">
-            <span className="page-hero-tag">METALLURGICAL SPECTRUM</span>
-            <h1 className="page-hero-title">Materials & Material Grades</h1>
-            <p className="page-hero-subtitle">
-              Comprehensive ferrous, non-ferrous, and specialty nickel alloy metallurgy supplied according to ASTM, ASME, API, DIN, and international standards.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        bgImage="/images/herosliderimg/products.jpg"
+        eyebrow="METALLURGICAL SPECTRUM"
+        titleWhite1="ADVANCED ALLOY"
+        titleHighlight="& STEEL GRADES."
+        titleWhite2="MILL CERTIFIED."
+        description="Comprehensive ferrous, non-ferrous, and specialty nickel alloy metallurgy supplied according to ASTM, ASME, API, DIN, and international standards."
+        primaryBtn={{ text: "EXPLORE PRODUCTS ↗", link: "/products" }}
+        secondaryBtn={{ text: "REQUEST MTC >", link: "/contact" }}
+        pillText="9 METALLURGICAL FAMILIES // MILL TEST TRACEABLE"
+      />
 
       {/* Main Filterable Material Section */}
       <section className="section-py bg-light-steel">

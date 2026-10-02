@@ -1,0 +1,446 @@
+/* ==========================================================================
+   DEDICATED CATALOGUE & BROCHURE PAGE STYLES
+   ========================================================================== */
+
+.catalogue-page {
+  background-color: var(--color-light-steel, #f8fafc);
+  min-height: 100vh;
+}
+
+.catalogue-main-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Card */
+.cat-detail-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.cat-detail-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #1e40af, #3b82f6);
+}
+
+.cat-detail-card.highlight-card::before {
+  background: linear-gradient(90deg, #0284c7, #0ea5e9);
+}
+
+.cat-detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.12), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+  border-color: #cbd5e1;
+}
+
+/* Card Header */
+.cat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.75rem 0.5rem 1.75rem;
+}
+
+.cat-type-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
+}
+
+.cat-type-pill.tech {
+  background: rgba(14, 165, 233, 0.1);
+  color: #0369a1;
+  border: 1px solid rgba(14, 165, 233, 0.25);
+}
+
+.cat-type-pill.corporate {
+  background: rgba(30, 64, 175, 0.1);
+  color: #1e40af;
+  border: 1px solid rgba(30, 64, 175, 0.25);
+}
+
+.cat-size-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  padding: 0.3rem 0.75rem;
+  border-radius: 8px;
+}
+
+/* Card Body */
+.cat-card-body {
+  padding: 1rem 1.75rem 1.5rem 1.75rem;
+  flex: 1;
+}
+
+.cat-doc-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
+}
+
+.cat-doc-lead {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.cat-doc-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Scope Box */
+.cat-scope-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.cat-scope-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.85rem;
+}
+
+.cat-scope-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.cat-scope-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  color: #334155;
+  line-height: 1.45;
+}
+
+.csc-icon {
+  color: #10b981;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+/* Card Footer Actions */
+.cat-card-footer {
+  display: flex;
+  gap: 0.65rem;
+  padding: 1.25rem 1.75rem 1.5rem 1.75rem;
+  background: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+}
+
+.cat-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.75rem 1.15rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.cat-action-btn.primary {
+  flex: 1.4;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
+}
+
+.cat-action-btn.primary:hover {
+  background: linear-gradient(135deg, #1e3a5f 0%, #0284c7 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(2, 132, 199, 0.25);
+}
+
+.cat-action-btn.secondary {
+  flex: 1;
+  background: #ffffff;
+  color: #334155;
+  border-color: #cbd5e1;
+}
+
+.cat-action-btn.secondary:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+.cat-action-btn.preview {
+  background: #ffffff;
+  color: #0284c7;
+  border-color: #bae6fd;
+}
+
+.cat-action-btn.preview:hover {
+  background: #f0f9ff;
+  border-color: #0284c7;
+}
+
+/* Bottom Inquiry Banner */
+.catalogue-inquiry-box {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+  border-radius: 16px;
+  padding: 2.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: #ffffff;
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.15);
+}
+
+.cib-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #38bdf8;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.cib-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.cib-text {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  max-width: 680px;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.cib-contact-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cib-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cib-link:hover {
+  color: #38bdf8;
+}
+
+.cib-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.95rem 1.75rem;
+  background: #0ea5e9;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.35);
+}
+
+.cib-btn:hover {
+  background: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.45);
+}
+
+/* PDF Modal */
+.pdf-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.pdf-modal-container {
+  background: #ffffff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 1100px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.pdf-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.pmh-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.pmh-icon {
+  color: #ef4444;
+  font-size: 1.25rem;
+}
+
+.pmh-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pmh-open-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #38bdf8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pmh-open-tab:hover {
+  text-decoration: underline;
+}
+
+.pmh-close-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.pmh-close-btn:hover {
+  background: rgba(239, 68, 68, 0.8);
+}
+
+.pdf-modal-body {
+  flex: 1;
+  background: #334155;
+}
+
+.pdf-iframe-view {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .catalogue-main-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .catalogue-inquiry-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cib-action {
+    width: 100%;
+  }
+
+  .cib-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .cat-card-footer {
+    flex-direction: column;
+  }
+
+  .cat-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .pdf-modal-container {
+    height: 96vh;
+  }
+}
