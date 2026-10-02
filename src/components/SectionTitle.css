@@ -1,0 +1,114 @@
+.section-header-component {
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+  position: relative;
+}
+
+.section-header-component.text-center {
+  text-align: center;
+}
+
+.section-header-component.text-left {
+  text-align: left;
+}
+
+.section-subtitle-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(27, 147, 207, 0.1);
+  border: 1px solid rgba(27, 147, 207, 0.3);
+  padding: 5px 14px;
+  border-radius: 9999px;
+  margin-bottom: 0.85rem;
+}
+
+.subtitle-pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--cyan);
+  animation: pulseCyan 2s infinite ease-in-out;
+}
+
+@keyframes pulseCyan {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+}
+
+.section-subtitle-text {
+  font-family: var(--font-main);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.section-heading-title {
+  font-family: var(--font-main);
+  font-size: clamp(1.75rem, 3.2vw, 2.65rem);
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  color: var(--dark-navy);
+  margin-bottom: 0.85rem;
+}
+
+.theme-light .section-heading-title {
+  color: var(--white);
+}
+
+.section-heading-desc {
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  color: var(--slate-600);
+  max-width: 720px;
+  line-height: 1.65;
+  margin: 0 auto;
+}
+
+.text-left .section-heading-desc {
+  margin: 0;
+}
+
+.theme-light .section-heading-desc {
+  color: var(--light-blue);
+}
+
+.section-title-divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.section-title-divider.align-center {
+  justify-content: center;
+}
+
+.section-title-divider.align-left {
+  justify-content: flex-start;
+}
+
+.divider-line {
+  height: 2px;
+  width: 38px;
+  background: linear-gradient(90deg, transparent, var(--cyan));
+}
+
+.divider-line.line-right {
+  background: linear-gradient(90deg, var(--cyan), transparent);
+}
+
+.divider-diamond {
+  width: 6px;
+  height: 6px;
+  background-color: var(--cyan);
+  transform: rotate(45deg);
+}

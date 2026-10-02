@@ -1,0 +1,408 @@
+/* ============================================================
+   TECHNICAL DATA & CALCULATOR STYLES
+   ============================================================ */
+
+.tech-nav-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.tech-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-main);
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid #CBD5E1;
+  background: var(--white);
+  color: var(--slate-700);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tech-tab-btn:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.tech-tab-btn.active {
+  background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
+  color: var(--white);
+  border-color: var(--dark-navy);
+  box-shadow: 0 4px 14px rgba(16, 24, 79, 0.2);
+}
+
+/* Calculator Card */
+.calculator-wrapper-card {
+  background: var(--white);
+  border: 1px solid rgba(190, 216, 243, 0.8);
+  border-radius: 14px;
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  box-shadow: 0 10px 30px rgba(16, 24, 79, 0.06);
+}
+
+.calc-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #E2E8F0;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.calc-title {
+  font-family: var(--font-main);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 800;
+  color: var(--dark-navy);
+  margin-bottom: 0.35rem;
+}
+
+.calc-subtitle {
+  font-size: 0.925rem;
+  color: var(--slate-600);
+}
+
+.calc-density-badge {
+  background: var(--very-light-blue);
+  border: 1px solid rgba(27, 147, 207, 0.3);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.825rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.calc-density-badge span {
+  color: var(--slate-500);
+}
+
+.calc-density-badge strong {
+  font-family: var(--font-main);
+  color: var(--cyan);
+  font-size: 1.05rem;
+}
+
+.calc-body-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+  align-items: start;
+}
+
+.calc-form-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.calc-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.calc-label {
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--dark-navy);
+}
+
+.calc-shape-selector {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.shape-pill {
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #CBD5E1;
+  background: #F8FAFC;
+  color: var(--slate-700);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.shape-pill:hover {
+  border-color: var(--cyan);
+}
+
+.shape-pill.active {
+  background: var(--primary-blue);
+  color: var(--white);
+  border-color: var(--primary-blue);
+}
+
+.calc-select {
+  padding: 11px 14px;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark-navy);
+  background-color: var(--white);
+  outline: none;
+}
+
+.calc-dimension-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.calc-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.calc-input-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--slate-600);
+}
+
+.calc-input-group input {
+  padding: 10px 12px;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark-navy);
+  outline: none;
+  background: #F8FAFC;
+}
+
+.calc-input-group input:focus {
+  background: var(--white);
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(27, 147, 207, 0.15);
+}
+
+/* Result Box Side */
+.calc-result-box {
+  background: linear-gradient(135deg, #0A0E2A 0%, var(--dark-navy) 40%, var(--primary-blue) 100%);
+  border: 1px solid rgba(27, 147, 207, 0.4);
+  border-radius: 12px;
+  padding: 2rem;
+  color: var(--white);
+  box-shadow: 0 10px 30px rgba(16, 24, 79, 0.2);
+}
+
+.result-tag {
+  display: block;
+  font-family: var(--font-main);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--cyan);
+  margin-bottom: 0.75rem;
+}
+
+.result-big-number {
+  font-family: var(--font-main);
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.unit-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--cyan);
+}
+
+.result-metric-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.875rem;
+  color: var(--light-blue);
+}
+
+.result-metric-row strong {
+  color: var(--white);
+}
+
+.calc-action-btn-row {
+  margin-top: 1.75rem;
+  display: flex;
+}
+
+.calc-disclaimer-note {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  margin-top: 1.25rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+/* ------------------------------------------------------------
+   Tables Styles
+   ------------------------------------------------------------ */
+.tech-table-card {
+  background: var(--white);
+  border: 1px solid rgba(190, 216, 243, 0.8);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(16, 24, 79, 0.05);
+}
+
+.table-card-header {
+  margin-bottom: 1.5rem;
+}
+
+.table-card-header h3 {
+  font-family: var(--font-main);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--dark-navy);
+  margin-bottom: 0.25rem;
+}
+
+.table-card-header p {
+  font-size: 0.9rem;
+  color: var(--slate-600);
+}
+
+.tech-table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+}
+
+.tech-industrial-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  min-width: 650px;
+}
+
+.tech-industrial-table thead th {
+  background: var(--dark-navy);
+  color: var(--white);
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 12px 14px;
+  text-align: left;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-industrial-table tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #E2E8F0;
+  color: var(--slate-700);
+}
+
+.tech-industrial-table tbody tr:nth-child(even) {
+  background: #F8FAFC;
+}
+
+.tech-industrial-table tbody tr:hover {
+  background: rgba(27, 147, 207, 0.08);
+}
+
+.highlight-cell {
+  font-weight: 700;
+  color: var(--primary-blue);
+  background-color: rgba(29, 39, 138, 0.04);
+}
+
+.table-note-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.825rem;
+  color: var(--slate-600);
+  line-height: 1.5;
+}
+
+.info-icon {
+  color: var(--cyan);
+  font-size: 1.15rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Standards cards grid */
+.standards-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.std-summary-card {
+  background: var(--very-light-blue);
+  border: 1px solid rgba(190, 216, 243, 0.7);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all var(--transition-normal);
+}
+
+.std-summary-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--cyan);
+  background: var(--white);
+  box-shadow: 0 8px 20px rgba(27, 147, 207, 0.15);
+}
+
+.std-code {
+  display: inline-block;
+  font-family: var(--font-main);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--cyan);
+  background: rgba(27, 147, 207, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.std-summary-card h4 {
+  font-family: var(--font-main);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark-navy);
+  margin-bottom: 0.5rem;
+}
+
+.std-summary-card p {
+  font-size: 0.825rem;
+  color: var(--slate-600);
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .calc-body-grid {
+    grid-template-columns: 1fr;
+  }
+}

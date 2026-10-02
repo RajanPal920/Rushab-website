@@ -1,0 +1,299 @@
+/* ============================================================
+   ABOUT PAGE STYLES - RUSHAB METAL INDUSTRIES
+   ============================================================ */
+
+.page-hero-banner {
+  background: linear-gradient(135deg, #0A0E2A 0%, var(--dark-navy) 40%, var(--primary-blue) 100%);
+  padding: clamp(3.5rem, 6vw, 5rem) 0;
+  color: var(--white);
+  position: relative;
+  border-bottom: 2px solid var(--cyan);
+}
+
+.page-hero-content {
+  max-width: 860px;
+}
+
+.page-hero-tag {
+  display: inline-block;
+  font-family: var(--font-main);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--cyan);
+  background: rgba(27, 147, 207, 0.15);
+  border: 1px solid rgba(27, 147, 207, 0.35);
+  padding: 4px 14px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.page-hero-title {
+  font-family: var(--font-main);
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.02em;
+}
+
+.page-hero-subtitle {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  color: var(--light-blue);
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------
+   Overview Section
+   ------------------------------------------------------------ */
+.about-overview-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.overview-heading {
+  font-family: var(--font-main);
+  font-size: clamp(1.8rem, 2.6vw, 2.3rem);
+  font-weight: 800;
+  color: var(--dark-navy);
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+
+.overview-p {
+  font-size: 0.95rem;
+  color: var(--slate-600);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.motto-callout-box {
+  background: linear-gradient(135deg, rgba(29, 39, 138, 0.08) 0%, rgba(27, 147, 207, 0.08) 100%);
+  border-left: 4px solid var(--cyan);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1.5rem 0 2rem;
+}
+
+.motto-quote {
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark-navy);
+  font-style: italic;
+  line-height: 1.45;
+  margin-bottom: 0.35rem;
+}
+
+.motto-author {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.about-overview-media {
+  position: relative;
+}
+
+.media-card-stack {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(16, 24, 79, 0.15);
+  border: 1px solid rgba(190, 216, 243, 0.8);
+}
+
+.about-stack-img-main {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.about-stack-floating-card {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(16, 24, 79, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(27, 147, 207, 0.5);
+  border-radius: 8px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--white);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+.floating-card-icon {
+  font-size: 1.8rem;
+  color: #FBBF24;
+  flex-shrink: 0;
+}
+
+.about-stack-floating-card strong {
+  display: block;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.about-stack-floating-card p {
+  font-size: 0.775rem;
+  color: var(--light-blue);
+  line-height: 1.4;
+}
+
+/* ------------------------------------------------------------
+   Capabilities Pillars Grid
+   ------------------------------------------------------------ */
+.capabilities-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.pillar-card {
+  background: var(--white);
+  border: 1px solid rgba(190, 216, 243, 0.6);
+  border-radius: 10px;
+  padding: 1.75rem;
+  position: relative;
+  transition: all var(--transition-normal);
+  box-shadow: 0 4px 16px rgba(16, 24, 79, 0.04);
+}
+
+.pillar-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--cyan);
+  box-shadow: 0 12px 28px rgba(27, 147, 207, 0.15);
+}
+
+.pillar-num {
+  font-family: var(--font-main);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: rgba(27, 147, 207, 0.25);
+  margin-bottom: 0.5rem;
+}
+
+.pillar-title {
+  font-family: var(--font-main);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark-navy);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.pillar-desc {
+  font-size: 0.875rem;
+  color: var(--slate-600);
+  line-height: 1.55;
+}
+
+/* ------------------------------------------------------------
+   Philosophy Cards
+   ------------------------------------------------------------ */
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.philosophy-card {
+  background: var(--very-light-blue);
+  border: 1px solid rgba(190, 216, 243, 0.6);
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  transition: all var(--transition-normal);
+}
+
+.philosophy-card:hover {
+  background: var(--white);
+  border-color: var(--cyan);
+  box-shadow: 0 10px 24px rgba(27, 147, 207, 0.12);
+  transform: translateY(-3px);
+}
+
+.phi-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background: rgba(27, 147, 207, 0.12);
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  margin-bottom: 1.25rem;
+  transition: all var(--transition-normal);
+}
+
+.philosophy-card:hover .phi-icon-box {
+  background: var(--cyan);
+  color: var(--white);
+}
+
+.phi-title {
+  font-family: var(--font-main);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark-navy);
+  margin-bottom: 0.75rem;
+}
+
+.phi-text {
+  font-size: 0.875rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------
+   Bottom CTA
+   ------------------------------------------------------------ */
+.about-bottom-cta {
+  background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
+  color: var(--white);
+}
+
+.about-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-cta-inner h3 {
+  font-family: var(--font-main);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+}
+
+.about-cta-inner p {
+  font-size: 0.9rem;
+  color: var(--light-blue);
+}
+
+@media (max-width: 992px) {
+  .about-overview-grid {
+    grid-template-columns: 1fr;
+  }
+}

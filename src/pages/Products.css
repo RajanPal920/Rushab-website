@@ -1,0 +1,293 @@
+/* ============================================================
+   PRODUCTS PAGE STYLES - RUSHAB METAL INDUSTRIES
+   ============================================================ */
+
+.products-controls-bar {
+  background: var(--white);
+  border: 1px solid rgba(190, 216, 243, 0.7);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 16px rgba(16, 24, 79, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.product-search-input-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--slate-400);
+  font-size: 1.15rem;
+}
+
+.product-search-input {
+  width: 100%;
+  padding: 11px 40px 11px 42px;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--dark-navy);
+  outline: none;
+  background-color: #F8FAFC;
+  transition: all var(--transition-fast);
+}
+
+.product-search-input:focus {
+  background-color: var(--white);
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(27, 147, 207, 0.15);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--slate-400);
+  cursor: pointer;
+  padding: 2px 6px;
+}
+
+.search-clear-btn:hover {
+  color: var(--dark-navy);
+}
+
+.product-material-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.material-select-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--dark-navy);
+  white-space: nowrap;
+}
+
+.material-dropdown {
+  padding: 10px 14px;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--dark-navy);
+  background-color: #F8FAFC;
+  outline: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.material-dropdown:focus {
+  border-color: var(--cyan);
+  background-color: var(--white);
+}
+
+.reset-filters-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #DC2626;
+  background: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  padding: 9px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.reset-filters-btn:hover {
+  background: #FEE2E2;
+  border-color: #EF4444;
+}
+
+/* Category Pills Bar */
+.category-pills-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.category-bar-label {
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--dark-navy);
+  white-space: nowrap;
+}
+
+.category-pills-scroll {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.category-pill-btn {
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--slate-600);
+  background: var(--white);
+  border: 1px solid #CBD5E1;
+  padding: 7px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.category-pill-btn:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.category-pill-btn.active {
+  background: var(--primary-blue);
+  color: var(--white);
+  border-color: var(--primary-blue);
+  box-shadow: 0 4px 12px rgba(29, 39, 138, 0.2);
+}
+
+/* Status count */
+.results-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+  padding: 0 4px;
+}
+
+.results-count {
+  font-size: 0.875rem;
+  color: var(--slate-500);
+}
+
+.results-count strong {
+  color: var(--dark-navy);
+}
+
+/* Catalog Grid */
+.products-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 3rem;
+}
+
+/* No products found */
+.no-products-found-card {
+  background: var(--white);
+  border: 1px dashed #CBD5E1;
+  border-radius: 12px;
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 550px;
+  margin: 2rem auto;
+}
+
+.no-products-icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #F1F5F9;
+  color: var(--slate-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.no-products-title {
+  font-family: var(--font-main);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--dark-navy);
+  margin-bottom: 0.5rem;
+}
+
+.no-products-desc {
+  font-size: 0.925rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Bottom Disclaimer / Custom Notice */
+.catalog-disclaimer-section {
+  background: var(--white);
+  padding: 3rem 0;
+  border-top: 1px solid rgba(190, 216, 243, 0.6);
+}
+
+.catalog-notice-box {
+  background: linear-gradient(135deg, rgba(29, 39, 138, 0.05) 0%, rgba(27, 147, 207, 0.08) 100%);
+  border: 1px solid rgba(27, 147, 207, 0.3);
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+}
+
+.catalog-notice-box h4 {
+  font-family: var(--font-main);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--dark-navy);
+  margin-bottom: 0.5rem;
+}
+
+.catalog-notice-box p {
+  font-size: 0.925rem;
+  color: var(--slate-600);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  max-width: 850px;
+}
+
+.notice-btn-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .products-controls-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .catalog-notice-box {
+    padding: 1.5rem;
+  }
+}

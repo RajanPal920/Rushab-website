@@ -1,0 +1,290 @@
+/* ============================================================
+   FOOTER STYLES - RUSHAB METAL INDUSTRIES
+   ============================================================ */
+
+.site-footer {
+  background: #080C24;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.footer-value-banner {
+  background: linear-gradient(90deg, #10184F 0%, #1D278A 50%, #1B93CF 100%);
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(27, 147, 207, 0.4);
+  border-bottom: 1px solid rgba(27, 147, 207, 0.2);
+}
+
+.banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.banner-eyebrow {
+  display: block;
+  font-family: var(--font-main);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #BED8F3;
+  margin-bottom: 2px;
+}
+
+.banner-motto {
+  font-family: var(--font-main);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 700;
+  color: var(--white);
+  font-style: italic;
+}
+
+.footer-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--dark-navy);
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+}
+
+.footer-cta-btn:hover {
+  background: var(--cyan);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(27, 147, 207, 0.4);
+}
+
+.footer-main-grid-wrapper {
+  padding: clamp(3rem, 5vw, 4.5rem) 0 clamp(2rem, 4vw, 3rem);
+}
+
+.footer-columns-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.2fr 1.5fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.col-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo-link {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  height: 100px;
+  overflow: hidden;
+}
+
+.footer-logo-img {
+  height: 100px;
+  width: auto;
+  background-color: white;
+  border-radius: 10px;
+  max-width: none;
+  object-fit: contain;
+  object-position: center;
+  filter: brightness(1.05);
+}
+
+.footer-brand-desc {
+  font-size: 0.875rem;
+  color: #94A3B8;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.footer-iso-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-main);
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: #FBBF24;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  width: fit-content;
+  margin-bottom: 1.25rem;
+}
+
+.badge-icon {
+  font-size: 0.9rem;
+}
+
+.footer-social-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.f-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+}
+
+.f-social-btn:hover {
+  background: var(--cyan);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.f-social-btn.wa:hover {
+  background: #25D366;
+}
+
+.footer-col-title {
+  font-family: var(--font-main);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.footer-col-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  background-color: var(--cyan);
+}
+
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-nav-list a {
+  font-size: 0.875rem;
+  color: #94A3B8;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.footer-nav-list a:hover {
+  color: var(--cyan);
+  padding-left: 4px;
+}
+
+.footer-contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.f-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #94A3B8;
+  line-height: 1.55;
+}
+
+.f-ci-icon {
+  color: var(--cyan);
+  font-size: 1rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.f-contact-item a {
+  color: #CBD5E1;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.f-contact-item a:hover {
+  color: var(--cyan);
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.25rem 0;
+  font-size: 0.825rem;
+  color: #64748B;
+}
+
+.bottom-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.bottom-bar-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bottom-bar-links a {
+  color: #94A3B8;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.bottom-bar-links a:hover {
+  color: var(--cyan);
+}
+
+.bottom-bar-links .dot {
+  color: #475569;
+}
+
+@media (max-width: 1024px) {
+  .footer-columns-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-columns-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .banner-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bottom-bar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

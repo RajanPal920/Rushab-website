@@ -1,0 +1,738 @@
+[
+  {
+    "id": 1,
+    "slug": "pipes-and-tubes",
+    "std": "ASTM A312 / A269 / ASME B36.10 / B36.19",
+    "type": "SUPPLIER & STOCKIST",
+    "title": "PIPES AND TUBES",
+    "subtitle": "SEAMLESS & WELDED PIPES & TUBES",
+    "category": "Pipes & Tubes",
+    "image": "/images/products/pipes.jpg",
+    "gallery": [
+      "/images/products/pipes.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Carbon Steel",
+      "Alloy Steel",
+      "Nickel Alloys",
+      "Monel",
+      "Inconel",
+      "Hastelloy",
+      "Duplex & Super Duplex",
+      "Titanium",
+      "Copper",
+      "Brass",
+      "Bronze"
+    ],
+    "grades": [
+      "SS: ASTM A312 TP 304, 304L, 304H, 316, 316L, 317, 317L, 321, 347, 904L",
+      "Carbon Steel: ASTM A53 Gr. B, A106 Gr. B, API 5L Gr. B, API 5L X42 to X70, A333 Gr. 3/6",
+      "Alloy Steel: ASTM A335 P1, P5, P9, P11, P22, P91",
+      "Nickel & Special: Monel, Inconel, Hastelloy, Duplex, Super Duplex, Titanium, Copper, Brass, Bronze"
+    ],
+    "types": [
+      "Round Tubes & Pipes",
+      "Square Tubes",
+      "Rectangular Tubes",
+      "Capillary Tubes",
+      "Straight Lengths & Coils"
+    ],
+    "sizes": "Pipe Size: Up to 36\" NB (Seamless & Welded); Schedule: 5S to XXS; Tube Size: From 0.5 mm OD with Wall thickness from 0.2 mm",
+    "description": "Rushab Metal Industries supplies a comprehensive range of seamless and welded pipes and tubes in stainless steel, carbon steel, alloy steel, duplex, and exotic alloys. Backed by buffer stock of standard sizes, ready for immediate dispatch with MTC and third-party inspection support.",
+    "specifications": [
+      {
+        "label": "Pipe Size Range",
+        "value": "Up to 36\" NB (Seamless & Welded)"
+      },
+      {
+        "label": "Tube Size Range",
+        "value": "From 0.5 mm OD (Wall thickness from 0.2 mm)"
+      },
+      {
+        "label": "Schedules",
+        "value": "SCH 5S, 10S, 20, 30, 40S, 80S, 160, XS, XXS"
+      },
+      {
+        "label": "Execution Forms",
+        "value": "Round, Square, Rectangular, Capillary, Straight Lengths, Coils"
+      },
+      {
+        "label": "Primary Standards",
+        "value": "ASTM A312, ASTM A269, ASTM A53, ASTM A106, API 5L, ASTM A333, ASTM A335, ANSI B36.10 / B36.19"
+      },
+      {
+        "label": "Certification",
+        "value": "Manufacturer Test Certificate (MTC), Govt. Approved Lab & TPI on request"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "butt-weld-fittings",
+    "std": "ASME B16.9 / MSS-SP-75 / MSS-SP-43",
+    "type": "MANUFACTURING & SUPPLY",
+    "title": "BUTT WELD FITTINGS",
+    "subtitle": "ELBOWS, TEES, REDUCERS & CAPS",
+    "category": "Fittings",
+    "image": "/images/products/buttweld-fitting.jpg",
+    "gallery": [
+      "/images/products/buttweld-fitting.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Carbon Steel",
+      "Alloy Steel",
+      "Duplex & Super Duplex",
+      "Nickel Alloys"
+    ],
+    "grades": [
+      "SS: ASTM A403 WP304, WP304L, WP304H, WP316, WP316L, WP317, WP317L, WP321, WP310, WP347, WP904L",
+      "Carbon Steel: ASTM A234 WPB, A420 WPL3, A420 WPL6, MSS-SP-75 WPHY 42 to 70",
+      "Alloy Steel: ASTM A234 WP1, WP5, WP11, WP22, WP91",
+      "Special: Monel, Inconel, Hastelloy, Duplex UNS S31803 / S32205"
+    ],
+    "types": [
+      "Elbow (45°, 90°, 180° Long & Short Radius)",
+      "Equal Tee & Reducing Tee",
+      "Concentric Reducer & Eccentric Reducer",
+      "Return Bend",
+      "Stub End (Short & Long)",
+      "End Cap",
+      "Collar",
+      "Cross & Insert"
+    ],
+    "sizes": "1/4\" to 48\" NB; Seamless & Welded; Schedule: 5S to XXS",
+    "description": "High integrity butt weld pipe fittings designed for high-pressure, temperature, and corrosive applications across chemical, petrochemical, refinery, and energy sectors. Available in standard and custom sizes.",
+    "specifications": [
+      {
+        "label": "Size Range",
+        "value": "1/4\" to 48\" NB"
+      },
+      {
+        "label": "Construction",
+        "value": "Seamless & Welded"
+      },
+      {
+        "label": "Schedules",
+        "value": "SCH 5S to XXS"
+      },
+      {
+        "label": "Types",
+        "value": "Elbow, Tee, Reducer, Return Bend, Stub End, Cap, Collar, Cross, Insert"
+      },
+      {
+        "label": "Standards",
+        "value": "ASME B16.9, MSS-SP-75, MSS-SP-43, DIN 2605"
+      },
+      {
+        "label": "Quality Assurance",
+        "value": "MTC with EN 10204 3.1, Hydrostatic and Ultrasonic tested"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "forged-fittings",
+    "std": "ASME B16.11 / BS 3799",
+    "type": "MANUFACTURING & SUPPLY",
+    "title": "SCREWED & FORGED FITTINGS",
+    "subtitle": "SOCKET WELD & THREADED (3000# - 9000#)",
+    "category": "Fittings",
+    "image": "/images/products/forge-fittings.jpg",
+    "gallery": [
+      "/images/products/forge-fittings.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Carbon Steel",
+      "Alloy Steel",
+      "Nickel Alloys"
+    ],
+    "grades": [
+      "SS: ASTM A182 F304, F304L, F316, F316L, F317, F321, F347, F904L",
+      "Carbon Steel: ASTM A105, A350 LF2, LF3, A694 F42 to F70",
+      "Alloy Steel: ASTM A182 F1, F5, F9, F11, F22, F91"
+    ],
+    "types": [
+      "Elbow & Tee",
+      "Union & Cross",
+      "Coupling & Half Coupling",
+      "Cap & Bushing & Plug",
+      "Swage Nipple, Barrel Nipple, Hex Nipple",
+      "Weld Boss, Street Elbow, Hose Nipple, Adapter Insert",
+      "Branch Outlets: Weldolet, Elbowlet, Sockolet, Thredolet, Letrolet"
+    ],
+    "sizes": "1/4\" to 4\" NB; Socket Weld & Threaded (NPT / BSP / BSPT); Pressure Classes: 3000#, 6000#, 9000#",
+    "description": "Heavy-duty forged fittings and branch outlet connections engineered for critical high-pressure pipelines in chemical plants, oil refineries, and power generation units.",
+    "specifications": [
+      {
+        "label": "Size Range",
+        "value": "1/4\" to 4\" NB"
+      },
+      {
+        "label": "Pressure Ratings",
+        "value": "3000#, 6000#, 9000#"
+      },
+      {
+        "label": "Connection Types",
+        "value": "Socket Weld (SW) & Screwed / Threaded (NPT, BSPT, BSP)"
+      },
+      {
+        "label": "Fittings Portfolio",
+        "value": "Elbow, Tee, Union, Cross, Coupling, Cap, Bushing, Plug, Swage Nipple, Hex Nipple, Weldolet, Sockolet, Thredolet"
+      },
+      {
+        "label": "Manufacturing Standard",
+        "value": "ASME B16.11, MSS SP-79, MSS SP-83, MSS SP-95, MSS SP-97"
+      },
+      {
+        "label": "Testing",
+        "value": "MTC, PMI, Hardness testing, Lab certification"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "flanges",
+    "std": "ASME B16.5 / B16.47 / MSS-SP-44",
+    "type": "MANUFACTURING & SUPPLY",
+    "title": "INDUSTRIAL FLANGES",
+    "subtitle": "WELD NECK, SLIP-ON, BLIND & CUSTOM",
+    "category": "Flanges",
+    "image": "/images/products/flanges.jpg",
+    "gallery": [
+      "/images/products/flanges.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Carbon Steel",
+      "Alloy Steel",
+      "Duplex & Super Duplex",
+      "Monel",
+      "Inconel",
+      "Hastelloy",
+      "Titanium"
+    ],
+    "grades": [
+      "SS: ASTM A182 F304, F304L, F316, F316L, F317, F321, F347, F904L",
+      "Carbon Steel: ASTM A105, A350 LF2, A694 F42 to F70",
+      "Alloy Steel: ASTM A182 F1, F5, F9, F11, F22, F91",
+      "Duplex / Super Duplex: UNS S31803, S32205, S32750, S32760"
+    ],
+    "types": [
+      "Weld Neck Flange (WNRF)",
+      "Slip-On Flange (SORF)",
+      "Blind Flange (BLRF)",
+      "Socket Weld Flange (SWRF)",
+      "Lap Joint Flange (LJRF)",
+      "Spectacle Blind & Ring Joint (RTJ)",
+      "Orifice Flange, Long Weld Neck, Deck Flange"
+    ],
+    "sizes": "1/2\" to 60\" NB; Pressure Classes: 150#, 300#, 400#, 600#, 900#, 1500#, 2500#",
+    "description": "Precision forged and machined flanges manufactured from high-grade raw material ingots and billets, meeting international dimensional tolerances and pressure retention standards.",
+    "specifications": [
+      {
+        "label": "Size Range",
+        "value": "1/2\" to 60\" NB"
+      },
+      {
+        "label": "Pressure Classes",
+        "value": "150#, 300#, 400#, 600#, 900#, 1500#, 2500#"
+      },
+      {
+        "label": "Facing Options",
+        "value": "Raised Face (RF), Flat Face (FF), Ring Type Joint (RTJ)"
+      },
+      {
+        "label": "Types",
+        "value": "Weld Neck, Slip-On, Blind, Socket Weld, Lap Joint, Spectacle, Ring Joint, Orifice, Long Weld Neck, Deck Flange"
+      },
+      {
+        "label": "Applicable Standards",
+        "value": "ASME B16.5, ASME B16.47 Series A & B, DIN, BS 4504, EN 1092-1"
+      },
+      {
+        "label": "Inspection",
+        "value": "Hydrostatic, Ultrasonic, Third-party inspection on request"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "fasteners",
+    "std": "ASTM A193 / A194 / DIN / IS",
+    "type": "MANUFACTURING & SUPPLY",
+    "title": "HIGH TENSILE FASTENERS",
+    "subtitle": "STUDS, BOLTS, NUTS & SPECIALS",
+    "category": "Fasteners",
+    "image": "/images/products/fasteners.jpg",
+    "gallery": [
+      "/images/products/fasteners.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Alloy Steel",
+      "Carbon Steel",
+      "Nickel Alloys"
+    ],
+    "grades": [
+      "SS: AISI 302, 304, 304L, 316, 316L, 310, 317, 317L, 321, 347, 410, 420, 904L",
+      "Alloy Steel Grades: 4.6, 5.6, 6.6, 8.8, 10.9, 12.9, B7, B7M, 2H",
+      "Carbon Steel Finishes: Bare, Galvanized, Phosphated, Cadmium, Hot Dip Galvanized, Nickel, Chrome Plated"
+    ],
+    "types": [
+      "Hex Bolts & Heavy Hex Bolts",
+      "Nuts & Heavy Hex Nuts",
+      "Flat & Spring Washers",
+      "Stud Bolts with Two Nuts",
+      "Anchor Fasteners & Foundation Fasteners",
+      "Eye Bolts, Threaded Rod, Cotter Pin, Socket Screws"
+    ],
+    "sizes": "M6 to M100 / 1/4\" to 4\" Dia in customized and standard lengths",
+    "description": "Comprehensive fastener solutions engineered to withstand extreme vibrations, tensile stress, and aggressive environmental exposure. Certified with full mechanical and chemical trace reports.",
+    "specifications": [
+      {
+        "label": "Diameter Range",
+        "value": "M6 to M100 | 1/4\" to 4\""
+      },
+      {
+        "label": "Standard Specifications",
+        "value": "ASTM A193 (B7, B7M, B8, B8M), ASTM A194 (2H, Gr. 4, Gr. 7, Gr. 8), DIN 931, DIN 933, DIN 934"
+      },
+      {
+        "label": "Product Types",
+        "value": "Bolts, Nuts, Washers, Anchor Fasteners, Stud Bolts, Eye Bolts, Threaded Rod, Cotter Pin, Socket Screws, Foundation Fasteners"
+      },
+      {
+        "label": "Surface Finishes",
+        "value": "Bare, Galvanized, Phosphated, Cadmium, Hot Dip Galvanized, Nickel, Chrome Plated"
+      },
+      {
+        "label": "Traceability",
+        "value": "Complete heat-number marking & MTC"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "sheets-plates",
+    "std": "ASTM A240 / ASME SA240 / ASTM A516",
+    "type": "SUPPLIER DIV.",
+    "title": "SHEETS AND PLATES",
+    "subtitle": "COLD & HOT ROLLED SHEETS & PLATES",
+    "category": "Sheets & Plates",
+    "image": "/images/products/sheets-plates.jpg",
+    "gallery": [
+      "/images/products/sheets-plates.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Duplex & Super Duplex",
+      "Carbon Steel",
+      "Alloy Steel",
+      "Nickel Alloys"
+    ],
+    "grades": [
+      "SS: SA 240 304, 304L, 304H, 309S/H, 310S/H, 316, 316H, 316L, 316Ti, 317, 317L, 321H, 347/H, 409, 410, 410S, 430",
+      "Duplex: UNS S31803, S32205, S32550, S32750, S32760",
+      "Carbon Steel: ASTM A516 Gr. 60/70, ASTM A517 Gr. 60/70, IS 2062, IS 2002",
+      "Alloy Steel: ASTM A387 Gr. F5, F9, F11, F12, F22, F91",
+      "Nickel Alloys: Nickel 200/201, Monel 400, Inconel 600/601/625/825, Hastelloy C276, Alloy 20",
+      "Specialty: Imported Sheets, JSL-make Sheets, Checkered Plates, Strips"
+    ],
+    "types": [
+      "Hot Rolled (HR) Plates",
+      "Cold Rolled (CR) Sheets",
+      "Checkered Plates",
+      "Shim Sheets & Strips",
+      "Profile Cut & Plasma Cut Blanks"
+    ],
+    "sizes": "Thickness: 0.3 mm to 100 mm; Width: 1000 mm to 3000 mm; Lengths: 2500 / 5000 / 10000 mm & Custom Coils",
+    "description": "Extensive stock of industrial plates, sheets, and coils sourced from reputed mills (including Jindal Stainless, Acerinox, Outokumpu, Acroni, Daekyung Corp) for heavy engineering, fabrication, and pressure vessel construction.",
+    "specifications": [
+      {
+        "label": "Thickness Range",
+        "value": "0.3 mm to 100 mm"
+      },
+      {
+        "label": "Width Range",
+        "value": "1000 mm to 3000 mm"
+      },
+      {
+        "label": "Standard Lengths",
+        "value": "2500 mm / 5000 mm / 10000 mm (Cut-to-size available)"
+      },
+      {
+        "label": "Finishes",
+        "value": "2B, No. 1, No. 4, BA, Chequered"
+      },
+      {
+        "label": "Mill Certifications",
+        "value": "Available with authentic MTC from prime manufacturers"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "coils",
+    "std": "ASTM A240 / EN 10088-2",
+    "type": "SUPPLIER DIV.",
+    "title": "COILS & SLIT STRIPS",
+    "subtitle": "HOT & COLD ROLLED COILS",
+    "category": "Sheets & Plates",
+    "image": "/images/products/coil.jpg",
+    "gallery": [
+      "/images/products/coil.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Carbon Steel",
+      "Nickel Alloys"
+    ],
+    "grades": [
+      "SS: AISI 304, 304L, 316, 316L, 310S, 409, 430",
+      "Carbon Steel: CRCA, HR, IS 2062",
+      "Nickel Alloys: Monel, Inconel"
+    ],
+    "types": [
+      "Cold Rolled Coils (CR)",
+      "Hot Rolled Coils (HR)",
+      "Slit Strips & Baby Coils",
+      "Perforated & Embossed Coils"
+    ],
+    "sizes": "Thickness: 0.3 mm to 12 mm; Width: Up to 2000 mm",
+    "description": "Continuous coil supply and slitting capabilities to fulfill automated stamping, tube manufacturing, and industrial roll-forming requirements with tight dimensional tolerances.",
+    "specifications": [
+      {
+        "label": "Thickness Range",
+        "value": "0.3 mm to 12.0 mm"
+      },
+      {
+        "label": "Coil Width",
+        "value": "1000 mm, 1250 mm, 1500 mm, up to 2000 mm"
+      },
+      {
+        "label": "Slitting Capability",
+        "value": "Custom slit strip widths from 15 mm onwards"
+      },
+      {
+        "label": "Condition",
+        "value": "Annealed, Pickled, Bright Annealed (BA), 2B"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "flat-bars",
+    "std": "ASTM A276 / A484",
+    "type": "SUPPLIER DIV.",
+    "title": "FLAT BARS",
+    "subtitle": "COLD DRAWN & HRAP FLAT BARS",
+    "category": "Bars & Rods",
+    "image": "/images/products/flat-bar.jpg",
+    "gallery": [
+      "/images/products/flat-bar.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Carbon Steel",
+      "Alloy Steel",
+      "Nickel Alloys"
+    ],
+    "grades": [
+      "SS: 304, 304L, 316, 316L, 310, 321, 410",
+      "Carbon & Alloy: En8, En9, En19, En24",
+      "Special Alloys: Monel, Inconel, Hastelloy"
+    ],
+    "types": [
+      "Cold Drawn Flat Bars",
+      "Hot Rolled Annealed & Pickled (HRAP)",
+      "Slit from Plate Flat Bars"
+    ],
+    "sizes": "Width: 10 mm to 150 mm; Thickness: 3 mm to 50 mm",
+    "description": "Precision flat bars engineered for architectural, structural framing, bracket manufacturing, and specialized machine tooling with sharp corners and smooth surface finishes.",
+    "specifications": [
+      {
+        "label": "Width Range",
+        "value": "10 mm to 150 mm"
+      },
+      {
+        "label": "Thickness Range",
+        "value": "3 mm to 50 mm"
+      },
+      {
+        "label": "Lengths",
+        "value": "3 to 6 Meters or Cut to Length"
+      },
+      {
+        "label": "Edges",
+        "value": "Square Edge, Round Edge, Sheared Edge"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "rods-bars",
+    "std": "ASTM A276 / A479",
+    "type": "SUPPLIER DIV.",
+    "title": "RODS AND BARS",
+    "subtitle": "ROUND, SQUARE & HEX BARS",
+    "category": "Bars & Rods",
+    "image": "/images/products/rods-bars.jpg",
+    "gallery": [
+      "/images/products/rods-bars.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Carbon Steel",
+      "Alloy Steel",
+      "Duplex & Super Duplex",
+      "Monel",
+      "Inconel",
+      "Hastelloy",
+      "Titanium"
+    ],
+    "grades": [
+      "SS: 304, 304L, 316, 316L, 317, 321, 310, 410, 420, 904L",
+      "Duplex: UNS S31803, S32205, S32750",
+      "Alloy Steel: 4140, 4340, En19, En24, P11, P22",
+      "Nickel Alloys: Inconel 600/625/718, Monel 400/K500, Hastelloy C276"
+    ],
+    "types": [
+      "Round Bars (Bright Drawn, Peeled & Polished)",
+      "Square Bars (Cold Drawn & Hot Rolled)",
+      "Hex Bars (Cold Drawn Hexagonal)"
+    ],
+    "sizes": "Round Bars: 3 mm to 500 mm Dia; Hex & Square: 6 mm to 100 mm",
+    "description": "High-strength round, square, and hexagonal bars crafted for CNC machining, shaft manufacturing, fasteners, and heavy industrial mechanical components.",
+    "specifications": [
+      {
+        "label": "Round Bar Diameter",
+        "value": "3 mm to 500 mm"
+      },
+      {
+        "label": "Hex & Square Bar Sizes",
+        "value": "6 mm to 100 mm A/F"
+      },
+      {
+        "label": "Finishes",
+        "value": "Bright Drawn, Centerless Ground, Peeled, Black Forged"
+      },
+      {
+        "label": "Standards",
+        "value": "ASTM A276, ASTM A479, DIN 1013, BS 970"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "valves",
+    "std": "API 600 / API 6D / ASME B16.34 / BS 5352",
+    "type": "INDUSTRIAL SUPPLY",
+    "title": "INDUSTRIAL VALVES",
+    "subtitle": "GATE, GLOBE, CHECK, BALL & STRAINERS",
+    "category": "Valves & Flow Control",
+    "image": "/images/products/flanges.jpg",
+    "gallery": [
+      "/images/products/flanges.jpg"
+    ],
+    "materials": [
+      "Cast Carbon Steel",
+      "Forged Carbon Steel",
+      "Stainless Steel",
+      "Alloy Steel",
+      "Cast Iron"
+    ],
+    "grades": [
+      "WCB, LCB, CF8, CF8M, CF3, CF3M",
+      "ASTM A105, A182 F304/F316/F11/F22"
+    ],
+    "types": [
+      "Globe Valve & Gate Valve",
+      "Non-Return Valve (NRV) & Wafer Check",
+      "Butterfly Valve & Spherical Disc",
+      "Forged Ball Valve & Investment Cast Ball Valve",
+      "Y-Type Strainer, Pot Strainer, T-Type Strainer",
+      "DIN Globe & DIN Non-Return, Knife Gate Valve",
+      "Pulp Valve, Diaphragm Valve, Steam Trap, Spring Loaded Safety Valve, Tube-Class Sight Glass"
+    ],
+    "sizes": "6 mm to 1200 mm (1/4\" to 48\"); Ratings: 150# to 1500#, PN 10 to PN 64",
+    "description": "Industrial fluid handling and flow control valves manufactured to stringent API, BS, and DIN standards for oil refineries, chemical processing, thermal power, and municipal water systems.",
+    "specifications": [
+      {
+        "label": "Size Range",
+        "value": "6 mm to 1200 mm"
+      },
+      {
+        "label": "Pressure Ratings",
+        "value": "150#, 300#, 600#, 800#, 900#, 1500#, PN 10 to PN 64"
+      },
+      {
+        "label": "Design Standards",
+        "value": "BS 5352, BS 1873, BS 6755, BS 1414, BS 5155, BS 1868, API 600, API 602, API 598, API 6D, API 609, ASME B16.34, DIN 3356"
+      },
+      {
+        "label": "Operation",
+        "value": "Handwheel, Gearbox, Pneumatic & Electric Actuator"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "slug": "wire-mesh-screens",
+    "std": "ASTM E2016 / ISO 9044",
+    "type": "INDUSTRIAL SUPPLY",
+    "title": "WIRE MESH & SCREENS",
+    "subtitle": "FILTER CLOTH, PERFORATED & WOVEN MESH",
+    "category": "Screens & Mesh",
+    "image": "/images/products/wire-mesh.jpg",
+    "gallery": [
+      "/images/products/wire-mesh.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Mild Steel",
+      "GI",
+      "Nylon",
+      "Aluminium",
+      "Copper",
+      "Brass",
+      "Monel",
+      "Inconel",
+      "Titanium",
+      "PP"
+    ],
+    "grades": [
+      "SS 304, 304L, 316, 316L, Monel 400, Inconel 600, Titanium Grade 2"
+    ],
+    "types": [
+      "Perforated Sheets",
+      "Wire Mesh Filter Cloth",
+      "Dutch Woven Mesh",
+      "Crimped Wire Mesh",
+      "Square Screens & Vibrating Screens",
+      "Food Conveyor Belts",
+      "Weld Mesh & Dehydration Screens",
+      "Chain Link Fencing & Demister Pads"
+    ],
+    "sizes": "Width: Up to 4.5 m; Length: As required in rolls or cut panels",
+    "description": "High performance screening, filtration, and architectural wire mesh products designed for chemical separation, food processing, mineral screening, and environmental protection.",
+    "specifications": [
+      {
+        "label": "Roll Width",
+        "value": "Up to 4.5 Meters"
+      },
+      {
+        "label": "Mesh Range",
+        "value": "1 Mesh to 600 Mesh (Micron grade filtration cloth)"
+      },
+      {
+        "label": "Weave Patterns",
+        "value": "Plain Weave, Twill Weave, Plain Dutch, Reverse Dutch Weave"
+      },
+      {
+        "label": "Perforation Options",
+        "value": "Round, Square, Slotted, Hexagonal hole profiles"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "lifting-materials",
+    "std": "EN 1492 / ASME B30.9 / IS 2762",
+    "type": "INDUSTRIAL SUPPLY",
+    "title": "LIFTING MATERIALS & TACKLE",
+    "subtitle": "SLINGS, SHACKLES, CLAMPS & HARDWARE",
+    "category": "Lifting & Rigging",
+    "image": "/images/products/lifting-materials.jpg",
+    "gallery": [
+      "/images/products/lifting-materials.jpg"
+    ],
+    "materials": [
+      "Alloy Steel (Grade 80 / Grade 100)",
+      "Stainless Steel",
+      "Polyester / Nylon",
+      "Manila Fiber"
+    ],
+    "grades": [
+      "High Tensile Forged Steel, SS 316, Grade 80 Rigging"
+    ],
+    "types": [
+      "Web Slings & Cargo Belts",
+      "Wire Rope Slings & Chain Slings",
+      "Lever Blocks & Pulleys",
+      "Bow Shackles & D Shackles",
+      "Plate Clamps, Pipe Clamps & Beam Clamps",
+      "Hooks & Master Links",
+      "Load Binders & Turnbuckles",
+      "Safety Harnesses & Tripods",
+      "Nylon Rope & Manila Rope"
+    ],
+    "sizes": "Safe Working Load (SWL): 0.5 Ton to 100+ Tons",
+    "description": "Industrial rigging, material handling, and lifting gear engineered and load-tested for safe and heavy-duty load positioning in ports, construction yards, and offshore installations.",
+    "specifications": [
+      {
+        "label": "Working Load Limit",
+        "value": "0.5 Ton up to 100+ Ton capacity"
+      },
+      {
+        "label": "Safety Factor",
+        "value": "4:1 to 6:1 design factor"
+      },
+      {
+        "label": "Product Range",
+        "value": "Slings, Shackles, Clamps, Hooks, Binders, Turnbuckles, Ropes"
+      },
+      {
+        "label": "Proof Load Testing",
+        "value": "Tested with individual proof load test certificates"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "slug": "structural-profiles",
+    "std": "IS 2062 / ASTM A36 / EN 10025",
+    "type": "STOCKIST & SUPPLIER",
+    "title": "STRUCTURAL PROFILES & OTHER PRODUCTS",
+    "subtitle": "ANGLES, CHANNELS, BEAMS & CHEQUERED PLATES",
+    "category": "Structural & Others",
+    "image": "/images/products/structural-profiles.jpg",
+    "gallery": [
+      "/images/products/structural-profiles.jpg"
+    ],
+    "materials": [
+      "Mild Steel",
+      "Carbon Steel",
+      "Stainless Steel"
+    ],
+    "grades": [
+      "IS 2062 E250 / E350, ASTM A36, SS 304, SS 316"
+    ],
+    "types": [
+      "MS Angles & Equal / Unequal Angles",
+      "Channels (ISMC)",
+      "Beams (ISMB & NPB / WPB)",
+      "Wires, Circles & Rings",
+      "TOR Steel / TMT Bars",
+      "Chequered Plates & Black Sheets"
+    ],
+    "sizes": "Standard mill lengths (6m to 12m) and fabricated profiles",
+    "description": "Complete supply of structural steel members, fabricated rings, circles, and reinforcement steel for infrastructural, civil engineering, and general manufacturing projects.",
+    "specifications": [
+      {
+        "label": "Profile Range",
+        "value": "Angles, Channels, Beams, Circles, Rings, Wires, Black Sheets"
+      },
+      {
+        "label": "Finishes",
+        "value": "Mill Finish, Black, Hot-Dip Galvanized, Painted"
+      },
+      {
+        "label": "Certification",
+        "value": "Primary mill test certificate with every bundle"
+      }
+    ]
+  }
+]

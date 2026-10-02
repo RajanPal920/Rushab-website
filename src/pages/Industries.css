@@ -1,0 +1,227 @@
+/* ============================================================
+   INDUSTRIES PAGE STYLES - RUSHAB METAL INDUSTRIES
+   ============================================================ */
+
+.industries-search-bar {
+  position: relative;
+  max-width: 750px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.i-search-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--slate-400);
+  font-size: 1.25rem;
+}
+
+.i-search-input {
+  width: 100%;
+  padding: 13px 70px 13px 46px;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--dark-navy);
+  outline: none;
+  background-color: var(--white);
+  box-shadow: 0 4px 14px rgba(16, 24, 79, 0.05);
+  transition: all var(--transition-fast);
+}
+
+.i-search-input:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(27, 147, 207, 0.15);
+}
+
+.i-clear-btn {
+  position: absolute;
+  right: 14px;
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--slate-600);
+  cursor: pointer;
+}
+
+.industries-counter-bar {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--slate-500);
+  margin-bottom: 2.5rem;
+}
+
+.industries-counter-bar strong {
+  color: var(--dark-navy);
+}
+
+.industries-full-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.ind-detail-card {
+  background: var(--white);
+  border: 1px solid rgba(190, 216, 243, 0.7);
+  border-radius: 12px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(16, 24, 79, 0.05);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.ind-detail-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--cyan));
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.ind-detail-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--cyan);
+  box-shadow: 0 12px 28px rgba(27, 147, 207, 0.16);
+}
+
+.ind-detail-card:hover::before {
+  opacity: 1;
+}
+
+.ind-card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.15rem;
+}
+
+.ind-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: rgba(27, 147, 207, 0.12);
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all var(--transition-normal);
+}
+
+.ind-detail-card:hover .ind-icon-box {
+  background: var(--cyan);
+  color: var(--white);
+  transform: scale(1.05);
+}
+
+.ind-focus-tag {
+  font-family: var(--font-main);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.ind-name {
+  font-family: var(--font-main);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--dark-navy);
+  margin-bottom: 0.5rem;
+}
+
+.ind-desc {
+  font-size: 0.875rem;
+  color: var(--slate-600);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.ind-supplies-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 1.25rem;
+}
+
+.supplies-heading {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--slate-400);
+  margin-bottom: 6px;
+}
+
+.supplies-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.supply-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: var(--white);
+  color: var(--dark-navy);
+  border: 1px solid #CBD5E1;
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+.ind-card-action {
+  margin-top: auto;
+}
+
+/* Bottom Consultation CTA */
+.ind-cta-box {
+  background: linear-gradient(135deg, var(--very-light-blue) 0%, #FFFFFF 100%);
+  border: 1px solid rgba(27, 147, 207, 0.4);
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.ind-cta-box h3 {
+  font-family: var(--font-main);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--dark-navy);
+  margin-bottom: 0.35rem;
+}
+
+.ind-cta-box p {
+  font-size: 0.9rem;
+  color: var(--slate-600);
+}
+
+.ind-cta-btns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

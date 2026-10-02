@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { FaChevronLeft, FaChevronRight, FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { heroSlides } from '../../data/heroSlides';
+import '../../styles/hero.css';
 
 export default function HeroSlider() {
   const slidesCount = heroSlides.length; // Exactly 4 slides
@@ -12,7 +14,7 @@ export default function HeroSlider() {
     { ...heroSlides[0], cloneKey: 'clone-next' }
   ];
 
-  // Index 1 corresponds to the real Slide 1
+  // Index 1 corresponds to real Slide 1
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isAnimated, setIsAnimated] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
@@ -22,7 +24,7 @@ export default function HeroSlider() {
   const touchStartXRef = useRef(0);
   const touchEndXRef = useRef(0);
 
-  // Calculate the active slide number (1 to 4) for pagination & counter
+  // Active slide number (1 to 4)
   let activeSlideNumber = 1;
   if (currentIndex === 0) {
     activeSlideNumber = slidesCount;
@@ -32,7 +34,6 @@ export default function HeroSlider() {
     activeSlideNumber = currentIndex;
   }
 
-  // Clear existing autoplay timer
   const clearAutoplayTimer = useCallback(() => {
     if (autoplayTimerRef.current) {
       clearInterval(autoplayTimerRef.current);
@@ -40,7 +41,6 @@ export default function HeroSlider() {
     }
   }, []);
 
-  // Safety timeout ref to avoid permanently locking transitions
   const safetyTimeoutRef = useRef(null);
 
   const startTransitionLock = () => {
@@ -48,10 +48,9 @@ export default function HeroSlider() {
     if (safetyTimeoutRef.current) clearTimeout(safetyTimeoutRef.current);
     safetyTimeoutRef.current = setTimeout(() => {
       isTransitioningRef.current = false;
-    }, 1100);
+    }, 1000);
   };
 
-  // Advance to next slide smoothly
   const handleNext = useCallback(() => {
     if (isTransitioningRef.current) return;
     startTransitionLock();
@@ -59,7 +58,6 @@ export default function HeroSlider() {
     setCurrentIndex((prev) => prev + 1);
   }, []);
 
-  // Move to previous slide smoothly
   const handlePrev = useCallback(() => {
     if (isTransitioningRef.current) return;
     startTransitionLock();
@@ -67,7 +65,6 @@ export default function HeroSlider() {
     setCurrentIndex((prev) => prev - 1);
   }, []);
 
-  // Jump to specific slide (1-indexed: 1, 2, 3, 4)
   const handleGoTo = useCallback(
     (targetNumber) => {
       if (isTransitioningRef.current) return;
@@ -79,28 +76,23 @@ export default function HeroSlider() {
     [activeSlideNumber]
   );
 
-  // Seamless infinite loop transition reset
   const handleTransitionEnd = (e) => {
-    // Only handle transform transition on track itself, ignore bubbled events
     if (e.target !== e.currentTarget || e.propertyName !== 'transform') return;
 
     if (safetyTimeoutRef.current) clearTimeout(safetyTimeoutRef.current);
     isTransitioningRef.current = false;
 
-    // If we transitioned to the clone of Slide 1 at the end
+    // Reset when transitioning to clone slides
     if (currentIndex === slidesCount + 1) {
       setIsAnimated(false);
-      setCurrentIndex(1); // Jump seamlessly to real Slide 1
+      setCurrentIndex(1);
     }
-
-    // If we transitioned to the clone of Slide 4 at the start
     if (currentIndex === 0) {
       setIsAnimated(false);
-      setCurrentIndex(slidesCount); // Jump seamlessly to real Slide 4
+      setCurrentIndex(slidesCount);
     }
   };
 
-  // Re-enable animation in the next paint cycle if it was temporarily disabled for instant reset
   useEffect(() => {
     if (!isAnimated) {
       const raf = requestAnimationFrame(() => {
@@ -112,14 +104,13 @@ export default function HeroSlider() {
     }
   }, [isAnimated]);
 
-  // Autoplay management: 4.5 seconds per slide, paused on desktop hover
   useEffect(() => {
     clearAutoplayTimer();
 
     if (!isPaused) {
       autoplayTimerRef.current = setInterval(() => {
         handleNext();
-      }, 4500);
+      }, 5500);
     }
 
     return () => {
@@ -128,7 +119,6 @@ export default function HeroSlider() {
     };
   }, [isPaused, handleNext, clearAutoplayTimer, currentIndex]);
 
-  // Mobile Touch / Swipe Handlers
   const handleTouchStart = (e) => {
     touchStartXRef.current = e.touches[0].clientX;
     touchEndXRef.current = e.touches[0].clientX;
@@ -140,11 +130,9 @@ export default function HeroSlider() {
 
   const handleTouchEnd = () => {
     const swipeDistance = touchStartXRef.current - touchEndXRef.current;
-    const minSwipeDistance = 50;
-
-    if (swipeDistance > minSwipeDistance) {
+    if (swipeDistance > 45) {
       handleNext();
-    } else if (swipeDistance < -minSwipeDistance) {
+    } else if (swipeDistance < -45) {
       handlePrev();
     }
   };
@@ -152,7 +140,7 @@ export default function HeroSlider() {
   return (
     <section
       className="hero-section"
-      aria-label="Hero Image Carousel"
+      aria-label="Rushab Metal Industries Hero Showcase"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
@@ -175,48 +163,54 @@ export default function HeroSlider() {
               className={`hero-slide ${isCurrentActive ? 'is-active' : ''}`}
               aria-hidden={!isCurrentActive}
             >
-              {/* Background Image with object-fit: cover */}
+              {/* Background Image: Natural, crystal clear without heavy solid blue cover */}
               <img
                 src={slide.image}
-                alt={slide.title}
+                alt={slide.eyebrow}
                 className="hero-slide-bg"
                 loading={idx === 1 ? 'eager' : 'lazy'}
               />
 
-              {/* Slide Content */}
-              <div className="container hero-content-wrapper">
-                <div className="hero-content">
-                  <div className="hero-content-panel">
-                    {/* Eyebrow badge */}
-                    <div className="hero-eyebrow">
-                      <span className="hero-eyebrow-dot" />
-                      <span>{slide.eyebrow}</span>
-                    </div>
+              {/* Subtle bottom vignette gradient to ensure control legibility without covering image */}
+              <div className="hero-subtle-vignette" />
 
-                    {/* Headline */}
-                    <h1 className="hero-title">{slide.title}</h1>
-
-                    {/* Description */}
-                    <p className="hero-description">{slide.description}</p>
-
-                    {/* Call to Action Buttons */}
-                    <div className="hero-actions">
-                      <a
-                        href={slide.primaryButton.link}
-                        className="btn-primary"
-                      >
-                        <span>{slide.primaryButton.text}</span>
-                        <FaArrowRight />
-                      </a>
-
-                      <a
-                        href={slide.secondaryButton.link}
-                        className="btn-secondary"
-                      >
-                        <span>{slide.secondaryButton.text}</span>
-                      </a>
-                    </div>
+              {/* Slide Content with Frosted Glass Container matching reference screenshot */}
+              <div className="hero-container-inner">
+                <div className="hero-glass-card">
+                  {/* Eyebrow with horizontal dash line */}
+                  <div className="hero-eyebrow-line">
+                    <span className="eyebrow-dash">—</span>
+                    <span className="eyebrow-text">{slide.eyebrow}</span>
                   </div>
+
+                  {/* Main Headline */}
+                  <h1 className="hero-headline">
+                    {slide.titleLine1}{' '}
+                    <span className="headline-highlight">{slide.titleHighlight}</span>
+                    <br />
+                    {slide.titleLine2}
+                  </h1>
+
+                  {/* Description */}
+                  <p className="hero-desc">{slide.description}</p>
+
+                  {/* CTA Actions */}
+                  <div className="hero-btn-row">
+                    <Link to={slide.primaryButton.link} className="hero-btn-primary">
+                      {slide.primaryButton.text}
+                    </Link>
+                    <Link to={slide.secondaryButton.link} className="hero-btn-secondary">
+                      {slide.secondaryButton.text}
+                    </Link>
+                  </div>
+
+                  {/* Bottom Badge Inside Glass Card */}
+                  {slide.badgeText && (
+                    <div className="hero-card-bottom-pill">
+                      <span className="card-pill-dot" />
+                      <span className="card-pill-text">{slide.badgeText}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -224,65 +218,58 @@ export default function HeroSlider() {
         })}
       </div>
 
-      {/* Navigation Arrow: Previous */}
-      <button
-        type="button"
-        className="slider-arrow prev"
-        onClick={handlePrev}
-        aria-label="Previous Hero Slide"
-        title="Previous slide"
-      >
-        <FaChevronLeft />
-      </button>
+      {/* Bottom Bar: Timeline Phase Indicator on Left, Navigation Arrows on Right */}
+      <div className="hero-bottom-controls">
+        <div className="hero-controls-inner">
+          {/* Phase 01 / 04 Capsule + Steps */}
+          <div className="hero-phase-capsule">
+            <div className="phase-label-wrap">
+              <span className="phase-pulse-dot" />
+              <span className="phase-title">PHASE 0{activeSlideNumber}</span>
+              <span className="phase-total">/ 0{slidesCount}</span>
+            </div>
 
-      {/* Navigation Arrow: Next */}
-      <button
-        type="button"
-        className="slider-arrow next"
-        onClick={handleNext}
-        aria-label="Next Hero Slide"
-        title="Next slide"
-      >
-        <FaChevronRight />
-      </button>
-
-      {/* Controls Bar at Bottom: Slide Counter & 4 Pagination Indicators */}
-      <div className="hero-controls-bar">
-        <div className="hero-controls-container">
-          {/* Numeric Slide Indicator (e.g. 01 / 04) */}
-          <div className="slide-counter" aria-live="polite">
-            <span className="slide-counter-current">
-              0{activeSlideNumber}
-            </span>
-            <span className="slide-counter-divider">/</span>
-            <span className="slide-counter-total">
-              0{slidesCount}
-            </span>
+            <div className="phase-ticks-row">
+              {heroSlides.map((slide, i) => {
+                const num = i + 1;
+                const isActive = num === activeSlideNumber;
+                return (
+                  <button
+                    key={slide.id}
+                    type="button"
+                    className={`phase-tick-btn ${isActive ? 'active' : ''}`}
+                    onClick={() => handleGoTo(num)}
+                    aria-label={`Go to slide 0${num}`}
+                  >
+                    <span className="phase-tick-bar" />
+                    <span className="phase-tick-num">0{num}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          {/* 4 Clickable Pagination Indicators */}
-          <nav
-            className="pagination-indicators"
-            aria-label="Hero Slide Pagination"
-          >
-            {heroSlides.map((slide, i) => {
-              const slideNum = i + 1;
-              const isActive = slideNum === activeSlideNumber;
-              return (
-                <button
-                  key={slide.id}
-                  type="button"
-                  className={`pagination-item ${isActive ? 'active' : ''}`}
-                  onClick={() => handleGoTo(slideNum)}
-                  aria-label={`Go to slide ${slideNum}: ${slide.title}`}
-                  aria-current={isActive ? 'true' : 'false'}
-                >
-                  <span className="pagination-dot" />
-                  <span className="pagination-label">0{slideNum}</span>
-                </button>
-              );
-            })}
-          </nav>
+          {/* Navigation Arrows on Bottom Right matching reference */}
+          <div className="hero-arrows-group">
+            <button
+              type="button"
+              className="hero-arrow-btn prev"
+              onClick={handlePrev}
+              aria-label="Previous Slide"
+              title="Previous slide"
+            >
+              <FaChevronLeft />
+            </button>
+            <button
+              type="button"
+              className="hero-arrow-btn next"
+              onClick={handleNext}
+              aria-label="Next Slide"
+              title="Next slide"
+            >
+              <FaChevronRight />
+            </button>
+          </div>
         </div>
       </div>
     </section>

@@ -15,7 +15,7 @@
    1. TOP CONTACT BAR
    ------------------------------------------------------------ */
 .top-bar {
-  background: linear-gradient(90deg, #18246F 0%, #25339B 60%, #1e2b85 100%);
+  background: linear-gradient(90deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
   color: var(--white);
   height: var(--topbar-height);
   font-size: 0.8125rem;
@@ -149,7 +149,7 @@
   height: 140px;
   width: auto;
   max-width: none;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center left;
   /* Seamlessly clips top dark capture artifact without touching emblem, text or ISO tagline */
   clip-path: inset(2.2% 0 0 0);
@@ -158,11 +158,11 @@
 }
 
 .header-wrapper.is-scrolled .navbar-brand {
-  height: 56px;
+  height: 66px;
 }
 
 .header-wrapper.is-scrolled .brand-logo-img {
-  height: 116px;
+  height: 136px;
 }
 
 /* Center: Navigation Links Group */
@@ -192,7 +192,7 @@
   font-family: var(--font-main);
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--dark-blue);
+  color: var(--primary-blue);
   text-decoration: none;
   padding: 8px 4px;
   letter-spacing: 0.01em;
@@ -200,8 +200,8 @@
   z-index: 1;
   transform: translateY(0);
   transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
-              color 250ms ease,
-              text-shadow 300ms ease;
+    color 250ms ease,
+    text-shadow 300ms ease;
 }
 
 /* Subtle clean cyan underline below link */
@@ -219,7 +219,7 @@
   opacity: 0;
   pointer-events: none;
   transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
-              opacity 250ms ease;
+    opacity 250ms ease;
 }
 
 /* Keyboard Accessibility */
@@ -227,12 +227,12 @@
   outline: 2px solid var(--cyan);
   outline-offset: 4px;
   border-radius: 4px;
-  color: #08A6D6;
+  color: var(--cyan);
 }
 
 /* Active Home Link: ONLY a subtle cyan underline */
 .nav-link.active {
-  color: var(--royal-blue);
+  color: var(--primary-blue);
   font-weight: 700;
 }
 
@@ -248,8 +248,8 @@
 @media (hover: hover) and (pointer: fine) {
   .nav-link:hover {
     transform: translateY(-4px);
-    color: #08A6D6;
-    text-shadow: 0 4px 10px rgba(8, 166, 214, 0.25);
+    color: var(--cyan);
+    text-shadow: 0 4px 10px rgba(27, 147, 207, 0.25);
     z-index: 10;
   }
 
@@ -260,8 +260,8 @@
 
   .nav-link.active:hover {
     transform: translateY(-4px);
-    color: #08A6D6;
-    text-shadow: 0 4px 10px rgba(8, 166, 214, 0.25);
+    color: var(--cyan);
+    text-shadow: 0 4px 10px rgba(27, 147, 207, 0.25);
     z-index: 10;
   }
 }
@@ -282,7 +282,7 @@
   justify-content: center;
   height: 42px;
   padding: 0 24px;
-  background: linear-gradient(135deg, var(--cyan) 0%, #0093c4 100%);
+  background: var(--primary-blue);
   color: var(--white);
   font-family: var(--font-main);
   font-size: 0.85rem;
@@ -291,19 +291,19 @@
   text-transform: uppercase;
   border-radius: 6px;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(8, 166, 214, 0.35);
+  box-shadow: 0 4px 14px rgba(29, 39, 138, 0.35);
   transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 250ms ease,
-              background 250ms ease;
+    box-shadow 250ms ease,
+    background 250ms ease;
   white-space: nowrap;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .nav-quote-btn:hover {
-    background: linear-gradient(135deg, #0093c4 0%, var(--primary-blue) 100%);
+    background: var(--cyan);
     color: var(--white);
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(8, 166, 214, 0.45);
+    box-shadow: 0 6px 18px rgba(27, 147, 207, 0.45);
   }
 }
 
@@ -441,7 +441,7 @@
 
 .mobile-nav-link.active {
   border-left: 4px solid var(--cyan);
-  color: var(--royal-blue);
+  color: var(--primary-blue);
 }
 
 .mobile-quote-item {
@@ -455,7 +455,7 @@
   justify-content: center;
   width: 100%;
   padding: 14px 20px;
-  background: linear-gradient(135deg, var(--cyan) 0%, #0093c4 100%);
+  background: var(--primary-blue);
   color: var(--white);
   font-family: var(--font-main);
   font-size: 0.95rem;
@@ -464,12 +464,12 @@
   text-transform: uppercase;
   border-radius: 6px;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(8, 166, 214, 0.35);
+  box-shadow: 0 4px 14px rgba(29, 39, 138, 0.35);
   transition: all var(--transition-fast);
 }
 
 .mobile-quote-btn:hover {
-  background: linear-gradient(135deg, #0093c4 0%, var(--primary-blue) 100%);
+  background: var(--cyan);
 }
 
 .mobile-drawer-footer {
@@ -515,7 +515,7 @@
   width: 34px;
   height: 34px;
   border-radius: 4px;
-  background-color: var(--royal-blue);
+  background-color: var(--primary-blue);
   color: var(--white);
   font-size: 0.95rem;
   text-decoration: none;
@@ -533,17 +533,21 @@
   .navbar-nav-area {
     padding: 0 0.75rem;
   }
+
   .desktop-nav {
     gap: 1.15rem;
   }
+
   .nav-link {
     font-size: 0.875rem;
   }
+
   .navbar-brand {
     height: 60px;
   }
+
   .brand-logo-img {
-    height: 124px;
+    height: 144px;
   }
 }
 
@@ -553,22 +557,28 @@
     align-items: center;
     justify-content: space-between;
   }
+
   .navbar-nav-area {
     display: none;
   }
+
   .nav-quote-btn {
     display: none;
   }
+
   .mobile-menu-toggle {
     display: flex;
   }
+
   .main-navbar {
     height: 72px;
     min-height: 72px;
   }
+
   .navbar-brand {
     height: 56px;
   }
+
   .brand-logo-img {
     height: 115px;
     max-width: calc(100% - 65px);
@@ -580,30 +590,38 @@
     height: auto;
     padding: 0.35rem 0;
   }
+
   .top-bar-container {
     flex-wrap: nowrap;
     gap: 0.75rem;
   }
+
   .contact-email {
     display: none;
   }
+
   .contact-item {
     font-size: 0.75rem;
   }
+
   .main-navbar {
     height: 64px;
     min-height: 64px;
   }
+
   .navbar-brand {
     height: 50px;
   }
+
   .brand-logo-img {
     height: 102px;
     max-width: calc(100% - 58px);
   }
+
   .social-links {
     gap: 0.4rem;
   }
+
   .social-link {
     width: 24px;
     height: 24px;
@@ -616,13 +634,16 @@
     height: 60px;
     min-height: 60px;
   }
+
   .navbar-brand {
     height: 44px;
   }
+
   .brand-logo-img {
     height: 90px;
     max-width: calc(100% - 52px);
   }
+
   .contact-item span {
     font-size: 0.7rem;
   }
@@ -633,9 +654,11 @@
     height: 58px;
     min-height: 58px;
   }
+
   .navbar-brand {
     height: 40px;
   }
+
   .brand-logo-img {
     height: 82px;
     max-width: calc(100% - 48px);

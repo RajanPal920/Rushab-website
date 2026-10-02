@@ -1,0 +1,249 @@
+/* ============================================================
+   MATERIALS PAGE STYLES - RUSHAB METAL INDUSTRIES
+   ============================================================ */
+
+.materials-group-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.mat-switch-btn {
+  font-family: var(--font-main);
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 11px 22px;
+  border-radius: 6px;
+  border: 1px solid #CBD5E1;
+  background: var(--white);
+  color: var(--slate-700);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mat-switch-btn:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.mat-switch-btn.active {
+  background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
+  color: var(--white);
+  border-color: var(--dark-navy);
+  box-shadow: 0 4px 14px rgba(16, 24, 79, 0.2);
+}
+
+/* Material Cards Grid */
+.materials-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
+}
+
+.material-detail-card {
+  background: var(--white);
+  border: 1px solid rgba(190, 216, 243, 0.8);
+  border-radius: 12px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 18px rgba(16, 24, 79, 0.05);
+  transition: all var(--transition-normal);
+}
+
+.material-detail-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--cyan);
+  box-shadow: 0 12px 28px rgba(27, 147, 207, 0.16);
+}
+
+.mat-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.mat-category-tag {
+  display: inline-block;
+  font-family: var(--font-main);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: rgba(27, 147, 207, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.mat-card-title {
+  font-family: var(--font-main);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--dark-navy);
+}
+
+.mat-feature-tag {
+  font-family: var(--font-main);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--slate-600);
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-align: right;
+  line-height: 1.3;
+  max-width: 170px;
+}
+
+.mat-standards-row {
+  font-size: 0.825rem;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 1.15rem;
+}
+
+.std-label {
+  font-weight: 700;
+  color: var(--dark-navy);
+  margin-right: 6px;
+}
+
+.std-val {
+  color: var(--slate-600);
+}
+
+.mat-grades-block {
+  margin-bottom: 1.15rem;
+}
+
+.mat-block-subtitle {
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--dark-navy);
+  margin-bottom: 6px;
+}
+
+.mat-grades-ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mat-grades-ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.825rem;
+  color: var(--slate-700);
+  line-height: 1.45;
+}
+
+.mat-check-icon {
+  color: var(--cyan);
+  font-size: 0.95rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.mat-info-row,
+.mat-products-row {
+  margin-bottom: 1rem;
+}
+
+.info-title {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--dark-navy);
+  margin-bottom: 2px;
+}
+
+.info-text {
+  font-size: 0.825rem;
+  color: var(--slate-600);
+  line-height: 1.5;
+}
+
+.mat-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 1.15rem;
+  border-top: 1px solid #F1F5F9;
+  flex-wrap: wrap;
+}
+
+/* Bottom Cert Banner */
+.mat-cert-banner {
+  background: linear-gradient(135deg, var(--very-light-blue) 0%, #FFFFFF 100%);
+  border: 1px solid rgba(27, 147, 207, 0.4);
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.cert-banner-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: rgba(27, 147, 207, 0.15);
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.cert-banner-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.cert-banner-text h3 {
+  font-family: var(--font-main);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--dark-navy);
+  margin-bottom: 0.35rem;
+}
+
+.cert-banner-text p {
+  font-size: 0.9rem;
+  color: var(--slate-600);
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  .materials-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mat-card-header {
+    flex-direction: column;
+  }
+
+  .mat-feature-tag {
+    max-width: 100%;
+    text-align: left;
+  }
+}

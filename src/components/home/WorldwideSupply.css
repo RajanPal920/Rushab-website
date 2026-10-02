@@ -1,0 +1,293 @@
+/* ============================================================
+   COUNTRIES WE EXPORT TO - SECTION STYLES
+   With real graphic country logos and advanced hover effects
+   ============================================================ */
+
+.countries-export-section {
+  padding: clamp(3.5rem, 6vw, 5.5rem) 0;
+  background-color: #F8FAFD;
+  position: relative;
+  border-bottom: 1px solid rgba(190, 216, 243, 0.4);
+}
+
+.countries-header-block {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
+}
+
+.countries-main-title {
+  font-family: var(--font-main);
+  font-size: clamp(2rem, 3.5vw, 2.85rem);
+  font-weight: 800;
+  color: #10184F;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  margin-bottom: 0.85rem;
+  text-transform: uppercase;
+}
+
+.title-accent {
+  color: #1D278A;
+}
+
+.countries-lead-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 1.25rem;
+}
+
+.countries-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0F172A;
+  color: #FFFFFF;
+  padding: 8px 22px;
+  border-radius: 30px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+}
+
+.badge-text {
+  font-family: var(--font-main);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Controls Bar: Filter Tabs & Search */
+.countries-controls-bar {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.countries-tabs-scroll {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 4px 0;
+}
+
+.countries-tabs-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.country-tab-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: var(--font-main);
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #475569;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.country-tab-btn:hover {
+  color: #0F172A;
+  background: #F1F5F9;
+}
+
+.country-tab-btn.active {
+  background: #0F172A;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* Search Box */
+.country-search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  padding: 6px 14px;
+  min-width: 220px;
+  transition: border-color 0.2s ease;
+}
+
+.country-search-box:focus-within {
+  border-color: #1B93CF;
+  background: #FFFFFF;
+}
+
+.search-icon {
+  font-size: 0.95rem;
+  color: #94A3B8;
+  flex-shrink: 0;
+}
+
+.country-search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-main);
+  font-size: 0.825rem;
+  color: #1E293B;
+  width: 100%;
+}
+
+.country-search-input::placeholder {
+  color: #94A3B8;
+}
+
+/* Counter */
+.countries-counter-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  color: #64748B;
+  margin-bottom: 1.25rem;
+}
+
+.globe-icon {
+  font-size: 1rem;
+  color: #1B93CF;
+}
+
+.countries-counter-indicator strong {
+  color: #1E293B;
+}
+
+/* 4-Column Grid with Actual Flag Logos & Advanced Hover Effects */
+.countries-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.country-flag-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 11px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Advanced Hover Effect on Country Button */
+.country-flag-card:hover {
+  transform: translateY(-4px) scale(1.015);
+  border-color: #1B93CF;
+  box-shadow: 0 10px 24px rgba(27, 147, 207, 0.18);
+  background: #FFFFFF;
+}
+
+.country-flag-card:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+.country-flag-wrap {
+  width: 26px;
+  height: 18px;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F1F5F9;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.country-flag-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.country-flag-card:hover .country-flag-img {
+  transform: scale(1.2);
+}
+
+.country-name-text {
+  font-family: var(--font-main);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #1E293B;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s ease;
+}
+
+.country-flag-card:hover .country-name-text {
+  color: #1D278A;
+}
+
+.no-countries-found {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #64748B;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .countries-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .countries-controls-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .country-search-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .countries-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .countries-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .countries-pill-badge {
+    padding: 6px 14px;
+  }
+  .badge-text {
+    font-size: 0.65rem;
+  }
+}

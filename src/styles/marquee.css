@@ -1,0 +1,91 @@
+/* ============================================================
+   INFINITE HIGHLIGHT MARQUEE STRIP
+   Seamless loop, logo-based blue & cyan colors
+   ============================================================ */
+
+.highlight-marquee-strip {
+  background: linear-gradient(90deg, #0D1642 0%, #10184F 50%, #0D1642 100%);
+  border-top: 1px solid rgba(27, 147, 207, 0.4);
+  border-bottom: 1px solid rgba(27, 147, 207, 0.3);
+  padding: 0.85rem 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  user-select: none;
+  box-shadow: 0 4px 18px rgba(10, 16, 48, 0.25);
+  z-index: 20;
+}
+
+.marquee-outer-track {
+  display: flex;
+  width: max-content;
+}
+
+.marquee-infinite-row {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  animation: marqueeContinuous 32s linear infinite;
+  will-change: transform;
+}
+
+.highlight-marquee-strip:hover .marquee-infinite-row {
+  animation-play-state: paused;
+}
+
+.marquee-pill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0 1.5rem;
+  white-space: nowrap;
+}
+
+.marquee-bullet-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1B93CF;
+  box-shadow: 0 0 8px #1B93CF;
+  flex-shrink: 0;
+}
+
+.marquee-text-content {
+  font-family: var(--font-main);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  transition: color 0.2s ease;
+}
+
+.marquee-pill-item:hover .marquee-text-content {
+  color: #38bdf8;
+}
+
+@keyframes marqueeContinuous {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .highlight-marquee-strip {
+    padding: 0.7rem 0;
+  }
+  .marquee-pill-item {
+    padding: 0 1rem;
+    gap: 0.5rem;
+  }
+  .marquee-text-content {
+    font-size: 0.8rem;
+  }
+  .marquee-bullet-dot {
+    width: 6px;
+    height: 6px;
+  }
+}

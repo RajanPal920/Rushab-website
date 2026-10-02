@@ -1,0 +1,560 @@
+/* ============================================================
+   HOME PAGE STYLES - RUSHAB METAL INDUSTRIES
+   Corporate Blue, Navy, White, Light Blue & Gray accents
+   ============================================================ */
+
+.home-page-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ------------------------------------------------------------
+   Section Spacings & Backgrounds
+   ------------------------------------------------------------ */
+.section-py {
+  padding: clamp(3.5rem, 6vw, 5.5rem) 0;
+}
+
+.bg-light-steel {
+  background-color: #F8FAFD;
+}
+
+.bg-white {
+  background-color: #FFFFFF;
+}
+
+/* ------------------------------------------------------------
+   Section 4: Who We Are
+   ------------------------------------------------------------ */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.15fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.intro-visual-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.intro-image-frame {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(16, 24, 79, 0.1);
+  border: 1px solid rgba(190, 216, 243, 0.8);
+  aspect-ratio: 4 / 3;
+  background-color: #F1F5F9;
+}
+
+.intro-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.intro-image-frame:hover .intro-main-img {
+  transform: scale(1.05);
+}
+
+.intro-badge-card {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(16, 24, 79, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(27, 147, 207, 0.5);
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: var(--white);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.ibc-title {
+  display: block;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 0.04em;
+}
+
+.ibc-desc {
+  font-size: 0.75rem;
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.intro-statement-card {
+  background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
+  border: 1px solid rgba(27, 147, 207, 0.35);
+  padding: 1.15rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(16, 24, 79, 0.08);
+}
+
+.statement-text {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  font-style: italic;
+  text-align: center;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.intro-main-title {
+  font-family: var(--font-main);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  color: var(--dark-navy);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.intro-sub-heading {
+  font-family: var(--font-main);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+}
+
+.intro-para {
+  font-size: 0.95rem;
+  color: var(--slate-600);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.intro-key-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.key-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--dark-navy);
+}
+
+.kp-icon {
+  color: var(--cyan);
+  font-size: 1.15rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.intro-action-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 992px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   Section 6: Products Section
+   ------------------------------------------------------------ */
+.product-category-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.category-tab-btn {
+  font-family: var(--font-main);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--slate-600);
+  background: var(--white);
+  border: 1px solid #CBD5E1;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.category-tab-btn:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.category-tab-btn.active {
+  background: var(--dark-navy);
+  color: var(--white);
+  border-color: var(--dark-navy);
+  box-shadow: 0 4px 12px rgba(16, 24, 79, 0.15);
+}
+
+.home-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.products-view-all-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .home-products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .home-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .home-products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------------------------------------
+   Section 7: Testing & Integrity
+   ------------------------------------------------------------ */
+.quality-preview-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.15fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.quality-image-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(16, 24, 79, 0.12);
+  border: 1px solid rgba(190, 216, 243, 0.8);
+  aspect-ratio: 4 / 3;
+  background-color: #0E1647;
+}
+
+.quality-img-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.quality-image-card:hover .quality-img-main {
+  transform: scale(1.05);
+}
+
+.quality-cert-glass-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  background: rgba(16, 24, 79, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(27, 147, 207, 0.5);
+  border-radius: 8px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #FFFFFF;
+}
+
+.qc-badge-icon {
+  font-size: 1.8rem;
+  color: var(--cyan);
+  flex-shrink: 0;
+}
+
+.quality-cert-glass-badge strong {
+  display: block;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.quality-cert-glass-badge span {
+  font-size: 0.75rem;
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.quality-heading {
+  font-family: var(--font-main);
+  font-size: clamp(1.85rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  color: var(--dark-navy);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.quality-para {
+  font-size: 0.95rem;
+  color: var(--slate-600);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.quality-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.qc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.qc-icon {
+  color: var(--cyan);
+  font-size: 1.2rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.qc-item strong {
+  display: block;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark-navy);
+  margin-bottom: 2px;
+}
+
+.qc-item p {
+  font-size: 0.85rem;
+  color: var(--slate-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.test-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+
+.test-badge {
+  font-family: var(--font-main);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #F1F5F9;
+  color: var(--dark-navy);
+  border: 1px solid #CBD5E1;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.quality-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 992px) {
+  .quality-preview-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   Section 9: Industries We Serve
+   ------------------------------------------------------------ */
+.industries-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.industries-footer-link-box {
+  display: flex;
+  justify-content: center;
+}
+
+.view-all-industries-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-main);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  background: #F8FAFD;
+  border: 1px solid rgba(27, 147, 207, 0.4);
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.view-all-industries-link:hover {
+  background: var(--primary-blue);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(29, 39, 138, 0.25);
+}
+
+@media (max-width: 1024px) {
+  .industries-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .industries-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------------------------------------
+   Section 11: Direct Inquiry Desk
+   ------------------------------------------------------------ */
+.home-cta-banner-section {
+  padding: clamp(3rem, 5vw, 4.5rem) 0;
+  background-color: #FFFFFF;
+}
+
+.home-cta-card {
+  background: linear-gradient(135deg, #090E28 0%, #10184F 45%, #1D278A 100%);
+  border: 1px solid rgba(27, 147, 207, 0.4);
+  border-radius: 14px;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  box-shadow: 0 16px 40px rgba(16, 24, 79, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-content-wrap {
+  flex: 1;
+  min-width: 280px;
+}
+
+.cta-badge {
+  display: inline-block;
+  font-family: var(--font-main);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--cyan);
+  background: rgba(27, 147, 207, 0.15);
+  border: 1px solid rgba(27, 147, 207, 0.35);
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.cta-title {
+  font-family: var(--font-main);
+  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+.cta-text {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin-bottom: 1.35rem;
+  max-width: 650px;
+}
+
+.cta-contact-pills {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-main);
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 6px 14px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.cta-pill:hover {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: #FFFFFF;
+}
+
+.cta-pill.whatsapp {
+  background: rgba(37, 211, 102, 0.15);
+  border-color: rgba(37, 211, 102, 0.4);
+  color: #4ade80;
+}
+
+.cta-pill.whatsapp:hover {
+  background: #25D366;
+  border-color: #25D366;
+  color: #FFFFFF;
+}
+
+.cta-btn-wrap {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .home-cta-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cta-btn-wrap {
+    width: 100%;
+  }
+  .cta-btn-wrap a {
+    width: 100%;
+    justify-content: center;
+  }
+}

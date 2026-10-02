@@ -1,47 +1,62 @@
 /* ============================================================
    RUSHAB METAL INDUSTRIES - GLOBAL DESIGN SYSTEM & STYLES
+   Colors matched precisely with Rushab Metal Industries Logo
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  /* Brand Primary Colors extracted directly from Rushab Logo */
-  --primary-blue: #25339B;
-  --royal-blue: #2e3192;
-  --dark-blue: #18246F;
-  --navy-deep: #0e173e;
-  --navy-header: #141c4b;
-  
-  /* Brand Cyan / Sky Accent */
-  --cyan: #08A6D6;
-  --cyan-bright: #00aeef;
-  --cyan-hover: #0793bd;
-  --cyan-tint: #f0f8fd;
-  --cyan-border: rgba(8, 166, 214, 0.4);
-  --cyan-glow: rgba(8, 166, 214, 0.25);
-
-  /* Neutrals & Typography */
+  /* Primary Logo Brand Colors */
+  --primary-blue: #1D278A;     /* Deep Royal / Emblem Indigo */
+  --cyan: #1B93CF;             /* Vivid Electric Sky / Cyan */
+  --light-blue: #BED8F3;       /* Soft Ice / Steel Blue */
+  --dark-navy: #10184F;        /* Deep Industrial Navy */
+  --very-light-blue: #F5F9FD;  /* Crisp Metallic White-Blue Background */
   --white: #FFFFFF;
-  --light-bg: #F5F8FC;
-  --light-border: #E2E8F0;
-  --dark-text: #172033;
-  --body-text: #334155;
-  --muted-text: #64748B;
-  --light-muted: #94A3B8;
 
-  /* Layout dimensions */
+  /* Premium Industrial Secondary & Neutral Tones */
+  --navy-darkest: #0B1038;
+  --navy-header: #0E1647;
+  --navy-surface: #141E5D;
+  --slate-900: #0F172A;
+  --slate-800: #1E293B;
+  --slate-700: #334155;
+  --slate-600: #475569;
+  --slate-500: #64748B;
+  --slate-400: #94A3B8;
+  --slate-200: #E2E8F0;
+  --slate-100: #F1F5F9;
+  --slate-50: #F8FAFC;
+
+  /* Functional Accents */
+  --gold-accent: #D97706;
+  --gold-light: #FEF3C7;
+  --success-green: #10B981;
+  --cyan-bright: #00A6F4;
+  --cyan-hover: #1279AE;
+  --cyan-glow: rgba(27, 147, 207, 0.25);
+  --cyan-border: rgba(27, 147, 207, 0.35);
+
+  /* Layout & Sizing */
   --topbar-height: 40px;
-  --navbar-height: 82px;
-  --max-content-width: 1440px;
+  --navbar-height: 84px;
+  --max-content-width: 1360px;
+  --container-padding: clamp(1rem, 4vw, 2.5rem);
 
   /* Typography */
-  --font-main: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
-  /* Transitions */
-  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-smooth: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Premium Shadows & Transitions */
+  --shadow-sm: 0 1px 3px rgba(16, 24, 79, 0.06), 0 1px 2px rgba(16, 24, 79, 0.04);
+  --shadow-md: 0 4px 16px -2px rgba(16, 24, 79, 0.08), 0 2px 6px -1px rgba(16, 24, 79, 0.04);
+  --shadow-lg: 0 12px 30px -4px rgba(16, 24, 79, 0.12), 0 4px 12px -2px rgba(16, 24, 79, 0.06);
+  --shadow-glow: 0 0 25px rgba(27, 147, 207, 0.35);
+
+  --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *, *::before, *::after {
@@ -58,9 +73,9 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--light-bg);
-  color: var(--body-text);
-  line-height: 1.5;
+  background-color: var(--very-light-blue);
+  color: var(--slate-700);
+  line-height: 1.6;
   overflow-x: hidden;
   width: 100%;
   position: relative;
@@ -68,11 +83,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Base resets */
+/* Base resets & utilities */
 a {
   color: inherit;
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition: all var(--transition-fast);
 }
 
 button {
@@ -86,27 +101,31 @@ button {
 img {
   max-width: 100%;
   display: block;
-  user-select: none;
 }
 
-/* Utility container */
+/* Page wrapper */
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--very-light-blue);
+}
+
+.main-content-wrapper {
+  flex: 1 0 auto;
+}
+
+/* Global Container */
 .container {
   width: 100%;
   max-width: var(--max-content-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
-@media (max-width: 640px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-
-/* Accessible visually hidden class */
+/* Visually Hidden */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -117,4 +136,65 @@ img {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* Shared Section Utilities */
+.section-py {
+  padding-top: clamp(3.5rem, 6vw, 6rem);
+  padding-bottom: clamp(3.5rem, 6vw, 6rem);
+}
+
+.section-py-sm {
+  padding-top: clamp(2.5rem, 4vw, 4rem);
+  padding-bottom: clamp(2.5rem, 4vw, 4rem);
+}
+
+.bg-light-steel {
+  background-color: var(--very-light-blue);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.bg-dark-industrial {
+  background: linear-gradient(180deg, var(--navy-darkest) 0%, var(--dark-navy) 100%);
+  color: var(--white);
+}
+
+/* Subtle Animated Glow Accents */
+.badge-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--cyan);
+  margin-right: 6px;
+  box-shadow: 0 0 8px var(--cyan);
+}
+
+/* Micro-interaction Lift */
+.hover-lift {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #E2E8F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #1B93CF;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1D278A;
 }

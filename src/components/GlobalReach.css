@@ -1,0 +1,126 @@
+.global-reach-section {
+  padding: clamp(3.5rem, 6vw, 6rem) 0;
+  background: linear-gradient(180deg, var(--navy-darkest) 0%, var(--dark-navy) 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.global-map-wrapper {
+  margin-bottom: 3rem;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(27, 147, 207, 0.3);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.svg-map-stage {
+  width: 100%;
+  background: #0B1038;
+}
+
+.interactive-world-map {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.supply-trade-routes path {
+  animation: dashRoute 25s linear infinite;
+}
+
+@keyframes dashRoute {
+  to {
+    stroke-dashoffset: -200;
+  }
+}
+
+.export-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.export-feat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1.75rem 1.5rem;
+  backdrop-filter: blur(8px);
+  transition: all var(--transition-normal);
+}
+
+.export-feat-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--cyan);
+  box-shadow: 0 8px 24px rgba(27, 147, 207, 0.2);
+}
+
+.feat-icon-bubble {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: rgba(27, 147, 207, 0.2);
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 1.15rem;
+  transition: all var(--transition-normal);
+}
+
+.export-feat-card:hover .feat-icon-bubble {
+  background: var(--cyan);
+  color: var(--white);
+  transform: scale(1.05);
+}
+
+.feat-title {
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.feat-desc {
+  font-size: 0.85rem;
+  color: var(--light-blue);
+  line-height: 1.55;
+}
+
+.global-cta-box {
+  background: linear-gradient(135deg, rgba(29, 39, 138, 0.5) 0%, rgba(27, 147, 207, 0.25) 100%);
+  border: 1px solid rgba(27, 147, 207, 0.4);
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.cta-text-side h3 {
+  font-family: var(--font-main);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+}
+
+.cta-text-side p {
+  font-size: 0.925rem;
+  color: var(--light-blue);
+}
+
+@media (max-width: 768px) {
+  .global-cta-box {
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

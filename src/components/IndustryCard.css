@@ -1,0 +1,294 @@
+/* ============================================================
+   INDUSTRY CARD - PREMIUM 3D PHYSICAL ROTATION ANIMATION
+   Applied ONLY to "Industries We Serve" section
+   Realistic 3D perspective, layered depth, and natural return
+   ============================================================ */
+
+/* 1. Perspective Viewport Wrapper */
+.industry-3d-card-wrapper {
+  perspective: 1200px;
+  width: 100%;
+  animation: industryCardEntrance 750ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes industryCardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Main 3D Card Element */
+.industry-3d-card {
+  display: block;
+  text-decoration: none;
+  border-radius: 14px;
+  position: relative;
+  height: 250px;
+  transform-style: preserve-3d;
+  transition: transform 850ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 850ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 450ms ease;
+  box-shadow: 0 6px 20px rgba(16, 24, 79, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background-color: #0E1640;
+}
+
+/* 3. 3D Hover Animation: Lift, Y-axis rotation, side reveal, depth */
+.industry-3d-card-wrapper:hover .industry-3d-card {
+  transform: translateY(-8px) rotateY(-18deg) rotateX(4deg) translateZ(12px) scale(1.025);
+  border-color: #38bdf8;
+  box-shadow: -22px 28px 46px rgba(10, 16, 45, 0.36),
+              0 4px 16px rgba(27, 147, 207, 0.2);
+}
+
+/* Simulated 3D Depth / Side Thickness Layer */
+.industry-card-depth-plate {
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(29, 39, 138, 0.25) 0%, rgba(16, 24, 79, 0.8) 100%);
+  border-radius: 14px;
+  transform: translateZ(-14px);
+  pointer-events: none;
+  transition: transform 850ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.industry-3d-card-wrapper:hover .industry-card-depth-plate {
+  transform: translateZ(-18px) rotateY(-6deg);
+}
+
+/* Card Body Surface */
+.industry-card-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 13px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Image Container with overflow: hidden for clean boundary */
+.industry-image-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Natural Industrial Photography (No Blue Overlay over photo) */
+.industry-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.01);
+  transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1),
+              filter 600ms ease;
+  filter: brightness(0.95);
+}
+
+/* Image zoom & subtle independent parallax shift */
+.industry-3d-card-wrapper:hover .industry-card-img {
+  transform: scale(1.09) translateX(5px);
+  filter: brightness(1.03);
+}
+
+/* Localized subtle text backdrop gradient for contrast only */
+.industry-localized-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 14, 38, 0.02) 0%,
+    rgba(8, 14, 38, 0.22) 42%,
+    rgba(6, 11, 30, 0.92) 100%
+  );
+  pointer-events: none;
+  transition: opacity 400ms ease;
+}
+
+/* Subtle Shimmer Sweep */
+.industry-shimmer-sweep {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 65%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.industry-3d-card-wrapper:hover .industry-shimmer-sweep {
+  animation: industryShimmer 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes industryShimmer {
+  0% {
+    left: -120%;
+  }
+  100% {
+    left: 220%;
+  }
+}
+
+/* Floating 3D Content Layer */
+.industry-floating-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.25rem 1.4rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+  z-index: 3;
+  transform: translateZ(28px);
+  transition: transform 850ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.industry-3d-card-wrapper:hover .industry-floating-overlay {
+  transform: translateZ(48px);
+}
+
+.industry-info-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.industry-sector-pill {
+  font-family: var(--font-main);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #38bdf8;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  transform: translateZ(12px);
+  transition: transform 850ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.industry-3d-card-wrapper:hover .industry-sector-pill {
+  transform: translateZ(20px);
+}
+
+.industry-card-title {
+  font-family: var(--font-main);
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+  transform: translateZ(16px);
+  transition: transform 850ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.industry-3d-card-wrapper:hover .industry-card-title {
+  transform: translateZ(28px);
+}
+
+/* Action Arrow with 3D Pop Out */
+.industry-card-arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  transform: translateZ(24px);
+  transition: all 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.industry-3d-card-wrapper:hover .industry-card-arrow {
+  background: #1B93CF;
+  border-color: #38bdf8;
+  color: #FFFFFF;
+  transform: translateZ(52px) rotate(45deg);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.65);
+}
+
+/* ============================================================
+   ACCESSIBILITY & PREFERS-REDUCED-MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .industry-3d-card-wrapper {
+    animation: none;
+  }
+  .industry-3d-card-wrapper:hover .industry-3d-card {
+    transform: translateY(-6px);
+  }
+  .industry-card-depth-plate,
+  .industry-card-img,
+  .industry-floating-overlay,
+  .industry-sector-pill,
+  .industry-card-title,
+  .industry-card-arrow {
+    transform: none !important;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .industry-3d-card {
+    height: 225px;
+  }
+  .industry-3d-card-wrapper:hover .industry-3d-card {
+    transform: translateY(-6px) rotateY(-10deg) rotateX(3deg) scale(1.02);
+  }
+}
+
+@media (max-width: 768px) {
+  .industry-3d-card {
+    height: 210px;
+  }
+  /* On touch mobile: stable cards without rotation to maintain clean legibility */
+  .industry-3d-card-wrapper:hover .industry-3d-card {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(16, 24, 79, 0.15);
+  }
+  .industry-card-title {
+    font-size: 1.05rem;
+  }
+  .industry-floating-overlay {
+    padding: 1rem 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .industry-3d-card {
+    height: 195px;
+  }
+  .industry-card-title {
+    font-size: 1rem;
+  }
+  .industry-card-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+}

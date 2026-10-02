@@ -1,0 +1,170 @@
+.brand-logos-section {
+  padding: clamp(3.5rem, 6vw, 5.5rem) 0;
+  position: relative;
+}
+
+.brand-logos-section.bg-industrial {
+  background: linear-gradient(180deg, #0A0E2A 0%, #10184F 100%);
+  color: var(--white);
+}
+
+.brand-logos-section.bg-light {
+  background-color: var(--very-light-blue);
+  color: var(--dark-navy);
+}
+
+.brochure-brand-banner-card {
+  background: var(--white);
+  border: 1px solid rgba(27, 147, 207, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+.banner-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.banner-tag {
+  font-family: var(--font-main);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--primary-blue);
+  background: rgba(29, 39, 138, 0.08);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.banner-note {
+  font-size: 0.8rem;
+  color: var(--slate-500);
+  font-weight: 500;
+}
+
+.banner-image-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  overflow-x: auto;
+}
+
+.brochure-brands-img {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  object-fit: contain;
+  filter: contrast(1.05);
+}
+
+.source-mills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mill-item-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 1.15rem 1.25rem;
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-normal);
+}
+
+.bg-light .mill-item-card {
+  background: var(--white);
+  border-color: #CBD5E1;
+  box-shadow: 0 2px 8px rgba(16, 24, 79, 0.04);
+}
+
+.mill-item-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--cyan);
+  box-shadow: 0 8px 20px rgba(27, 147, 207, 0.2);
+}
+
+.mill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.mill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--cyan);
+}
+
+.mill-origin {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cyan);
+}
+
+.mill-name {
+  font-family: var(--font-main);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.bg-light .mill-name {
+  color: var(--dark-navy);
+}
+
+.mill-type {
+  font-size: 0.775rem;
+  color: var(--light-blue);
+  line-height: 1.4;
+}
+
+.bg-light .mill-type {
+  color: var(--slate-500);
+}
+
+.brand-disclaimer-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.bg-light .brand-disclaimer-box {
+  background: #F1F5F9;
+  border-color: #CBD5E1;
+}
+
+.brand-disclaimer-text {
+  font-size: 0.78rem;
+  color: var(--slate-400);
+  line-height: 1.6;
+}
+
+.bg-light .brand-disclaimer-text {
+  color: var(--slate-600);
+}
+
+@media (max-width: 640px) {
+  .brochure-brand-banner-card {
+    padding: 1rem 0.75rem;
+  }
+}
