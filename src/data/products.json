@@ -8,9 +8,7 @@
     "subtitle": "SEAMLESS & WELDED PIPES & TUBES",
     "category": "Pipes & Tubes",
     "image": "/images/products/pipes.jpg",
-    "gallery": [
-      "/images/products/pipes.jpg"
-    ],
+    "gallery": ["/images/products/pipes.jpg"],
     "materials": [
       "Stainless Steel",
       "Carbon Steel",
@@ -76,9 +74,7 @@
     "subtitle": "ELBOWS, TEES, REDUCERS & CAPS",
     "category": "Fittings",
     "image": "/images/products/buttweld-fitting.jpg",
-    "gallery": [
-      "/images/products/buttweld-fitting.jpg"
-    ],
+    "gallery": ["/images/products/buttweld-fitting.jpg"],
     "materials": [
       "Stainless Steel",
       "Carbon Steel",
@@ -140,9 +136,7 @@
     "subtitle": "SOCKET WELD & THREADED (3000# - 9000#)",
     "category": "Fittings",
     "image": "/images/products/forge-fittings.jpg",
-    "gallery": [
-      "/images/products/forge-fittings.jpg"
-    ],
+    "gallery": ["/images/products/forge-fittings.jpg"],
     "materials": [
       "Stainless Steel",
       "Carbon Steel",
@@ -201,9 +195,7 @@
     "subtitle": "WELD NECK, SLIP-ON, BLIND & CUSTOM",
     "category": "Flanges",
     "image": "/images/products/flanges.jpg",
-    "gallery": [
-      "/images/products/flanges.jpg"
-    ],
+    "gallery": ["/images/products/flanges.jpg"],
     "materials": [
       "Stainless Steel",
       "Carbon Steel",
@@ -267,9 +259,7 @@
     "subtitle": "STUDS, BOLTS, NUTS & SPECIALS",
     "category": "Fasteners",
     "image": "/images/products/fasteners.jpg",
-    "gallery": [
-      "/images/products/fasteners.jpg"
-    ],
+    "gallery": ["/images/products/fasteners.jpg"],
     "materials": [
       "Stainless Steel",
       "Alloy Steel",
@@ -323,9 +313,7 @@
     "subtitle": "COLD & HOT ROLLED SHEETS & PLATES",
     "category": "Sheets & Plates",
     "image": "/images/products/sheets-plates.jpg",
-    "gallery": [
-      "/images/products/sheets-plates.jpg"
-    ],
+    "gallery": ["/images/products/sheets-plates.jpg"],
     "materials": [
       "Stainless Steel",
       "Duplex & Super Duplex",
@@ -382,14 +370,8 @@
     "subtitle": "HOT & COLD ROLLED COILS",
     "category": "Sheets & Plates",
     "image": "/images/products/coil.jpg",
-    "gallery": [
-      "/images/products/coil.jpg"
-    ],
-    "materials": [
-      "Stainless Steel",
-      "Carbon Steel",
-      "Nickel Alloys"
-    ],
+    "gallery": ["/images/products/coil.jpg"],
+    "materials": ["Stainless Steel", "Carbon Steel", "Nickel Alloys"],
     "grades": [
       "SS: AISI 304, 304L, 316, 316L, 310S, 409, 430",
       "Carbon Steel: CRCA, HR, IS 2062",
@@ -424,16 +406,14 @@
   },
   {
     "id": 8,
-    "slug": "flat-bars",
+    "slug": "patta-patti",
     "std": "ASTM A276 / A484",
     "type": "SUPPLIER DIV.",
-    "title": "FLAT BARS",
-    "subtitle": "COLD DRAWN & HRAP FLAT BARS",
+    "title": "Patta Paati",
+    "subtitle": "COLD DRAWN & HRAP Patta Patti",
     "category": "Bars & Rods",
     "image": "/images/products/flat-bar.jpg",
-    "gallery": [
-      "/images/products/flat-bar.jpg"
-    ],
+    "gallery": ["/images/products/flat-bar.jpg"],
     "materials": [
       "Stainless Steel",
       "Carbon Steel",
@@ -446,12 +426,12 @@
       "Special Alloys: Monel, Inconel, Hastelloy"
     ],
     "types": [
-      "Cold Drawn Flat Bars",
+      "Cold Drawn Patta Pa",
       "Hot Rolled Annealed & Pickled (HRAP)",
-      "Slit from Plate Flat Bars"
+      "Slit from Plate Patta Patti"
     ],
     "sizes": "Width: 10 mm to 150 mm; Thickness: 3 mm to 50 mm",
-    "description": "Precision flat bars engineered for architectural, structural framing, bracket manufacturing, and specialized machine tooling with sharp corners and smooth surface finishes.",
+    "description": "Precision Patta Patti engineered for architectural, structural framing, bracket manufacturing, and specialized machine tooling with sharp corners and smooth surface finishes.",
     "specifications": [
       {
         "label": "Width Range",
@@ -480,9 +460,7 @@
     "subtitle": "ROUND, SQUARE & HEX BARS",
     "category": "Bars & Rods",
     "image": "/images/products/rods-bars.jpg",
-    "gallery": [
-      "/images/products/rods-bars.jpg"
-    ],
+    "gallery": ["/images/products/rods-bars.jpg"],
     "materials": [
       "Stainless Steel",
       "Carbon Steel",
@@ -533,10 +511,8 @@
     "title": "INDUSTRIAL VALVES",
     "subtitle": "GATE, GLOBE, CHECK, BALL & STRAINERS",
     "category": "Valves & Flow Control",
-    "image": "/images/products/flanges.jpg",
-    "gallery": [
-      "/images/products/flanges.jpg"
-    ],
+    "image": "/images/products/valves.jpg",
+    "gallery": ["/images/products/valves.jpg"],
     "materials": [
       "Cast Carbon Steel",
       "Forged Carbon Steel",
@@ -587,9 +563,7 @@
     "subtitle": "FILTER CLOTH, PERFORATED & WOVEN MESH",
     "category": "Screens & Mesh",
     "image": "/images/products/wire-mesh.jpg",
-    "gallery": [
-      "/images/products/wire-mesh.jpg"
-    ],
+    "gallery": ["/images/products/wire-mesh.jpg"],
     "materials": [
       "Stainless Steel",
       "Mild Steel",
@@ -646,18 +620,14 @@
     "subtitle": "SLINGS, SHACKLES, CLAMPS & HARDWARE",
     "category": "Lifting & Rigging",
     "image": "/images/products/lifting-materials.jpg",
-    "gallery": [
-      "/images/products/lifting-materials.jpg"
-    ],
+    "gallery": ["/images/products/lifting-materials.jpg"],
     "materials": [
       "Alloy Steel (Grade 80 / Grade 100)",
       "Stainless Steel",
       "Polyester / Nylon",
       "Manila Fiber"
     ],
-    "grades": [
-      "High Tensile Forged Steel, SS 316, Grade 80 Rigging"
-    ],
+    "grades": ["High Tensile Forged Steel, SS 316, Grade 80 Rigging"],
     "types": [
       "Web Slings & Cargo Belts",
       "Wire Rope Slings & Chain Slings",
@@ -699,17 +669,9 @@
     "subtitle": "ANGLES, CHANNELS, BEAMS & CHEQUERED PLATES",
     "category": "Structural & Others",
     "image": "/images/products/structural-profiles.jpg",
-    "gallery": [
-      "/images/products/structural-profiles.jpg"
-    ],
-    "materials": [
-      "Mild Steel",
-      "Carbon Steel",
-      "Stainless Steel"
-    ],
-    "grades": [
-      "IS 2062 E250 / E350, ASTM A36, SS 304, SS 316"
-    ],
+    "gallery": ["/images/products/structural-profiles.jpg"],
+    "materials": ["Mild Steel", "Carbon Steel", "Stainless Steel"],
+    "grades": ["IS 2062 E250 / E350, ASTM A36, SS 304, SS 316"],
     "types": [
       "MS Angles & Equal / Unequal Angles",
       "Channels (ISMC)",
@@ -744,17 +706,13 @@
     "subtitle": "Sanitary Tube Fittings & Tri-Clover Connections",
     "category": "Fittings",
     "image": "/images/products/buttweld-fitting.jpg",
-    "gallery": [
-      "/images/products/buttweld-fitting.jpg"
-    ],
+    "gallery": ["/images/products/buttweld-fitting.jpg"],
     "materials": [
       "Stainless Steel (304 / 304L / 316 / 316L)",
       "Hastelloy C22",
       "Titanium"
     ],
-    "grades": [
-      "AISI 304, AISI 316L, 1.4404, 1.4435"
-    ],
+    "grades": ["AISI 304, AISI 316L, 1.4404, 1.4435"],
     "types": [
       "Tri-Clover Clamps & Ferrules",
       "Sanitary Bends & Elbows",
@@ -787,20 +745,10 @@
     "title": "FERRULE FITTINGS",
     "subtitle": "Instrumentation Double & Single Ferrule Flareless Fittings",
     "category": "Fittings",
-    "image": "/images/products/forge-fittings.jpg",
-    "gallery": [
-      "/images/products/forge-fittings.jpg"
-    ],
-    "materials": [
-      "Stainless Steel",
-      "Monel",
-      "Inconel",
-      "Hastelloy",
-      "Brass"
-    ],
-    "grades": [
-      "SS 316 / 316L, Monel 400, Inconel 625, Hastelloy C276"
-    ],
+    "image": "/images/products/ferrule-fittings.jpg",
+    "gallery": ["/images/products/ferrule-fittings.jpg"],
+    "materials": ["Stainless Steel", "Monel", "Inconel", "Hastelloy", "Brass"],
+    "grades": ["SS 316 / 316L, Monel 400, Inconel 625, Hastelloy C276"],
     "types": [
       "Male / Female Connectors",
       "Union Elbows & Tees",
@@ -833,17 +781,10 @@
     "title": "HOSE PIPES",
     "subtitle": "Flexible Corrugated Metallic Braided Hoses",
     "category": "Pipes & Tubes",
-    "image": "/images/products/pipes.jpg",
-    "gallery": [
-      "/images/products/pipes.jpg"
-    ],
-    "materials": [
-      "Stainless Steel (304 / 316 / 321)",
-      "Monel"
-    ],
-    "grades": [
-      "SS 304, SS 316, SS 321 with Single / Double SS 304 Braiding"
-    ],
+    "image": "/images/products/hose-pipe.jpg",
+    "gallery": ["/images/products/pipes.jpg"],
+    "materials": ["Stainless Steel (304 / 316 / 321)", "Monel"],
+    "grades": ["SS 304, SS 316, SS 321 with Single / Double SS 304 Braiding"],
     "types": [
       "Corrugated Flexible Hoses",
       "Single Braided Hoses",
@@ -875,10 +816,8 @@
     "title": "PERFORATED SHEETS",
     "subtitle": "Precision Punched & Slotted Industrial Screens",
     "category": "Screens & Mesh",
-    "image": "/images/products/sheets-plates.jpg",
-    "gallery": [
-      "/images/products/sheets-plates.jpg"
-    ],
+    "image": "/images/products/perforated-sheets.jpg",
+    "gallery": ["/images/products/perforated-sheets.jpg"],
     "materials": [
       "Stainless Steel",
       "Carbon Steel",
@@ -886,9 +825,7 @@
       "Brass",
       "Copper"
     ],
-    "grades": [
-      "SS 304, 304L, 316, 316L, Galvanized Steel, MS"
-    ],
+    "grades": ["SS 304, 304L, 316, 316L, Galvanized Steel, MS"],
     "types": [
       "Round Hole Perforations",
       "Square Hole Sheets",
@@ -917,10 +854,8 @@
     "title": "CIRCLE",
     "subtitle": "Precision Cold-Sheared, Plasma & Laser-Cut Circles",
     "category": "Sheets & Plates",
-    "image": "/images/products/sheets-plates.jpg",
-    "gallery": [
-      "/images/products/sheets-plates.jpg"
-    ],
+    "image": "/images/products/circle.jpg",
+    "gallery": ["/images/products/circle.jpg"],
     "materials": [
       "Stainless Steel",
       "Carbon Steel",
@@ -928,9 +863,7 @@
       "Nickel Alloys",
       "Copper"
     ],
-    "grades": [
-      "SS 304, 316, 310, A516 Gr. 70, Duplex 2205"
-    ],
+    "grades": ["SS 304, 316, 310, A516 Gr. 70, Duplex 2205"],
     "types": [
       "Cold-Sheared Circles",
       "CNC Laser Cut Circles",
@@ -952,25 +885,16 @@
   },
   {
     "id": 19,
-    "slug": "patapatti-strips",
+    "slug": "strips",
     "std": "ASTM A240 / ASTM A666",
     "type": "SUPPLIER & STOCKIST",
-    "title": "PATAPATTI / STRIPS",
+    "title": "STRIPS",
     "subtitle": "Precision Narrow Slit Strips & Continuous Patti",
     "category": "Bars & Rods",
-    "image": "/images/products/flat-bar.jpg",
-    "gallery": [
-      "/images/products/flat-bar.jpg"
-    ],
-    "materials": [
-      "Stainless Steel",
-      "Carbon Steel",
-      "Brass",
-      "Copper"
-    ],
-    "grades": [
-      "SS 202, 304, 304L, 316, 316L, 410, 430"
-    ],
+    "image": "/images/products/strips.jpg",
+    "gallery": ["/images/products/strips.jpg"],
+    "materials": ["Stainless Steel", "Carbon Steel", "Brass", "Copper"],
+    "grades": ["SS 202, 304, 304L, 316, 316L, 410, 430"],
     "types": [
       "Slit Edge Patti",
       "Deburred Round Edge Strips",
@@ -998,10 +922,8 @@
     "title": "RING",
     "subtitle": "Seamless Forged & Rolled Rings",
     "category": "Flanges",
-    "image": "/images/products/flanges.jpg",
-    "gallery": [
-      "/images/products/flanges.jpg"
-    ],
+    "image": "/images/products/ring.jpg",
+    "gallery": ["/images/products/ring.jpg"],
     "materials": [
       "Carbon Steel",
       "Alloy Steel",
@@ -1009,9 +931,7 @@
       "Duplex",
       "Titanium"
     ],
-    "grades": [
-      "ASTM A105, A350 LF2, A182 F304/F316/F11/F22/F91, Duplex F51"
-    ],
+    "grades": ["ASTM A105, A350 LF2, A182 F304/F316/F11/F22/F91, Duplex F51"],
     "types": [
       "Contour Rolled Rings",
       "Rectangular Forged Rings",
@@ -1040,18 +960,9 @@
     "subtitle": "Industrial Spring Wires, TIG/MIG Welding & Tie Wires",
     "category": "Screens & Mesh",
     "image": "/images/products/wire-mesh.jpg",
-    "gallery": [
-      "/images/products/wire-mesh.jpg"
-    ],
-    "materials": [
-      "Stainless Steel",
-      "Inconel",
-      "Monel",
-      "Carbon Steel"
-    ],
-    "grades": [
-      "SS 302, 304, 316, 310, Inconel 600, Monel 400"
-    ],
+    "gallery": ["/images/products/wire-mesh.jpg"],
+    "materials": ["Stainless Steel", "Inconel", "Monel", "Carbon Steel"],
+    "grades": ["SS 302, 304, 316, 310, Inconel 600, Monel 400"],
     "types": [
       "Spring Steel Wires",
       "MIG & TIG Filler Wires",
@@ -1068,47 +979,6 @@
       {
         "label": "Packaging",
         "value": "Coils, Wooden Spools, DIN 250 Plastic Spools"
-      }
-    ]
-  },
-  {
-    "id": 22,
-    "slug": "specialist-alloy-steel",
-    "std": "ASTM A335 / ASTM A234 / ASTM A182 (P11, P22, P91, P92)",
-    "type": "SUPPLIER & STOCKIST",
-    "title": "SPECIALIST ALLOY STEEL PRODUCTS",
-    "subtitle": "High-Temperature & High-Pressure Creep-Resistant Products",
-    "category": "Pipes & Tubes",
-    "image": "/images/products/pipes.jpg",
-    "gallery": [
-      "/images/products/pipes.jpg"
-    ],
-    "materials": [
-      "Alloy Steel (P5, P9, P11, P22, P91, P92, 16Mo3)"
-    ],
-    "grades": [
-      "ASTM A335 P11, P22, P91, P92, A234 WP11, WP22, WP91, A182 F11, F22, F91"
-    ],
-    "types": [
-      "Seamless Heavy Wall Pipes",
-      "Superheater & Reheater Tubes",
-      "Induction Pipe Bends (3D/5D)",
-      "High-Pressure Forged Headers"
-    ],
-    "sizes": "1/2\" NB to 36\" NB; Wall Thickness up to 100 mm",
-    "description": "Engineered creep-resistant and high-temperature alloy steel pipes, heavy wall forged fittings, and power boiler headers for ultra-supercritical thermal power stations and petrochemical cracking furnaces.",
-    "specifications": [
-      {
-        "label": "Service Temperature",
-        "value": "Creep resistant up to 650°C"
-      },
-      {
-        "label": "Testing",
-        "value": "100% UT, Hardness testing, Positive Material Identification (PMI)"
-      },
-      {
-        "label": "Certificates",
-        "value": "IBR Certified Form III-A / EN 10204 Type 3.1 & 3.2"
       }
     ]
   }

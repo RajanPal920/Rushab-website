@@ -17,11 +17,15 @@
   font-weight: 700;
   padding: 11px 22px;
   border-radius: 6px;
-  border: 1px solid #CBD5E1;
+  border: 1px solid #cbd5e1;
   background: var(--white);
   color: var(--slate-700);
   cursor: pointer;
   transition: all var(--transition-fast);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .mat-switch-btn:hover {
@@ -30,7 +34,11 @@
 }
 
 .mat-switch-btn.active {
-  background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--dark-navy) 0%,
+    var(--primary-blue) 100%
+  );
   color: var(--white);
   border-color: var(--dark-navy);
   box-shadow: 0 4px 14px rgba(16, 24, 79, 0.2);
@@ -67,7 +75,7 @@
   gap: 12px;
   margin-bottom: 1rem;
   padding-bottom: 0.85rem;
-  border-bottom: 1px solid #F1F5F9;
+  border-bottom: 1px solid #f1f5f9;
 }
 
 .mat-category-tag {
@@ -96,8 +104,8 @@
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--slate-600);
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   padding: 4px 10px;
   border-radius: 4px;
   text-align: right;
@@ -107,8 +115,8 @@
 
 .mat-standards-row {
   font-size: 0.825rem;
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   padding: 8px 12px;
   border-radius: 6px;
   margin-bottom: 1.15rem;
@@ -184,13 +192,13 @@
   gap: 8px;
   margin-top: auto;
   padding-top: 1.15rem;
-  border-top: 1px solid #F1F5F9;
+  border-top: 1px solid #f1f5f9;
   flex-wrap: wrap;
 }
 
 /* Bottom Cert Banner */
 .mat-cert-banner {
-  background: linear-gradient(135deg, var(--very-light-blue) 0%, #FFFFFF 100%);
+  background: linear-gradient(135deg, var(--very-light-blue) 0%, #ffffff 100%);
   border: 1px solid rgba(27, 147, 207, 0.4);
   border-radius: 12px;
   padding: 2rem 2.5rem;
@@ -233,9 +241,36 @@
   line-height: 1.55;
 }
 
+/* ------------------------------------------------------------
+   MOBILE RESPONSIVE FIXES (overflow + button text fix)
+   ------------------------------------------------------------ */
 @media (max-width: 640px) {
+  .materials-group-switcher {
+    gap: 8px;
+    padding: 0 0.75rem;
+  }
+
+  .mat-switch-btn {
+    font-size: 0.75rem;
+    padding: 9px 14px;
+    white-space: normal;
+    word-break: break-word;
+    text-align: center;
+    max-width: 100%;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.35;
+  }
+
   .materials-cards-grid {
     grid-template-columns: 1fr;
+  }
+
+  .material-detail-card {
+    padding: 1.25rem;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .mat-card-header {
@@ -245,5 +280,13 @@
   .mat-feature-tag {
     max-width: 100%;
     text-align: left;
+  }
+
+  .mat-cert-banner {
+    padding: 1.5rem;
+  }
+
+  .cert-banner-text {
+    min-width: 0;
   }
 }

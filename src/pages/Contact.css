@@ -217,6 +217,8 @@
 .contact-field input,
 .contact-field select,
 .contact-field textarea {
+  width: 100%;
+  max-width: 100%;
   padding: 11px 14px;
   border: 1px solid #CBD5E1;
   border-radius: 6px;
@@ -340,12 +342,43 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .contact-form-row {
     grid-template-columns: 1fr;
   }
 
+  .form-wrapper-box {
+    padding: 1.5rem 1.25rem;
+  }
+  
+  .location-logistics-box {
+    padding: 1.5rem 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .llb-left {
+    min-width: 100%;
+  }
+
+  .c-info-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .c-info-text {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .contact-main-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
   .llb-right {
     flex-wrap: wrap;
+    gap: 1rem;
   }
 }
