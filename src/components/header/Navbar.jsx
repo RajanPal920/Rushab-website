@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   FaBars,
   FaTimes,
@@ -7,62 +8,84 @@ import {
   FaFacebookF,
   FaInstagram,
   FaWhatsapp,
-  FaLinkedinIn
-} from 'react-icons/fa';
-import TopBar from './TopBar';
-import { siteConfig } from '../../data/siteConfig';
-import { navigationLinks } from '../../data/navigation';
+  FaLinkedinIn,
+  FaChevronDown,
+} from "react-icons/fa";
+import TopBar from "./TopBar";
+import NavMegaMenu from "./NavMegaMenu";
+import { siteConfig } from "../../data/siteConfig";
+import { navigationLinks } from "../../data/navigation";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(null); // 'products' | 'materials' | 'certificates' | null
+  const location = useLocation();
+  const hoverTimeoutRef = useRef(null);
 
-  // Monitor scroll for subtle sticky header compression
+  // Close menus on route change
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 30) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+    setActiveMenu(null);
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+  // Monitor scroll
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 30);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Lock background scroll when mobile menu is open
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    if (mobileMenuOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [mobileMenuOpen]);
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen((prev) => !prev);
+  // Cleanup hover timeout
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+    };
+  }, []);
+
+  const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
+  // Hover handlers with slight delay (better UX)
+  const handleMouseEnter = (menuKey) => {
+    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+    setActiveMenu(menuKey);
   };
 
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
+  const handleMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setActiveMenu(null);
+    }, 150);
+  };
+
+  // Decide which menu a nav link triggers (if any)
+  const getMenuKeyForLink = (link) => {
+    const name = link.name.toLowerCase();
+    if (name === "products") return "products";
+    if (name === "materials") return "materials";
+    if (name === "certificates") return "certificates";
+    return null;
   };
 
   return (
-    <header className={`header-wrapper ${isScrolled ? 'is-scrolled' : ''}`}>
-      {/* 1. Slim Professional Top Contact Bar */}
+    <header className={`header-wrapper ${isScrolled ? "is-scrolled" : ""}`}>
       <TopBar />
 
-      {/* 2. Main Navigation Bar */}
       <nav className="main-navbar" aria-label="Main Navigation">
         <div className="container navbar-container">
-          {/* Left: Brand Logo Area */}
+          {/* Left: Brand Logo */}
           <div className="navbar-logo-area">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="navbar-brand"
               aria-label={`${siteConfig.companyName} Home`}
             >
@@ -71,54 +94,85 @@ export default function Navbar() {
                 alt={siteConfig.companyName}
                 className="brand-logo-img"
               />
-            </a>
+            </Link>
           </div>
 
-          {/* Center: Visually Centered Navigation Links Area */}
+          {/* Center: Navigation Links with Mega Menu */}
           <div className="navbar-nav-area">
             <div className="desktop-nav">
-              {navigationLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`nav-link ${link.active ? 'active' : ''}`}
-                  aria-current={link.active ? 'page' : undefined}
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navigationLinks.map((link) => {
+                const menuKey = getMenuKeyForLink(link);
+
+                if (menuKey) {
+                  return (
+                    <div
+                      key={link.name}
+                      className="nav-item-has-mega"
+                      onMouseEnter={() => handleMouseEnter(menuKey)}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      <Link
+                        to={link.href}
+                        className={`nav-link ${activeMenu === menuKey ? "active" : ""} ${link.active ? "active" : ""}`}
+                      >
+                        {link.name}
+                        <FaChevronDown
+                          style={{ fontSize: "0.6em", marginLeft: "6px" }}
+                        />
+                      </Link>
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className={`nav-link ${link.active ? "active" : ""}`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
-          {/* Right: Action Area (Get Quote & Mobile Toggle) */}
+          {/* Right: Actions */}
           <div className="navbar-action-area">
-            <a href="/contact" className="nav-quote-btn">
+            <Link to="/contact" className="nav-quote-btn">
               GET QUOTE
-            </a>
+            </Link>
 
-            {/* Mobile Hamburger Toggle Button */}
             <button
               type="button"
               className="mobile-menu-toggle"
               onClick={toggleMobileMenu}
               aria-expanded={mobileMenuOpen}
-              aria-label={mobileMenuOpen ? 'Close menu' : 'Open navigation menu'}
+              aria-label={
+                mobileMenuOpen ? "Close menu" : "Open navigation menu"
+              }
             >
               {mobileMenuOpen ? <FaTimes /> : <FaBars />}
             </button>
           </div>
         </div>
+
+        {/* ✅ Mega Menu Render */}
+        <NavMegaMenu
+          activeMenu={activeMenu}
+          onClose={() => setActiveMenu(null)}
+        />
       </nav>
 
-      {/* 3. Mobile Navigation Drawer & Backdrop */}
+      {/* Mobile Drawer */}
       <div
-        className={`mobile-menu-backdrop ${mobileMenuOpen ? 'open' : ''}`}
+        className={`mobile-menu-backdrop ${mobileMenuOpen ? "open" : ""}`}
         onClick={closeMobileMenu}
         aria-hidden={!mobileMenuOpen}
       />
 
       <aside
-        className={`mobile-drawer ${mobileMenuOpen ? 'open' : ''}`}
+        className={`mobile-drawer ${mobileMenuOpen ? "open" : ""}`}
         aria-label="Mobile Navigation Menu"
         aria-hidden={!mobileMenuOpen}
       >
@@ -141,25 +195,24 @@ export default function Navbar() {
         <ul className="mobile-nav-list">
           {navigationLinks.map((link) => (
             <li key={link.name} className="mobile-nav-item">
-              <a
-                href={link.href}
-                className={`mobile-nav-link ${link.active ? 'active' : ''}`}
+              <Link
+                to={link.href}
+                className={`mobile-nav-link ${link.active ? "active" : ""}`}
                 onClick={closeMobileMenu}
-                aria-current={link.active ? 'page' : undefined}
               >
                 <span>{link.name}</span>
                 {link.active && <span className="active-dot">•</span>}
-              </a>
+              </Link>
             </li>
           ))}
           <li className="mobile-nav-item mobile-quote-item">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="mobile-quote-btn"
               onClick={closeMobileMenu}
             >
               GET QUOTE
-            </a>
+            </Link>
           </li>
         </ul>
 

@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import productsData from '../data/products.json';
-import { siteConfig } from '../data/siteConfig';
-import Button from '../components/Button';
-import ProductCard from '../components/ProductCard';
+import React, { useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import productsData from "../data/products.json";
+import { getVariantsByProduct } from "../data/productVariants";
+import { siteConfig } from "../data/siteConfig";
+import Button from "../components/Button";
+import ProductCard from "../components/ProductCard";
 import {
   FiCheckCircle,
   FiFileText,
   FiShield,
   FiSend,
-  FiBox
-} from 'react-icons/fi';
-import { FaWhatsapp } from 'react-icons/fa';
-import './ProductDetails.css';
+  FiBox,
+} from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
+import "./ProductDetails.css";
+import "./VariantDetails.css";
 
 export default function ProductDetails() {
   const { slug } = useParams();
@@ -20,20 +22,25 @@ export default function ProductDetails() {
   // Find product by slug
   const product = productsData.find((p) => p.slug === slug) || productsData[0];
 
+  // ✅ Get variants for this product
+  const variants = getVariantsByProduct(slug);
+
   const [activeImage, setActiveImage] = useState(
     product && product.gallery && product.gallery.length > 0
       ? product.gallery[0]
-      : product ? product.image : "/images/products/pipes.jpg"
+      : product
+        ? product.image
+        : "/images/products/pipes.jpg",
   );
 
   const [quoteSubmitted, setQuoteSubmitted] = useState(false);
   const [quoteForm, setQuoteForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    quantity: '',
-    specification: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    quantity: "",
+    specification: "",
+    message: "",
   });
 
   if (!product) {
@@ -41,19 +48,26 @@ export default function ProductDetails() {
       <div className="product-not-found-section section-py container">
         <h2>Product Not Found</h2>
         <p>The requested product category could not be located.</p>
-        <Button to="/products" variant="primary">Return to Catalog</Button>
+        <Button to="/products" variant="primary">
+          Return to Catalog
+        </Button>
       </div>
     );
   }
 
   // Related products
   const relatedProducts = productsData
-    .filter((p) => p.id !== product.id && (p.category === product.category || p.materials.some(m => product.materials.includes(m))))
+    .filter(
+      (p) =>
+        p.id !== product.id &&
+        (p.category === product.category ||
+          p.materials.some((m) => product.materials.includes(m))),
+    )
     .slice(0, 3);
 
-  // WhatsApp Inquiry URL with pre-filled product details
+  // WhatsApp Inquiry URL
   const waProductText = encodeURIComponent(
-    `Hello Rushab Metal Industries, I am interested in inquiring about "${product.title}" (${product.std || ''}). Please provide availability and technical quotation.`
+    `Hello Rushab Metal Industries, I am interested in inquiring about "${product.title}" (${product.std || ""}). Please provide availability and technical quotation.`,
   );
   const waProductUrl = `https://wa.me/${siteConfig.whatsappNumber}?text=${waProductText}`;
 
@@ -72,9 +86,13 @@ export default function ProductDetails() {
       <div className="details-breadcrumb-bar">
         <div className="container">
           <nav className="breadcrumb-nav" aria-label="Breadcrumb">
-            <Link to="/" className="bc-link">Home</Link>
+            <Link to="/" className="bc-link">
+              Home
+            </Link>
             <span className="bc-sep">/</span>
-            <Link to="/products" className="bc-link">Products</Link>
+            <Link to="/products" className="bc-link">
+              Products
+            </Link>
             <span className="bc-sep">/</span>
             <span className="bc-current">{product.title}</span>
           </nav>
@@ -85,7 +103,7 @@ export default function ProductDetails() {
       <section className="section-py-sm bg-white">
         <div className="container">
           <div className="product-main-grid">
-            {/* Left Column: Gallery & Media */}
+            {/* Left Column: Gallery */}
             <div className="product-gallery-col">
               <div className="main-image-display">
                 <img
@@ -99,14 +117,13 @@ export default function ProductDetails() {
                 </div>
               </div>
 
-              {/* Thumbnail Gallery */}
               {product.gallery && product.gallery.length > 1 && (
                 <div className="thumbnails-strip">
                   {product.gallery.map((imgSrc, i) => (
                     <button
                       key={i}
                       type="button"
-                      className={`thumbnail-btn ${activeImage === imgSrc ? 'active' : ''}`}
+                      className={`thumbnail-btn ${activeImage === imgSrc ? "active" : ""}`}
                       onClick={() => setActiveImage(imgSrc)}
                       aria-label={`Select product image ${i + 1}`}
                     >
@@ -116,7 +133,6 @@ export default function ProductDetails() {
                 </div>
               )}
 
-              {/* Assurance Trust Badges */}
               <div className="gallery-trust-badges">
                 <div className="trust-badge-item">
                   <FiShield className="t-icon" />
@@ -133,7 +149,7 @@ export default function ProductDetails() {
               </div>
             </div>
 
-            {/* Right Column: Information & Actions */}
+            {/* Right Column: Info */}
             <div className="product-info-col">
               <div className="product-meta-header">
                 <span className="p-category-pill">{product.category}</span>
@@ -147,27 +163,30 @@ export default function ProductDetails() {
                 <p>{product.description}</p>
               </div>
 
-              {/* Available Materials Chips */}
               {product.materials && (
                 <div className="p-materials-section">
-                  <h4 className="p-sub-heading">Available Material Metallurgy:</h4>
+                  <h4 className="p-sub-heading">
+                    Available Material Metallurgy:
+                  </h4>
                   <div className="materials-badge-grid">
                     {product.materials.map((mat, i) => (
-                      <span key={i} className="mat-badge-tag">{mat}</span>
+                      <span key={i} className="mat-badge-tag">
+                        {mat}
+                      </span>
                     ))}
                   </div>
                 </div>
               )}
 
-              {/* Execution Forms & Sizes */}
               {product.sizes && (
                 <div className="p-sizes-section">
-                  <h4 className="p-sub-heading">Standard Size Range & Schedules:</h4>
+                  <h4 className="p-sub-heading">
+                    Standard Size Range & Schedules:
+                  </h4>
                   <p className="sizes-text-highlight">{product.sizes}</p>
                 </div>
               )}
 
-              {/* Action Buttons */}
               <div className="p-cta-actions-row">
                 <a
                   href={waProductUrl}
@@ -179,10 +198,7 @@ export default function ProductDetails() {
                   <span>Inquire on WhatsApp</span>
                 </a>
 
-                <a
-                  href="#rfq-form"
-                  className="quote-inquiry-action-btn"
-                >
+                <a href="/contact" className="quote-inquiry-action-btn">
                   <FiSend className="btn-icon-rfq" />
                   <span>Request Written Quote</span>
                 </a>
@@ -192,17 +208,89 @@ export default function ProductDetails() {
         </div>
       </section>
 
-      {/* Specifications & Available Grades Tabular Breakdown */}
+      {/* ============================================================
+          ✅ VARIANTS GRID — Cards for SS 304, SS 316, CS, etc.
+          ============================================================ */}
+      {variants.length > 0 && (
+        <section className="section-py bg-light-steel">
+          <div className="container">
+            <div
+              className="section-header-compact"
+              style={{ textAlign: "center", marginBottom: "2rem" }}
+            >
+              <h2 className="section-title">
+                Available {product.title} Grades & Variants
+              </h2>
+              <p className="section-description">
+                Click any variant below to view its detailed technical
+                specifications, sizes, and standards.
+              </p>
+            </div>
+
+            <div className="variants-grid">
+              {variants.map((variant) => (
+                <Link
+                  key={variant.slug}
+                  to={`/products/${slug}/${variant.slug}`}
+                  className="variant-card"
+                >
+                  <div className="variant-card-image">
+                    <img
+                      src={variant.image}
+                      alt={variant.title}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="variant-card-body">
+                    {/* materialGroup as top badge (e.g. "Stainless Steel") */}
+                    <span className="variant-card-grade">
+                      {variant.materialGroup}
+                    </span>
+
+                    <h4 className="variant-card-title">{variant.title}</h4>
+
+                    {/* shortDescription instead of subtitle */}
+                    <p className="variant-card-subtitle">
+                      {variant.shortDescription}
+                    </p>
+
+                    {/* Standards preview */}
+                    {variant.standards && (
+                      <p
+                        style={{
+                          fontSize: "0.7rem",
+                          color: "#94A3B8",
+                          margin: "0.5rem 0 0",
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        <strong style={{ color: "#1B93CF" }}>STD:</strong>{" "}
+                        {variant.standards}
+                      </p>
+                    )}
+
+                    <span className="variant-card-cta">VIEW DETAILS →</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Specifications & Grades */}
       <section className="section-py bg-light-steel">
         <div className="container">
           <div className="specs-section-container">
-            <h2 className="specs-section-title">Technical Specifications & Standard Grades</h2>
+            <h2 className="specs-section-title">
+              Technical Specifications & Standard Grades
+            </h2>
             <p className="specs-section-subtitle">
-              Comprehensive dimensional and metallurgical parameters for {product.title} supplied by Rushab Metal Industries.
+              Comprehensive dimensional and metallurgical parameters for{" "}
+              {product.title} supplied by Rushab Metal Industries.
             </p>
 
             <div className="specs-two-col-layout">
-              {/* Left: Specifications Table */}
               {product.specifications && (
                 <div className="specs-table-card">
                   <h3 className="specs-card-title">Technical Parameters</h3>
@@ -221,11 +309,12 @@ export default function ProductDetails() {
                 </div>
               )}
 
-              {/* Right: Grades & Execution Forms */}
               <div className="grades-forms-card">
                 {product.grades && (
                   <div className="grades-block">
-                    <h3 className="specs-card-title">Commonly Supplied Grades</h3>
+                    <h3 className="specs-card-title">
+                      Commonly Supplied Grades
+                    </h3>
                     <ul className="grades-list">
                       {product.grades.map((grade, i) => (
                         <li key={i}>
@@ -239,7 +328,9 @@ export default function ProductDetails() {
 
                 {product.types && (
                   <div className="types-block">
-                    <h4 className="types-title">Execution Forms & Product Variations</h4>
+                    <h4 className="types-title">
+                      Execution Forms & Product Variations
+                    </h4>
                     <ul className="types-list">
                       {product.types.map((t, i) => (
                         <li key={i} className="type-item">
@@ -256,15 +347,19 @@ export default function ProductDetails() {
         </div>
       </section>
 
-      {/* Quotation Request Form Formatted for This Product */}
+      {/* RFQ Form */}
       <section className="section-py bg-white" id="rfq-form">
         <div className="container">
           <div className="rfq-wrapper-card">
             <div className="rfq-header">
               <span className="rfq-tag">DIRECT COMMERCIAL INQUIRY</span>
-              <h2 className="rfq-title">Request Quotation for {product.title}</h2>
+              <h2 className="rfq-title">
+                Request Quotation for {product.title}
+              </h2>
               <p className="rfq-desc">
-                Submit your required size, schedule, grade, and quantity. Our technical sales team in Mumbai will provide competitive pricing and dispatch schedules.
+                Submit your required size, schedule, grade, and quantity. Our
+                technical sales team in Mumbai will provide competitive pricing
+                and dispatch schedules.
               </p>
             </div>
 
@@ -273,9 +368,14 @@ export default function ProductDetails() {
                 <FiCheckCircle className="success-icon" />
                 <h3>Thank you for your RFQ</h3>
                 <p>
-                  Your inquiry for <strong>{product.title}</strong> has been received. Our sales engineer will review your specifications and contact you shortly.
+                  Your inquiry for <strong>{product.title}</strong> has been
+                  received. Our sales engineer will review your specifications
+                  and contact you shortly.
                 </p>
-                <Button onClick={() => setQuoteSubmitted(false)} variant="secondary">
+                <Button
+                  onClick={() => setQuoteSubmitted(false)}
+                  variant="secondary"
+                >
                   Submit Another Inquiry
                 </Button>
               </div>
@@ -322,7 +422,9 @@ export default function ProductDetails() {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="quantity">Approx Quantity & Dimensions</label>
+                    <label htmlFor="quantity">
+                      Approx Quantity & Dimensions
+                    </label>
                     <input
                       type="text"
                       id="quantity"
@@ -335,19 +437,26 @@ export default function ProductDetails() {
                 </div>
 
                 <div className="form-group full-width">
-                  <label htmlFor="message">Required Grade, Standard & Notes</label>
+                  <label htmlFor="message">
+                    Required Grade, Standard & Notes
+                  </label>
                   <textarea
                     id="message"
                     name="message"
                     rows="4"
-                    placeholder={`Specify ASTM/ASME standard, preferred material grade (e.g. SS 316L, Inconel 625), test certificate needs (EN 10204 3.1), and delivery destination...`}
+                    placeholder="Specify ASTM/ASME standard, preferred material grade (e.g. SS 316L, Inconel 625), test certificate needs (EN 10204 3.1), and delivery destination..."
                     value={quoteForm.message}
                     onChange={handleFormChange}
                   ></textarea>
                 </div>
 
                 <div className="form-submit-row">
-                  <Button type="submit" variant="primary" size="lg" icon={<FiSend />}>
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    size="lg"
+                    icon={<FiSend />}
+                  >
                     Submit RFQ to Sales Desk
                   </Button>
                   <span className="submit-disclaimer">
@@ -360,14 +469,17 @@ export default function ProductDetails() {
         </div>
       </section>
 
-      {/* Related Products Section */}
+      {/* Related Products */}
       {relatedProducts.length > 0 && (
         <section className="section-py bg-light-steel">
           <div className="container">
             <div className="section-header-compact">
-              <h3 className="section-title">Related Piping & Fitting Solutions</h3>
+              <h3 className="section-title">
+                Related Piping & Fitting Solutions
+              </h3>
               <p className="section-description">
-                Explore complementary components and materials frequently ordered alongside {product.title}.
+                Explore complementary components and materials frequently
+                ordered alongside {product.title}.
               </p>
             </div>
 

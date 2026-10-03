@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import HeroSlider from '../components/hero/HeroSlider';
-import Marquee from '../components/home/Marquee';
-import WhyChooseUs from '../components/home/WhyChooseUs';
-import ThirdPartyMarquee from '../components/home/ThirdPartyMarquee';
-import WorldwideSupply from '../components/home/WorldwideSupply';
-import SectionTitle from '../components/SectionTitle';
-import Button from '../components/Button';
-import ProductCard from '../components/ProductCard';
-import IndustryCard from '../components/IndustryCard';
-import CatalogueDownloads from '../components/home/CatalogueDownloads';
-import productsData from '../data/products.json';
-import { siteConfig } from '../data/siteConfig';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import HeroSlider from "../components/hero/HeroSlider";
+import Marquee from "../components/home/Marquee";
+import WhyChooseUs from "../components/home/WhyChooseUs";
+import ThirdPartyMarquee from "../components/home/ThirdPartyMarquee";
+import WorldwideSupply from "../components/home/WorldwideSupply";
+import SectionTitle from "../components/SectionTitle";
+import Button from "../components/Button";
+import ProductCard from "../components/ProductCard";
+import IndustryCard from "../components/IndustryCard";
+import CatalogueDownloads from "../components/home/CatalogueDownloads";
+import productsData from "../data/products.json";
+import { siteConfig } from "../data/siteConfig";
 
 import {
   FiCheckCircle,
@@ -24,55 +24,85 @@ import {
   FiActivity,
   FiLayers,
   FiShield,
-  FiMessageCircle
-} from 'react-icons/fi';
+  FiMessageCircle,
+} from "react-icons/fi";
 
-import './Home.css';
+import "./Home.css";
 
-// Industries with authentic images from /images/industiresimage folder
 const featuredIndustries = [
   {
     title: "Oil & Gas / Offshore",
-    image: "/images/industiresimage/oil.jpg",
+    image: "/images/industriesimage/oil.jpg", // ✅ FIXED
     icon: <FiDroplet />,
-    description: "High-pressure seamless pipes, forged fittings, and duplex flanges for upstream exploration and midstream transmission.",
-    products: ["ASTM A312 TP316L", "API 5L X52/X65", "Duplex UNS S31803", "3000# Forged Fittings"]
+    description:
+      "High-pressure seamless pipes, forged fittings, and duplex flanges for upstream exploration and midstream transmission.",
+    products: [
+      "ASTM A312 TP316L",
+      "API 5L X52/X65",
+      "Duplex UNS S31803",
+      "3000# Forged Fittings",
+    ],
   },
   {
     title: "Refinery & Petrochemical",
-    image: "/images/industiresimage/petrochemical.jpg",
+    image: "/images/industriesimage/petrochemical.jpg",
     icon: <FiLayers />,
-    description: "Corrosion-resistant alloy piping, heavy-wall butt weld fittings, and heat exchanger tubes engineered for severe thermal service.",
-    products: ["ASTM A335 P11/P22/P91", "ASTM A234 WPB", "Alloy 20", "Inconel 625"]
+    description:
+      "Corrosion-resistant alloy piping, heavy-wall butt weld fittings, and heat exchanger tubes engineered for severe thermal service.",
+    products: [
+      "ASTM A335 P11/P22/P91",
+      "ASTM A234 WPB",
+      "Alloy 20",
+      "Inconel 625",
+    ],
   },
   {
     title: "Chemical & Fertilizer",
-    image: "/images/industiresimage/chemical.jpg",
+    image: "/images/industriesimage/chemical.jpg",
     icon: <FiActivity />,
-    description: "Acid-resistant stainless steel sheets, seamless tubing, and PTFE gasketed flanges for aggressive chemical media.",
-    products: ["SS 904L", "Hastelloy C276", "Monel 400", "Titanium Gr. 2"]
+    description:
+      "Acid-resistant stainless steel sheets, seamless tubing, and PTFE gasketed flanges for aggressive chemical media.",
+    products: ["SS 904L", "Hastelloy C276", "Monel 400", "Titanium Gr. 2"],
   },
   {
     title: "Thermal & Nuclear Power",
-    image: "/images/industiresimage/power-plant.jpg",
+    image: "/images/industriesimage/power-plant.jpg",
     icon: <FiZap />,
-    description: "High-temperature alloy tubes, steam-line piping, and high-tensile stud bolts meeting strict ASME boiler and pressure vessel codes.",
-    products: ["SA 213 T91/T22", "ASTM A193 B7/B16", "High Pressure Flanges", "Steam Traps"]
+    description:
+      "High-temperature alloy tubes, steam-line piping, and high-tensile stud bolts meeting strict ASME boiler and pressure vessel codes.",
+    products: [
+      "SA 213 T91/T22",
+      "ASTM A193 B7/B16",
+      "High Pressure Flanges",
+      "Steam Traps",
+    ],
   },
   {
     title: "Automobile & Engineering",
-    image: "/images/industiresimage/automobile.jpg",
+    image: "/images/industriesimage/automobile.jpg",
     icon: <FiCpu />,
-    description: "Bright round bars, precision capillary tubing, hex bars, and structural flat bars for CNC machining and automotive components.",
-    products: ["ASTM A276 SS 304/316", "Hex & Square Bars", "Cold Drawn Tubes", "Fasteners"]
+    description:
+      "Bright round bars, precision capillary tubing, hex bars, and structural flat bars for CNC machining and automotive components.",
+    products: [
+      "ASTM A276 SS 304/316",
+      "Hex & Square Bars",
+      "Cold Drawn Tubes",
+      "Fasteners",
+    ],
   },
   {
     title: "Food & Pharmaceutical",
-    image: "/images/industiresimage/food.jpg",
+    image: "/images/industriesimage/food.jpg",
     icon: <FiCheckCircle />,
-    description: "Sanitary mirror-polished tubing, electro-polished fittings, and wire mesh filter cloth ensuring utmost hygiene and chemical passivity.",
-    products: ["ASTM A270 SS 316L", "Dairy Fittings", "Wire Mesh Cloth", "Sanitary Valves"]
-  }
+    description:
+      "Sanitary mirror-polished tubing, electro-polished fittings, and wire mesh filter cloth ensuring utmost hygiene and chemical passivity.",
+    products: [
+      "ASTM A270 SS 316L",
+      "Dairy Fittings",
+      "Wire Mesh Cloth",
+      "Sanitary Valves",
+    ],
+  },
 ];
 
 export default function Home() {
@@ -86,12 +116,19 @@ export default function Home() {
     "Fasteners",
     "Sheets & Plates",
     "Bars & Rods",
-    "Valves & Flow Control"
+    "Valves & Flow Control",
   ];
 
-  const filteredProducts = activeCategory === "All"
-    ? productsData.slice(0, 8)
-    : productsData.filter(p => p.category === activeCategory || (activeCategory === "Fittings" && p.category === "Fittings")).slice(0, 8);
+  const filteredProducts =
+    activeCategory === "All"
+      ? productsData.slice(0, 8)
+      : productsData
+          .filter(
+            (p) =>
+              p.category === activeCategory ||
+              (activeCategory === "Fittings" && p.category === "Fittings"),
+          )
+          .slice(0, 8);
 
   return (
     <div className="home-page-container">
@@ -102,7 +139,10 @@ export default function Home() {
       <Marquee />
 
       {/* 6. Existing Products Section — Visual Redesign Only */}
-      <section className="home-products-section section-py bg-light-steel" id="products-catalog">
+      <section
+        className="home-products-section section-py bg-light-steel"
+        id="products-catalog"
+      >
         <div className="container">
           <SectionTitle
             subtitle="Engineering Inventory & Production"
@@ -117,7 +157,7 @@ export default function Home() {
               <button
                 key={cat}
                 type="button"
-                className={`category-tab-btn ${activeCategory === cat ? 'active' : ''}`}
+                className={`category-tab-btn ${activeCategory === cat ? "active" : ""}`}
                 onClick={() => setActiveCategory(cat)}
               >
                 {cat}
@@ -133,7 +173,12 @@ export default function Home() {
           </div>
 
           <div className="products-view-all-box">
-            <Button to="/catalogue" variant="primary" size="lg" icon={<FiArrowRight />}>
+            <Button
+              to="/catalogue"
+              variant="primary"
+              size="lg"
+              icon={<FiArrowRight />}
+            >
               View & Download Complete Product Catalogue (PDF & Portal)
             </Button>
           </div>
@@ -144,7 +189,10 @@ export default function Home() {
       <CatalogueDownloads />
 
       {/* 4. Who We Are (Two-Column Layout) */}
-      <section className="home-intro-section section-py bg-light-steel" id="who-we-are">
+      <section
+        className="home-intro-section section-py bg-light-steel"
+        id="who-we-are"
+      >
         <div className="container">
           <div className="intro-grid">
             {/* Left: Professional Industrial Visual */}
@@ -163,9 +211,7 @@ export default function Home() {
               </div>
 
               <div className="intro-statement-card">
-                <p className="statement-text">
-                  "{siteConfig.motto}"
-                </p>
+                <p className="statement-text">"{siteConfig.motto}"</p>
               </div>
             </div>
 
@@ -175,43 +221,73 @@ export default function Home() {
                 <span className="subtitle-pulse-dot" />
                 <span className="section-subtitle-text">WHO WE ARE</span>
               </div>
-              <h2 className="intro-main-title">
-                {siteConfig.companyName}
-              </h2>
+              <h2 className="intro-main-title">{siteConfig.companyName}</h2>
               <h3 className="intro-sub-heading">
-                Exporters, Importers, Stockists & Suppliers of Ferrous & Non-Ferrous Metals
+                Exporters, Importers, Stockists & Suppliers of Ferrous &
+                Non-Ferrous Metals
               </h3>
               <p className="intro-para">
-                Based in Mumbai, India, <strong>Rushab Metal Industries (RMI)</strong> is an ISO 9001:2015 certified premier supplier and stockist serving critical industrial infrastructure across India and worldwide. We specialize in seamless & welded pipes, butt weld fittings, forged fittings, flanges, fasteners, sheets, plates, coils, valves, and specialty wire mesh.
+                Based in Mumbai, India,{" "}
+                <strong>Rushab Metal Industries (RMI)</strong> is an ISO
+                9001:2015 certified premier supplier and stockist serving
+                critical industrial infrastructure across India and worldwide.
+                We specialize in seamless & welded pipes, butt weld fittings,
+                forged fittings, flanges, fasteners, sheets, plates, coils,
+                valves, and specialty wire mesh.
               </p>
               <p className="intro-para">
-                Our inventory comprises a comprehensive spectrum of materials including Stainless Steel, Carbon Steel, Alloy Steel, Monel, Inconel, Hastelloy, Duplex, Super Duplex, Titanium, and other high-performance alloys.
+                Our inventory comprises a comprehensive spectrum of materials
+                including Stainless Steel, Carbon Steel, Alloy Steel, Monel,
+                Inconel, Hastelloy, Duplex, Super Duplex, Titanium, and other
+                high-performance alloys.
               </p>
 
               <div className="intro-key-points">
                 <div className="key-point-item">
                   <FiCheckCircle className="kp-icon" />
-                  <span>Buffer stock of standard-size pipes, fittings, and flanges ready for rapid dispatch</span>
+                  <span>
+                    Buffer stock of standard-size pipes, fittings, and flanges
+                    ready for rapid dispatch
+                  </span>
                 </div>
                 <div className="key-point-item">
                   <FiCheckCircle className="kp-icon" />
-                  <span>Custom manufacturing and cutting tailored to client engineering drawings</span>
+                  <span>
+                    Custom manufacturing and cutting tailored to client
+                    engineering drawings
+                  </span>
                 </div>
                 <div className="key-point-item">
                   <FiCheckCircle className="kp-icon" />
-                  <span>Raw materials sourced strictly from reputed domestic and international mills</span>
+                  <span>
+                    Raw materials sourced strictly from reputed domestic and
+                    international mills
+                  </span>
                 </div>
                 <div className="key-point-item">
                   <FiCheckCircle className="kp-icon" />
-                  <span>Manufacturer Test Certificates (MTC EN 10204 3.1) and Govt-approved laboratory reports</span>
+                  <span>
+                    Manufacturer Test Certificates (MTC EN 10204 3.1) and
+                    Govt-approved laboratory reports
+                  </span>
                 </div>
               </div>
 
               <div className="intro-action-row">
-                <Button to="/about" variant="primary" size="md" icon={<FiArrowRight />}>
+                <Button
+                  to="/about"
+                  variant="primary"
+                  size="md"
+                  icon={<FiArrowRight />}
+                >
                   About Rushab Metal Industries
                 </Button>
-                <Button to="/contact" variant="secondary" size="md" icon={<FiPhone />}>
+                <Button
+                  to="/contact"
+                  variant="secondary"
+                  size="md"
+                  icon={<FiPhone />}
+                >
                   Contact Technical Sales
                 </Button>
               </div>
@@ -223,10 +299,11 @@ export default function Home() {
       {/* 5. Why Choose Us — EXACTLY 9 Cards */}
       <WhyChooseUs />
 
-
-
       {/* 7. Testing & Integrity Section */}
-      <section className="home-quality-section section-py bg-white" id="testing-integrity">
+      <section
+        className="home-quality-section section-py bg-white"
+        id="testing-integrity"
+      >
         <div className="container">
           <div className="quality-preview-grid">
             {/* Left: Industrial/Testing Visual */}
@@ -252,13 +329,19 @@ export default function Home() {
             <div className="quality-text-side">
               <div className="section-subtitle-badge align-left">
                 <span className="subtitle-pulse-dot" />
-                <span className="section-subtitle-text">TESTING & INTEGRITY</span>
+                <span className="section-subtitle-text">
+                  TESTING & INTEGRITY
+                </span>
               </div>
               <h2 className="quality-heading">
                 Quality Assurance & Certified Testing
               </h2>
               <p className="quality-para">
-                At Rushab Metal Industries, our adherence to ISO 9001:2015 guarantees full material traceability from raw billet ingestion to final product delivery. Every single batch is verified against rigorous dimensional tolerances and metallurgical composition standards.
+                At Rushab Metal Industries, our adherence to ISO 9001:2015
+                guarantees full material traceability from raw billet ingestion
+                to final product delivery. Every single batch is verified
+                against rigorous dimensional tolerances and metallurgical
+                composition standards.
               </p>
 
               <div className="quality-checklist">
@@ -266,21 +349,30 @@ export default function Home() {
                   <FiCheckCircle className="qc-icon" />
                   <div>
                     <strong>Material Test Certificate (MTC)</strong>
-                    <p>Supplied with EN 10204 3.1 / 3.2 documentation detailing complete chemical and mechanical test values.</p>
+                    <p>
+                      Supplied with EN 10204 3.1 / 3.2 documentation detailing
+                      complete chemical and mechanical test values.
+                    </p>
                   </div>
                 </div>
                 <div className="qc-item">
                   <FiCheckCircle className="qc-icon" />
                   <div>
                     <strong>Government-Approved Laboratory Testing</strong>
-                    <p>Third-party physical, tensile, hardness, flattening, flare, and PMI test certificates available.</p>
+                    <p>
+                      Third-party physical, tensile, hardness, flattening,
+                      flare, and PMI test certificates available.
+                    </p>
                   </div>
                 </div>
                 <div className="qc-item">
                   <FiCheckCircle className="qc-icon" />
                   <div>
                     <strong>Third-Party Inspection Available on Request</strong>
-                    <p>Coordinated with international inspection authorities prior to packaging and dispatch.</p>
+                    <p>
+                      Coordinated with international inspection authorities
+                      prior to packaging and dispatch.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -294,11 +386,18 @@ export default function Home() {
                 <span className="test-badge">Tensile Testing</span>
                 <span className="test-badge">Hardness (Rockwell/Brinell)</span>
                 <span className="test-badge">Chemical Spectro Analysis</span>
-                <span className="test-badge">Intergranular Corrosion (IGC)</span>
+                <span className="test-badge">
+                  Intergranular Corrosion (IGC)
+                </span>
               </div>
 
               <div className="quality-action-buttons">
-                <Button to="/certificates" variant="primary" size="md" icon={<FiArrowRight />}>
+                <Button
+                  to="/certificates"
+                  variant="primary"
+                  size="md"
+                  icon={<FiArrowRight />}
+                >
                   View Quality Framework
                 </Button>
                 <Button to="/technical-data" variant="secondary" size="md">
@@ -314,7 +413,10 @@ export default function Home() {
       <ThirdPartyMarquee />
 
       {/* 9. Industries We Serve (With Images) */}
-      <section className="home-industries-section section-py bg-white" id="industries">
+      <section
+        className="home-industries-section section-py bg-white"
+        id="industries"
+      >
         <div className="container">
           <SectionTitle
             subtitle="Engineered for Critical Sectors"
@@ -337,7 +439,9 @@ export default function Home() {
 
           <div className="industries-footer-link-box">
             <Link to="/industries" className="view-all-industries-link">
-              <span>Explore All 21 Industrial Sectors Detailed in Our Brochure</span>
+              <span>
+                Explore All 21 Industrial Sectors Detailed in Our Brochure
+              </span>
               <FiArrowRight />
             </Link>
           </div>
@@ -357,13 +461,23 @@ export default function Home() {
                 Require Standard Inventory or Special Custom Fabrication?
               </h2>
               <p className="cta-text">
-                Send your Bill of Materials (BOM) or specifications to our technical sales team for immediate pricing, MTC verification, and dispatch timelines.
+                Send your Bill of Materials (BOM) or specifications to our
+                technical sales team for immediate pricing, MTC verification,
+                and dispatch timelines.
               </p>
               <div className="cta-contact-pills">
-                <a href={siteConfig.phoneHref} className="cta-pill" aria-label="Call Rushab Metal">
+                <a
+                  href={siteConfig.phoneHref}
+                  className="cta-pill"
+                  aria-label="Call Rushab Metal"
+                >
                   <FiPhone /> {siteConfig.phone}
                 </a>
-                <a href={siteConfig.emailHref} className="cta-pill" aria-label="Email Rushab Metal">
+                <a
+                  href={siteConfig.emailHref}
+                  className="cta-pill"
+                  aria-label="Email Rushab Metal"
+                >
                   <FiSend /> {siteConfig.email}
                 </a>
                 <a
@@ -378,7 +492,12 @@ export default function Home() {
               </div>
             </div>
             <div className="cta-btn-wrap">
-              <Button to="/contact" variant="cyan" size="lg" icon={<FiArrowRight />}>
+              <Button
+                to="/contact"
+                variant="cyan"
+                size="lg"
+                icon={<FiArrowRight />}
+              >
                 Submit Request For Quote
               </Button>
             </div>

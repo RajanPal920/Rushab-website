@@ -94,7 +94,7 @@ export const productsMegaMenu = {
         title: "Patta Patti",
         subtitle: "Hot Rolled Annealed & Cold Drawn Patti",
         image: "/images/products/flat-bar.jpg",
-        slug: "flat-bars",
+        slug: "patta-patti", // ✅ FIXED
       },
       {
         title: "Strips",
@@ -106,7 +106,7 @@ export const productsMegaMenu = {
         title: "Pipes & Tubes",
         subtitle: "Seamless, Welded & Heat Exchanger Tubing",
         image: "/images/products/pipes.jpg",
-        slug: "pipes-and-tubes",
+        slug: "pipes-tubes", // ✅ FIXED
       },
       {
         title: "Ring",

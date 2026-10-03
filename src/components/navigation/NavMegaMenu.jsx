@@ -1,16 +1,30 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaChevronRight, FaFilePdf, FaCheckCircle, FaAward, FaShieldAlt } from 'react-icons/fa';
-import { productsMegaMenu, materialsMegaMenu, certificatesMenu } from '../../data/megaMenuData';
-import './NavMegaMenu.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  FaChevronRight,
+  FaFilePdf,
+  FaCheckCircle,
+  FaAward,
+  FaShieldAlt,
+} from "react-icons/fa";
+import {
+  productsMegaMenu,
+  materialsMegaMenu,
+  certificatesMenu,
+} from "../../data/megaMenuData";
+import "./NavMegaMenu.css";
 
 export default function NavMegaMenu({ activeMenu, onClose }) {
   if (!activeMenu) return null;
 
-  if (activeMenu === 'products') {
+  if (activeMenu === "products") {
     const { manufacturer, supplier, footer } = productsMegaMenu;
     return (
-      <div className="mega-menu-overlay products-overlay" onMouseEnter={() => {}} onMouseLeave={onClose}>
+      <div
+        className="mega-menu-overlay products-overlay"
+        onMouseEnter={() => {}}
+        onMouseLeave={onClose}
+      >
         <div className="mega-menu-container products-mega-menu">
           {/* Main 2-Column Divisions */}
           <div className="mega-columns-grid">
@@ -18,7 +32,9 @@ export default function NavMegaMenu({ activeMenu, onClose }) {
             <div className="mega-column">
               <div className="mega-col-header">
                 <div className="mega-badge-row">
-                  <span className="mega-badge manufacturer">{manufacturer.badge}</span>
+                  <span className="mega-badge manufacturer">
+                    {manufacturer.badge}
+                  </span>
                   <span className="mega-count-text">{manufacturer.count}</span>
                 </div>
                 <h3 className="mega-col-title">{manufacturer.title}</h3>
@@ -29,7 +45,7 @@ export default function NavMegaMenu({ activeMenu, onClose }) {
                 {manufacturer.items.map((item) => (
                   <Link
                     key={item.title}
-                    to={`/products?category=${encodeURIComponent(item.title)}`}
+                    to={`/products/${item.slug}`}
                     className="mega-item-row"
                     onClick={onClose}
                   >
@@ -60,7 +76,7 @@ export default function NavMegaMenu({ activeMenu, onClose }) {
                 {supplier.items.map((item) => (
                   <Link
                     key={item.title}
-                    to={`/products?category=${encodeURIComponent(item.title)}`}
+                    to={`/products/${item.slug}`}
                     className="mega-item-row"
                     onClick={onClose}
                   >
@@ -84,7 +100,11 @@ export default function NavMegaMenu({ activeMenu, onClose }) {
               <span className="red-dot">●</span>
               <span>{footer.notice}</span>
             </div>
-            <Link to={footer.ctaLink} className="mm-footer-cta" onClick={onClose}>
+            <Link
+              to={footer.ctaLink}
+              className="mm-footer-cta"
+              onClick={onClose}
+            >
               <span>{footer.ctaText}</span>
             </Link>
           </div>
@@ -93,10 +113,14 @@ export default function NavMegaMenu({ activeMenu, onClose }) {
     );
   }
 
-  if (activeMenu === 'materials') {
+  if (activeMenu === "materials") {
     const { eyebrow, count, items, footer } = materialsMegaMenu;
     return (
-      <div className="mega-menu-overlay materials-overlay" onMouseEnter={() => {}} onMouseLeave={onClose}>
+      <div
+        className="mega-menu-overlay materials-overlay"
+        onMouseEnter={() => {}}
+        onMouseLeave={onClose}
+      >
         <div className="mega-menu-container materials-mega-menu">
           {/* Header */}
           <div className="materials-menu-header">
@@ -134,7 +158,11 @@ export default function NavMegaMenu({ activeMenu, onClose }) {
               <span className="red-dot">●</span>
               <span>{footer.notice}</span>
             </div>
-            <Link to={footer.ctaLink} className="mm-footer-cta" onClick={onClose}>
+            <Link
+              to={footer.ctaLink}
+              className="mm-footer-cta"
+              onClick={onClose}
+            >
               <span>{footer.ctaText}</span>
             </Link>
           </div>
@@ -143,10 +171,14 @@ export default function NavMegaMenu({ activeMenu, onClose }) {
     );
   }
 
-  if (activeMenu === 'certificates') {
+  if (activeMenu === "certificates") {
     const { eyebrow, count, items, footer } = certificatesMenu;
     return (
-      <div className="mega-menu-overlay certificates-overlay" onMouseEnter={() => {}} onMouseLeave={onClose}>
+      <div
+        className="mega-menu-overlay certificates-overlay"
+        onMouseEnter={() => {}}
+        onMouseLeave={onClose}
+      >
         <div className="mega-menu-container certificates-mega-menu">
           {/* Header */}
           <div className="materials-menu-header">
@@ -188,7 +220,11 @@ export default function NavMegaMenu({ activeMenu, onClose }) {
                 <span className="red-dot">●</span>
                 <span>{footer.notice}</span>
               </div>
-              <Link to={footer.ctaLink} className="mm-footer-cta" onClick={onClose}>
+              <Link
+                to={footer.ctaLink}
+                className="mm-footer-cta"
+                onClick={onClose}
+              >
                 <span>{footer.ctaText}</span>
               </Link>
             </div>
