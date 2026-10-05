@@ -19,10 +19,8 @@ import "./VariantDetails.css";
 export default function ProductDetails() {
   const { slug } = useParams();
 
-  // Find product by slug
   const product = productsData.find((p) => p.slug === slug) || productsData[0];
 
-  // ✅ Get variants for this product
   const variants = getVariantsByProduct(slug);
 
   const [activeImage, setActiveImage] = useState(
@@ -34,6 +32,7 @@ export default function ProductDetails() {
   );
 
   const [quoteSubmitted, setQuoteSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [quoteForm, setQuoteForm] = useState({
     name: "",
     email: "",
@@ -55,17 +54,54 @@ export default function ProductDetails() {
     );
   }
 
-  // Related products
-  const relatedProducts = productsData
-    .filter(
+  // ✅ Related products — smart filter with fallback (unique per page)
+  const relatedProducts = (() => {
+    const currentMaterials = Array.isArray(product.materials)
+      ? product.materials
+      : [];
+
+    let related = productsData.filter(
       (p) =>
         p.id !== product.id &&
-        (p.category === product.category ||
-          p.materials.some((m) => product.materials.includes(m))),
-    )
-    .slice(0, 3);
+        p.category === product.category &&
+        Array.isArray(p.materials) &&
+        p.materials.some((m) => currentMaterials.includes(m)),
+    );
 
-  // WhatsApp Inquiry URL
+    if (related.length < 4) {
+      const sameCat = productsData.filter(
+        (p) => p.id !== product.id && p.category === product.category,
+      );
+      related = [...related, ...sameCat.filter((p) => !related.includes(p))];
+    }
+
+    if (related.length < 4 && currentMaterials.length > 0) {
+      const sameMat = productsData.filter(
+        (p) =>
+          p.id !== product.id &&
+          Array.isArray(p.materials) &&
+          p.materials.some((m) => currentMaterials.includes(m)),
+      );
+      related = [...related, ...sameMat.filter((p) => !related.includes(p))];
+    }
+
+    if (related.length < 4) {
+      const others = productsData.filter(
+        (p) => p.id !== product.id && !related.includes(p),
+      );
+      const offset = product.id % (others.length || 1);
+      const rotated = [...others.slice(offset), ...others.slice(0, offset)];
+      related = [...related, ...rotated];
+    }
+
+    const unique = Array.from(new Set(related.map((p) => p.id))).map((id) =>
+      related.find((p) => p.id === id),
+    );
+
+    return unique.slice(0, 4);
+  })();
+
+  // WhatsApp Inquiry URL (top button — quick inquire)
   const waProductText = encodeURIComponent(
     `Hello Rushab Metal Industries, I am interested in inquiring about "${product.title}" (${product.std || ""}). Please provide availability and technical quotation.`,
   );
@@ -75,9 +111,47 @@ export default function ProductDetails() {
     setQuoteForm({ ...quoteForm, [e.target.name]: e.target.value });
   };
 
+  // ✅ Submit handler — opens WhatsApp with pre-filled RFQ details to +91 99698 84597 (Sumit)
   const handleQuoteSubmit = (e) => {
     e.preventDefault();
-    setQuoteSubmitted(true);
+    setIsSubmitting(true);
+
+    // Build WhatsApp message with all form data
+    const waMessage = `*NEW RFQ — ${product.title}*
+━━━━━━━━━━━━━━━━━━━━
+*Product:* ${product.title}
+*Standard:* ${product.std || "N/A"}
+*Category:* ${product.category || "N/A"}
+━━━━━━━━━━━━━━━━━━━━
+*Name / Company:* ${quoteForm.name}
+*Email:* ${quoteForm.email}
+*Phone / WhatsApp:* ${quoteForm.phone}
+*Approx Quantity:* ${quoteForm.quantity || "N/A"}
+━━━━━━━━━━━━━━━━━━━━
+*Required Grade / Standard / Notes:*
+${quoteForm.message || "N/A"}
+━━━━━━━━━━━━━━━━━━━━
+*Submitted From:* ${window.location.href}`;
+
+    const waNumber = "919969884597"; // +91 99698 84597 (Sumit)
+    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
+
+    // Open WhatsApp in new tab
+    window.open(waUrl, "_blank");
+
+    // Show success state after short delay
+    setTimeout(() => {
+      setQuoteSubmitted(true);
+      setIsSubmitting(false);
+      setQuoteForm({
+        name: "",
+        email: "",
+        phone: "",
+        quantity: "",
+        specification: "",
+        message: "",
+      });
+    }, 500);
   };
 
   return (
@@ -123,7 +197,9 @@ export default function ProductDetails() {
                     <button
                       key={i}
                       type="button"
-                      className={`thumbnail-btn ${activeImage === imgSrc ? "active" : ""}`}
+                      className={`thumbnail-btn ${
+                        activeImage === imgSrc ? "active" : ""
+                      }`}
                       onClick={() => setActiveImage(imgSrc)}
                       aria-label={`Select product image ${i + 1}`}
                     >
@@ -198,7 +274,7 @@ export default function ProductDetails() {
                   <span>Inquire on WhatsApp</span>
                 </a>
 
-                <a href="/contact" className="quote-inquiry-action-btn">
+                <a href="#rfq-form" className="quote-inquiry-action-btn">
                   <FiSend className="btn-icon-rfq" />
                   <span>Request Written Quote</span>
                 </a>
@@ -208,9 +284,7 @@ export default function ProductDetails() {
         </div>
       </section>
 
-      {/* ============================================================
-          ✅ VARIANTS GRID — Cards for SS 304, SS 316, CS, etc.
-          ============================================================ */}
+      {/* VARIANTS GRID */}
       {variants.length > 0 && (
         <section className="section-py bg-light-steel">
           <div className="container">
@@ -242,19 +316,16 @@ export default function ProductDetails() {
                     />
                   </div>
                   <div className="variant-card-body">
-                    {/* materialGroup as top badge (e.g. "Stainless Steel") */}
                     <span className="variant-card-grade">
                       {variant.materialGroup}
                     </span>
 
                     <h4 className="variant-card-title">{variant.title}</h4>
 
-                    {/* shortDescription instead of subtitle */}
                     <p className="variant-card-subtitle">
                       {variant.shortDescription}
                     </p>
 
-                    {/* Standards preview */}
                     {variant.standards && (
                       <p
                         style={{
@@ -347,7 +418,7 @@ export default function ProductDetails() {
         </div>
       </section>
 
-      {/* RFQ Form */}
+      {/* ✅ RFQ Form — now sends to WhatsApp (+91 99698 84597 Sumit) */}
       <section className="section-py bg-white" id="rfq-form">
         <div className="container">
           <div className="rfq-wrapper-card">
@@ -369,8 +440,8 @@ export default function ProductDetails() {
                 <h3>Thank you for your RFQ</h3>
                 <p>
                   Your inquiry for <strong>{product.title}</strong> has been
-                  received. Our sales engineer will review your specifications
-                  and contact you shortly.
+                  sent to our sales team on WhatsApp. Our sales engineer will
+                  review your specifications and contact you shortly.
                 </p>
                 <Button
                   onClick={() => setQuoteSubmitted(false)}
@@ -456,12 +527,12 @@ export default function ProductDetails() {
                     variant="primary"
                     size="lg"
                     icon={<FiSend />}
+                    disabled={isSubmitting}
                   >
-                    Submit RFQ to Sales Desk
+                    {isSubmitting
+                      ? "Opening WhatsApp..."
+                      : "Submit RFQ to Sales Desk"}
                   </Button>
-                  <span className="submit-disclaimer">
-                    Direct email dispatch: {siteConfig.email}
-                  </span>
                 </div>
               </form>
             )}

@@ -174,12 +174,12 @@ export default function Home() {
 
           <div className="products-view-all-box">
             <Button
-              to="/catalogue"
+              to="/products"
               variant="primary"
               size="lg"
               icon={<FiArrowRight />}
             >
-              View & Download Complete Product Catalogue (PDF & Portal)
+              View all Products
             </Button>
           </div>
         </div>

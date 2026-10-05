@@ -698,46 +698,6 @@
     ]
   },
   {
-    "id": 14,
-    "slug": "dairy-pharma-fittings",
-    "std": "DIN 11851 / SMS 1145 / 3A Sanitary / ISO 2852",
-    "type": "MANUFACTURER & EXPORTER",
-    "title": "DAIRY & PHARMA FITTINGS",
-    "subtitle": "Sanitary Tube Fittings & Tri-Clover Connections",
-    "category": "Fittings",
-    "image": "/images/products/buttweld-fitting.jpg",
-    "gallery": ["/images/products/buttweld-fitting.jpg"],
-    "materials": [
-      "Stainless Steel (304 / 304L / 316 / 316L)",
-      "Hastelloy C22",
-      "Titanium"
-    ],
-    "grades": ["AISI 304, AISI 316L, 1.4404, 1.4435"],
-    "types": [
-      "Tri-Clover Clamps & Ferrules",
-      "Sanitary Bends & Elbows",
-      "Sanitary Equal & Reducing Tees",
-      "DIN / SMS Unions",
-      "Sampling Valves & Sight Glasses"
-    ],
-    "sizes": "1/2\" to 4\" OD (Sanitary Tube Dimensions)",
-    "description": "Sanitary stainless steel bends, tees, unions, ferrules, TC clamps, and butterfly valves with mechanical and electro-polished surfaces (Ra < 0.4 µm) for pharmaceutical, biotechnology, food & dairy processing.",
-    "specifications": [
-      {
-        "label": "Surface Finish",
-        "value": "Electro-polished Ra < 0.4 µm / Mechanical Mirror Finish"
-      },
-      {
-        "label": "Standards",
-        "value": "3A Sanitary, DIN 11851, SMS 1145, ISO 2852"
-      },
-      {
-        "label": "Applications",
-        "value": "Pharmaceutical, Biotechnology, Food & Beverage, Dairy"
-      }
-    ]
-  },
-  {
     "id": 15,
     "slug": "ferrule-fittings",
     "std": "ASTM A276 / ASME B31.3 / MSS-SP-99",
@@ -782,7 +742,7 @@
     "subtitle": "Flexible Corrugated Metallic Braided Hoses",
     "category": "Pipes & Tubes",
     "image": "/images/products/hose-pipe.jpg",
-    "gallery": ["/images/products/pipes.jpg"],
+    "gallery": ["/images/products/hose-pipe.jpg"],
     "materials": ["Stainless Steel (304 / 316 / 321)", "Monel"],
     "grades": ["SS 304, SS 316, SS 321 with Single / Double SS 304 Braiding"],
     "types": [
@@ -959,8 +919,8 @@
     "title": "WIRES",
     "subtitle": "Industrial Spring Wires, TIG/MIG Welding & Tie Wires",
     "category": "Screens & Mesh",
-    "image": "/images/products/wire-mesh.jpg",
-    "gallery": ["/images/products/wire-mesh.jpg"],
+    "image": "/images/products/wires.jpg",
+    "gallery": ["/images/products/wires.jpg"],
     "materials": ["Stainless Steel", "Inconel", "Monel", "Carbon Steel"],
     "grades": ["SS 302, 304, 316, 310, Inconel 600, Monel 400"],
     "types": [

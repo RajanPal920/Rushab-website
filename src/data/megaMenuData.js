@@ -12,12 +12,6 @@ export const productsMegaMenu = {
         slug: "butt-weld-fittings",
       },
       {
-        title: "Dairy & Pharma Fittings",
-        subtitle: "Sanitary Tube Fittings & Tri-Clover Connections",
-        image: "/images/products/buttweld-fitting.jpg",
-        slug: "dairy-pharma-fittings",
-      },
-      {
         title: "Fasteners",
         subtitle: "High-Tensile Stud Bolts, Hex Bolts, Nuts & Washers",
         image: "/images/products/fasteners.jpg",
@@ -64,6 +58,12 @@ export const productsMegaMenu = {
         subtitle: "Woven, Welded & Dutch Weave Filtration Cloth",
         image: "/images/products/wire-mesh.jpg",
         slug: "wire-mesh-screens",
+      },
+      {
+        title: "Structural Profiles & Others",
+        subtitle: "Angles, Channels, Beams & Chequered Plates",
+        image: "/images/products/structural-profiles.jpg",
+        slug: "structural-profiles",
       },
     ],
   },
@@ -125,12 +125,6 @@ export const productsMegaMenu = {
         subtitle: "Hot Rolled Heavy Plates & Cold Rolled Sheets",
         image: "/images/products/sheets-plates.jpg",
         slug: "sheets-plates",
-      },
-      {
-        title: "Structural Profiles & Others",
-        subtitle: "Angles, Channels, Beams & Chequered Plates",
-        image: "/images/products/structural-profiles.jpg",
-        slug: "structural-profiles",
       },
       {
         title: "Wires",
