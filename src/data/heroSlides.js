@@ -1,7 +1,7 @@
 export const heroSlides = [
   {
     id: 1,
-    image: "/images/herosliderimg/img1.jpg",
+    image: "/images/herosliderimg/img6.jpg",
     eyebrow: "LARGE DIAMETER ALLOY STEEL PIPES",
     titleLine1: "ENGINEERED FOR",
     titleHighlight: "INDUSTRIAL SCALE.",
@@ -21,13 +21,13 @@ export const heroSlides = [
   {
     id: 2,
     image: "/images/herosliderimg/img2.jpg",
-    eyebrow: "PRECISION ROLLING & BILLET FORGING",
-    titleLine1: "FORGED UNDER HEAT.",
-    titleHighlight: "MAXIMUM RESILIENCE.",
-    titleLine2: "ENGINEERED TO LAST.",
+    eyebrow: "QUALITY STEEL & SPECIALTY METALS",
+    titleLine1: "ENGINEERED FOR",
+    titleHighlight: "STRENGTH.",
+    titleLine2: "BUILT TO PERFORM.",
     description:
-      "High-integrity alloy, carbon, and stainless steel raw materials processed to stringent ASTM and ASME standards, engineered for severe thermal stress and high-pressure infrastructure.",
-    badgeText: "PRECISION METALLURGY // ISO 9001:2015 CERTIFIED",
+      "Premium stainless steel, alloy steel, carbon steel, and specialty metals supplied for demanding industrial applications with consistent quality, dimensional accuracy, and dependable performance.",
+    badgeText: "QUALITY ASSURED // ASTM & ASME COMPLIANT",
     primaryButton: {
       text: "EXPLORE MATERIALS ↗",
       link: "/materials"
@@ -59,16 +59,16 @@ export const heroSlides = [
   {
     id: 4,
     image: "/images/herosliderimg/img4.jpg",
-    eyebrow: "ADVANCED METALLURGY & SEVERE-SERVICE ALLOYS",
-    titleLine1: "TESTED INTEGRITY.",
-    titleHighlight: "EXTREME CONDITIONS.",
-    titleLine2: "ZERO DEFECTS.",
+    eyebrow: "PRECISION ENGINEERED STEEL SOLUTIONS",
+    titleLine1: "BUILT FOR",
+    titleHighlight: "DEMANDING APPLICATIONS.",
+    titleLine2: "DELIVERED WITH CONFIDENCE.",
     description:
-      "Certified exotic alloys including Monel, Inconel, Hastelloy, and Super Duplex engineered to withstand aggressive chemical corrosion, cryogenic extremes, and ultra-high pressure.",
-    badgeText: "100% TRACEABLE MTC // EN 10204 3.1 & 3.2",
+      "High-quality stainless steel, alloy steel, nickel alloys, and specialty metals engineered for demanding industrial applications with reliable performance, precision, and complete material traceability.",
+    badgeText: "QUALITY ASSURED // COMPLETE MATERIAL TRACEABILITY",
     primaryButton: {
-      text: "QUALITY FRAMEWORK ↗",
-      link: "/certificates"
+      text: "EXPLORE OUR PRODUCTS ↗",
+      link: "/products"
     },
     secondaryButton: {
       text: "REQUEST A QUOTE >",
