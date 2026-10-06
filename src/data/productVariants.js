@@ -757,7 +757,7 @@ export const productVariants = {
     {
       id: 2,
       slug: "carbon-steel-buttweld-fittings",
-      image: Bcarbon,
+      image: "/images/products/carbon-steel-butt-weld-fittings.jpg",
       title: "Carbon Steel Buttweld Fittings",
       shortDescription:
         "ASTM A106 Gr B, A105, A333 Low Temp Carbon Steel Seamless Fittings for High-Pressure Service.",

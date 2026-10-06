@@ -38,7 +38,7 @@ export default function CatalogueDownloads() {
           <div className="catalogue-card brochure-card">
             <div className="catalogue-card-badge">
               <span className="cc-badge-text">{brochure.badge}</span>
-              <span className="cc-format-tag"><FaFilePdf /> {brochure.size}</span>
+              <span className="cc-format-tag"><FaFilePdf /></span>
             </div>
 
             <div className="catalogue-card-content">
@@ -100,7 +100,7 @@ export default function CatalogueDownloads() {
           <div className="catalogue-card technical-card">
             <div className="catalogue-card-badge">
               <span className="cc-badge-text">{productCatalogue.badge}</span>
-              <span className="cc-format-tag"><FaFilePdf /> {productCatalogue.size}</span>
+              <span className="cc-format-tag"><FaFilePdf /></span>
             </div>
 
             <div className="catalogue-card-content">

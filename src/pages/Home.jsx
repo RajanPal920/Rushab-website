@@ -123,12 +123,12 @@ export default function Home() {
     activeCategory === "All"
       ? productsData.slice(0, 8)
       : productsData
-          .filter(
-            (p) =>
-              p.category === activeCategory ||
-              (activeCategory === "Fittings" && p.category === "Fittings"),
-          )
-          .slice(0, 8);
+        .filter(
+          (p) =>
+            p.category === activeCategory ||
+            (activeCategory === "Fittings" && p.category === "Fittings"),
+        )
+        .slice(0, 8);
 
   return (
     <div className="home-page-container">
@@ -481,7 +481,7 @@ export default function Home() {
                   <FiSend /> {siteConfig.email}
                 </a>
                 <a
-                  href={`https://wa.me/${siteConfig.whatsapp}?text=Hello%20Rushab%20Metal%20Industries,%20I%20have%20an%20inquiry.`}
+                  href={`https://wa.me/${siteConfig.whatsappNumber}?text=Hello%20Rushab%20Metal%20Industries,%20I%20have%20an%20inquiry.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cta-pill whatsapp"
