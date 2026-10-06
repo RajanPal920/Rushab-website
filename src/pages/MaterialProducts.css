@@ -1,0 +1,259 @@
+/* ==========================================================================
+   MaterialProducts.css - Styling for dedicated Material Product listing pages
+   ========================================================================== */
+
+.material-products-page {
+  background-color: var(--color-bg-light, #f8fafc);
+  min-height: 100vh;
+}
+
+/* Breadcrumb Navigation */
+.mat-breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem 0 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-muted, #64748b);
+}
+
+.mat-bc-link {
+  color: var(--color-text-muted, #64748b);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.mat-bc-link:hover {
+  color: var(--color-primary, #004b87);
+}
+
+.mat-bc-sep {
+  color: #cbd5e1;
+  font-size: 0.8rem;
+}
+
+.mat-bc-current {
+  color: var(--color-primary, #004b87);
+  font-weight: 600;
+}
+
+/* Quick Switcher Pills Bar */
+.mat-quick-switcher-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.875rem 1.25rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.mat-quick-switcher-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.mat-quick-switcher-scroll {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  padding-bottom: 2px;
+}
+
+.mat-quick-switcher-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.mat-quick-switcher-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.mat-quick-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.mat-quick-pill:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.mat-quick-pill.active {
+  background: var(--color-primary, #004b87);
+  color: #ffffff;
+  border-color: var(--color-primary, #004b87);
+  box-shadow: 0 2px 6px rgba(0, 75, 135, 0.25);
+}
+
+/* Standards pill in results status bar */
+.mat-standards-pill-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary, #004b87);
+  background: rgba(0, 75, 135, 0.08);
+  border: 1px solid rgba(0, 75, 135, 0.15);
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+/* Material Technical Specification Summary Card */
+.mat-specs-summary-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.mat-specs-summary-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 1.5rem;
+}
+
+.mat-specs-eyebrow {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #e63946;
+  margin-bottom: 0.25rem;
+}
+
+.mat-specs-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.mat-specs-badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #0284c7;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 20px;
+}
+
+.mat-specs-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.mat-specs-col.full-width {
+  grid-column: 1 / -1;
+}
+
+.mat-specs-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.mat-specs-val {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0;
+}
+
+.mat-grades-mini-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.mat-grades-mini-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #334155;
+}
+
+.mat-check-icon {
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  font-size: 0.95rem;
+}
+
+.mat-specs-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.mat-pmi-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #475569;
+  font-size: 0.88rem;
+  max-width: 650px;
+}
+
+.mat-shield-icon {
+  font-size: 1.5rem;
+  color: #0284c7;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .mat-quick-switcher-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .mat-specs-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

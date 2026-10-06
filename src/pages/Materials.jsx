@@ -87,6 +87,22 @@ const ferrousMaterials = [
     products:
       "Subsea Piping, Chemical Processing Valves, Heavy Duty Forged Flanges, Exotic Fasteners",
   },
+  {
+    id: "mild-steel",
+    name: "Mild Steel & Carbon Structural",
+    category: "Ferrous",
+    tag: "Structural Framing & Load Bearing",
+    standards: "IS 2062, ASTM A36, BS 4360, EN 10025 S275JR",
+    grades: [
+      "IS 2062 Grade A / B / C",
+      "ASTM A36 / SA36 Carbon Structural",
+      "EN 10025 S235JR / S275JR / S355JR",
+    ],
+    features:
+      "Cost-effective structural steel engineered with high ductility, excellent weldability, and proven reliability for heavy civil and industrial framing.",
+    products:
+      "MS Equal & Unequal Angles, ISMC Channels, ISLC Channels, Parallel Flange Channels (PFC)",
+  },
 ];
 
 const nonFerrousMaterials = [
@@ -338,8 +354,30 @@ export default function Materials() {
                   >
                     Inquire for
                   </Button>
-                  <Button to="/products" variant="outline" size="sm">
-                    View Catalog Products
+                  <Button
+                    to={
+                      {
+                        ss: "/materials/stainless-steel",
+                        cs: "/materials/carbon",
+                        as: "/materials/alloy-steel",
+                        duplex: "/materials/duplex",
+                        "super-duplex": "/materials/super-duplex",
+                        "mild-steel": "/materials/mild-steel",
+                        nickel: "/materials/nickel-alloy",
+                        monel: "/materials/monel",
+                        inconel: "/materials/inconel",
+                        hastelloy: "/materials/hastelloy",
+                        titanium: "/materials/titanium",
+                        "copper-brass": "/materials/copper",
+                        aluminium: "/materials/aluminium",
+                        "exotic-alloys": "/materials/exotic-alloy",
+                        "high-alloys": "/materials/high-alloy",
+                      }[mat.id] || "/products"
+                    }
+                    variant="outline"
+                    size="sm"
+                  >
+                    View Material Products
                   </Button>
                 </div>
               </div>

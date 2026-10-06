@@ -22,6 +22,7 @@ import Catalogue from './pages/Catalogue';
 // Global Styles
 import './styles/global.css';
 import VariantDetails from './pages/VariantDetails';
+import MaterialProducts from './pages/MaterialProducts';
 
 // Automatically scroll window to top on route change
 function ScrollToTop() {
@@ -55,6 +56,7 @@ export default function App() {
             <Route path="/products/:slug" element={<ProductDetails />} />
             <Route path="/products/:slug/:variantSlug" element={<VariantDetails />} />
             <Route path="/materials" element={<Materials />} />
+            <Route path="/materials/:materialSlug" element={<MaterialProducts />} />
             <Route path="/industries" element={<Industries />} />
             <Route path="/technical-data" element={<TechnicalData />} />
             <Route path="/certificates" element={<Certificates />} />

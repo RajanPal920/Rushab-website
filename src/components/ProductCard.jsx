@@ -8,7 +8,7 @@ export default function ProductCard({ product }) {
 
   return (
     <div className="industrial-product-card">
-      <Link to={`/products/${product.slug}`} className="product-card-link-wrapper" aria-label={`View ${product.title} details`}>
+      <Link to={product.detailUrl || `/products/${product.slug}`} className="product-card-link-wrapper" aria-label={`View ${product.title} details`}>
         <div className="product-card-media">
           <img
             src={product.image}

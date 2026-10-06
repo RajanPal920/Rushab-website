@@ -136,7 +136,7 @@ export default function NavMegaMenu({ activeMenu, onClose }) {
             {items.map((item) => (
               <Link
                 key={item.name}
-                to={`/materials`}
+                to={`/materials/${item.slug || item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
                 className="mega-item-row material-row"
                 onClick={onClose}
               >
