@@ -24,7 +24,6 @@ import './styles/global.css';
 import MaterialProducts from './pages/MaterialProducts';
 import GradeDetails from './pages/GradeDetails';
 import FlangeTypeDetails from './pages/FlangeTypeDetails';
-import ProductTypeDetails from './pages/ProductTypeDetails';
 
 // Automatically scroll window to top on route change
 function ScrollToTop() {
@@ -57,10 +56,6 @@ export default function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/products/:slug" element={<ProductRouteHandler />} />
             <Route path="/products/:slug/:variantSlug" element={<TwoLevelProductRouteHandler />} />
-            {/* Level 3: Individual Product Type Detail Page */}
-            <Route path="/products/:categorySlug/:materialSlug/:typeSlug" element={<ProductTypeDetails />} />
-            {/* Level 5: Individual Grade Detail Page under Product & Type Hierarchy */}
-            <Route path="/products/:categorySlug/:materialSlug/:typeSlug/:gradeSlug" element={<GradeDetails />} />
             <Route path="/materials" element={<Materials />} />
             <Route path="/materials/:materialSlug" element={<MaterialProducts />} />
             <Route path="/industries" element={<Industries />} />

@@ -21,7 +21,7 @@ const ferrousMaterials = [
     features:
       "Superior oxidation resistance, excellent weldability, and resistance to pitting in acidic, marine, and industrial chemical environments.",
     products:
-      "Pipes, Tubes, Butt Weld Fittings, Forged Fittings, Flanges, Sheets, Plates, Coils, Fasteners, Round Bars",
+      "Pipes, Tubes, Butt Weld Fittings, Forged Fittings, Flanges, Sheets, Plates, Coils, Fasteners, Ferrule Fittings",
   },
   {
     id: "cs",

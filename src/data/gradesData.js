@@ -1079,7 +1079,7 @@ export const gradesDatabase = [
       "Titanium Flanges (ASTM B381 Gr. F-2)",
       "Pipes & Tubes (ASTM B861 / B338)",
       "Titanium Butt Weld Fittings",
-      "Fasteners & Round Bars"
+      "Fasteners & Tube Fittings"
     ]
   }
 ];

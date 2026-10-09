@@ -115,12 +115,6 @@ export const productsMegaMenu = {
         slug: "rings",
       },
       {
-        title: "Rods & Bars",
-        subtitle: "Round, Hexagonal & Square Solid Bars & Wire Ropes",
-        image: "/images/products/rods-bars.jpg",
-        slug: "rods-bars",
-      },
-      {
         title: "Sheets & Plates",
         subtitle: "Hot Rolled Heavy Plates & Cold Rolled Sheets",
         image: "/images/products/sheets-plates.jpg",
@@ -136,7 +130,7 @@ export const productsMegaMenu = {
   },
   footer: {
     notice: "100% PMI, MTC 3.1 & EN 10204 Certified Mill Inventory",
-    ctaText: "VIEW COMPLETE PRODUCTS CATALOG (21 FAMILIES) →",
+    ctaText: "VIEW COMPLETE PRODUCTS CATALOG (20 FAMILIES) →",
     ctaLink: "/products",
   },
 };

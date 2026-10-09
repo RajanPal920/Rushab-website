@@ -1,21 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FiArrowUpRight, FiArrowRight } from 'react-icons/fi';
 import '../../styles/products.css';
 
 const products = [
   {
     id: 1,
-    slug: "butt-weld-fittings",
     std: "ASME B16.9",
     type: "MANUFACTURING",
-    title: "BUTT WELD FITTINGS",
+    title: "BUTT WELD FITTING",
     subtitle: "ELBOWS, TEES, REDUCERS",
     image: "/images/products/buttweld-fitting.jpg"
   },
   {
     id: 2,
-    slug: "fasteners",
     std: "ASTM A193 / A194",
     type: "MANUFACTURING",
     title: "FASTENERS",
@@ -24,7 +21,6 @@ const products = [
   },
   {
     id: 3,
-    slug: "flanges",
     std: "ASME B16.5",
     type: "MANUFACTURING",
     title: "FLANGES",
@@ -33,34 +29,30 @@ const products = [
   },
   {
     id: 4,
-    slug: "forged-fittings",
     std: "ASME B16.11",
     type: "MANUFACTURING",
-    title: "FORGED FITTINGS",
+    title: "FORGE FITTING",
     subtitle: "3000# / 6000# / 9000#",
     image: "/images/products/forge-fittings.jpg"
   },
   {
     id: 5,
-    slug: "coils",
     std: "ASTM A240",
     type: "SUPPLIER DIV.",
-    title: "COILS",
+    title: "COIL",
     subtitle: "HOT & COLD ROLLED COILS",
     image: "/images/products/coil.jpg"
   },
   {
     id: 6,
-    slug: "patta-patti",
     std: "ASTM A276 / A484",
     type: "SUPPLIER DIV.",
-    title: "PATTA PATTI",
+    title: "FLAT BAR",
     subtitle: "COLD DRAWN & HRAP",
     image: "/images/products/flat-bar.jpg"
   },
   {
     id: 7,
-    slug: "pipes-tubes",
     std: "ASTM A312 / A269",
     type: "SUPPLIER DIV.",
     title: "PIPES AND TUBES",
@@ -69,7 +61,6 @@ const products = [
   },
   {
     id: 8,
-    slug: "sheets-plates",
     std: "ASTM A240 / ASME SA240",
     type: "SUPPLIER DIV.",
     title: "SHEETS AND PLATES",
@@ -78,12 +69,11 @@ const products = [
   },
   {
     id: 9,
-    slug: "rods-bars",
-    std: "ASTM A276 / A479",
-    type: "SUPPLIER DIV.",
-    title: "RODS AND BARS",
-    subtitle: "BRIGHT & BLACK FINISH",
-    image: "/images/products/rods-bars.jpg"
+    std: "ASME B31.3 / MSS SP-99",
+    type: "MANUFACTURING",
+    title: "FERRULE FITTINGS",
+    subtitle: "DOUBLE & SINGLE FERRULE TUBE FITTINGS",
+    image: "/images/products/ferrule-fittings.jpg"
   }
 ];
 
@@ -105,11 +95,7 @@ export default function Products() {
 
         <div className="products-grid">
           {products.map((product) => (
-            <Link
-              to={`/products/${product.slug}-manufacture-in-india`}
-              className="product-card"
-              key={product.id}
-            >
+            <div className="product-card" key={product.id}>
               <div className="product-image-wrapper">
                 <img src={product.image} alt={product.title} className="product-image" />
                 <div className="product-badges">
@@ -124,19 +110,19 @@ export default function Products() {
                 <p className="product-subtitle">{product.subtitle}</p>
                 <div className="product-footer-link">
                   <span className="explore-text">EXPLORE SPECS</span>
-                  <span className="explore-icon-box">
+                  <a href="#" className="explore-icon-box">
                     <FiArrowUpRight />
-                  </span>
+                  </a>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
         <div className="products-footer">
-          <Link to="/products" className="all-products-btn">
+          <a href="#" className="all-products-btn">
             ALL PRODUCTS <FiArrowRight className="btn-icon" />
-          </Link>
+          </a>
         </div>
       </div>
     </section>

@@ -115,7 +115,7 @@ export default function Home() {
     "Flanges",
     "Fasteners",
     "Sheets & Plates",
-    "Bars & Rods",
+    "Ferrule Fittings",
     "Valves & Flow Control",
   ];
 

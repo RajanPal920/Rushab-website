@@ -12,12 +12,10 @@ import {
   FiShield,
   FiSend,
   FiBox,
-  FiArrowRight,
 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import TypesOfFlangesSection from "../components/flanges/TypesOfFlangesSection";
 import { parseGradeLineToTokens, getGradeUrl } from "../data/gradesData";
-import { getCatalogueProduct } from "../data/productCatalogueData.js";
 import "./ProductDetails.css";
 import "./VariantDetails.css";
 
@@ -26,11 +24,7 @@ export default function ProductDetails({ resolvedProduct }) {
 
   const product =
     resolvedProduct ||
-    productsData.find((p) => p.slug === slug || toProductSeoSlug(p) === slug) ||
-    productsData[0];
-
-  const catProduct = getCatalogueProduct(product?.slug || slug);
-  const catMaterials = catProduct?.materials || [];
+    productsData.find((p) => p.slug === slug || toProductSeoSlug(p) === slug);
 
   const variants = getVariantsByProduct(product?.slug || slug);
 
@@ -44,6 +38,8 @@ export default function ProductDetails({ resolvedProduct }) {
 
   const [quoteSubmitted, setQuoteSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [variantSearch, setVariantSearch] = useState("");
+  const [variantFilterTab, setVariantFilterTab] = useState("all");
   const [quoteForm, setQuoteForm] = useState({
     name: "",
     email: "",
@@ -301,125 +297,274 @@ ${quoteForm.message || "N/A"}
         </div>
       </section>
 
-      {/* LEVEL 1: AVAILABLE MATERIAL METALLURGIES GRID */}
-      {catMaterials.length > 0 ? (
-        <section className="section-py bg-light-steel" id="materials-metallurgy">
-          <div className="container">
-            <div
-              className="section-header-compact"
-              style={{ textAlign: "center", marginBottom: "2.5rem" }}
-            >
-              <span className="sub-title-accent">LEVEL 1: MATERIAL METALLURGY</span>
-              <h2 className="section-title">
-                Available Materials for {product.title}
-              </h2>
-              <p className="section-description">
-                Rishabh Metal Industries manufactures and stocks {product.title} across the following verified material metallurgies.
-                Click any material card below to explore its applicable product configurations, types, and dimensional specifications.
-              </p>
-            </div>
+      {/* VARIANTS & SUBCATEGORIES CATALOGUE GRID */}
+      {variants.length > 0 && (() => {
+        const subcategoryItems = variants.filter((v) => Boolean(v.subcategory));
+        const materialItems = variants.filter((v) => !v.subcategory);
+        const hasSubcategories = subcategoryItems.length > 0;
 
-            <div className="materials-catalogue-grid">
-              {catMaterials.map((mat) => {
-                const matUrl = `/products/${toProductSeoSlug(product)}/${mat.slug}`;
-                return (
-                  <Link
-                    key={mat.slug}
-                    to={matUrl}
-                    className="material-catalogue-card"
-                    title={`View ${mat.name} ${product.title} types and configurations`}
-                  >
-                    <div className="mat-card-img-wrap">
-                      <img
-                        src={mat.image || product.image}
-                        alt={`${mat.name} ${product.title}`}
-                        className="mat-card-img"
-                        loading="lazy"
-                      />
-                      <span className="mat-card-badge">{mat.name}</span>
-                    </div>
-                    <div className="mat-card-body">
-                      <h3 className="mat-card-title">{mat.name}</h3>
-                      <p className="mat-card-desc">{mat.shortDescription}</p>
-                      {mat.standards && (
-                        <p className="mat-card-std">
-                          <strong style={{ color: "#0284c7" }}>Standards:</strong> {mat.standards}
-                        </p>
-                      )}
-                      <div className="mat-card-action">
-                        <span>Explore {mat.types?.length || 0} Configurations</span>
-                        <FiArrowRight className="mat-arrow" />
-                      </div>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      ) : variants.length > 0 ? (
-        <section className="section-py bg-light-steel">
-          <div className="container">
-            <div
-              className="section-header-compact"
-              style={{ textAlign: "center", marginBottom: "2rem" }}
-            >
-              <h2 className="section-title">
-                Available {product.title} Grades & Variants
-              </h2>
-              <p className="section-description">
-                Click any variant below to view its detailed technical
-                specifications, sizes, and standards.
-              </p>
-            </div>
+        const displayedVariants = variants.filter((v) => {
+          if (variantFilterTab === "subcategories" && !v.subcategory) return false;
+          if (variantFilterTab === "materials" && v.subcategory) return false;
+          if (!variantSearch.trim()) return true;
+          const q = variantSearch.toLowerCase().trim();
+          return (
+            (v.title && v.title.toLowerCase().includes(q)) ||
+            (v.subcategory && v.subcategory.toLowerCase().includes(q)) ||
+            (v.materialGroup && v.materialGroup.toLowerCase().includes(q)) ||
+            (v.shortDescription && v.shortDescription.toLowerCase().includes(q)) ||
+            (v.standards && v.standards.toLowerCase().includes(q)) ||
+            (v.availableSizes && v.availableSizes.toLowerCase().includes(q))
+          );
+        });
 
-            <div className="variants-grid">
-              {variants.map((variant) => (
-                <Link
-                  key={variant.slug}
-                  to={getVariantUrl(variant, product)}
-                  className="variant-card"
+        return (
+          <section className="section-py bg-light-steel" id="product-catalogue">
+            <div className="container">
+              <div
+                className="section-header-compact"
+                style={{ textAlign: "center", marginBottom: "1.75rem" }}
+              >
+                <span
+                  style={{
+                    display: "inline-block",
+                    background: "rgba(27,147,207,0.12)",
+                    color: "#1B93CF",
+                    padding: "4px 14px",
+                    borderRadius: "20px",
+                    fontWeight: 700,
+                    fontSize: "0.8rem",
+                    letterSpacing: "0.05em",
+                    marginBottom: "0.5rem",
+                  }}
                 >
-                  <div className="variant-card-image">
-                    <img
-                      src={variant.image}
-                      alt={variant.title}
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="variant-card-body">
-                    <span className="variant-card-grade">
-                      {variant.materialGroup}
-                    </span>
+                  INDUSTRIAL PRODUCT CATALOGUE
+                </span>
+                <h2 className="section-title">
+                  Available {product.title} Subcategories & Products
+                </h2>
+                <p className="section-description">
+                  Select any subcategory or product below to inspect detailed dimensional specifications, schedules, pressure ratings, and certified grades.
+                </p>
+              </div>
 
-                    <h4 className="variant-card-title">{variant.title}</h4>
+              {/* Filter Tabs & Search Bar Controls */}
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: "1rem",
+                  marginBottom: "2rem",
+                  background: "#fff",
+                  padding: "1rem 1.25rem",
+                  borderRadius: "10px",
+                  border: "1px solid #E2E8F0",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+                }}
+              >
+                {/* Filter Pills */}
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                  <button
+                    type="button"
+                    onClick={() => setVariantFilterTab("all")}
+                    style={{
+                      padding: "6px 14px",
+                      borderRadius: "20px",
+                      border: "1px solid",
+                      borderColor: variantFilterTab === "all" ? "#1B93CF" : "#CBD5E1",
+                      background: variantFilterTab === "all" ? "#1B93CF" : "#F8FAFC",
+                      color: variantFilterTab === "all" ? "#fff" : "#334155",
+                      fontSize: "0.825rem",
+                      fontWeight: 600,
+                      cursor: "pointer",
+                      transition: "all 0.2s",
+                    }}
+                  >
+                    All Items ({variants.length})
+                  </button>
+                  {hasSubcategories && (
+                    <button
+                      type="button"
+                      onClick={() => setVariantFilterTab("subcategories")}
+                      style={{
+                        padding: "6px 14px",
+                        borderRadius: "20px",
+                        border: "1px solid",
+                        borderColor: variantFilterTab === "subcategories" ? "#1B93CF" : "#CBD5E1",
+                        background: variantFilterTab === "subcategories" ? "#1B93CF" : "#F8FAFC",
+                        color: variantFilterTab === "subcategories" ? "#fff" : "#334155",
+                        fontSize: "0.825rem",
+                        fontWeight: 600,
+                        cursor: "pointer",
+                        transition: "all 0.2s",
+                      }}
+                    >
+                      Subcategories ({subcategoryItems.length})
+                    </button>
+                  )}
+                  {materialItems.length > 0 && hasSubcategories && (
+                    <button
+                      type="button"
+                      onClick={() => setVariantFilterTab("materials")}
+                      style={{
+                        padding: "6px 14px",
+                        borderRadius: "20px",
+                        border: "1px solid",
+                        borderColor: variantFilterTab === "materials" ? "#1B93CF" : "#CBD5E1",
+                        background: variantFilterTab === "materials" ? "#1B93CF" : "#F8FAFC",
+                        color: variantFilterTab === "materials" ? "#fff" : "#334155",
+                        fontSize: "0.825rem",
+                        fontWeight: 600,
+                        cursor: "pointer",
+                        transition: "all 0.2s",
+                      }}
+                    >
+                      Material Alloys ({materialItems.length})
+                    </button>
+                  )}
+                </div>
 
-                    <p className="variant-card-subtitle">
-                      {variant.shortDescription}
-                    </p>
+                {/* Instant Search Filter */}
+                <div style={{ position: "relative", minWidth: "250px", flex: "1", maxWidth: "360px" }}>
+                  <input
+                    type="text"
+                    placeholder="Search by subcategory, size or grade..."
+                    value={variantSearch}
+                    onChange={(e) => setVariantSearch(e.target.value)}
+                    style={{
+                      width: "100%",
+                      padding: "8px 14px",
+                      borderRadius: "6px",
+                      border: "1px solid #CBD5E1",
+                      fontSize: "0.85rem",
+                      outline: "none",
+                    }}
+                  />
+                  {variantSearch && (
+                    <button
+                      type="button"
+                      onClick={() => setVariantSearch("")}
+                      style={{
+                        position: "absolute",
+                        right: "10px",
+                        top: "50%",
+                        transform: "translateY(-50%)",
+                        background: "none",
+                        border: "none",
+                        color: "#94A3B8",
+                        cursor: "pointer",
+                        fontSize: "0.85rem",
+                      }}
+                    >
+                      ✕
+                    </button>
+                  )}
+                </div>
+              </div>
 
-                    {variant.standards && (
-                      <p
-                        style={{
-                          fontSize: "0.7rem",
-                          color: "#94A3B8",
-                          margin: "0.5rem 0 0",
-                          lineHeight: 1.4,
-                        }}
-                      >
-                        <strong style={{ color: "#1B93CF" }}>STD:</strong>{" "}
-                        {variant.standards}
-                      </p>
-                    )}
+              {displayedVariants.length === 0 ? (
+                <div
+                  style={{
+                    textAlign: "center",
+                    padding: "3rem 1rem",
+                    background: "#fff",
+                    borderRadius: "8px",
+                    border: "1px solid #E2E8F0",
+                  }}
+                >
+                  <p style={{ color: "#64748B", fontSize: "1rem" }}>
+                    No matching products or subcategories found for "{variantSearch}".
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setVariantSearch("");
+                      setVariantFilterTab("all");
+                    }}
+                    style={{
+                      marginTop: "0.75rem",
+                      background: "#1B93CF",
+                      color: "#fff",
+                      border: "none",
+                      padding: "8px 16px",
+                      borderRadius: "4px",
+                      cursor: "pointer",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Reset Filter
+                  </button>
+                </div>
+              ) : (
+                <div className="variants-grid">
+                  {displayedVariants.map((variant) => (
+                    <Link
+                      key={variant.slug}
+                      to={getVariantUrl(variant, product)}
+                      className="variant-card"
+                    >
+                      <div className="variant-card-image">
+                        <img
+                          src={variant.image}
+                          alt={variant.title}
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="variant-card-body">
+                        <span className="variant-card-grade">
+                          {variant.subcategory ? `Subcategory: ${variant.subcategory}` : variant.materialGroup}
+                        </span>
 
-                    <span className="variant-card-cta">VIEW DETAILS →</span>
-                  </div>
-                </Link>
-              ))}
+                        <h4 className="variant-card-title">{variant.title}</h4>
+
+                        <p className="variant-card-subtitle">
+                          {variant.shortDescription}
+                        </p>
+
+                        {variant.availableSizes && (
+                          <p
+                            style={{
+                              fontSize: "0.75rem",
+                              color: "#0A192F",
+                              background: "#F1F5F9",
+                              padding: "4px 8px",
+                              borderRadius: "4px",
+                              margin: "0.5rem 0 0",
+                              lineHeight: 1.4,
+                              fontWeight: 600,
+                            }}
+                          >
+                            <strong style={{ color: "#1B93CF" }}>Sizes:</strong>{" "}
+                            {variant.availableSizes}
+                          </p>
+                        )}
+
+                        {variant.standards && (
+                          <p
+                            style={{
+                              fontSize: "0.7rem",
+                              color: "#94A3B8",
+                              margin: "0.4rem 0 0",
+                              lineHeight: 1.4,
+                            }}
+                          >
+                            <strong style={{ color: "#1B93CF" }}>STD:</strong>{" "}
+                            {variant.standards}
+                          </p>
+                        )}
+
+                        <span className="variant-card-cta">VIEW DETAILS & RFQ →</span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
-          </div>
-        </section>
-      ) : null}
+          </section>
+        );
+      })()}
 
       {/* Types of Flanges - Strictly rendered ONLY on Flanges product page */}
       {product?.slug === "flanges" && (
