@@ -47,6 +47,14 @@ export default function TypesOfFlangesSection({ currentMaterialSlug = "", curren
                 className="flange-type-card"
                 title={`View ${flange.name} technical specifications`}
               >
+                <div className="flange-card-image-box">
+                  <img
+                    src={flange.image || flange.heroImage}
+                    alt={flange.name}
+                    className="flange-card-img"
+                    loading="lazy"
+                  />
+                </div>
                 <div className="flange-card-top">
                   <span className="flange-code-badge">{flange.diagramName}</span>
                   <span className="flange-std-mini">{flange.standards.split(",")[0]}</span>

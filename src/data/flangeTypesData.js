@@ -11,7 +11,8 @@ export const flangeTypesDatabase = [
     diagramName: "WELD NECK",
     code: "WN",
     shortDescription: "High-integrity butt-welded flanges with a tapered hub for severe cyclic, high-pressure, and thermal gradient piping systems.",
-    heroImage: "/images/products/types-of-flanges.png",
+    image: "/images/products/flanges/weld-neck.jpg",
+    heroImage: "/images/products/flanges/weld-neck.jpg",
     overview:
       "Weld Neck Flanges (WN) are engineered with a long, tapered reinforced hub that provides an optimal transition of mechanical stress from the flange body into the attached pipeline. Butt-welded directly to matching pipe schedule, weld neck flanges eliminate abrupt stress risers and turbulent flow. They are universally specified for critical high-pressure and extreme-temperature services in oil & gas exploration, petrochemical processing, steam power stations, and subsea pipelines.",
     workingPrinciple:
@@ -109,7 +110,8 @@ export const flangeTypesDatabase = [
     diagramName: "SLIP ON",
     code: "SO",
     shortDescription: "Cost-effective, easily aligned pipe flanges fitted over pipe outer diameter and secured with dual fillet welds.",
-    heroImage: "/images/products/types-of-flanges.png",
+    image: "/images/products/flanges/slip-on.jpg",
+    heroImage: "/images/products/flanges/slip-on.jpg",
     overview:
       "Slip-On Flanges (SO) feature an inside diameter slightly larger than the outside diameter of the pipe. The pipe is slipped inside the flange bore until positioned approximately 1/4\" from the flange face, whereupon it is secured by two fillet welds — one at the back hub and one at the inner flange face. Due to their simple assembly and reduced cutting precision requirements, slip-on flanges are one of the most widely used industrial flanges for moderate pressure systems.",
     workingPrinciple:
@@ -184,7 +186,8 @@ export const flangeTypesDatabase = [
     diagramName: "BLIND FLANGE",
     code: "BL",
     shortDescription: "Solid circular forged discs used to seal the ends of piping manifolds, valves, and pressure vessel nozzle openings.",
-    heroImage: "/images/products/types-of-flanges.png",
+    image: "/images/products/flanges/blind-flange.jpg",
+    heroImage: "/images/products/flanges/blind-flange.jpg",
     overview:
       "Blind Flanges (BL) are solid forged disks manufactured without a central bore. Featuring the same bolt hole circle, diameter, and gasket facing as mating flanges, blind flanges are bolted to the end of a piping run to terminate fluid flow or seal pressure vessel inspection openings. Because maximum bending stress occurs at the center of the blind plate, blind flanges are designed with heavier center section thickness to resist hydrostatic pressure forces.",
     workingPrinciple:
@@ -257,7 +260,8 @@ export const flangeTypesDatabase = [
     diagramName: "THREADED",
     code: "THD",
     shortDescription: "Non-welded threaded flanges connected to externally threaded pipes, ideal for explosive and hazardous areas.",
-    heroImage: "/images/products/types-of-flanges.png",
+    image: "/images/products/flanges/threaded.jpg",
+    heroImage: "/images/products/flanges/threaded.jpg",
     overview:
       "Threaded Flanges (also referred to as Screwed Flanges) feature internal female pipe threads machined into the bore conforming to ASME B1.20.1 (NPT) or ISO 7-1 (BSPT). The flange is assembled onto externally threaded pipe without hot work welding. This makes threaded flanges indispensable in oil refineries, chemical depots, and gas handling facilities where open flame welding is strictly prohibited due to explosion hazards.",
     workingPrinciple:
@@ -331,7 +335,8 @@ export const flangeTypesDatabase = [
     diagramName: "SOCKET WELD",
     code: "SW",
     shortDescription: "Small bore high-pressure flanges with internal shoulder counterbore and single fillet weld connection.",
-    heroImage: "/images/products/types-of-flanges.png",
+    image: "/images/products/flanges/socket-weld.jpg",
+    heroImage: "/images/products/flanges/socket-weld.jpg",
     overview:
       "Socket Weld Flanges (SW) are engineered specifically for small nominal pipe sizes (NPS 1/2\" to 3\") operating under high pressure and elevated temperature. The flange bore contains a counter-bored socket that accepts the pipe end. A mandatory 1/16\" (1.6 mm) gap is left between the pipe tip and socket shoulder to allow thermal expansion, after which a single fillet weld is applied around the hub.",
     workingPrinciple:
@@ -402,7 +407,8 @@ export const flangeTypesDatabase = [
     diagramName: "LAP JOINT",
     code: "LJ",
     shortDescription: "Two-piece loose ring flanges pairing with a butt-welded stub end for quick bolt alignment and economical exotic alloy use.",
-    heroImage: "/images/products/types-of-flanges.png",
+    image: "/images/products/flanges/lap-joint.jpg",
+    heroImage: "/images/products/flanges/lap-joint.jpg",
     overview:
       "Lap Joint Flanges (LJ) are two-component assemblies consisting of a loose, backing flange and a butt-welded Lap Joint Stub End. The inner bore of the flange has a curved radius to seat against the matching radiused hub of the stub end. Because the backing flange does not contact the process fluid, it can be manufactured from cost-effective carbon steel while only the stub end is made from expensive corrosion-resistant alloys (Titanium, Nickel, Duplex, or SS 316L).",
     workingPrinciple:
@@ -475,7 +481,8 @@ export const flangeTypesDatabase = [
     diagramName: "REDUCING",
     code: "RED",
     shortDescription: "Specialized connecting flanges with differing outer bolt circle and inner bore diameter for line size reduction.",
-    heroImage: "/images/products/types-of-flanges.png",
+    image: "/images/products/flanges/reducing.jpg",
+    heroImage: "/images/products/flanges/reducing.jpg",
     overview:
       "Reducing Flanges are designed to connect two pipes of different nominal sizes together without using a separate concentric or eccentric pipe reducer fitting. The flange features an outer diameter and bolt pattern matching the larger nominal pipe size, while the inner bore and hub profile are machined to match the smaller connecting pipe diameter.",
     workingPrinciple:
@@ -539,7 +546,8 @@ export const flangeTypesDatabase = [
     diagramName: "PLATE FLANGE",
     code: "PL",
     shortDescription: "Flat, hubless plate flanges flame/plasma cut and CNC machined for low-pressure water, HVAC, and ducting systems.",
-    heroImage: "/images/products/types-of-flanges.png",
+    image: "/images/products/flanges/plate-flange.jpg",
+    heroImage: "/images/products/flanges/plate-flange.jpg",
     overview:
       "Plate Flanges (Flat Face Slip-On Plate Flanges) are hubless, flat circular flanges manufactured directly from hot-rolled steel plates conforming to DIN EN 1092-1 Type 01, BS 4504, IS 2062, or AWWA C207 standards. The flange is slid over the pipe and secured with inside and outside fillet welds. Due to the absence of a forged hub, plate flanges are the most cost-efficient flange solution for low-pressure municipal, wastewater, and general ventilation systems.",
     workingPrinciple:
@@ -602,7 +610,8 @@ export const flangeTypesDatabase = [
     diagramName: "EXPANDER",
     code: "EXP",
     shortDescription: "Integrated weld neck flanges with an expanding tapered bore, transitioning a smaller pipe to a larger valve or pump nozzle.",
-    heroImage: "/images/products/types-of-flanges.png",
+    image: "/images/products/flanges/expander.jpg",
+    heroImage: "/images/products/flanges/expander.jpg",
     overview:
       "Expander Flanges are specialized weld neck flanges where the hub incorporates a gradual internal cone expansion. Designed in accordance with MSS SP-65 and ASME B16.5 conventions, expander flanges transition from a smaller pipe diameter at the weld bevel to a larger nominal flange mating face. By combining a weld neck flange and a pipe expander reducer into a single forged component, piping engineers eliminate one butt-weld seam and conserve vital skid footprint.",
     workingPrinciple:
@@ -670,7 +679,8 @@ export const flangeTypesDatabase = [
     diagramName: "WELDO FLANGE",
     code: "WF",
     shortDescription: "Integrally reinforced branch outlet forgings combining a Weldolet branch fitting and a weld neck flange in one solid body.",
-    heroImage: "/images/products/types-of-flanges.png",
+    image: "/images/products/flanges/weldo-flange.jpg",
+    heroImage: "/images/products/flanges/weldo-flange.jpg",
     overview:
       "Weldo Flanges (also known as Weldolet Flanges or Nipoflanges) are integrally reinforced forged components that fuse a branch outlet fitting (Weldolet) and a weld neck flange into a single, seamless forging. Designed per MSS SP-97 and ASME B31.3 reinforcement rules, a weldo flange is contoured to weld directly onto the main run header pipe, providing a 90° flanged takeoff branch without needing separate branch nipples, tees, or weld neck flanges.",
     workingPrinciple:
@@ -739,7 +749,8 @@ export const flangeTypesDatabase = [
     diagramName: "ELBOW FLANGE",
     code: "EF",
     shortDescription: "Engineered 90° or 45° forged piping elbows with integrated flange faces for extremely compact directional change piping.",
-    heroImage: "/images/products/types-of-flanges.png",
+    image: "/images/products/flanges/elbow-flange.jpg",
+    heroImage: "/images/products/flanges/elbow-flange.jpg",
     overview:
       "Elbow Flanges (Flanged Elbows) are heavy-duty forged components that combine a 90° or 45° pipe elbow with an integral flange face at one or both ends. Engineered for space-restricted environments where welding a standard pipe elbow to a separate weld neck flange is physically impossible due to tight center-to-face dimensions, elbow flanges provide an ultra-compact, high-strength solution.",
     workingPrinciple:
@@ -801,7 +812,8 @@ export const flangeTypesDatabase = [
     diagramName: "ORIFICE",
     code: "ORF",
     shortDescription: "Precision differential pressure metering flange pairs equipped with radial tap holes and jack screws for flow measurement.",
-    heroImage: "/images/products/types-of-flanges.png",
+    image: "/images/products/flanges/orifice.jpg",
+    heroImage: "/images/products/flanges/orifice.jpg",
     overview:
       "Orifice Flanges are specialized flange sets manufactured strictly in matching pairs per ASME B16.36 to house an orifice plate for fluid flow measurement. Unlike standard flanges, orifice flanges feature radial tapped differential pressure sensing ports (typically 1/2\" NPT) drilled directly into the flange ring, along with dedicated jack screw holes. Jack screws are utilized to spread the flange faces apart during maintenance, facilitating easy replacement or inspection of the orifice plate without straining adjacent piping.",
     workingPrinciple:

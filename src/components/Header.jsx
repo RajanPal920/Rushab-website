@@ -10,17 +10,59 @@ import {
   FaBars,
   FaTimes,
   FaCertificate,
-  FaFilePdf
+  FaFilePdf,
+  FaChevronDown,
+  FaChevronUp,
+  FaChevronRight
 } from 'react-icons/fa';
 import { siteConfig } from '../data/siteConfig';
 import { navigationLinks } from '../data/navigation';
+import { productsMegaMenu, materialsMegaMenu } from '../data/megaMenuData';
+import {
+  buttweldSubcategories,
+  flangesSubcategories,
+  fastenersSubcategories,
+  ferruleSubcategories,
+  forgedSubcategories
+} from '../data/subcategoriesData';
+import { getProductUrl, getVariantUrl, getMaterialUrl } from '../utils/seoSlugUtils';
 import NavMegaMenu from './navigation/NavMegaMenu';
 import './Header.css';
+
+const mainProductFamilies = [
+  {
+    name: "Butt Weld Fittings",
+    slug: "butt-weld-fittings",
+    items: buttweldSubcategories,
+  },
+  {
+    name: "Flanges",
+    slug: "flanges",
+    items: flangesSubcategories,
+  },
+  {
+    name: "Fasteners",
+    slug: "fasteners",
+    items: fastenersSubcategories,
+  },
+  {
+    name: "Ferrule Fittings",
+    slug: "ferrule-fittings",
+    items: ferruleSubcategories,
+  },
+  {
+    name: "Forged Fittings",
+    slug: "forged-fittings",
+    items: forgedSubcategories,
+  },
+];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
+  const [mobileExpandedGroup, setMobileExpandedGroup] = useState(null); // 'products' | 'materials' | null
+  const [mobileSubcategoryGroup, setMobileSubcategoryGroup] = useState('butt-weld-fittings');
   const timeoutRef = useRef(null);
 
   useEffect(() => {
@@ -53,6 +95,7 @@ export default function Header() {
   const closeMenu = () => {
     setActiveMenu(null);
     setMobileMenuOpen(false);
+    setMobileExpandedGroup(null);
   };
 
   return (
@@ -233,19 +276,195 @@ export default function Header() {
 
         <div className="mobile-drawer-body">
           <ul className="mobile-nav-menu">
-            {navigationLinks.map((link) => (
-              <li key={link.name} className="mobile-nav-item">
-                <NavLink
-                  to={link.href}
-                  className={({ isActive }) => `mobile-nav-anchor ${isActive ? 'active' : ''}`}
-                  onClick={closeMenu}
-                  end={link.href === '/'}
-                >
-                  <span>{link.name}</span>
-                  <span className="mobile-active-indicator"></span>
-                </NavLink>
-              </li>
-            ))}
+            {navigationLinks.map((link) => {
+              const lowerName = link.name.toLowerCase();
+              const isProducts = lowerName === 'products';
+              const isMaterials = lowerName === 'materials';
+
+              if (isProducts) {
+                const isOpen = mobileExpandedGroup === 'products';
+                return (
+                  <li key={link.name} className={`mobile-nav-item mobile-expandable-item ${isOpen ? 'is-open' : ''}`}>
+                    <div
+                      className={`mobile-nav-anchor mobile-expand-trigger ${isOpen ? 'active' : ''}`}
+                      onClick={() => setMobileExpandedGroup(isOpen ? null : 'products')}
+                      role="button"
+                      tabIndex={0}
+                      aria-expanded={isOpen}
+                    >
+                      <span className="mobile-link-text">{link.name}</span>
+                      <span className="mobile-expand-badge">
+                        {isOpen ? <FaChevronUp /> : <FaChevronDown />}
+                      </span>
+                    </div>
+
+                    {isOpen && (
+                      <div className="mobile-subproducts-drawer">
+                        <Link
+                          to="/products"
+                          className="mobile-all-overview-link"
+                          onClick={closeMenu}
+                        >
+                          <span>Explore All Products Overview (21 Families)</span>
+                          <FaChevronRight className="m-arrow-icon" />
+                        </Link>
+
+                        {/* Major Subcategory Families Accordion */}
+                        <div className="mobile-subcat-group">
+                          <div className="mobile-group-title">MAJOR PRODUCT SUBCATEGORIES</div>
+                          {mainProductFamilies.map((fam) => {
+                            const isFamOpen = mobileSubcategoryGroup === fam.slug;
+                            return (
+                              <div key={fam.slug} className="mobile-fam-wrapper">
+                                <button
+                                  type="button"
+                                  className={`mobile-fam-header ${isFamOpen ? 'open' : ''}`}
+                                  onClick={() => setMobileSubcategoryGroup(isFamOpen ? null : fam.slug)}
+                                >
+                                  <span className="fam-name">{fam.name}</span>
+                                  <span className="fam-count-pill">{fam.items.length} Types</span>
+                                  <span className="fam-icon">
+                                    {isFamOpen ? <FaChevronUp /> : <FaChevronDown />}
+                                  </span>
+                                </button>
+
+                                {isFamOpen && (
+                                  <div className="mobile-subitems-grid">
+                                    <Link
+                                      to={getProductUrl(fam.slug)}
+                                      className="mobile-subitem-all-link"
+                                      onClick={closeMenu}
+                                    >
+                                      <span>All {fam.name} Catalog & Specs →</span>
+                                    </Link>
+                                    {fam.items.map((subItem) => (
+                                      <Link
+                                        key={subItem.slug}
+                                        to={getVariantUrl(subItem, { slug: fam.slug })}
+                                        className="mobile-subitem-card"
+                                        onClick={closeMenu}
+                                      >
+                                        <div className="mobile-subitem-thumb">
+                                          <img
+                                            src={subItem.image}
+                                            alt={subItem.title}
+                                            loading="lazy"
+                                          />
+                                        </div>
+                                        <div className="mobile-subitem-details">
+                                          <span className="mobile-subitem-name">{subItem.title}</span>
+                                          <span className="mobile-subitem-spec">
+                                            {subItem.standards ? subItem.standards.split(',')[0] : 'ASME Standard'}
+                                          </span>
+                                        </div>
+                                        <FaChevronRight className="mobile-card-chevron" />
+                                      </Link>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })}
+                        </div>
+
+                        {/* All Product Families */}
+                        <div className="mobile-subcat-group">
+                          <div className="mobile-group-title">OTHER INDUSTRIAL PRODUCT LINES</div>
+                          <div className="mobile-other-grid">
+                            {[...productsMegaMenu.manufacturer.items, ...productsMegaMenu.supplier.items]
+                              .filter((p) => !mainProductFamilies.some((f) => f.slug === p.slug))
+                              .map((prod) => (
+                                <Link
+                                  key={prod.slug}
+                                  to={getProductUrl(prod.slug)}
+                                  className="mobile-other-card"
+                                  onClick={closeMenu}
+                                >
+                                  <div className="mobile-other-thumb">
+                                    <img src={prod.image} alt={prod.title} loading="lazy" />
+                                  </div>
+                                  <span className="mobile-other-name">{prod.title}</span>
+                                  <FaChevronRight className="mobile-other-chevron" />
+                                </Link>
+                              ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </li>
+                );
+              }
+
+              if (isMaterials) {
+                const isOpen = mobileExpandedGroup === 'materials';
+                return (
+                  <li key={link.name} className={`mobile-nav-item mobile-expandable-item ${isOpen ? 'is-open' : ''}`}>
+                    <div
+                      className={`mobile-nav-anchor mobile-expand-trigger ${isOpen ? 'active' : ''}`}
+                      onClick={() => setMobileExpandedGroup(isOpen ? null : 'materials')}
+                      role="button"
+                      tabIndex={0}
+                      aria-expanded={isOpen}
+                    >
+                      <span className="mobile-link-text">{link.name}</span>
+                      <span className="mobile-expand-badge">
+                        {isOpen ? <FaChevronUp /> : <FaChevronDown />}
+                      </span>
+                    </div>
+
+                    {isOpen && (
+                      <div className="mobile-subproducts-drawer">
+                        <Link
+                          to="/materials"
+                          className="mobile-all-overview-link"
+                          onClick={closeMenu}
+                        >
+                          <span>Explore All Materials Overview (16 Alloys)</span>
+                          <FaChevronRight className="m-arrow-icon" />
+                        </Link>
+
+                        <div className="mobile-materials-container">
+                          <div className="mobile-group-title">16 CERTIFIED METALLURGICAL ALLOYS</div>
+                          <div className="mobile-materials-grid">
+                            {materialsMegaMenu.items.map((mat) => (
+                              <Link
+                                key={mat.slug}
+                                to={getMaterialUrl(mat.slug)}
+                                className="mobile-material-card"
+                                onClick={closeMenu}
+                              >
+                                <div className="mobile-mat-thumb">
+                                  <img src={mat.image} alt={mat.name} loading="lazy" />
+                                </div>
+                                <div className="mobile-mat-details">
+                                  <span className="mobile-mat-name">{mat.name}</span>
+                                  <span className="mobile-mat-grade">{mat.grade}</span>
+                                </div>
+                                <FaChevronRight className="mobile-mat-chevron" />
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </li>
+                );
+              }
+
+              return (
+                <li key={link.name} className="mobile-nav-item">
+                  <NavLink
+                    to={link.href}
+                    className={({ isActive }) => `mobile-nav-anchor ${isActive ? 'active' : ''}`}
+                    onClick={closeMenu}
+                    end={link.href === '/'}
+                  >
+                    <span>{link.name}</span>
+                    <span className="mobile-active-indicator"></span>
+                  </NavLink>
+                </li>
+              );
+            })}
           </ul>
 
           <div className="mobile-drawer-cta">
