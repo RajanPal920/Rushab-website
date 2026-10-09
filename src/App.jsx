@@ -22,6 +22,8 @@ import Catalogue from './pages/Catalogue';
 // Global Styles
 import './styles/global.css';
 import MaterialProducts from './pages/MaterialProducts';
+import GradeDetails from './pages/GradeDetails';
+import FlangeTypeDetails from './pages/FlangeTypeDetails';
 
 // Automatically scroll window to top on route change
 function ScrollToTop() {
@@ -62,6 +64,10 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/catalogue" element={<Catalogue />} />
             <Route path="/downloads" element={<Catalogue />} />
+            {/* Dedicated Grade and Flange Routes */}
+            <Route path="/grades/:gradeSlug" element={<GradeDetails />} />
+            <Route path="/flanges/:typeSlug" element={<FlangeTypeDetails />} />
+            <Route path="/flanges/:materialSlug/:typeSlug" element={<FlangeTypeDetails />} />
             {/* Catch-all fallback */}
             <Route path="*" element={<Home />} />
           </Routes>

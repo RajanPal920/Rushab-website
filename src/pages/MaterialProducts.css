@@ -214,6 +214,32 @@
   color: #334155;
 }
 
+.mat-grade-item-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+}
+
+.mat-grade-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.mat-grade-category-lbl {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.mat-grade-tokens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
 .mat-check-icon {
   color: #10b981;
   flex-shrink: 0;

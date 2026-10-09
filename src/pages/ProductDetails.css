@@ -225,6 +225,34 @@
   border-radius: 4px;
 }
 
+.mat-badge-link {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mat-badge-link:hover {
+  background: #1b93cf;
+  color: #ffffff;
+  border-color: #1b93cf;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(27, 147, 207, 0.25);
+}
+
+.mat-badge-link-arrow {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mat-badge-link:hover .mat-badge-link-arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
 .p-sizes-section {
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
@@ -573,4 +601,30 @@
   .specs-two-col-layout {
     grid-template-columns: 1fr;
   }
+}
+
+.grade-parsed-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.grade-item-content {
+  flex: 1;
+}
+
+.grade-cat-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--dark-navy);
+  margin-bottom: 0.35rem;
+}
+
+.grade-tokens-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
 }

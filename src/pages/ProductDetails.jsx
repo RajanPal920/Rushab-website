@@ -14,6 +14,8 @@ import {
   FiBox,
 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import TypesOfFlangesSection from "../components/flanges/TypesOfFlangesSection";
+import { parseGradeLineToTokens, getGradeUrl } from "../data/gradesData";
 import "./ProductDetails.css";
 import "./VariantDetails.css";
 
@@ -250,9 +252,15 @@ ${quoteForm.message || "N/A"}
                   </h4>
                   <div className="materials-badge-grid">
                     {product.materials.map((mat, i) => (
-                      <span key={i} className="mat-badge-tag">
+                      <Link
+                        key={i}
+                        to={getGradeUrl(mat, product)}
+                        className="mat-badge-tag mat-badge-link"
+                        title={`View ${mat} metallurgy & standards`}
+                      >
                         {mat}
-                      </span>
+                        <span className="mat-badge-link-arrow">↗</span>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -353,6 +361,11 @@ ${quoteForm.message || "N/A"}
         </section>
       )}
 
+      {/* Types of Flanges - Strictly rendered ONLY on Flanges product page */}
+      {product?.slug === "flanges" && (
+        <TypesOfFlangesSection currentVariantTitle="Industrial Flanges" />
+      )}
+
       {/* Specifications & Grades */}
       <section className="section-py bg-light-steel">
         <div className="container">
@@ -391,12 +404,30 @@ ${quoteForm.message || "N/A"}
                       Commonly Supplied Grades
                     </h3>
                     <ul className="grades-list">
-                      {product.grades.map((grade, i) => (
-                        <li key={i}>
-                          <FiCheckCircle className="grade-check-icon" />
-                          <span>{grade}</span>
-                        </li>
-                      ))}
+                      {product.grades.map((gradeLine, i) => {
+                        const { label, tokens } = parseGradeLineToTokens(gradeLine, product);
+                        return (
+                          <li key={i} className="grade-parsed-item">
+                            <FiCheckCircle className="grade-check-icon" />
+                            <div className="grade-item-content">
+                              {label && <strong className="grade-cat-label">{label}: </strong>}
+                              <div className="grade-tokens-flex">
+                                {tokens.map((tok, j) => (
+                                  <Link
+                                    key={j}
+                                    to={tok.url}
+                                    className="mat-badge-tag mat-badge-link"
+                                    title={`View verified metallurgical dossier for ${tok.text}`}
+                                  >
+                                    {tok.text}
+                                    <span className="mat-badge-link-arrow">↗</span>
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 )}

@@ -1,0 +1,569 @@
+/* src/pages/FlangeTypeDetails.css */
+
+.flange-details-page {
+  background-color: #f8fafc;
+}
+
+.flange-hero-section {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.flange-main-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .flange-main-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Visual Column */
+.flange-visual-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.flange-hero-image-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.flange-hero-img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.flange-diagram-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.flange-diagram-tag .dot-active {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+}
+
+.flange-quick-highlights-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.quick-box-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.85rem;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 0.5rem;
+}
+
+.quick-spec-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+  font-size: 0.82rem;
+}
+
+.quick-spec-item .qs-label {
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.quick-spec-item .qs-val {
+  color: #0f172a;
+  font-weight: 700;
+  margin-top: 0.15rem;
+}
+
+/* Info Column */
+.flange-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flange-meta-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.badge-flange-code {
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+}
+
+.badge-std-pill {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #bae6fd;
+}
+
+.badge-mat-pill {
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #fde68a;
+}
+
+.flange-page-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.18;
+  margin-bottom: 0.65rem;
+}
+
+.flange-page-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #475569;
+  margin-bottom: 1.25rem;
+}
+
+.flange-overview-body {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #334155;
+  margin-bottom: 1.5rem;
+}
+
+.working-principle-card {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.wp-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.wp-icon {
+  font-size: 1.25rem;
+  color: #16a34a;
+}
+
+.wp-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #166534;
+  margin: 0;
+}
+
+.wp-text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #14532d;
+  margin: 0;
+}
+
+.design-features-block {
+  margin-bottom: 1.75rem;
+}
+
+.df-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.df-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.df-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.df-check-icon {
+  font-size: 1rem;
+  color: #1b93cf;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.flange-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Material Switcher Strip */
+.material-tabs-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.mat-tab-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.55rem 1.15rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.mat-tab-btn:hover {
+  border-color: #1b93cf;
+  color: #1b93cf;
+}
+
+.mat-tab-btn.active {
+  background: #1b93cf;
+  border-color: #1b93cf;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(27, 147, 207, 0.25);
+}
+
+.materials-breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.material-spec-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.mat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.mat-name-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.mat-tag-pill {
+  font-size: 0.7rem;
+  font-weight: 800;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+.mat-highlight-desc {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #475569;
+  margin-bottom: 1rem;
+}
+
+.mat-grades-listing {
+  margin-bottom: 1rem;
+}
+
+.mat-grades-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+.mat-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.mat-spec-grade-badge {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #bae6fd;
+}
+
+.mat-card-bottom {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 0.75rem;
+}
+
+.mat-standard-note {
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.4;
+  display: block;
+}
+
+/* Evaluation Two Col */
+.comparison-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .comparison-two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.evaluation-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.75rem;
+  border: 1px solid #e2e8f0;
+}
+
+.advantages-card {
+  border-left: 4px solid #16a34a;
+}
+
+.limitations-card {
+  border-left: 4px solid #d97706;
+}
+
+.eval-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.eval-icon.green {
+  color: #16a34a;
+  font-size: 1.35rem;
+}
+
+.eval-icon.amber {
+  color: #d97706;
+  font-size: 1.35rem;
+}
+
+.eval-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.eval-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.eval-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.bullet-icon.green {
+  color: #16a34a;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.bullet-icon.amber {
+  color: #d97706;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+/* Applications Grid */
+.applications-badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.application-item-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+
+.app-icon {
+  font-size: 1.25rem;
+  color: #1b93cf;
+  flex-shrink: 0;
+}
+
+.app-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+/* Related Flanges */
+.related-flanges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.related-flange-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.related-flange-card:hover {
+  transform: translateY(-3px);
+  border-color: #1b93cf;
+  box-shadow: 0 8px 16px -4px rgba(27, 147, 207, 0.12);
+}
+
+.rel-card-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  align-self: flex-start;
+}
+
+.rel-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.4rem;
+}
+
+.rel-card-desc {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #64748b;
+  margin-bottom: 0.85rem;
+  flex: 1;
+}
+
+.rel-card-cta {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0284c7;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.back-to-flanges-wrap {
+  text-align: center;
+}
+
+.btn-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-back-link:hover {
+  border-color: #1b93cf;
+  color: #1b93cf;
+  background: #f8fafc;
+}

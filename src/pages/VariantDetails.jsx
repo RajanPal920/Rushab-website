@@ -23,6 +23,8 @@ import {
   FiBox,
 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import { getGradeUrl } from "../data/gradesData";
+import TypesOfFlangesSection from "../components/flanges/TypesOfFlangesSection";
 import "./VariantDetails.css";
 
 // Helper: Convert camelCase to Title Case
@@ -93,6 +95,12 @@ export default function VariantDetails({ resolvedProduct, resolvedVariant }) {
         value,
       }))
     : [];
+
+  // Check if current context is a Flange product
+  const isFlangeProduct =
+    product?.slug === "flanges" ||
+    Boolean(variant?.slug && variant.slug.includes("flange")) ||
+    Boolean(variant?.title && variant.title.toLowerCase().includes("flange"));
 
   return (
     <div className="variant-details-page">
@@ -191,9 +199,15 @@ export default function VariantDetails({ resolvedProduct, resolvedVariant }) {
                   <h4 className="p-sub-heading">Available Grades:</h4>
                   <div className="materials-badge-grid">
                     {variant.grades.map((grade, i) => (
-                      <span key={i} className="mat-badge-tag">
+                      <Link
+                        key={i}
+                        to={getGradeUrl(grade, product, variant)}
+                        className="mat-badge-tag mat-badge-link"
+                        title={`Click to view chemical composition & properties for ${grade}`}
+                      >
                         {grade}
-                      </span>
+                        <span className="mat-badge-link-arrow">↗</span>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -218,6 +232,14 @@ export default function VariantDetails({ resolvedProduct, resolvedVariant }) {
           </div>
         </div>
       </section>
+
+      {/* Types of Flanges - Strictly rendered ONLY for Flange Products */}
+      {isFlangeProduct && (
+        <TypesOfFlangesSection
+          currentMaterialSlug={variant?.slug?.replace(/-flanges?.*$/, "") || ""}
+          currentVariantTitle={variant?.title || ""}
+        />
+      )}
 
       {/* Technical Specifications */}
       {specsArray.length > 0 && (

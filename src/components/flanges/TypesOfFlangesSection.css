@@ -1,0 +1,285 @@
+/* src/components/flanges/TypesOfFlangesSection.css */
+.types-of-flanges-section {
+  padding: 4.5rem 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+}
+
+.flanges-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 900px) {
+  .flanges-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.flanges-header-left {
+  flex: 1;
+}
+
+.flanges-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid #bae6fd;
+  margin-bottom: 0.85rem;
+}
+
+.flanges-eyebrow-pill .pill-shield-icon {
+  font-size: 0.9rem;
+}
+
+.flanges-section-heading {
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.flanges-section-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #475569;
+  max-width: 750px;
+  margin: 0;
+}
+
+.flanges-header-infographic-preview {
+  flex-shrink: 0;
+}
+
+.infographic-badge-box {
+  background: #ffffff;
+  padding: 0.75rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  text-align: center;
+  max-width: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-badge-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #0369a1;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.infographic-mini-thumb {
+  width: 100%;
+  max-height: 110px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.info-chart-caption {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-top: 0.35rem;
+}
+
+/* Flanges Grid */
+.flange-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 1200px) {
+  .flange-types-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.flange-type-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.35rem;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+}
+
+.flange-type-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #e2e8f0;
+  transition: background 0.25s ease;
+}
+
+.flange-type-card:hover {
+  transform: translateY(-4px);
+  border-color: #1b93cf;
+  box-shadow: 0 12px 24px -6px rgba(27, 147, 207, 0.12), 0 4px 8px rgba(15, 23, 42, 0.04);
+}
+
+.flange-type-card:hover::before {
+  background: linear-gradient(90deg, #1b93cf, #0284c7);
+}
+
+.flange-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.flange-code-badge {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.flange-type-card:hover .flange-code-badge {
+  background: #e0f2fe;
+  color: #0284c7;
+  border-color: #bae6fd;
+}
+
+.flange-std-mini {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.flange-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.flange-type-card:hover .flange-card-title {
+  color: #1b93cf;
+}
+
+.flange-card-desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #475569;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.flange-card-meta {
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.flange-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.flange-meta-row:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+
+.flange-meta-row .meta-label {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.flange-meta-row .meta-value {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.flange-card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0284c7;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 0.75rem;
+  transition: color 0.2s ease;
+}
+
+.flange-card-action .action-arrow {
+  transition: transform 0.2s ease;
+}
+
+.flange-type-card:hover .flange-card-action .action-arrow {
+  transform: translateX(4px);
+}
+
+/* Assurance Bar */
+.flanges-assurance-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .flanges-assurance-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.assurance-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.assurance-item .assur-icon {
+  font-size: 1.15rem;
+  color: #1b93cf;
+  flex-shrink: 0;
+}

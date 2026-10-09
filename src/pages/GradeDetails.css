@@ -1,0 +1,466 @@
+/* src/pages/GradeDetails.css */
+
+.grade-details-page {
+  background-color: #f8fafc;
+}
+
+.grade-hero-section {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.grade-main-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .grade-main-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Visual / ID Card Column */
+.grade-visual-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.grade-identity-card {
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  color: #ffffff;
+  border-radius: 14px;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.grade-identity-card::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(27, 147, 207, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.grade-id-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.grade-cat-tag {
+  background: rgba(255, 255, 255, 0.12);
+  color: #93c5fd;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(147, 197, 253, 0.2);
+}
+
+.grade-pren-badge {
+  background: #0284c7;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+}
+
+.grade-id-code {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.grade-id-subnames {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.id-sub-pill {
+  background: rgba(15, 23, 42, 0.6);
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  font-family: monospace;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.grade-quick-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 1.25rem;
+}
+
+.g-stat-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.g-stat-box .stat-label {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.g-stat-box .stat-val {
+  font-size: 0.82rem;
+  color: #f8fafc;
+  font-weight: 700;
+  margin-top: 0.2rem;
+}
+
+.parent-return-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.prc-label {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.prc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0284c7;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.prc-link:hover {
+  color: #0369a1;
+  text-decoration: underline;
+}
+
+/* Info Column */
+.grade-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.grade-context-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid #bae6fd;
+  margin-bottom: 0.85rem;
+  align-self: flex-start;
+}
+
+.grade-context-eyebrow .eyebrow-icon {
+  font-size: 0.9rem;
+}
+
+.grade-page-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.grade-full-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 1.25rem;
+}
+
+.grade-overview-prose {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #334155;
+  margin-bottom: 1.5rem;
+}
+
+.grade-contextual-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ctx-box-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #166534;
+  margin-bottom: 0.4rem;
+}
+
+.ctx-box-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #14532d;
+  margin: 0;
+}
+
+.grade-features-block {
+  margin-bottom: 1.75rem;
+}
+
+.gf-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.gf-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.gf-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.gf-check-icon {
+  font-size: 1rem;
+  color: #1b93cf;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.grade-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Properties Two Col Grid */
+.properties-two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .properties-two-col-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.prop-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.prop-card-header {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 0.65rem;
+}
+
+.prop-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #0284c7;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.prop-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+/* Applications & Compatible Products */
+.apps-products-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 800px) {
+  .apps-products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.app-block-col .block-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1.25rem;
+}
+
+.grade-apps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.grade-apps-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  font-size: 0.88rem;
+  color: #334155;
+  line-height: 1.45;
+}
+
+.app-li-icon {
+  font-size: 1.1rem;
+  color: #1b93cf;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.compat-products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.compat-prod-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+}
+
+.compat-check {
+  font-size: 1.1rem;
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+.compat-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #14532d;
+}
+
+/* Related Grades Grid */
+.related-grades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.related-grade-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.related-grade-card:hover {
+  transform: translateY(-3px);
+  border-color: #1b93cf;
+  box-shadow: 0 8px 16px -4px rgba(27, 147, 207, 0.12);
+}
+
+.rg-cat-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.rg-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.35rem;
+}
+
+.rg-subtitle {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 0.85rem;
+  flex: 1;
+}
+
+.rg-cta {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0284c7;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.back-navigation-row {
+  text-align: center;
+}

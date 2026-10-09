@@ -22,6 +22,7 @@ import {
 } from 'react-icons/fi';
 import './Products.css';
 import './MaterialProducts.css';
+import { parseGradeLineToTokens } from '../data/gradesData';
 
 export default function MaterialProducts() {
   const { materialSlug } = useParams();
@@ -269,12 +270,30 @@ export default function MaterialProducts() {
                 <div className="mat-specs-col">
                   <strong className="mat-specs-label">Supplied Grades & Standards:</strong>
                   <ul className="mat-grades-mini-list">
-                    {materialInfo.grades.map((gradeItem, idx) => (
-                      <li key={idx}>
-                        <FiCheck className="mat-check-icon" />
-                        <span>{gradeItem}</span>
-                      </li>
-                    ))}
+                    {materialInfo.grades.map((gradeItem, idx) => {
+                      const { label, tokens } = parseGradeLineToTokens(gradeItem);
+                      return (
+                        <li key={idx} className="mat-grade-item-wrap">
+                          <FiCheck className="mat-check-icon" />
+                          <div className="mat-grade-item-body">
+                            {label && <strong className="mat-grade-category-lbl">{label}: </strong>}
+                            <span className="mat-grade-tokens">
+                              {tokens.map((tok, j) => (
+                                <Link
+                                  key={j}
+                                  to={tok.url}
+                                  className="mat-badge-tag mat-badge-link"
+                                  title={`View ${tok.text} metallurgical specifications`}
+                                >
+                                  {tok.text}
+                                  <span className="mat-badge-link-arrow">↗</span>
+                                </Link>
+                              ))}
+                            </span>
+                          </div>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               )}
