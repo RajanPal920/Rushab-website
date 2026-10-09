@@ -69,6 +69,14 @@ const products = [
   },
   {
     id: 9,
+    std: "ASTM A276 / A479",
+    type: "SUPPLIER DIV.",
+    title: "RODS AND BARS",
+    subtitle: "BRIGHT & BLACK FINISH",
+    image: "/images/products/rods-bars.jpg"
+  },
+  {
+    id: 10,
     std: "ASME B31.3 / MSS SP-99",
     type: "MANUFACTURING",
     title: "FERRULE FITTINGS",

@@ -22,6 +22,7 @@ export default function Products() {
     "Fasteners",
     "Ferrule Fittings",
     "Sheets & Plates",
+    "Bars & Rods",
     "Valves & Flow Control",
     "Screens & Mesh",
     "Lifting & Rigging",

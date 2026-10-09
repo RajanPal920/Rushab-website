@@ -35,8 +35,8 @@ const brochureIndustries = [
     image: "/images/industriesimage/automobile.jpg",
     icon: <FiCpu />,
     tag: "Machining & Precision",
-    description: "Precision engineered components, capillary stainless tubes, and high-tensile fasteners for powertrain components and exhaust lines.",
-    typicalSupplies: ["Precision Machined Components", "Hex & Square Profiles", "Capillary SS Tubing", "Grade 8.8 / 10.9 Bolts"]
+    description: "Precision bright bars, capillary stainless tubes, and high-tensile fasteners for powertrain components and exhaust lines.",
+    typicalSupplies: ["Bright Drawn Round Bars", "Hex & Square Bars", "Capillary SS Tubing", "Grade 8.8 / 10.9 Bolts"]
   },
   {
     id: 3,

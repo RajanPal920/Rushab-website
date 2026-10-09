@@ -437,7 +437,7 @@
     "type": "SUPPLIER DIV.",
     "title": "Patta Paati",
     "subtitle": "COLD DRAWN & HRAP Patta Patti",
-    "category": "Sheets & Plates",
+    "category": "Bars & Rods",
     "image": "/images/products/flat-bar.jpg",
     "gallery": [
       "/images/products/flat-bar.jpg"
@@ -476,6 +476,60 @@
       {
         "label": "Edges",
         "value": "Square Edge, Round Edge, Sheared Edge"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "rods-bars",
+    "std": "ASTM A276 / A479",
+    "type": "SUPPLIER DIV.",
+    "title": "RODS AND BARS",
+    "subtitle": "ROUND, SQUARE & HEX BARS",
+    "category": "Bars & Rods",
+    "image": "/images/products/rods-bars.jpg",
+    "gallery": [
+      "/images/products/rods-bars.jpg"
+    ],
+    "materials": [
+      "Stainless Steel",
+      "Carbon Steel",
+      "Alloy Steel",
+      "Duplex & Super Duplex",
+      "Monel",
+      "Inconel",
+      "Hastelloy",
+      "Titanium"
+    ],
+    "grades": [
+      "SS: 304, 304L, 316, 316L, 317, 321, 310, 410, 420, 904L",
+      "Duplex: UNS S31803, S32205, S32750",
+      "Alloy Steel: 4140, 4340, En19, En24, P11, P22",
+      "Nickel Alloys: Inconel 600/625/718, Monel 400/K500, Hastelloy C276"
+    ],
+    "types": [
+      "Round Bars (Bright Drawn, Peeled & Polished)",
+      "Square Bars (Cold Drawn & Hot Rolled)",
+      "Hex Bars (Cold Drawn Hexagonal)"
+    ],
+    "sizes": "Round Bars: 3 mm to 500 mm Dia; Hex & Square: 6 mm to 100 mm",
+    "description": "High-strength round, square, and hexagonal bars crafted for CNC machining, shaft manufacturing, fasteners, and heavy industrial mechanical components.",
+    "specifications": [
+      {
+        "label": "Round Bar Diameter",
+        "value": "3 mm to 500 mm"
+      },
+      {
+        "label": "Hex & Square Bar Sizes",
+        "value": "6 mm to 100 mm A/F"
+      },
+      {
+        "label": "Finishes",
+        "value": "Bright Drawn, Centerless Ground, Peeled, Black Forged"
+      },
+      {
+        "label": "Standards",
+        "value": "ASTM A276, ASTM A479, DIN 1013, BS 970"
       }
     ]
   },
@@ -872,7 +926,7 @@
     "type": "SUPPLIER & STOCKIST",
     "title": "STRIPS",
     "subtitle": "Precision Narrow Slit Strips & Continuous Patti",
-    "category": "Sheets & Plates",
+    "category": "Bars & Rods",
     "image": "/images/products/strips.jpg",
     "gallery": [
       "/images/products/strips.jpg"
