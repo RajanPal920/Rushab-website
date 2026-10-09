@@ -1,7 +1,7 @@
 // src/utils/seoSlugUtils.js
 import productsData from '../data/products.json';
-import { productVariants } from '../data/productVariants';
-import { materialsList } from '../data/materialsData';
+import { productVariants } from '../data/productVariants.js';
+import { materialsList } from '../data/materialsData.js';
 
 export const SEO_SUFFIX = 'manufacture-in-india';
 
@@ -287,6 +287,31 @@ export function resolveVariantBySlugs(parentSlug, variantSlug) {
       canonicalUrl: info.canonicalUrl,
       isCanonical: false
     };
+  }
+
+  // Try matching material slug to variant within product family
+  const rawParent = cleanP.replace(/-manufacture-in-india$/, '');
+  const pInfo = productMap.get(cleanP) || productMap.get(rawParent);
+  if (pInfo && pInfo.product) {
+    const variants = productVariants[pInfo.product.slug] || [];
+    const matched = variants.find(
+      (v) =>
+        v.slug === cleanV ||
+        v.slug === `${cleanV}-${pInfo.product.slug}` ||
+        v.slug === `${cleanV}-${pInfo.product.slug.replace(/s$/, '')}` ||
+        v.slug.startsWith(cleanV) ||
+        (v.materialGroup && v.materialGroup.toLowerCase().includes(cleanV))
+    );
+    if (matched) {
+      const seoSlug = toVariantSeoSlug(matched, pInfo.product.slug);
+      return {
+        product: pInfo.product,
+        variant: matched,
+        seoSlug,
+        canonicalUrl: `/products/${seoSlug}`,
+        isCanonical: false
+      };
+    }
   }
 
   return null;

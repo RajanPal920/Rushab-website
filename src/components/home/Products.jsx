@@ -1,18 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FiArrowUpRight, FiArrowRight } from 'react-icons/fi';
 import '../../styles/products.css';
 
 const products = [
   {
     id: 1,
+    slug: "butt-weld-fittings",
     std: "ASME B16.9",
     type: "MANUFACTURING",
-    title: "BUTT WELD FITTING",
+    title: "BUTT WELD FITTINGS",
     subtitle: "ELBOWS, TEES, REDUCERS",
     image: "/images/products/buttweld-fitting.jpg"
   },
   {
     id: 2,
+    slug: "fasteners",
     std: "ASTM A193 / A194",
     type: "MANUFACTURING",
     title: "FASTENERS",
@@ -21,6 +24,7 @@ const products = [
   },
   {
     id: 3,
+    slug: "flanges",
     std: "ASME B16.5",
     type: "MANUFACTURING",
     title: "FLANGES",
@@ -29,30 +33,34 @@ const products = [
   },
   {
     id: 4,
+    slug: "forged-fittings",
     std: "ASME B16.11",
     type: "MANUFACTURING",
-    title: "FORGE FITTING",
+    title: "FORGED FITTINGS",
     subtitle: "3000# / 6000# / 9000#",
     image: "/images/products/forge-fittings.jpg"
   },
   {
     id: 5,
+    slug: "coils",
     std: "ASTM A240",
     type: "SUPPLIER DIV.",
-    title: "COIL",
+    title: "COILS",
     subtitle: "HOT & COLD ROLLED COILS",
     image: "/images/products/coil.jpg"
   },
   {
     id: 6,
+    slug: "patta-patti",
     std: "ASTM A276 / A484",
     type: "SUPPLIER DIV.",
-    title: "FLAT BAR",
+    title: "PATTA PATTI",
     subtitle: "COLD DRAWN & HRAP",
     image: "/images/products/flat-bar.jpg"
   },
   {
     id: 7,
+    slug: "pipes-tubes",
     std: "ASTM A312 / A269",
     type: "SUPPLIER DIV.",
     title: "PIPES AND TUBES",
@@ -61,6 +69,7 @@ const products = [
   },
   {
     id: 8,
+    slug: "sheets-plates",
     std: "ASTM A240 / ASME SA240",
     type: "SUPPLIER DIV.",
     title: "SHEETS AND PLATES",
@@ -69,6 +78,7 @@ const products = [
   },
   {
     id: 9,
+    slug: "rods-bars",
     std: "ASTM A276 / A479",
     type: "SUPPLIER DIV.",
     title: "RODS AND BARS",
@@ -95,7 +105,11 @@ export default function Products() {
 
         <div className="products-grid">
           {products.map((product) => (
-            <div className="product-card" key={product.id}>
+            <Link
+              to={`/products/${product.slug}-manufacture-in-india`}
+              className="product-card"
+              key={product.id}
+            >
               <div className="product-image-wrapper">
                 <img src={product.image} alt={product.title} className="product-image" />
                 <div className="product-badges">
@@ -110,19 +124,19 @@ export default function Products() {
                 <p className="product-subtitle">{product.subtitle}</p>
                 <div className="product-footer-link">
                   <span className="explore-text">EXPLORE SPECS</span>
-                  <a href="#" className="explore-icon-box">
+                  <span className="explore-icon-box">
                     <FiArrowUpRight />
-                  </a>
+                  </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         <div className="products-footer">
-          <a href="#" className="all-products-btn">
+          <Link to="/products" className="all-products-btn">
             ALL PRODUCTS <FiArrowRight className="btn-icon" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

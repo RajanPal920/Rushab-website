@@ -25,6 +25,8 @@ import {
 import { FaWhatsapp } from "react-icons/fa";
 import { getGradeUrl } from "../data/gradesData";
 import TypesOfFlangesSection from "../components/flanges/TypesOfFlangesSection";
+import ProductTypeCardsSection from "../components/catalogue/ProductTypeCardsSection";
+import { getCatalogueMaterial } from "../data/productCatalogueData.js";
 import "./VariantDetails.css";
 
 // Helper: Convert camelCase to Title Case
@@ -61,6 +63,29 @@ export default function VariantDetails({ resolvedProduct, resolvedVariant }) {
   }
   if (!variant && product && (variantSlug || slug)) {
     variant = getVariantBySlug(product.slug, variantSlug || slug);
+    if (!variant) {
+      const catMat = getCatalogueMaterial(product.slug, variantSlug || slug);
+      if (catMat) {
+        variant = {
+          slug: catMat.slug,
+          title: `${catMat.name} ${product.title}`,
+          materialGroup: catMat.name,
+          image: catMat.image || product.image,
+          shortDescription: catMat.shortDescription,
+          overview: `Rishabh Metal Industries manufactures, machines, and stocks certified ${catMat.name} ${product.title} conforming to ${catMat.standards || product.std}. Fully tested with 100% PMI and EN 10204 3.1 MTC.`,
+          standards: catMat.standards || product.std,
+          grades: catMat.grades || [],
+          technicalSpecs: {
+            material: catMat.name,
+            standards: catMat.standards || product.std,
+            sizeRange: product.sizes || "All Standard Sizes",
+            origin: "India",
+            testing: "100% PMI Spectro, Hydrostatic, Ultrasonic",
+            certification: "EN 10204 3.1 MTC"
+          }
+        };
+      }
+    }
   }
 
   const allVariants = product ? getVariantsByProduct(product.slug) : [];
@@ -233,13 +258,13 @@ export default function VariantDetails({ resolvedProduct, resolvedVariant }) {
         </div>
       </section>
 
-      {/* Types of Flanges - Strictly rendered ONLY for Flange Products */}
-      {isFlangeProduct && (
-        <TypesOfFlangesSection
-          currentMaterialSlug={variant?.slug?.replace(/-flanges?.*$/, "") || ""}
-          currentVariantTitle={variant?.title || ""}
-        />
-      )}
+      {/* LEVEL 2: Universal Product Type Cards for ALL Product Categories */}
+      <ProductTypeCardsSection
+        product={product}
+        variant={variant}
+        currentMaterialSlug={variant?.slug?.replace(new RegExp(`-${product?.slug}$`), '') || ''}
+        currentVariantTitle={variant?.title || ''}
+      />
 
       {/* Technical Specifications */}
       {specsArray.length > 0 && (

@@ -12,10 +12,12 @@ import {
   FiShield,
   FiSend,
   FiBox,
+  FiArrowRight,
 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import TypesOfFlangesSection from "../components/flanges/TypesOfFlangesSection";
 import { parseGradeLineToTokens, getGradeUrl } from "../data/gradesData";
+import { getCatalogueProduct } from "../data/productCatalogueData.js";
 import "./ProductDetails.css";
 import "./VariantDetails.css";
 
@@ -26,6 +28,9 @@ export default function ProductDetails({ resolvedProduct }) {
     resolvedProduct ||
     productsData.find((p) => p.slug === slug || toProductSeoSlug(p) === slug) ||
     productsData[0];
+
+  const catProduct = getCatalogueProduct(product?.slug || slug);
+  const catMaterials = catProduct?.materials || [];
 
   const variants = getVariantsByProduct(product?.slug || slug);
 
@@ -296,8 +301,63 @@ ${quoteForm.message || "N/A"}
         </div>
       </section>
 
-      {/* VARIANTS GRID */}
-      {variants.length > 0 && (
+      {/* LEVEL 1: AVAILABLE MATERIAL METALLURGIES GRID */}
+      {catMaterials.length > 0 ? (
+        <section className="section-py bg-light-steel" id="materials-metallurgy">
+          <div className="container">
+            <div
+              className="section-header-compact"
+              style={{ textAlign: "center", marginBottom: "2.5rem" }}
+            >
+              <span className="sub-title-accent">LEVEL 1: MATERIAL METALLURGY</span>
+              <h2 className="section-title">
+                Available Materials for {product.title}
+              </h2>
+              <p className="section-description">
+                Rishabh Metal Industries manufactures and stocks {product.title} across the following verified material metallurgies.
+                Click any material card below to explore its applicable product configurations, types, and dimensional specifications.
+              </p>
+            </div>
+
+            <div className="materials-catalogue-grid">
+              {catMaterials.map((mat) => {
+                const matUrl = `/products/${toProductSeoSlug(product)}/${mat.slug}`;
+                return (
+                  <Link
+                    key={mat.slug}
+                    to={matUrl}
+                    className="material-catalogue-card"
+                    title={`View ${mat.name} ${product.title} types and configurations`}
+                  >
+                    <div className="mat-card-img-wrap">
+                      <img
+                        src={mat.image || product.image}
+                        alt={`${mat.name} ${product.title}`}
+                        className="mat-card-img"
+                        loading="lazy"
+                      />
+                      <span className="mat-card-badge">{mat.name}</span>
+                    </div>
+                    <div className="mat-card-body">
+                      <h3 className="mat-card-title">{mat.name}</h3>
+                      <p className="mat-card-desc">{mat.shortDescription}</p>
+                      {mat.standards && (
+                        <p className="mat-card-std">
+                          <strong style={{ color: "#0284c7" }}>Standards:</strong> {mat.standards}
+                        </p>
+                      )}
+                      <div className="mat-card-action">
+                        <span>Explore {mat.types?.length || 0} Configurations</span>
+                        <FiArrowRight className="mat-arrow" />
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      ) : variants.length > 0 ? (
         <section className="section-py bg-light-steel">
           <div className="container">
             <div
@@ -359,7 +419,7 @@ ${quoteForm.message || "N/A"}
             </div>
           </div>
         </section>
-      )}
+      ) : null}
 
       {/* Types of Flanges - Strictly rendered ONLY on Flanges product page */}
       {product?.slug === "flanges" && (

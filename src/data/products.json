@@ -153,7 +153,7 @@
       "Union & Cross",
       "Coupling & Half Coupling",
       "Cap & Bushing & Plug",
-      "Swage Nipple, Barrel Nipple, Hex Nipple",
+      "Swage Nipple, Hex Nipple, Pipe Nipple",
       "Weld Boss, Street Elbow, Hose Nipple, Adapter Insert",
       "Branch Outlets: Weldolet, Elbowlet, Sockolet, Thredolet, Letrolet"
     ],
@@ -409,7 +409,7 @@
     "slug": "patta-patti",
     "std": "ASTM A276 / A484",
     "type": "SUPPLIER DIV.",
-    "title": "Patta Paati",
+    "title": "Patta Patti",
     "subtitle": "COLD DRAWN & HRAP Patta Patti",
     "category": "Bars & Rods",
     "image": "/images/products/flat-bar.jpg",
@@ -426,7 +426,7 @@
       "Special Alloys: Monel, Inconel, Hastelloy"
     ],
     "types": [
-      "Cold Drawn Patta Pa",
+      "Cold Drawn Patta Patti",
       "Hot Rolled Annealed & Pickled (HRAP)",
       "Slit from Plate Patta Patti"
     ],

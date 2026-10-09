@@ -1,8 +1,13 @@
 import React, { useMemo, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { resolveGradeSlug, gradesDatabase } from "../data/gradesData";
+import { resolveGradeSlug, gradesDatabase, findGradeDefinition } from "../data/gradesData";
 import { siteConfig } from "../data/siteConfig";
 import { setCanonicalUrl } from "../utils/seoSlugUtils";
+import {
+  getCatalogueProduct,
+  getCatalogueMaterial,
+  getCatalogueType
+} from "../data/productCatalogueData.js";
 import productsData from "../data/products.json" with { type: "json" };
 import {
   FiCheckCircle,
@@ -19,25 +24,49 @@ import { FaWhatsapp } from "react-icons/fa";
 import "./GradeDetails.css";
 
 export default function GradeDetails() {
-  const { gradeSlug } = useParams();
+  const { gradeSlug, categorySlug, materialSlug, typeSlug } = useParams();
+
+  // Hierarchy Resolution
+  const catProd = useMemo(() => {
+    return categorySlug ? getCatalogueProduct(categorySlug) : null;
+  }, [categorySlug]);
+
+  const catMat = useMemo(() => {
+    return catProd && materialSlug ? getCatalogueMaterial(catProd.slug, materialSlug) : null;
+  }, [catProd, materialSlug]);
+
+  const catType = useMemo(() => {
+    return catProd && catMat && typeSlug ? getCatalogueType(catProd.slug, catMat.slug, typeSlug) : null;
+  }, [catProd, catMat, typeSlug]);
 
   const resolution = useMemo(() => {
     return resolveGradeSlug(gradeSlug);
   }, [gradeSlug]);
 
-  const grade = resolution?.grade;
-  const productContextName = resolution?.productContextName || "";
+  const grade = resolution?.grade || findGradeDefinition(gradeSlug);
+
+  const productContextName = useMemo(() => {
+    if (catType && catMat) {
+      return `${catMat.name} ${catType.name}`;
+    }
+    if (catProd) {
+      return catProd.title;
+    }
+    return resolution?.productContextName || "";
+  }, [catType, catMat, catProd, resolution]);
+
   const contextPortion = resolution?.contextPortion || "";
 
   // Attempt to resolve parent product link from context
   const parentProduct = useMemo(() => {
+    if (catProd) return catProd;
     if (!contextPortion) return null;
     const cleanCtx = contextPortion.toLowerCase();
     return (
       productsData.find((p) => cleanCtx.includes(p.slug) || p.slug.includes(cleanCtx)) ||
       null
     );
-  }, [contextPortion]);
+  }, [catProd, contextPortion]);
 
   // Set SEO Document Title, Meta Description, & Canonical URL
   useEffect(() => {
@@ -55,9 +84,12 @@ export default function GradeDetails() {
         metaDescription.setAttribute("content", metaDesc);
       }
 
-      setCanonicalUrl(`/grades/${gradeSlug}`);
+      const canonicalPath = (catProd && catMat && catType)
+        ? `/products/${catProd.slug}-manufacture-in-india/${catMat.slug}/${catType.slug}/${grade.slug || grade.id}`
+        : `/grades/${gradeSlug}`;
+      setCanonicalUrl(canonicalPath);
     }
-  }, [grade, gradeSlug, productContextName]);
+  }, [grade, gradeSlug, productContextName, catProd, catMat, catType]);
 
   if (!grade) {
     return (
@@ -91,19 +123,48 @@ export default function GradeDetails() {
           <nav className="breadcrumb-nav" aria-label="Breadcrumb">
             <Link to="/" className="bc-link">Home</Link>
             <span className="bc-sep">/</span>
-            <Link to="/materials" className="bc-link">Materials</Link>
-            {parentProduct && (
+            <Link to="/products" className="bc-link">Products</Link>
+            {catProd ? (
               <>
                 <span className="bc-sep">/</span>
-                <Link to={`/products/${parentProduct.slug}-manufacture-in-india`} className="bc-link">
-                  {parentProduct.title}
+                <Link to={`/products/${catProd.slug}-manufacture-in-india`} className="bc-link">
+                  {catProd.title}
                 </Link>
+                {catMat && (
+                  <>
+                    <span className="bc-sep">/</span>
+                    <Link to={`/products/${catProd.slug}-manufacture-in-india/${catMat.slug}`} className="bc-link">
+                      {catMat.name}
+                    </Link>
+                  </>
+                )}
+                {catType && (
+                  <>
+                    <span className="bc-sep">/</span>
+                    <Link to={`/products/${catProd.slug}-manufacture-in-india/${catMat.slug}/${catType.slug}`} className="bc-link">
+                      {catType.name}
+                    </Link>
+                  </>
+                )}
               </>
-            )}
-            {productContextName && !parentProduct && (
+            ) : (
               <>
                 <span className="bc-sep">/</span>
-                <span className="bc-link">{productContextName}</span>
+                <Link to="/materials" className="bc-link">Materials</Link>
+                {parentProduct && (
+                  <>
+                    <span className="bc-sep">/</span>
+                    <Link to={`/products/${parentProduct.slug}-manufacture-in-india`} className="bc-link">
+                      {parentProduct.title}
+                    </Link>
+                  </>
+                )}
+                {productContextName && !parentProduct && (
+                  <>
+                    <span className="bc-sep">/</span>
+                    <span className="bc-link">{productContextName}</span>
+                  </>
+                )}
               </>
             )}
             <span className="bc-sep">/</span>
@@ -166,7 +227,17 @@ export default function GradeDetails() {
               </div>
 
               {/* Return to parent product link */}
-              {parentProduct && (
+              {catType && catMat && catProd ? (
+                <div className="parent-return-card">
+                  <span className="prc-label">Associated Product Type:</span>
+                  <Link
+                    to={`/products/${catProd.slug}-manufacture-in-india/${catMat.slug}/${catType.slug}`}
+                    className="prc-link"
+                  >
+                    <FiArrowLeft /> Back to {catMat.name} {catType.name}
+                  </Link>
+                </div>
+              ) : parentProduct ? (
                 <div className="parent-return-card">
                   <span className="prc-label">Associated Product:</span>
                   <Link
@@ -176,7 +247,7 @@ export default function GradeDetails() {
                     <FiArrowLeft /> Back to {parentProduct.title}
                   </Link>
                 </div>
-              )}
+              ) : null}
             </div>
 
             {/* Right Column: Title, Overview, Contextual Notes */}

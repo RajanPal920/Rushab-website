@@ -4516,14 +4516,14 @@ export const productVariants = {
       id: 1,
       slug: "carbon-alloy-steel-flat-bars",
       image: pcarbon,
-      title: "Carbon Alloy Steel Flat Bars (Patta)",
+      title: "Carbon Alloy Steel Patta Patti",
       shortDescription:
         "High Tensile Carbon Steel, Mild Steel, ASTM A36, AISI 1018, 1045 Hot Rolled & Cold Drawn Heavy Structural Flat Bars.",
       materialGroup: "Carbon & Alloy Steel Patta",
       standards:
         "ASTM A36, AISI 1018, AISI 1045, IS 2062, EN8, EN9, DIN 1015, DIN 1025",
       overview:
-        "Heavy-duty carbon and alloy steel flat bars (patta) engineered for structural, manufacturing, and general engineering applications. Manufactured from high-tensile carbon steel, mild steel, ASTM A36, AISI 1018, and AISI 1045 grades in hot rolled and cold drawn conditions, our flat bars deliver superior strength, excellent weldability, and reliable machinability for heavy structural and industrial fabrication.",
+        "Heavy-duty carbon and alloy steel patta patti engineered for structural, manufacturing, and general engineering applications. Manufactured from high-tensile carbon steel, mild steel, ASTM A36, AISI 1018, and AISI 1045 grades in hot rolled and cold drawn conditions, our flat bars deliver superior strength, excellent weldability, and reliable machinability for heavy structural and industrial fabrication.",
       grades: [
         "Mild Steel (MS)",
         "High Tensile Carbon Steel",
@@ -4708,14 +4708,14 @@ export const productVariants = {
       id: 4,
       slug: "stainless-steel-flat-bars",
       image: pbar,
-      title: "Stainless Steel Flat Bars (Patta)",
+      title: "Stainless Steel Patta Patti",
       shortDescription:
         "ASTM A240 / ASME SA240 TP 304, 304L, 316, 316L, 317L, 321, 347, 904L Industrial Polished & Hot Rolled Patta Plates.",
       materialGroup: "Stainless Steel Patta",
       standards:
         "ASTM A240, ASME SA240, ASTM A276, ASTM A479, EN 10088, DIN 17440",
       overview:
-        "Premium stainless steel flat bars (patta) engineered for industrial, architectural, and high-purity applications. Manufactured from TP 304, 304L, 316, 316L, 317L, 321, 347, and 904L grades in polished and hot rolled conditions, our flat bars deliver superior corrosion resistance, excellent formability, and reliable performance in chemical, food, and pharmaceutical environments.",
+        "Premium stainless steel patta patti engineered for industrial, architectural, and high-purity applications. Manufactured from TP 304, 304L, 316, 316L, 317L, 321, 347, and 904L grades in polished and hot rolled conditions, our flat bars deliver superior corrosion resistance, excellent formability, and reliable performance in chemical, food, and pharmaceutical environments.",
       grades: [
         "TP 304",
         "TP 304L",
@@ -4775,13 +4775,13 @@ export const productVariants = {
       id: 5,
       slug: "nickel-alloy-flat-bars",
       image: "/images/products/nickel-alloy-flat-bars.jpg",
-      title: "Nickel Alloy Flat Bars (Patta)",
+      title: "Nickel Alloy Patta Patti",
       shortDescription:
         "Nickel 200/201, Monel 400, Inconel 600/625, Incoloy 800/825 Corrosion-Resistant Slit Patti Bars for Chemical & Marine Service.",
       materialGroup: "Nickel Alloy Patta",
       standards: "ASTM B160, B164, B166, B408, B425, B446, ASME SB160, DIN 17753",
       overview:
-        "Premium nickel alloy flat bars (patta) engineered for extreme temperature, pressure, and corrosive environments. Manufactured from Nickel 200/201, Monel 400, Inconel 600/625, and Incoloy 800/825 grades, our flat bars deliver exceptional oxidation resistance, high-temperature strength, and superior resistance to acids, alkalis, and seawater for chemical, marine, and nuclear applications.",
+        "Premium nickel alloy patta patti engineered for extreme temperature, pressure, and corrosive environments. Manufactured from Nickel 200/201, Monel 400, Inconel 600/625, and Incoloy 800/825 grades, our flat bars deliver exceptional oxidation resistance, high-temperature strength, and superior resistance to acids, alkalis, and seawater for chemical, marine, and nuclear applications.",
       grades: [
         "Nickel 200",
         "Nickel 201",
@@ -4844,13 +4844,13 @@ export const productVariants = {
       id: 6,
       slug: "high-alloy-flat-bars",
       image: "/images/products/high-alloy-flat-bars.jpg",
-      title: "High Alloy Flat Bars (Patta)",
+      title: "High Alloy Patta Patti",
       shortDescription:
         "Hastelloy C22, C276, Alloy 20, SMO 254 Slit Patti Bars for Extreme Corrosive Chemical Environments.",
       materialGroup: "High Alloys Patta",
       standards: "ASTM B574, B575, B622, B729, ASME SB574, DIN 17744",
       overview:
-        "Specialized high-alloy flat bars (patta) engineered for wet chlorine, sulfuric acid, phosphoric acid, and aggressive halide services. Manufactured from Hastelloy C22, C276, Alloy 20, and SMO 254 grades, our flat bars deliver exceptional performance in the most demanding corrosive environments across chemical processing, pollution control, and pharmaceutical industries.",
+        "Specialized high-alloy patta patti engineered for wet chlorine, sulfuric acid, phosphoric acid, and aggressive halide services. Manufactured from Hastelloy C22, C276, Alloy 20, and SMO 254 grades, our flat bars deliver exceptional performance in the most demanding corrosive environments across chemical processing, pollution control, and pharmaceutical industries.",
       grades: [
         "Hastelloy C22",
         "Hastelloy C276",
@@ -4907,13 +4907,13 @@ export const productVariants = {
       id: 7,
       slug: "titanium-flat-bars",
       image: "/images/products/titanium-flat-bars.jpg",
-      title: "Titanium Flat Bars (Patta)",
+      title: "Titanium Patta Patti",
       shortDescription:
         "ASTM B348 Grade 1, 2, 5 (Ti-6Al-4V), 7 Lightweight High-Strength Corrosion-Immune Titanium Patta Bars.",
       materialGroup: "Titanium Patta",
       standards: "ASTM B348, ASTM B381, ASME SB348, DIN 17862, DIN 65328",
       overview:
-        "Ultra-lightweight, high-strength titanium flat bars (patta) with impervious corrosion immunity against seawater, wet chlorine, and organic chlorides. Manufactured from Grade 1, 2, 5 (Ti-6Al-4V), and 7 grades, our flat bars deliver exceptional performance in aerospace, marine, and chemical processing applications.",
+        "Ultra-lightweight, high-strength titanium patta patti with impervious corrosion immunity against seawater, wet chlorine, and organic chlorides. Manufactured from Grade 1, 2, 5 (Ti-6Al-4V), and 7 grades, our flat bars deliver exceptional performance in aerospace, marine, and chemical processing applications.",
       grades: [
         "Grade 1",
         "Grade 2",
@@ -4967,13 +4967,13 @@ export const productVariants = {
       id: 8,
       slug: "alloy-flat-bars",
       image: "/images/products/alloy-flat-bars.jpg",
-      title: "Alloy Flat Bars (Patta)",
+      title: "Alloy Patta Patti",
       shortDescription:
         "Zirconium 702, Tantalum, Copper-Nickel 70/30 & 90/10 Specialty Alloy Patta Bars for Ultra-Corrosive Service.",
       materialGroup: "Alloys Patta",
       standards: "ASTM B550, B551, B466, B467, ASME SB550, DIN 17753",
       overview:
-        "Specialty alloy flat bars (patta) including zirconium, tantalum, and copper-nickel grades engineered for ultra-corrosive chemical processing, nuclear, and marine applications. Manufactured to ASTM B550, B551, B466, and B467 standards, our flat bars deliver exceptional performance in the most demanding environments.",
+        "Specialty alloy patta patti including zirconium, tantalum, and copper-nickel grades engineered for ultra-corrosive chemical processing, nuclear, and marine applications. Manufactured to ASTM B550, B551, B466, and B467 standards, our flat bars deliver exceptional performance in the most demanding environments.",
       grades: [
         "Zirconium 702",
         "Zirconium 705",
@@ -5029,14 +5029,14 @@ export const productVariants = {
       id: 9,
       slug: "alloy-steel-flat-bars",
       image: "/images/products/alloy-steel-flat-bars.jpg",
-      title: "Alloy Steel Flat Bars (Patta)",
+      title: "Alloy Steel Patta Patti",
       shortDescription:
         "ASTM A182 F1, F5, F9, F11, F22, F91 Chrome-Moly High-Temperature Forged Alloy Steel Patta Bars.",
       materialGroup: "Alloy Steel Patta",
       standards:
         "ASTM A182 F1/F5/F9/F11/F22/F91, ASTM A335, ASTM A387, ASME SB182, DIN 17175",
       overview:
-        "Chromium-molybdenum creep-resistant alloy steel flat bars (patta) engineered for supercritical boilers, heat recovery steam generators, and extreme-temperature steam lines. Manufactured to ASTM A182, A335, and A387 standards, our flat bars deliver reliable performance at temperatures up to 650°C.",
+        "Chromium-molybdenum creep-resistant alloy steel patta patti engineered for supercritical boilers, heat recovery steam generators, and extreme-temperature steam lines. Manufactured to ASTM A182, A335, and A387 standards, our flat bars deliver reliable performance at temperatures up to 650°C.",
       grades: [
         "ASTM A182 F1",
         "ASTM A182 F5",
