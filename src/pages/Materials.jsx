@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "../components/Button";
 import { FiCheck, FiSend, FiShield } from "react-icons/fi";
 import PageHero from "../components/common/PageHero";
+import { getMaterialUrl } from "../utils/seoSlugUtils";
 import "./Materials.css";
 
 const ferrousMaterials = [
@@ -357,22 +358,22 @@ export default function Materials() {
                   <Button
                     to={
                       {
-                        ss: "/materials/stainless-steel",
-                        cs: "/materials/carbon",
-                        as: "/materials/alloy-steel",
-                        duplex: "/materials/duplex",
-                        "super-duplex": "/materials/super-duplex",
-                        "mild-steel": "/materials/mild-steel",
-                        nickel: "/materials/nickel-alloy",
-                        monel: "/materials/monel",
-                        inconel: "/materials/inconel",
-                        hastelloy: "/materials/hastelloy",
-                        titanium: "/materials/titanium",
-                        "copper-brass": "/materials/copper",
-                        aluminium: "/materials/aluminium",
-                        "exotic-alloys": "/materials/exotic-alloy",
-                        "high-alloys": "/materials/high-alloy",
-                      }[mat.id] || "/products"
+                        ss: getMaterialUrl("stainless-steel"),
+                        cs: getMaterialUrl("carbon"),
+                        as: getMaterialUrl("alloy-steel"),
+                        duplex: getMaterialUrl("duplex"),
+                        "super-duplex": getMaterialUrl("super-duplex"),
+                        "mild-steel": getMaterialUrl("mild-steel"),
+                        nickel: getMaterialUrl("nickel-alloy"),
+                        monel: getMaterialUrl("monel"),
+                        inconel: getMaterialUrl("inconel"),
+                        hastelloy: getMaterialUrl("hastelloy"),
+                        titanium: getMaterialUrl("titanium"),
+                        "copper-brass": getMaterialUrl("copper"),
+                        aluminium: getMaterialUrl("aluminium"),
+                        "exotic-alloys": getMaterialUrl("exotic-alloy"),
+                        "high-alloys": getMaterialUrl("high-alloy"),
+                      }[mat.id] || "/materials"
                     }
                     variant="outline"
                     size="sm"

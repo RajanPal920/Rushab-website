@@ -11,7 +11,7 @@ import FloatingCall from './components/FloatingCall';
 import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
-import ProductDetails from './pages/ProductDetails';
+import ProductRouteHandler, { TwoLevelProductRouteHandler } from './pages/ProductRouteHandler';
 import Materials from './pages/Materials';
 import Industries from './pages/Industries';
 import TechnicalData from './pages/TechnicalData';
@@ -21,7 +21,6 @@ import Catalogue from './pages/Catalogue';
 
 // Global Styles
 import './styles/global.css';
-import VariantDetails from './pages/VariantDetails';
 import MaterialProducts from './pages/MaterialProducts';
 
 // Automatically scroll window to top on route change
@@ -53,8 +52,8 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
-            <Route path="/products/:slug" element={<ProductDetails />} />
-            <Route path="/products/:slug/:variantSlug" element={<VariantDetails />} />
+            <Route path="/products/:slug" element={<ProductRouteHandler />} />
+            <Route path="/products/:slug/:variantSlug" element={<TwoLevelProductRouteHandler />} />
             <Route path="/materials" element={<Materials />} />
             <Route path="/materials/:materialSlug" element={<MaterialProducts />} />
             <Route path="/industries" element={<Industries />} />

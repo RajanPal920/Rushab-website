@@ -382,13 +382,21 @@ export const materialsList = [
   }
 ];
 
-// Helper to find a material definition by slug or alias (case-insensitive)
+// Helper to find a material definition by slug or alias (case-insensitive, supporting -manufacture-in-india)
 export function getMaterialInfo(materialSlug) {
   if (!materialSlug) return null;
-  const normalized = materialSlug.toLowerCase().trim();
+  const raw = materialSlug.toLowerCase().trim();
+  const normalized = raw.replace(/-manufacture-in-india$/, '');
   return (
     materialsList.find(
-      (m) => m.slug === normalized || (m.aliases && m.aliases.includes(normalized))
+      (m) =>
+        m.slug === normalized ||
+        (m.aliases && m.aliases.includes(normalized)) ||
+        m.slug === raw ||
+        (m.aliases && m.aliases.includes(raw)) ||
+        (normalized === 'carbon-steel' && m.slug === 'carbon') ||
+        (normalized === 'duplex-steel' && m.slug === 'duplex') ||
+        (normalized === 'super-duplex-steel' && m.slug === 'super-duplex')
     ) || null
   );
 }
@@ -408,12 +416,18 @@ export function getProductsForMaterial(materialSlug) {
 
     for (const v of variants) {
       if (def.isMatch(v)) {
-        const detailRoute = `/products/${parentSlug}/${v.slug}`;
+        const vSlugNorm = v.slug.replace(/buttweld/g, 'butt-weld');
+        const vSeoSlug = (parentSlug === 'lifting-materials' && v.slug === 'lifting-materials')
+          ? 'lifting-materials-hardware-manufacture-in-india'
+          : `${vSlugNorm}-manufacture-in-india`;
+        const detailRoute = `/products/${vSeoSlug}`;
+
         if (!seenDetailUrls.has(detailRoute)) {
           seenDetailUrls.add(detailRoute);
           cards.push({
             id: `${parentSlug}-${v.slug}`,
-            slug: `${parentSlug}/${v.slug}`,
+            slug: vSeoSlug,
+            rawSlug: v.slug,
             detailUrl: detailRoute,
             title: v.title,
             subtitle: v.shortDescription || product.subtitle,

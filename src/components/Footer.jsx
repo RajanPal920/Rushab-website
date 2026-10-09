@@ -116,14 +116,14 @@ export default function Footer() {
             <div className="footer-col">
               <h4 className="footer-col-title">Core Products</h4>
               <ul className="footer-nav-list">
-                <li><Link to="/products/pipes-and-tubes">Pipes and Tubes</Link></li>
-                <li><Link to="/products/butt-weld-fittings">Butt Weld Fittings</Link></li>
-                <li><Link to="/products/forged-fittings">Forged & Screwed Fittings</Link></li>
-                <li><Link to="/products/flanges">Industrial Flanges</Link></li>
-                <li><Link to="/products/fasteners">High Tensile Fasteners</Link></li>
-                <li><Link to="/products/sheets-plates">Sheets and Plates</Link></li>
-                <li><Link to="/products/valves">Industrial Valves</Link></li>
-                <li><Link to="/products/wire-mesh-screens">Wire Mesh & Screens</Link></li>
+                <li><Link to="/products/pipes-tubes-manufacture-in-india">Pipes and Tubes</Link></li>
+                <li><Link to="/products/butt-weld-fittings-manufacture-in-india">Butt Weld Fittings</Link></li>
+                <li><Link to="/products/forged-fittings-manufacture-in-india">Forged & Screwed Fittings</Link></li>
+                <li><Link to="/products/flanges-manufacture-in-india">Industrial Flanges</Link></li>
+                <li><Link to="/products/fasteners-manufacture-in-india">High Tensile Fasteners</Link></li>
+                <li><Link to="/products/sheets-plates-manufacture-in-india">Sheets and Plates</Link></li>
+                <li><Link to="/products/valves-manufacture-in-india">Industrial Valves</Link></li>
+                <li><Link to="/products/wire-mesh-screens-manufacture-in-india">Wire Mesh & Screens</Link></li>
               </ul>
             </div>
 
@@ -165,6 +165,18 @@ export default function Footer() {
         <div className="container bottom-bar-inner">
           <p className="copyright-text">
             &copy; {CURRENT_YEAR} <strong>{siteConfig.companyName} ({siteConfig.shortName})</strong>. All Rights Reserved.
+            <span className="footer-credit-sep"> • </span>
+            <span className="footer-credit">
+              Design and SEO by{' '}
+              <a
+                href="https://sunmargindia.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-credit-link"
+              >
+                Sanmag India
+              </a>
+            </span>
           </p>
           <div className="bottom-bar-links">
             <Link to="/certificates">ISO 9001:2015</Link>

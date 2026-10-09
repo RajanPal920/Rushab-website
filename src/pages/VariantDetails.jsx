@@ -7,6 +7,13 @@ import {
   getVariantsByProduct,
 } from "../data/productVariants";
 import { siteConfig } from "../data/siteConfig";
+import {
+  getProductUrl,
+  getVariantUrl,
+  toProductSeoSlug,
+  resolveProductOrVariant,
+  resolveVariantBySlugs
+} from "../utils/seoSlugUtils";
 import Button from "../components/Button";
 import {
   FiCheckCircle,
@@ -25,20 +32,44 @@ const formatLabel = (key) =>
     .replace(/^./, (s) => s.toUpperCase())
     .trim();
 
-export default function VariantDetails() {
+export default function VariantDetails({ resolvedProduct, resolvedVariant }) {
   const { slug, variantSlug } = useParams();
 
-  const product = productsData.find((p) => p.slug === slug);
-  const variant = getVariantBySlug(slug, variantSlug);
-  const allVariants = getVariantsByProduct(slug);
+  let product = resolvedProduct;
+  let variant = resolvedVariant;
+
+  if (!product || !variant) {
+    if (variantSlug) {
+      const res = resolveVariantBySlugs(slug, variantSlug);
+      if (res) {
+        product = res.product;
+        variant = res.variant;
+      }
+    } else if (slug) {
+      const res = resolveProductOrVariant(slug);
+      if (res && res.type === 'variant') {
+        product = res.product;
+        variant = res.variant;
+      }
+    }
+  }
+
+  if (!product && variantSlug) {
+    product = productsData.find((p) => p.slug === slug || toProductSeoSlug(p) === slug);
+  }
+  if (!variant && product && (variantSlug || slug)) {
+    variant = getVariantBySlug(product.slug, variantSlug || slug);
+  }
+
+  const allVariants = product ? getVariantsByProduct(product.slug) : [];
 
   if (!product || !variant) {
     return (
       <div className="variant-not-found section-py container">
         <h2>Variant Not Found</h2>
         <p>The requested product variant could not be located.</p>
-        <Button to={`/products/${slug}`} variant="primary">
-          Back to {product?.title || "Product"}
+        <Button to={product ? getProductUrl(product) : "/products"} variant="primary">
+          Back to {product?.title || "Products"}
         </Button>
       </div>
     );
@@ -46,7 +77,7 @@ export default function VariantDetails() {
 
   // Related variants (exclude current)
   const relatedVariants = allVariants
-    .filter((v) => v.slug !== variantSlug)
+    .filter((v) => v.slug !== variant.slug)
     .slice(0, 4);
 
   // WhatsApp
@@ -77,7 +108,7 @@ export default function VariantDetails() {
               Products
             </Link>
             <span className="bc-sep">/</span>
-            <Link to={`/products/${slug}`} className="bc-link">
+            <Link to={getProductUrl(product)} className="bc-link">
               {product.title}
             </Link>
             <span className="bc-sep">/</span>
@@ -306,7 +337,7 @@ export default function VariantDetails() {
               {relatedVariants.map((v) => (
                 <Link
                   key={v.slug}
-                  to={`/products/${slug}/${v.slug}`}
+                  to={getVariantUrl(v, product)}
                   className="variant-card"
                 >
                   <div className="variant-card-image">

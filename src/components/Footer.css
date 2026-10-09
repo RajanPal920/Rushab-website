@@ -245,6 +245,28 @@
   flex-wrap: wrap;
 }
 
+.footer-credit-sep {
+  margin: 0 8px;
+  color: #475569;
+}
+
+.footer-credit {
+  color: #94A3B8;
+  display: inline-block;
+}
+
+.footer-credit-link {
+  color: #BED8F3;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.footer-credit-link:hover {
+  color: var(--cyan);
+  text-decoration: underline;
+}
+
 .bottom-bar-links {
   display: flex;
   align-items: center;

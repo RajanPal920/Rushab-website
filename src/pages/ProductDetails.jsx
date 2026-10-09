@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import productsData from "../data/products.json";
 import { getVariantsByProduct } from "../data/productVariants";
 import { siteConfig } from "../data/siteConfig";
+import { getVariantUrl, toProductSeoSlug } from "../utils/seoSlugUtils";
 import Button from "../components/Button";
 import ProductCard from "../components/ProductCard";
 import {
@@ -16,12 +17,15 @@ import { FaWhatsapp } from "react-icons/fa";
 import "./ProductDetails.css";
 import "./VariantDetails.css";
 
-export default function ProductDetails() {
+export default function ProductDetails({ resolvedProduct }) {
   const { slug } = useParams();
 
-  const product = productsData.find((p) => p.slug === slug) || productsData[0];
+  const product =
+    resolvedProduct ||
+    productsData.find((p) => p.slug === slug || toProductSeoSlug(p) === slug) ||
+    productsData[0];
 
-  const variants = getVariantsByProduct(slug);
+  const variants = getVariantsByProduct(product?.slug || slug);
 
   const [activeImage, setActiveImage] = useState(
     product && product.gallery && product.gallery.length > 0
@@ -305,7 +309,7 @@ ${quoteForm.message || "N/A"}
               {variants.map((variant) => (
                 <Link
                   key={variant.slug}
-                  to={`/products/${slug}/${variant.slug}`}
+                  to={getVariantUrl(variant, product)}
                   className="variant-card"
                 >
                   <div className="variant-card-image">

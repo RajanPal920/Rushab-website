@@ -11813,12 +11813,27 @@ export const productVariants = {
 
 };
 
-// Helper: get variants for a product
-export const getVariantsByProduct = (productSlug) =>
-  productVariants[productSlug] || [];
+// Helper: get variants for a product (supports raw, SEO, and alias slugs)
+export const getVariantsByProduct = (productSlug) => {
+  if (!productSlug) return [];
+  if (productVariants[productSlug]) return productVariants[productSlug];
+  const clean = productSlug.replace(/-manufacture-in-india$/, '');
+  if (productVariants[clean]) return productVariants[clean];
+  if (clean === 'pipes-and-tubes') return productVariants['pipes-tubes'] || [];
+  if (clean === 'sheets-and-plates') return productVariants['sheets-plates'] || [];
+  if (clean === 'fittings' || clean === 'screwed-forged-fittings') return productVariants['forged-fittings'] || [];
+  if (clean === 'buttweld-fittings') return productVariants['butt-weld-fittings'] || [];
+  return [];
+};
 
 // Helper: get single variant
 export const getVariantBySlug = (productSlug, variantSlug) => {
-  const variants = productVariants[productSlug] || [];
-  return variants.find((v) => v.slug === variantSlug);
+  if (!variantSlug) return null;
+  const variants = productSlug ? getVariantsByProduct(productSlug) : Object.values(productVariants).flat();
+  const targetClean = variantSlug.replace(/-manufacture-in-india$/, '').replace(/butt-weld/g, 'buttweld');
+  return variants.find((v) => {
+    if (v.slug === variantSlug) return true;
+    const vClean = v.slug.replace(/butt-weld/g, 'buttweld');
+    return vClean === targetClean;
+  });
 };

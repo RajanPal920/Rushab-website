@@ -12,6 +12,7 @@ import {
   materialsMegaMenu,
   certificatesMenu,
 } from "../../data/megaMenuData";
+import { getProductUrl, getMaterialUrl } from "../../utils/seoSlugUtils";
 import "./NavMegaMenu.css";
 
 export default function NavMegaMenu({ activeMenu, onClose }) {
@@ -45,7 +46,7 @@ export default function NavMegaMenu({ activeMenu, onClose }) {
                 {manufacturer.items.map((item) => (
                   <Link
                     key={item.title}
-                    to={`/products/${item.slug}`}
+                    to={getProductUrl(item.slug)}
                     className="mega-item-row"
                     onClick={onClose}
                   >
@@ -76,7 +77,7 @@ export default function NavMegaMenu({ activeMenu, onClose }) {
                 {supplier.items.map((item) => (
                   <Link
                     key={item.title}
-                    to={`/products/${item.slug}`}
+                    to={getProductUrl(item.slug)}
                     className="mega-item-row"
                     onClick={onClose}
                   >
@@ -136,7 +137,7 @@ export default function NavMegaMenu({ activeMenu, onClose }) {
             {items.map((item) => (
               <Link
                 key={item.name}
-                to={`/materials/${item.slug || item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
+                to={getMaterialUrl(item.slug || item.name)}
                 className="mega-item-row material-row"
                 onClick={onClose}
               >

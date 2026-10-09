@@ -1,13 +1,17 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import Button from '../components/Button';
 import PageHero from '../components/common/PageHero';
 import {
-  getMaterialInfo,
   getProductsForMaterial,
   materialsList
 } from '../data/materialsData';
+import {
+  resolveMaterial,
+  getMaterialUrl,
+  setCanonicalUrl
+} from '../utils/seoSlugUtils';
 import {
   FiSearch,
   FiRotateCcw,
@@ -22,9 +26,15 @@ import './MaterialProducts.css';
 export default function MaterialProducts() {
   const { materialSlug } = useParams();
 
-  const materialInfo = useMemo(() => {
-    return getMaterialInfo(materialSlug);
+  const resolution = useMemo(() => {
+    return resolveMaterial(materialSlug);
   }, [materialSlug]);
+
+  useEffect(() => {
+    if (resolution && resolution.canonicalUrl) {
+      setCanonicalUrl(resolution.canonicalUrl);
+    }
+  }, [resolution]);
 
   const allProducts = useMemo(() => {
     if (!materialSlug) return [];
@@ -70,9 +80,16 @@ export default function MaterialProducts() {
   const isFiltered = selectedCategory !== 'All' || searchQuery !== '';
 
   // If the slug doesn't exist in our materials spectrum, redirect to /materials
-  if (!materialInfo) {
+  if (!resolution || !resolution.material) {
     return <Navigate to="/materials" replace />;
   }
+
+  // Redirect legacy / alias URLs to canonical SEO URL
+  if (!resolution.isCanonical) {
+    return <Navigate to={resolution.canonicalUrl} replace />;
+  }
+
+  const materialInfo = resolution.material;
 
   return (
     <div className="material-products-page">
@@ -117,7 +134,7 @@ export default function MaterialProducts() {
                 return (
                   <Link
                     key={m.slug}
-                    to={`/materials/${m.slug}`}
+                    to={getMaterialUrl(m)}
                     className={`mat-quick-pill ${isActive ? 'active' : ''}`}
                   >
                     {m.name}

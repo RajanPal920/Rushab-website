@@ -69,7 +69,7 @@ export default function Footer() {
         <div className="container">
           <div className="footer-bottom-content">
             <p className="copyright">
-              &copy; {new Date().getFullYear()} Rishabh Metal Industries. All Rights Reserved.
+              &copy; {new Date().getFullYear()} Rishabh Metal Industries. All Rights Reserved. • Design and SEO by <a href="https://sunmargindia.com/" target="_blank" rel="noopener noreferrer">Sanmag India</a>
             </p>
             <div className="footer-bottom-links">
               <a href="#">Privacy Policy</a>

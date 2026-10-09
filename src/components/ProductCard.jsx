@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowUpRight } from 'react-icons/fi';
+import { getProductUrl } from '../utils/seoSlugUtils';
 import './ProductCard.css';
 
 export default function ProductCard({ product }) {
   if (!product) return null;
 
+  const targetUrl = product.detailUrl || getProductUrl(product);
+
   return (
     <div className="industrial-product-card">
-      <Link to={product.detailUrl || `/products/${product.slug}`} className="product-card-link-wrapper" aria-label={`View ${product.title} details`}>
+      <Link to={targetUrl} className="product-card-link-wrapper" aria-label={`View ${product.title} details`}>
         <div className="product-card-media">
           <img
             src={product.image}
