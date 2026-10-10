@@ -24,7 +24,6 @@ import {
 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { getGradeUrl } from "../data/gradesData";
-import TypesOfFlangesSection from "../components/flanges/TypesOfFlangesSection";
 import "./VariantDetails.css";
 import "./ProductDetails.css";
 
@@ -157,11 +156,6 @@ ${quoteForm.message || "Please provide delivery lead time, MTC confirmation, and
       }))
     : [];
 
-  // Check if current context is a Flange product
-  const isFlangeProduct =
-    product?.slug === "flanges" ||
-    Boolean(variant?.slug && variant.slug.includes("flange")) ||
-    Boolean(variant?.title && variant.title.toLowerCase().includes("flange"));
 
   return (
     <div className="variant-details-page">
@@ -364,13 +358,6 @@ ${quoteForm.message || "Please provide delivery lead time, MTC confirmation, and
         </div>
       </section>
 
-      {/* Types of Flanges - Strictly rendered ONLY for Flange Products */}
-      {isFlangeProduct && (
-        <TypesOfFlangesSection
-          currentMaterialSlug={variant?.slug?.replace(/-flanges?.*$/, "") || ""}
-          currentVariantTitle={variant?.title || ""}
-        />
-      )}
 
       {/* Technical Specifications Table */}
       {specsArray.length > 0 && (

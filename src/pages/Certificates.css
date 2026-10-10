@@ -329,6 +329,65 @@
   color: var(--slate-600);
 }
 
+.iso-card-cta-row {
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 1.25rem;
+}
+
+.iso-doc-view-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  background: #FBBF24;
+  color: #0A0E2A;
+  font-family: var(--font-main);
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.25);
+}
+
+.iso-doc-view-btn:hover {
+  background: #f59e0b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(251, 191, 36, 0.35);
+  color: #0A0E2A;
+}
+
+.cert-card-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(190, 216, 243, 0.5);
+}
+
+.cert-doc-btn {
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.cert-doc-btn:hover {
+  color: var(--cyan);
+  transform: translateX(2px);
+}
+
 @media (max-width: 900px) {
   .iso-overview-grid {
     grid-template-columns: 1fr;

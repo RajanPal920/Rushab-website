@@ -23,7 +23,7 @@ import Catalogue from './pages/Catalogue';
 import './styles/global.css';
 import MaterialProducts from './pages/MaterialProducts';
 import GradeDetails from './pages/GradeDetails';
-import FlangeTypeDetails from './pages/FlangeTypeDetails';
+import FlangeLegacyRedirect from './pages/FlangeLegacyRedirect';
 
 // Automatically scroll window to top on route change
 function ScrollToTop() {
@@ -64,10 +64,11 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/catalogue" element={<Catalogue />} />
             <Route path="/downloads" element={<Catalogue />} />
-            {/* Dedicated Grade and Flange Routes */}
+            {/* Dedicated Grade Route & Legacy Flange Route Redirects */}
             <Route path="/grades/:gradeSlug" element={<GradeDetails />} />
-            <Route path="/flanges/:typeSlug" element={<FlangeTypeDetails />} />
-            <Route path="/flanges/:materialSlug/:typeSlug" element={<FlangeTypeDetails />} />
+            <Route path="/flanges" element={<FlangeLegacyRedirect />} />
+            <Route path="/flanges/:typeSlug" element={<FlangeLegacyRedirect />} />
+            <Route path="/flanges/:materialSlug/:typeSlug" element={<FlangeLegacyRedirect />} />
             {/* Catch-all fallback */}
             <Route path="*" element={<Home />} />
           </Routes>

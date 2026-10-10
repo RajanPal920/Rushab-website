@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "../components/Button";
-import { FiCheck, FiSend, FiShield } from "react-icons/fi";
+import { FiCheck, FiSend, FiShield, FiArrowRight } from "react-icons/fi";
 import PageHero from "../components/common/PageHero";
 import { getMaterialUrl } from "../utils/seoSlugUtils";
 import "./Materials.css";
@@ -9,8 +10,12 @@ const ferrousMaterials = [
   {
     id: "ss",
     name: "Stainless Steel",
+    displayName: "Stainless Steel",
     category: "Ferrous",
     tag: "High Corrosion & Heat Resistance",
+    image: "/images/products/stainless-steel.jpg",
+    targetUrl: getMaterialUrl("stainless-steel"),
+    ctaText: "View Stainless Steel Material Products",
     standards: "ASTM A312, ASTM A240, ASTM A182, ASTM A403, ASTM A276",
     grades: [
       "Austenitic: 304, 304L, 304H, 316, 316L, 316H, 316Ti",
@@ -26,8 +31,12 @@ const ferrousMaterials = [
   {
     id: "cs",
     name: "Carbon Steel",
+    displayName: "Carbon Steel",
     category: "Ferrous",
     tag: "High Tensile Pipeline & Pressure Vessels",
+    image: "/images/productsImages/carbon-steel-pipe.jpg",
+    targetUrl: getMaterialUrl("carbon"),
+    ctaText: "View Carbon Steel Material Products",
     standards:
       "ASTM A106 Gr. B, ASTM A53 Gr. B, API 5L Gr. B to X70, ASTM A333, ASTM A234 WPB, ASTM A105",
     grades: [
@@ -45,8 +54,12 @@ const ferrousMaterials = [
   {
     id: "as",
     name: "Alloy Steel",
+    displayName: "Alloy Steel",
     category: "Ferrous",
     tag: "Elevated Temperature & Creep Resistance",
+    image: "/images/productsImages/alloy-steel-round-bar.jpg",
+    targetUrl: getMaterialUrl("alloy-steel"),
+    ctaText: "View Alloy Steel Material Products",
     standards: "ASTM A335, ASTM A234, ASTM A182, ASTM A387",
     grades: [
       "Pipe Grades: ASTM A335 P1, P5, P9, P11, P22, P91",
@@ -63,8 +76,12 @@ const ferrousMaterials = [
   {
     id: "duplex",
     name: "Duplex Stainless Steel",
+    displayName: "Duplex Steel",
     category: "Ferrous",
     tag: "Dual-Phase (Austenite + Ferrite) Strength",
+    image: "/images/productsImages/duplex-pipe.jpg",
+    targetUrl: getMaterialUrl("duplex"),
+    ctaText: "View Duplex Steel Material Products",
     standards: "ASTM A790, ASTM A815, ASTM A182, ASTM A240",
     grades: ["UNS S31803", "UNS S32205 (2205)", "W.Nr. 1.4462"],
     features:
@@ -75,8 +92,12 @@ const ferrousMaterials = [
   {
     id: "super-duplex",
     name: "Super Duplex Stainless Steel",
+    displayName: "Super Duplex Steel",
     category: "Ferrous",
     tag: "PREN > 40 Extreme Marine Metallurgy",
+    image: "/images/productsImages/super-duplex-flanges.jpg",
+    targetUrl: getMaterialUrl("super-duplex"),
+    ctaText: "View Super Duplex Steel Material Products",
     standards: "ASTM A790, ASTM A815, ASTM A182, ASTM A240",
     grades: [
       "UNS S32750 (2507)",
@@ -91,8 +112,12 @@ const ferrousMaterials = [
   {
     id: "mild-steel",
     name: "Mild Steel & Carbon Structural",
+    displayName: "Mild Steel",
     category: "Ferrous",
     tag: "Structural Framing & Load Bearing",
+    image: "/images/products/ms-equal-angles.jpg",
+    targetUrl: getMaterialUrl("mild-steel"),
+    ctaText: "View Mild Steel Material Products",
     standards: "IS 2062, ASTM A36, BS 4360, EN 10025 S275JR",
     grades: [
       "IS 2062 Grade A / B / C",
@@ -110,8 +135,12 @@ const nonFerrousMaterials = [
   {
     id: "nickel",
     name: "Nickel Alloys (Pure Nickel)",
+    displayName: "Nickel Alloy",
     category: "Non-Ferrous / Special Alloys",
     tag: "High Caustic & Chemical Resistance",
+    image: "/images/productsImages/nickel-pipe.jpg",
+    targetUrl: getMaterialUrl("nickel-alloy"),
+    ctaText: "View Nickel Alloy Material Products",
     standards: "ASTM B160, ASTM B161, ASTM B162, ASTM B366",
     grades: ["Nickel 200 (UNS N02200)", "Nickel 201 (UNS N02201 - Low Carbon)"],
     features:
@@ -121,8 +150,12 @@ const nonFerrousMaterials = [
   {
     id: "monel",
     name: "Monel (Nickel-Copper Alloy)",
+    displayName: "Monel",
     category: "Non-Ferrous / Special Alloys",
     tag: "Rapid Sea-Water Flow & HF Acid Resistance",
+    image: "/images/productsImages/monel-400-sheet.jpg",
+    targetUrl: getMaterialUrl("monel"),
+    ctaText: "View Monel Material Products",
     standards: "ASTM B165, ASTM B127, ASTM B164, ASTM B564",
     grades: [
       "Monel 400 (UNS N04400)",
@@ -136,8 +169,12 @@ const nonFerrousMaterials = [
   {
     id: "inconel",
     name: "Inconel (Nickel-Chromium)",
+    displayName: "Inconel",
     category: "Non-Ferrous / Special Alloys",
     tag: "Extreme Temperature Oxidation & Creep Resistance",
+    image: "/images/productsImages/inconel-incoloy-sheet.jpg",
+    targetUrl: getMaterialUrl("inconel"),
+    ctaText: "View Inconel Material Products",
     standards: "ASTM B167, ASTM B168, ASTM B564, ASTM B444",
     grades: [
       "Inconel 600 (UNS N06600)",
@@ -153,8 +190,12 @@ const nonFerrousMaterials = [
   {
     id: "hastelloy",
     name: "Hastelloy (Nickel-Mo-Cr)",
+    displayName: "Hastelloy",
     category: "Non-Ferrous / Special Alloys",
     tag: "Severe Chemical & Wet Chlorine Immunity",
+    image: "/images/productsImages/hastelloy-buttweld.jpg",
+    targetUrl: getMaterialUrl("hastelloy"),
+    ctaText: "View Hastelloy Material Products",
     standards: "ASTM B622, ASTM B575, ASTM B564, ASTM B619",
     grades: [
       "Hastelloy C276 (UNS N10276)",
@@ -170,8 +211,12 @@ const nonFerrousMaterials = [
   {
     id: "titanium",
     name: "Titanium & Titanium Alloys",
+    displayName: "Titanium",
     category: "Non-Ferrous / Special Alloys",
     tag: "High Strength-to-Weight & Seawater Immunity",
+    image: "/images/productsImages/titanium-pipe.jpg",
+    targetUrl: getMaterialUrl("titanium"),
+    ctaText: "View Titanium Material Products",
     standards: "ASTM B338, ASTM B265, ASTM B348, ASTM B381",
     grades: [
       "Grade 1 (CP 4 - Highest ductility)",
@@ -187,8 +232,12 @@ const nonFerrousMaterials = [
   {
     id: "copper-brass",
     name: "Copper, Brass & Bronze",
+    displayName: "Copper & Brass",
     category: "Non-Ferrous / Special Alloys",
     tag: "Thermal & Electrical Conductivity",
+    image: "/images/productsImages/copper-nickel-sheet.jpg",
+    targetUrl: getMaterialUrl("copper"),
+    ctaText: "View Copper & Brass Material Products",
     standards: "ASTM B111, ASTM B42, ASTM B171, BS 2871",
     grades: [
       "Copper: Cu-DHP, ETP Copper (C11000, C12200)",
@@ -204,8 +253,12 @@ const nonFerrousMaterials = [
   {
     id: "aluminium",
     name: "Aluminium & Aluminium Alloys",
+    displayName: "Aluminium",
     category: "Non-Ferrous / Special Alloys",
     tag: "Lightweight Structural & Cryogenic Ductility",
+    image: "/images/products/aluminum-perforated-sheets.jpg",
+    targetUrl: getMaterialUrl("aluminium"),
+    ctaText: "View Aluminium Material Products",
     standards: "ASTM B209, ASTM B221, ASTM B241",
     grades: [
       "1000 Series (Commercial Pure: 1050, 1100)",
@@ -220,8 +273,12 @@ const nonFerrousMaterials = [
   {
     id: "exotic-alloys",
     name: "Exotic Alloys (Tantalum, Zirconium)",
+    displayName: "Exotic Alloys",
     category: "Non-Ferrous / Special Alloys",
     tag: "Extreme Corrosion Immunity in Harsh Acids",
+    image: "/images/productsImages/tantalum-forged.jpg",
+    targetUrl: getMaterialUrl("exotic-alloy"),
+    ctaText: "View Exotic Alloys Material Products",
     standards: "ASTM B521, ASTM B365, ASTM B708",
     grades: [
       "Tantalum (UNS R05200 / R05400)",
@@ -236,8 +293,12 @@ const nonFerrousMaterials = [
   {
     id: "high-alloys",
     name: "High Alloys (Sanicro 28, 904L, Alloy 20)",
+    displayName: "High Alloys",
     category: "Non-Ferrous / Special Alloys",
     tag: "Phosphoric & Sulfuric Acid Resisting Metallurgy",
+    image: "/images/productsImages/alloy-20-pipe.jpg",
+    targetUrl: getMaterialUrl("high-alloy"),
+    ctaText: "View High Alloys Material Products",
     standards: "ASTM B668, ASTM B625, ASTM B464",
     grades: [
       "Sanicro 28 (UNS N08028)",
@@ -309,77 +370,76 @@ export default function Materials() {
           <div className="materials-cards-grid">
             {displayMaterials.map((mat) => (
               <div key={mat.id} className="material-detail-card">
-                <div className="mat-card-header">
-                  <div>
-                    <span className="mat-category-tag">{mat.category}</span>
-                    <h3 className="mat-card-title">{mat.name}</h3>
+                <Link
+                  to={mat.targetUrl}
+                  className="mat-card-media-link"
+                  aria-label={mat.ctaText}
+                >
+                  <div className="mat-card-media">
+                    <img
+                      src={mat.image}
+                      alt={`${mat.displayName} Materials`}
+                      className="mat-card-img"
+                      loading="lazy"
+                    />
+                    <div className="mat-card-badges-overlay">
+                      <span className="mat-category-pill">{mat.category}</span>
+                    </div>
                   </div>
-                  <span className="mat-feature-tag">{mat.tag}</span>
-                </div>
+                </Link>
 
-                <div className="mat-standards-row">
-                  <span className="std-label">Applicable Standards:</span>
-                  <span className="std-val">{mat.standards}</span>
-                </div>
+                <div className="mat-card-body">
+                  <div className="mat-card-header">
+                    <div>
+                      <Link to={mat.targetUrl} className="mat-title-link">
+                        <h3 className="mat-card-title">{mat.displayName}</h3>
+                      </Link>
+                      {mat.displayName !== mat.name && (
+                        <span className="mat-subtitle-spec">{mat.name}</span>
+                      )}
+                    </div>
+                    <span className="mat-feature-tag">{mat.tag}</span>
+                  </div>
 
-                <div className="mat-grades-block">
-                  <h4 className="mat-block-subtitle">Supplied Grades:</h4>
-                  <ul className="mat-grades-ul">
-                    {mat.grades.map((gradeItem, idx) => (
-                      <li key={idx}>
-                        <FiCheck className="mat-check-icon" />
-                        <span>{gradeItem}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  <div className="mat-standards-row">
+                    <span className="std-label">Standards:</span>
+                    <span className="std-val">{mat.standards}</span>
+                  </div>
 
-                <div className="mat-info-row">
-                  <strong className="info-title">
-                    Performance Highlights:
-                  </strong>
-                  <p className="info-text">{mat.features}</p>
-                </div>
+                  <div className="mat-grades-block">
+                    <h4 className="mat-block-subtitle">Supplied Grades:</h4>
+                    <ul className="mat-grades-ul">
+                      {mat.grades.map((gradeItem, idx) => (
+                        <li key={idx}>
+                          <FiCheck className="mat-check-icon" />
+                          <span>{gradeItem}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                <div className="mat-products-row">
-                  <strong className="info-title">Supplied Forms:</strong>
-                  <p className="info-text">{mat.products}</p>
-                </div>
+                  <div className="mat-info-row">
+                    <strong className="info-title">
+                      Performance Highlights:
+                    </strong>
+                    <p className="info-text">{mat.features}</p>
+                  </div>
 
-                <div className="mat-card-footer">
-                  <Button
-                    to={`/contact?material=${encodeURIComponent(mat.name)}`}
-                    variant="primary"
-                    size="sm"
-                    icon={<FiSend />}
-                  >
-                    Inquire for
-                  </Button>
-                  <Button
-                    to={
-                      {
-                        ss: getMaterialUrl("stainless-steel"),
-                        cs: getMaterialUrl("carbon"),
-                        as: getMaterialUrl("alloy-steel"),
-                        duplex: getMaterialUrl("duplex"),
-                        "super-duplex": getMaterialUrl("super-duplex"),
-                        "mild-steel": getMaterialUrl("mild-steel"),
-                        nickel: getMaterialUrl("nickel-alloy"),
-                        monel: getMaterialUrl("monel"),
-                        inconel: getMaterialUrl("inconel"),
-                        hastelloy: getMaterialUrl("hastelloy"),
-                        titanium: getMaterialUrl("titanium"),
-                        "copper-brass": getMaterialUrl("copper"),
-                        aluminium: getMaterialUrl("aluminium"),
-                        "exotic-alloys": getMaterialUrl("exotic-alloy"),
-                        "high-alloys": getMaterialUrl("high-alloy"),
-                      }[mat.id] || "/materials"
-                    }
-                    variant="outline"
-                    size="sm"
-                  >
-                    View Material Products
-                  </Button>
+                  <div className="mat-products-row">
+                    <strong className="info-title">Supplied Forms:</strong>
+                    <p className="info-text">{mat.products}</p>
+                  </div>
+
+                  <div className="mat-card-footer">
+                    <Link
+                      to={mat.targetUrl}
+                      className="mat-cta-button"
+                      aria-label={mat.ctaText}
+                    >
+                      <span>{mat.ctaText}</span>
+                      <FiArrowRight className="mat-cta-icon" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}

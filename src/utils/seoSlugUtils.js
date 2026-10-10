@@ -155,6 +155,41 @@ function ensureIndexes() {
       variantMap.set(norm, info);
       variantMap.set(`${norm}-${SEO_SUFFIX}`, info);
 
+      if (v.slug.toLowerCase().endsWith('-flange')) {
+        const plural = v.slug.toLowerCase().replace(/-flange$/, '-flanges');
+        variantMap.set(plural, info);
+        variantMap.set(`${plural}-${SEO_SUFFIX}`, info);
+
+        const baseNoFlange = v.slug.toLowerCase().replace(/-flange$/, '');
+        variantMap.set(baseNoFlange, info);
+        variantMap.set(`${baseNoFlange}-${SEO_SUFFIX}`, info);
+
+        // Common engineering aliases for ASME flanges
+        const flangeAliasMap = {
+          'weld-neck-flange': ['weld-neck', 'weldneck', 'wn-flange', 'welding-neck'],
+          'slip-on-flange': ['slip-on', 'slipon', 'so-flange'],
+          'blind-flange': ['blind', 'bl-flange', 'blank-flange'],
+          'socket-weld-flange': ['socket-weld', 'socketweld', 'sw-flange'],
+          'threaded-flange': ['threaded', 'th-flange', 'screwed-flange'],
+          'lap-joint-flange': ['lap-joint', 'lapjoint', 'lj-flange'],
+          'long-weld-neck-flange': ['long-weld-neck', 'lwn-flange'],
+          'orifice-flange': ['orifice'],
+          'reducing-flange': ['reducing'],
+          'plate-flange': ['plate'],
+          'expander-flange': ['expander'],
+          'weldo-flange': ['weldo', 'weldolet', 'weldoflange', 'nipoflange'],
+          'elbow-flange': ['elbow', 'elbowflange']
+        };
+
+        const aliases = flangeAliasMap[v.slug.toLowerCase()];
+        if (aliases) {
+          for (const al of aliases) {
+            variantMap.set(al, info);
+            variantMap.set(`${al}-${SEO_SUFFIX}`, info);
+          }
+        }
+      }
+
       // Keyed by parent/variant composite
       variantMap.set(`${pSlug}/${v.slug}`.toLowerCase(), info);
       variantMap.set(`${toProductSeoSlug(pSlug)}/${seoSlug}`.toLowerCase(), info);

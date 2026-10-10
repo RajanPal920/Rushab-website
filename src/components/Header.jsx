@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -13,11 +13,12 @@ import {
   FaFilePdf,
   FaChevronDown,
   FaChevronUp,
-  FaChevronRight
+  FaChevronRight,
+  FaAward
 } from 'react-icons/fa';
 import { siteConfig } from '../data/siteConfig';
 import { navigationLinks } from '../data/navigation';
-import { productsMegaMenu, materialsMegaMenu } from '../data/megaMenuData';
+import { productsMegaMenu, materialsMegaMenu, certificatesMenu } from '../data/megaMenuData';
 import {
   buttweldSubcategories,
   flangesSubcategories,
@@ -64,6 +65,7 @@ export default function Header() {
   const [mobileExpandedGroup, setMobileExpandedGroup] = useState(null); // 'products' | 'materials' | null
   const [mobileSubcategoryGroup, setMobileSubcategoryGroup] = useState('butt-weld-fittings');
   const timeoutRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -189,16 +191,20 @@ export default function Header() {
           <div className="desktop-navigation-links">
             {navigationLinks.map((link) => {
               const lowerName = link.name.toLowerCase();
+              const isProducts = lowerName === 'products';
+              const isMaterials = lowerName === 'materials';
+              const isCertificates = lowerName === 'certificates' || lowerName === 'certification';
               const menuKey =
-                lowerName === 'products'
+                isProducts
                   ? 'products'
-                  : lowerName === 'materials'
+                  : isMaterials
                   ? 'materials'
-                  : lowerName === 'certificates'
+                  : isCertificates
                   ? 'certificates'
                   : null;
 
               const isMenuActive = Boolean(menuKey && activeMenu === menuKey);
+              const isCertActive = isCertificates && location.pathname.startsWith('/certificates');
 
               return (
                 <div
@@ -207,17 +213,49 @@ export default function Header() {
                   onMouseEnter={() => menuKey && handleMenuEnter(menuKey)}
                   onMouseLeave={handleMenuLeave}
                 >
-                  <NavLink
-                    to={link.href}
-                    className={({ isActive }) =>
-                      `nav-item-link ${isActive ? 'active' : ''} ${isMenuActive ? 'menu-active' : ''}`
-                    }
-                    end={link.href === '/'}
-                    onClick={() => setActiveMenu(null)}
-                  >
-                    <span>{link.name}</span>
-                    <span className="nav-accent-underline"></span>
-                  </NavLink>
+                  {isCertificates ? (
+                    <span
+                      className={`nav-item-link ${isCertActive ? 'active' : ''} ${isMenuActive ? 'menu-active' : ''}`}
+                      role="button"
+                      tabIndex={0}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (activeMenu === 'certificates') {
+                          setActiveMenu(null);
+                        } else {
+                          handleMenuEnter('certificates');
+                        }
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          if (activeMenu === 'certificates') {
+                            setActiveMenu(null);
+                          } else {
+                            handleMenuEnter('certificates');
+                          }
+                        }
+                      }}
+                      style={{ cursor: 'pointer', userSelect: 'none' }}
+                      aria-haspopup="true"
+                      aria-expanded={isMenuActive}
+                    >
+                      <span>{link.name}</span>
+                      <span className="nav-accent-underline"></span>
+                    </span>
+                  ) : (
+                    <NavLink
+                      to={link.href}
+                      className={({ isActive }) =>
+                        `nav-item-link ${isActive ? 'active' : ''} ${isMenuActive ? 'menu-active' : ''}`
+                      }
+                      end={link.href === '/'}
+                      onClick={() => setActiveMenu(null)}
+                    >
+                      <span>{link.name}</span>
+                      <span className="nav-accent-underline"></span>
+                    </NavLink>
+                  )}
                   {isMenuActive && (
                     <NavMegaMenu activeMenu={menuKey} onClose={() => setActiveMenu(null)} />
                   )}
@@ -444,6 +482,65 @@ export default function Header() {
                               </Link>
                             ))}
                           </div>
+                        </div>
+                      </div>
+                    )}
+                  </li>
+                );
+              }
+
+              const isCertificates = lowerName === 'certificates' || lowerName === 'certification';
+              if (isCertificates) {
+                const isOpen = mobileExpandedGroup === 'certificates';
+                return (
+                  <li key={link.name} className={`mobile-nav-item mobile-expandable-item ${isOpen ? 'is-open' : ''}`}>
+                    <div
+                      className={`mobile-nav-anchor mobile-expand-trigger ${isOpen ? 'active' : ''}`}
+                      onClick={() => setMobileExpandedGroup(isOpen ? null : 'certificates')}
+                      role="button"
+                      tabIndex={0}
+                      aria-expanded={isOpen}
+                    >
+                      <span className="mobile-link-text">{link.name}</span>
+                      <span className="mobile-expand-badge">
+                        {isOpen ? <FaChevronUp /> : <FaChevronDown />}
+                      </span>
+                    </div>
+
+                    {isOpen && (
+                      <div className="mobile-subproducts-drawer">
+                        <div className="mobile-materials-container">
+                          <div className="mobile-group-title">OFFICIAL QUALITY CERTIFICATES & SCOPES</div>
+                          <div className="mobile-materials-grid">
+                            {certificatesMenu.items.map((item) => (
+                              <a
+                                key={item.title}
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="mobile-material-card"
+                                onClick={closeMenu}
+                              >
+                                <div className="mobile-mat-thumb">
+                                  <FaAward style={{ color: '#d97706', fontSize: '1.25rem' }} />
+                                </div>
+                                <div className="mobile-mat-details">
+                                  <span className="mobile-mat-name">{item.title}</span>
+                                  <span className="mobile-mat-grade">{item.badge} ↗</span>
+                                </div>
+                                <FaChevronRight className="mobile-mat-chevron" />
+                              </a>
+                            ))}
+                          </div>
+                          <Link
+                            to="/certificates"
+                            className="mobile-all-overview-link"
+                            onClick={closeMenu}
+                            style={{ marginTop: '0.75rem' }}
+                          >
+                            <span>View All Quality Systems & Testing Details →</span>
+                            <FaChevronRight className="m-arrow-icon" />
+                          </Link>
                         </div>
                       </div>
                     )}

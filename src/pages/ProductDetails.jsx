@@ -14,7 +14,6 @@ import {
   FiBox,
 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
-import TypesOfFlangesSection from "../components/flanges/TypesOfFlangesSection";
 import { parseGradeLineToTokens, getGradeUrl } from "../data/gradesData";
 import "./ProductDetails.css";
 import "./VariantDetails.css";
@@ -566,10 +565,6 @@ ${quoteForm.message || "N/A"}
         );
       })()}
 
-      {/* Types of Flanges - Strictly rendered ONLY on Flanges product page */}
-      {product?.slug === "flanges" && (
-        <TypesOfFlangesSection currentVariantTitle="Industrial Flanges" />
-      )}
 
       {/* Specifications & Grades */}
       <section className="section-py bg-light-steel">

@@ -193,9 +193,11 @@ export default function NavMegaMenu({ activeMenu, onClose }) {
           {/* List of Certificates */}
           <div className="certificates-list-grid">
             {items.map((item) => (
-              <Link
+              <a
                 key={item.title}
-                to={item.link}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mega-item-row cert-row"
                 onClick={onClose}
               >
@@ -210,7 +212,7 @@ export default function NavMegaMenu({ activeMenu, onClose }) {
                   <p className="mega-item-desc">{item.subtitle}</p>
                 </div>
                 <FaChevronRight className="mega-item-chevron" />
-              </Link>
+              </a>
             ))}
           </div>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 import {
@@ -127,6 +128,17 @@ export default function Certificates() {
                     <span>Pre-Dispatch Calibration & Inspection</span>
                   </div>
                 </div>
+
+                <div className="iso-card-cta-row">
+                  <a
+                    href="/catalogue/broucher_final_design.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="iso-doc-view-btn"
+                  >
+                    <span>View ISO 9001:2015 Certificate (PDF) ↗</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -150,7 +162,18 @@ export default function Certificates() {
               <p>
                 Standard mill certificate issued by the manufacturing mill's authorized inspection representative, confirming chemical composition and mechanical test properties compliant with governing ASTM/ASME specifications.
               </p>
-              <span className="cert-meta-tag">Included With Every Supply</span>
+              <div className="cert-card-action-bar">
+                <span className="cert-meta-tag">Included With Every Supply</span>
+                <a
+                  href="/catalogue/Rushab_Metal_Industries_Catalogue_With_Logo.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cert-doc-btn"
+                  title="View MTC Specifications & Technical Catalogue"
+                >
+                  View MTC Spec (PDF) ↗
+                </a>
+              </div>
             </div>
 
             <div className="cert-type-card">
@@ -159,7 +182,15 @@ export default function Certificates() {
               <p>
                 Independent testing carried out at recognized and government-accredited metallurgical laboratories for tensile, yield, impact (Charpy V-notch), intergranular corrosion (IGC), and microstructural examination.
               </p>
-              <span className="cert-meta-tag">Available Upon Request</span>
+              <div className="cert-card-action-bar">
+                <span className="cert-meta-tag">Available Upon Request</span>
+                <Link
+                  to="/contact"
+                  className="cert-doc-btn"
+                >
+                  Inquire Lab Tests ↗
+                </Link>
+              </div>
             </div>
 
             <div className="cert-type-card">
@@ -168,7 +199,18 @@ export default function Certificates() {
               <p>
                 Tri-party certified report endorsed by an independent third-party inspection agency (e.g. Lloyd's, DNV, BV, EIL) witnessing testing, heat number stamping, and dimensional conformance before dispatch.
               </p>
-              <span className="cert-meta-tag">Coordinated On Demand</span>
+              <div className="cert-card-action-bar">
+                <span className="cert-meta-tag">Coordinated On Demand</span>
+                <a
+                  href="/catalogue/broucher_final_design.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cert-doc-btn"
+                  title="View Third-Party Inspection Scope"
+                >
+                  View TPI Scope (PDF) ↗
+                </a>
+              </div>
             </div>
           </div>
         </div>

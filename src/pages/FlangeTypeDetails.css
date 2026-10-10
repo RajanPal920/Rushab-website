@@ -357,6 +357,17 @@
   padding: 0.25rem 0.6rem;
   border-radius: 6px;
   border: 1px solid #bae6fd;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.mat-spec-grade-badge:hover {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+  transform: translateY(-1px);
 }
 
 .mat-card-bottom {

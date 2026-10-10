@@ -5,6 +5,7 @@ import {
   getAllFlangeTypes,
   getFlangeTypeUrl
 } from "../data/flangeTypesData";
+import { getGradeUrl } from "../data/gradesData";
 import { siteConfig } from "../data/siteConfig";
 import { setCanonicalUrl } from "../utils/seoSlugUtils";
 import {
@@ -320,9 +321,14 @@ export default function FlangeTypeDetails() {
                     <span className="mat-grades-label">Verified ASTM / ASME Grades:</span>
                     <div className="mat-badges-row">
                       {mat.grades.map((g, idx) => (
-                        <span key={idx} className="mat-spec-grade-badge">
+                        <Link
+                          key={idx}
+                          to={getGradeUrl(g, null, { slug: `${mat.slug}-${flange.slug}` })}
+                          className="mat-spec-grade-badge"
+                          title={`View ${g} metallurgical specifications`}
+                        >
                           {g}
-                        </span>
+                        </Link>
                       ))}
                     </div>
                   </div>

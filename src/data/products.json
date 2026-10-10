@@ -233,7 +233,12 @@
       "Threaded Flange",
       "Lap Joint Flange",
       "Long Weld Neck Flange",
-      "Orifice Flange"
+      "Orifice Flange",
+      "Reducing Flange",
+      "Plate Flange",
+      "Expander Flange",
+      "Weldo Flange",
+      "Elbow Flange"
     ],
     "sizes": "1/2\" to 60\" NB; Pressure Classes: 150#, 300#, 400#, 600#, 900#, 1500#, 2500#",
     "description": "Precision forged and machined flanges manufactured from high-grade raw material ingots and billets, meeting international dimensional tolerances and pressure retention standards.",
@@ -252,7 +257,7 @@
       },
       {
         "label": "Types",
-        "value": "Weld Neck, Slip-On, Blind, Socket Weld, Lap Joint, Spectacle, Ring Joint, Orifice, Long Weld Neck, Deck Flange"
+        "value": "Weld Neck, Slip-On, Blind, Socket Weld, Lap Joint, Long Weld Neck, Orifice, Reducing, Plate, Expander, Weldolet Flange, Elbow Flange"
       },
       {
         "label": "Applicable Standards",

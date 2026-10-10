@@ -254,15 +254,27 @@ export const certificatesMenu = {
   count: "ISO 9001:2015",
   items: [
     {
-      title: "ISO 9001:2015 Certification",
-      subtitle: "Verified Quality Management System & Audited Scopes",
-      badge: "Audited QMS",
-      link: "/certificates",
+      title: "ISO 9001:2015 Quality Management Certificate",
+      subtitle: "Official QMS Certificate & IAF / JAS-ANZ Accredited Audited Scope",
+      badge: "ISO 9001:2015",
+      link: "/catalogue/broucher_final_design.pdf",
+    },
+    {
+      title: "Material Test Certificate (MTC EN 10204 3.1 & 3.2)",
+      subtitle: "Official Mill Test Inspection Protocols & ASTM/ASME Quality Conformance",
+      badge: "EN 10204 MTC",
+      link: "/catalogue/Rushab_Metal_Industries_Catalogue_With_Logo.pdf",
+    },
+    {
+      title: "Third-Party Inspection & Laboratory Audit Profile",
+      subtitle: "Independent Stamping & Witness Protocols (Lloyd's, DNV, BV, EIL, CEIL)",
+      badge: "TPI Verified",
+      link: "/catalogue/broucher_final_design.pdf",
     },
   ],
   footer: {
     notice: "Zero-Defect Inspection Protocol • 100% PMI Spectro Verified",
-    ctaText: "VIEW ALL QUALITY CERTIFICATES & SCOPES →",
+    ctaText: "VIEW ALL QUALITY PROCEDURES & SCOPES →",
     ctaLink: "/certificates",
   },
 };

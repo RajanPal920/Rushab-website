@@ -824,6 +824,235 @@ export const flangesSubcategories = [
       "Steam flow monitoring in boiler power generation plants",
       "Chemical process mass balance flow measurement"
     ]
+  },
+  {
+    id: 209,
+    slug: "reducing-flange",
+    title: "Reducing Flange",
+    subcategory: "Reducing Flange",
+    category: "Flanges",
+    parentSlug: "flanges",
+    image: "/images/products/flanges/reducing.jpg",
+    shortDescription:
+      "ASME B16.5 Table 6 Specialized connecting flanges with differing outer bolt circle and inner bore diameter for line size reduction.",
+    materialGroup: "Flanges",
+    standards: "ASME B16.5 Table 6, DIN EN 1092-1, MSS SP-44",
+    overview:
+      "Reducing Flanges are engineered to connect two pipes of different nominal pipe sizes without requiring an inline pipe reducer fitting. The flange features an outer diameter and bolt hole circle matching the larger nominal pipe size, while the inner bore and hub profile are machined to match the smaller connecting pipe diameter. By combining a flange and reducer into a single forged element, piping designers conserve valuable longitudinal space and eliminate one circumferential welding joint.",
+    grades: [
+      "ASTM A105",
+      "ASTM A350 LF2",
+      "ASTM A182 F304/304L",
+      "ASTM A182 F316/316L",
+      "ASTM A182 F51 (2205)"
+    ],
+    availableSizes: "2\" to 24\" NB (reducing to 1/2\" to 12\" NB)",
+    wallThickness: "Pressure Ratings: Class 150, 300, 600, 900, 1500 (PN 10 to PN 250)",
+    manufacturingType: "Forged Closed Die / CNC Precision Bored",
+    connectionType: "Threaded, Slip-On, or Butt Weld Neck Reducing",
+    surfaceFinish: "Serrated Concentric / Spiral Finish (Ra 3.2 - 6.3 µm)",
+    endConnection: "Raised Face (RF), Flat Face (FF)",
+    technicalSpecs: {
+      nominalSize: '2" to 24" NB reducing to 1/2" to 12" NB',
+      pressureClasses: "Class 150# to 1500#",
+      facingOptions: "RF, FF",
+      designStandards: "ASME B16.5 Table 6, DIN EN 1092-1",
+      reductionStyle: "Concentric Bore Reduction"
+    },
+    standardsCompliance: [
+      "ASME B16.5 Table 6 — Pipe Flanges and Flanged Fittings (Reducing Flanges)",
+      "DIN EN 1092-1 — Flanges and Their Joints",
+      "ASTM A105, ASTM A182"
+    ],
+    industryApplications: [
+      "Pump suction and discharge nozzles with differing header diameters",
+      "Meter run connections and valve body size transitions",
+      "Space-constrained modular offshore skids and compact marine engine rooms"
+    ]
+  },
+  {
+    id: 210,
+    slug: "plate-flange",
+    title: "Plate Flange",
+    subcategory: "Plate Flange",
+    category: "Flanges",
+    parentSlug: "flanges",
+    image: "/images/products/flanges/plate-flange.jpg",
+    shortDescription:
+      "DIN EN 1092-1 Type 01 & BS 4504 Hubless flat circular plate flanges for low-pressure water, HVAC, and ducting systems.",
+    materialGroup: "Flanges",
+    standards: "DIN EN 1092-1 Type 01, BS 4504, IS 2062 / IS 6392, AWWA C207 Class D & E",
+    overview:
+      "Plate Flanges (Flat Face Slip-On Plate Flanges) are hubless, flat circular flanges manufactured directly from hot-rolled steel plates conforming to DIN EN 1092-1 Type 01, BS 4504, IS 2062, or AWWA C207 standards. The flange slides over the pipe and is secured with inside and outside fillet welds. Due to the absence of a forged neck hub, plate flanges are the most cost-efficient flange solution for low-pressure municipal, wastewater, and general ventilation systems.",
+    grades: [
+      "IS 2062 Gr. A/B",
+      "ASTM A36",
+      "ASTM A516 Gr. 70",
+      "ASTM A240 SS 304/304L",
+      "ASTM A240 SS 316/316L"
+    ],
+    availableSizes: "1/2\" NB to 80\" NB (DN15 to DN2000)",
+    wallThickness: "Pressure Ratings: PN 2.5, PN 6, PN 10, PN 16 / Class 150 (AWWA)",
+    manufacturingType: "High-Definition CNC Plasma / Laser Profiled & Surface Machined",
+    connectionType: "Dual Fillet Weld (Internal & External)",
+    surfaceFinish: "Flat Face (FF) Smooth Machined",
+    endConnection: "Flat Face (FF)",
+    technicalSpecs: {
+      nominalSize: '1/2" NB to 80" NB (DN15 to DN2000)',
+      pressureClasses: "PN 2.5, PN 6, PN 10, PN 16 / Class 150",
+      facingOptions: "Flat Face (FF)",
+      designStandards: "DIN EN 1092-1 Type 01, BS 4504, AWWA C207",
+      plateStandard: "IS 2062, ASTM A36, ASTM A240"
+    },
+    standardsCompliance: [
+      "DIN EN 1092-1 — Flanges and Their Joints (Type 01 Plate Flange)",
+      "BS 4504 — Circular Flanges for Pipes, Valves and Fittings",
+      "AWWA C207 — Steel Pipe Flanges for Waterworks Service"
+    ],
+    industryApplications: [
+      "Municipal water supply, sewage treatment, and wastewater pumping stations",
+      "HVAC chilled water loops, cooling towers, and fire water circuits",
+      "Exhaust gas ducting, low-pressure ventilation, and bulk silo connections"
+    ]
+  },
+  {
+    id: 211,
+    slug: "expander-flange",
+    title: "Expander Flange",
+    subcategory: "Expander Flange",
+    category: "Flanges",
+    parentSlug: "flanges",
+    image: "/images/products/flanges/expander.jpg",
+    shortDescription:
+      "MSS SP-65 & ASME B16.5 Integrated weld neck flanges with an expanding tapered bore transitioning smaller pipe to larger valve or pump nozzles.",
+    materialGroup: "Flanges",
+    standards: "MSS SP-65, ASME B16.5, ASME B16.47",
+    overview:
+      "Expander Flanges are specialized weld neck flanges where the hub incorporates a gradual internal cone expansion. Designed in accordance with MSS SP-65 and ASME B16.5 conventions, expander flanges transition from a smaller pipe diameter at the weld bevel to a larger nominal flange mating face. By combining a weld neck flange and a pipe expander reducer into a single forged component, piping engineers eliminate one butt-weld seam and conserve vital skid footprint.",
+    grades: [
+      "ASTM A105",
+      "ASTM A350 LF2",
+      "ASTM A694 F52-F65",
+      "ASTM A182 F316/316L",
+      "ASTM A182 F304/304L",
+      "ASTM A182 F51 (2205)"
+    ],
+    availableSizes: "2\" to 24\" NB weld neck expanding to 3\" to 30\" flange face",
+    wallThickness: "Pressure Ratings: Class 150, 300, 600 (PN 20 to PN 100)",
+    manufacturingType: "One-Piece Integral Die Forged & CNC Precision Turned",
+    connectionType: "Full Penetration Circumferential Butt Weld",
+    surfaceFinish: "Serrated Concentric / Spiral (RF), RTJ Ring Groove",
+    endConnection: "Raised Face (RF), Ring Type Joint (RTJ)",
+    technicalSpecs: {
+      nominalSize: '2" to 24" NB expanding to 3" to 30" Flange',
+      pressureClasses: "Class 150#, 300#, 600#",
+      facingOptions: "RF, RTJ",
+      designStandards: "MSS SP-65, ASME B16.5",
+      expansionAngle: "Smooth hydrodynamic internal taper"
+    },
+    standardsCompliance: [
+      "MSS SP-65 — High-Pressure Chemical Industry Flanges and Threaded Stubs",
+      "ASME B16.5 — Pipe Flanges and Flanged Fittings",
+      "NACE MR0175 / ISO 15156 Sour Service Compliance"
+    ],
+    industryApplications: [
+      "Centrifugal pump suction nozzles requiring enlarged intake diameter",
+      "Compressor discharge headers and valve body tie-ins",
+      "Offshore modular gas processing skids where axial space is strictly constrained"
+    ]
+  },
+  {
+    id: 212,
+    slug: "weldo-flange",
+    title: "Weldo Flange",
+    subcategory: "Weldo Flange",
+    category: "Flanges",
+    parentSlug: "flanges",
+    image: "/images/products/flanges/weldo-flange.jpg",
+    shortDescription:
+      "MSS SP-97 Integrally reinforced branch outlet forgings combining a Weldolet branch fitting and a weld neck flange in one solid body.",
+    materialGroup: "Flanges",
+    standards: "MSS SP-97, ASME B16.5, ASME B31.3",
+    overview:
+      "Weldo Flanges (also known as Weldolet Flanges or Nipoflanges) are integrally reinforced forged components that fuse a branch outlet fitting (Weldolet) and a weld neck flange into a single, seamless forging. Designed per MSS SP-97 and ASME B31.3 reinforcement rules, a weldo flange is contoured to weld directly onto the main run header pipe, providing a 90° flanged takeoff branch without intermediate weld joints.",
+    grades: [
+      "ASTM A105",
+      "ASTM A350 LF2",
+      "ASTM A694 F52-F70",
+      "ASTM A182 F316/316L",
+      "ASTM A182 F304/304L",
+      "ASTM A182 F51 (2205)",
+      "ASTM A182 F53 (2507)"
+    ],
+    availableSizes: "Run 2\" to 36\" NB with branch flange 1/2\" to 8\" NB",
+    wallThickness: "Pressure Ratings: Class 150, 300, 600, 900, 1500, 2500",
+    manufacturingType: "Solid Billet Drop Forged & 3D Contour CNC Profiled",
+    connectionType: "Contoured Full Penetration Weld to Run Pipe",
+    surfaceFinish: "Serrated RF, Ring Type Joint (RTJ)",
+    endConnection: "Raised Face (RF), Ring Type Joint (RTJ)",
+    technicalSpecs: {
+      runSize: '2" to 36" NB Header Run',
+      branchSize: '1/2" to 8" NB Flange Branch',
+      pressureClasses: "Class 150# to 2500#",
+      facingOptions: "RF, RTJ",
+      designStandards: "MSS SP-97, ASME B16.5, ASME B31.3",
+      reinforcement: "100% Integrally Reinforced Branch"
+    },
+    standardsCompliance: [
+      "MSS SP-97 — Integrally Reinforced Forged Branch Outlet Fittings",
+      "ASME B16.5 — Pipe Flanges and Flanged Fittings",
+      "ASME B31.3 — Process Piping"
+    ],
+    industryApplications: [
+      "High-pressure pipeline instrument takeoffs, sample points, and drain connections",
+      "Header tie-ins on offshore drilling platforms and FPSO processing topsides",
+      "Refinery cracking furnaces and high-pressure steam distribution headers"
+    ]
+  },
+  {
+    id: 213,
+    slug: "elbow-flange",
+    title: "Elbow Flange",
+    subcategory: "Elbow Flange",
+    category: "Flanges",
+    parentSlug: "flanges",
+    image: "/images/products/flanges/elbow-flange.jpg",
+    shortDescription:
+      "ASME B16.5 & DIN 2605 Heavy-duty 90° or 45° forged piping elbows with integrated flange faces for ultra-compact directional change.",
+    materialGroup: "Flanges",
+    standards: "ASME B16.5, ASME B16.9, DIN 2605 / DIN 2633",
+    overview:
+      "Elbow Flanges (Flanged Elbows) are heavy-duty forged components that combine a 90° or 45° pipe elbow with an integral flange face at one or both ends. Engineered for space-restricted environments where welding a standard pipe elbow to a separate weld neck flange is physically impossible due to tight center-to-face dimensions, elbow flanges provide an ultra-compact, high-strength solution.",
+    grades: [
+      "ASTM A105",
+      "ASTM A350 LF2",
+      "ASTM A182 F304/304L",
+      "ASTM A182 F316/316L",
+      "ASTM A182 F51 (2205)"
+    ],
+    availableSizes: "1\" NB (DN25) to 12\" NB (DN300)",
+    wallThickness: "Pressure Ratings: Class 150, 300, 600",
+    manufacturingType: "Forged Monolithic Body & Multi-Axis CNC Machined",
+    connectionType: "Integral Flanged Bolted Joint / Butt Weld End",
+    surfaceFinish: "Raised Face (RF), Ring Type Joint (RTJ)",
+    endConnection: "Raised Face (RF), Ring Type Joint (RTJ)",
+    technicalSpecs: {
+      nominalSize: '1" NB to 12" NB (DN25 to DN300)',
+      pressureClasses: "Class 150#, 300#, 600#",
+      facingOptions: "RF, RTJ",
+      elbowAngles: "90° Long/Short Radius, 45° Elbow",
+      designStandards: "ASME B16.5, ASME B16.9, DIN 2605"
+    },
+    standardsCompliance: [
+      "ASME B16.5 — Pipe Flanges and Flanged Fittings",
+      "ASME B16.9 — Factory-Made Wrought Buttwelding Fittings",
+      "DIN 2605 — Steel Butt-Welding Pipe Fittings"
+    ],
+    industryApplications: [
+      "Pump suction and discharge nozzles with right-angle pipeline entry",
+      "Heat exchanger channel head tie-ins in compact marine engine rooms",
+      "Offshore skid packages and hydraulic accumulator manifolds"
+    ]
   }
 ];
 
